@@ -1,0 +1,26 @@
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="advertise"></div>
+      </div>
+      <div class="col-md-9">
+        <h5> Search Values </h5>
+        
+        <div class="smallslide">
+        <ul>
+        <li ng-repeat="property in properties" >
+        	
+        	<a href="#/property/{{property.id}}">
+            {{property.property}}
+            <img src="{{property.image|imagepath}}" />
+            </a>
+        </li>
+        </ul>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="contactussubform" ng-controller="contact2">
+    <h3>CONTACT US</h3>
+    <div class="contactthankyou" ng-show="contactsubmit" style="padding: 20%;">
+        Thank you. Your message has been sent.
+    </div>
+    <div ng-hide="contactsubmit">
+        <input type="text" class="form-control contactussub" placeholder="Name" ng-model="contact.name">
+        <input type="text" class="form-control contactussub" placeholder="Email" ng-model="contact.email">
+        <input type="text" class="form-control contactussub" placeholder="Phone" ng-model="contact.phone">
+        <textarea class="form-control contactussub" placeholder="Message" ng-model="contact.comment"></textarea>
+    </div>
+    <div class="row" ng-hide="contactsubmit">
+        <div class="col-xs-10"><p>We will get back to you within 24 hours.</p></div>
+        <div class="col-xs-2"><a  ng-click="usercontact(contact);" class="btn btn-primary" >Submit</a></div>
+    </div>
+</div>

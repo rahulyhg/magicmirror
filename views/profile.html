@@ -1,0 +1,185 @@
+<div class="content">
+    <div class="contenttop">
+        <div class="row">
+            <div class="col-xs-4">
+                <span class="breadcrumb">
+                    Home / Profile
+                </span>
+            </div>
+
+        </div>
+
+        <div class="container billing">
+            <div class="panel-group" id="accordion">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="">
+                                <h3>Personal Information</h3>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body billing-info">
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="text" placeholder="First Name" class="form-control" required>
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="text" placeholder="Last Name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="text" placeholder="Company" class="form-control">
+
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="email" placeholder="Email" class="form-control" required>
+                                </div>
+                            </div>
+
+
+                            <button href class="btn btn-default pull-right">Save</button>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="">
+                                <h3>Password</h3>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body billing-info">
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="password" placeholder="New Password" class="form-control" required>
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="password" placeholder="Re-enter Password" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <button href class="btn btn-default pull-right">Save</button>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="">
+                                <h3>Billing Information</h3>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body billing-info">
+
+
+
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <textarea name="" id="" class="form-control" placeholder="Address"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="text" placeholder="City" class="form-control" required>
+
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="text" placeholder="State/Province" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="text" placeholder="Zip/Postal Code" class="form-control" required>
+
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="text" placeholder="Country" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input type="tel" placeholder="Telephone" class="form-control" required>
+
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <input type="tel" placeholder="Fax" class="form-control">
+                                </div>
+                            </div>
+
+                            <button href class="btn btn-default pull-right">Save</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="">
+                                <h3>My Orders</h3>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body billing-info">
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+
+                                        <th>Unit Price</th>
+                                        <th>Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="singlecart in cart">
+                                        <td>{{singlecart.name}}</td>
+
+                                        <td>{{singlecart.price|convertprice}}</td>
+                                        <td>
+                                            <input type="number" ng-model="newquantity[$index]" class="form-control cartinput">
+                                        </td>
+                                        
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <button href class="btn btn-default pull-right">Save</button>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

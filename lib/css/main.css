@@ -1,0 +1,458 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+.logo img {
+    height: 135px;
+}
+.newbadge{
+    background-color: rgb(39, 240, 232);
+position: absolute;
+margin-left: -3px;
+margin-top: -10px;
+z-index: -1;
+}
+.msg{
+    color: green;
+    font-size: large;
+}
+.newsletterhead{
+    margin-top: 18px;
+    float: left;
+}
+.myaccount{
+position: absolute;
+margin-top: 20px;
+z-index: 1;
+background-color: white;
+margin-left: 40px;
+padding: 20px;
+}
+.headerright {
+    margin-top: 20px;
+}
+.img {
+    width: 100%;
+}
+.navigation {
+    float: right;
+    margin-top: -47px;
+    margin-bottom: 25px;
+}
+.slide {
+    margin-bottom: 30px;
+}
+.slidesel {
+    margin-bottom: 30px;
+}
+input:focus {
+    outline: none;
+}
+.newsletteremail {
+    width: 300px;
+}
+.newsletter {
+    background: rgb(224, 240, 255);
+    padding: 22px 0 15px;
+    margin-bottom: 30px;
+}
+.newsletter .form-control {
+    border: none;
+}
+.footernav .nav > li > a:hover,
+.nav > li > a:focus {
+    background: none;
+}
+.footernav {
+    padding-bottom: 25px;
+}
+.social {
+    margin-bottom: 10px;
+}
+.iosicon {
+    -webkit-filter: grayscale(1);
+    opacity: 0.7;
+    -webkit-transition: all 1s;
+}
+.androidicon {
+    -webkit-filter: grayscale(1);
+    opacity: 0.4;
+    -webkit-transition: all 1s;
+}
+.iosicon:hover,
+.androidicon:hover {
+    -webkit-filter: grayscale(0);
+    opacity: 1;
+}
+.socialicons {
+    -webkit-filter: grayscale(1);
+    opacity: 0.3;
+    -webkit-transition: all 1s;
+    padding: 10px;
+    width: 60px;
+}
+.socialicons:hover {
+    -webkit-filter: grayscale(0);
+    opacity: 1;
+}
+.container-fluid-non-responsive {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 1080px;
+}
+.headsearch {
+    margin-top: -3px;
+}
+.content {
+    margin-bottom: 30px;
+}
+.product {
+    margin-bottom: 30px;
+    height: 400px;
+}
+.product .img2 {
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    opacity: 1;
+    -webkit-transition: all 1.3s;
+}
+.product .img2:hover {
+    opacity: 0;
+}
+.product {
+    position: relative;
+}
+.contenttop {
+    margin-bottom: 30px;
+}
+.protitle h5 {
+    font-weight: 400;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #C7C7C7;
+    font-size: 110%;
+}
+.proprice h5 {
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: -9px;
+    font-weight: 300;
+    font-size: 150%;
+}
+.protitle h5:hover,
+.proprice h5:hover {
+    color: #FFABD3;
+}
+.protitle a,
+.proprice a {
+    color: #838383
+}
+.affixposition.affix {
+    top: 210px;
+    right: 100px;
+    z-index: 15;
+}
+.affixposition.affix-top {
+    margin-right: 85px;
+    z-index: 15;
+}
+.productheader h5 {
+    font-weight: 300;
+    font-size: 150%;
+}
+.productheader h4 {
+    font-weight: 300;
+    font-size: 30px;
+    color: #FFABD3;
+}
+.quantitybox {
+    width: 40px;
+    margin: 0 20px;
+    padding: 2px 12px;
+}
+.productheader {
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 10px;
+}
+.productdesc {
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 10px;
+}
+.zoomLens {
+    box-shadow: rgb(206, 206, 206) 1px 0px 5px 2px;
+    border: 0px !important;
+}
+.table-hover tr:hover>td {
+    color: #FFABD3;
+}
+.checkout {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding: 20px 0 0;
+    border-bottom: 1px solid #ccc;
+}
+.checkout .btn {
+    padding: 10px 20px;
+}
+.cart {
+    margin-top: 25px;
+}
+.cart tr>th {
+    background-color: #FFABD3;
+    color: white;
+}
+.billing h3 {
+    margin-top: 10px;
+    color: #a8a8a8;
+}
+.billing .panel-group .panel {
+    border-radius: 0px;
+    border-color: transparent;
+}
+.billing .panel-heading {
+    background-color: #fcfcfc;
+}
+.billing>.panel-group .panel-heading + .panel-collapse .panel-body {
+    border-top: 1px solid transparent;
+}
+.btn-default {
+    color: #A8A8A8;
+    background-color: #f5f5f5;
+}
+.billing-info .row {
+    margin: 10px 0;
+}
+.billing-info>p {
+    margin-left: 20px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+.billing {
+    margin: 20px 0;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+    border: none;
+}
+.cartinput {
+    width: 65px;
+    text-align: center;
+    padding: 0px;
+}
+a {
+    cursor: pointer;
+}
+p {
+    line-height: 180%;
+}
+.nav > li {
+    position: static;
+}
+div.megamenu {
+    position: absolute;
+    width: 98%;
+    left: 1%;
+    z-index: 100;
+    background: rgba(246, 246, 246, 0.92);
+    padding: 10px;
+}
+ul.submenudown {
+    list-style: none;
+    margin-left: -40px;
+}
+ul.submenudown li {
+    padding: 13px;
+    margin: 0 0 -1px;
+    font-size: 14px;
+}
+.img-pad {
+    padding: 10px;
+    background-color: #fff;
+}
+.nav-pills > li + li {
+    margin-left: 0px;
+}
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #FFABD3;
+    margin-left: 9px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0px;
+}
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-left: 9px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0px;
+}
+.productdetails {
+    position: fixed;
+    right: 10px;
+    background: rgba(253, 253, 253, 0.8);
+    border-radius: 2px;
+    padding: 0 10px;
+    z-index: 1;
+}
+.lookbookimg {
+    padding: 10px;
+    background: #FCFCFC;
+    width: 75%;
+}
+.pad {
+    margin: 10px 0px 20px;
+}
+button.home-btn {
+    border: none;
+    background: #fcfcfc;
+    width: 100%;
+    padding: 25px 0;
+}
+button.home-btn:hover {
+    background: #F6F6F6;
+    color: #FFABD3;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+    -o-transition: all 700ms;
+    -moz-transition: all 700ms;
+}
+button.home-btn:focus {
+    outline: none;
+}
+.pronew {
+    display: inline-block;
+    background: #FFABD3;
+    color: white;
+    font-size: 10px;
+    padding: 5px 15px;
+    z-index: 11;
+}
+.discountprice {
+    text-decoration: line-through;
+    color: #ccc !important;
+    padding-top: 0px !important;
+    font-size: 15px !important;
+}
+.wishlist {
+    position: absolute;
+    z-index: 11;
+    font-size: 150%;
+    right: 0em;
+}
+.wishlist:hover {
+    color: #FFABD3;
+}
+.sortby {
+    min-width: 165px;
+    right: 15px;
+}
+.filters {
+    min-width: 700px;
+    right: 105px;
+}
+.filters h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+}
+.sorting {
+    position: absolute;
+    z-index: 12;
+    line-height: 200%;
+    padding: 10px;
+    background: rgba(245, 245, 245, 0.9);
+}
+.btn.btn-danger {
+    color: #fff;
+    background-color: #FFCADB !important;
+    border-color: #FFB6B3;
+}
+.prowish {
+    font-size: 18px;
+    margin-left: 10px;
+}
+.lookdetails {
+    position: absolute;
+    right: 0;
+    width: 250px;
+    min-height: 150px;
+    padding: 10px 20px;
+    background: #fcfcfc;
+    opacity: 0;
+    -webkit-transition: all 700ms;
+}
+.maincontent:hover .lookdetails {
+    opacity: 1;
+    -webkit-transition: all 700ms;
+}
+h5.pricecolor {
+    color: #FFABD3;
+}
+.zibafunc {
+    background: rgba(255, 171, 211, 0.5);
+    padding: 10px 15px;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 30%;
+    text-transform: capitalize;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+/*Horizontal Slider*/
+.hori-item {
+    width: 250px;
+    border-top: 20px solid #ccc;
+    float: left;
+    -webkit-transition: all 700ms;
+    opacity: .5;
+}
+.hori-item:hover {
+    border-color: #AAA;
+    background: white;
+    opacity: 1;
+}
+.hori-item.active {
+    border-color:#AAA;
+    -webkit-transition: all 700ms;
+    background: white;
+    opacity: 1;
+}
+.img-2 {
+    width: 50%;
+}
+.horislide {
+    min-width: 400%;
+}
+.horizon {
+    overflow-x: scroll;
+    position: fixed;
+    bottom: -250px;
+    z-index: 10000;
+    background: white;
+    -webkit-transition: all 400ms;
+}
+.horizon:hover {
+    bottom:0px;
+}
+.horizon.firstshow {
+    bottom:0px;
+}
+.product .img1,.product .img2 {
+width: 300px;
+height: 300px;
+}

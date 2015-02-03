@@ -1,0 +1,49 @@
+
+
+<div ng-controller="navigationctrl">
+    <div class="navigation fadeInDown">
+       <center>
+        <ul class="nav nav-pills font mainmenu" ng-class="ishome" >
+           
+            <li>
+                <a href="#/category/31">New In</a>
+                
+            </li>
+            <!--li ng-mouseover="showsub(5)" ng-mouseleave="hidesub(5)" style="position:relative;">
+                <a href="#/home">New In</a>
+                <div class="megamenu megamenu2" ng-include src="submenuval[5]" ng-show="submenu[5]">
+                </div>
+            </li-->
+
+            <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:relative;">
+                <a href="#/category/1">Jewellery</a>
+                <div class="megamenu megamenu2" ng-include src="submenuval[0]" ng-show="submenu[0]">
+                </div>
+            </li>
+            <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:relative;">
+                <a href="#/category/6">Accesories</a>
+                <div class="megamenu megamenu2" ng-include src="submenuval[1]" ng-show="submenu[1]">
+                </div>
+            </li>
+<!--
+            <li ng-mouseover="showsub(2)" ng-mouseleave="hidesub(2)">
+                <a href="#/lookbook">LOOKBOOK</a>
+                <div class="megamenu" ng-include src="submenuval[2]" ng-show="submenu[2]">
+                </div>
+            </li>
+-->
+            <li>
+                <a href="#/lylaloves">lyla loves...</a>
+                
+            </li>
+
+            <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
+                <a   href="#/contact">Contact us</a>
+                <div class="megamenu" ng-include src="submenuval[6]" ng-show="submenu[6]">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

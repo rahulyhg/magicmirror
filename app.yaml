@@ -1,0 +1,51 @@
+application: lylalovescouk
+version: 1
+runtime: php
+api_version: 1
+threadsafe: no
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /(.+\.(gif|png|jpg|css|js|html|eot|woff|ttf|svg|otf))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|css|js|html|eot|woff|ttf|svg|otf)$
+  application_readable: true  
+
+- url: /admin/assets
+  static_dir: admin/assets
+
+- url: /admin
+  script: admin/index.php
+
+- url: /admin/(.+)
+  script: admin/index.php 
+
+- url: /myuploads
+  script: myuploads/index.php
+
+- url: /myuploads/(.+)
+  script: myuploads/index.php
+  
+- url: /showimage
+  script: showimage/index.php
+
+- url: /showimage/(.+)
+  script: showimage/index.php  
+
+- url: /uploadsuccess
+  script: uploadsuccess/index.php
+
+- url: /uploadsuccess/(.+)
+  script: uploadsuccess/index.php  
+
+- url: /.*
+  script: index.php  
+  
+
+
+
+ 
+ 

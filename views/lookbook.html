@@ -1,0 +1,50 @@
+<div class="content">
+    <div class="contenttop">
+
+        <div class="row">
+            <div class="col-xs-4">
+                <span class="breadcrumb">
+							Home / Global Grudge
+                </span>
+            </div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+                <div class="pull-right" ng-controller="filterctrl">
+                    <a href="#" class="btn btn-default" ng-mouseover="showfilter(0)" ng-mouseleave="hidefilter(0)">Filters</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="#" class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By</a>
+                    <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
+                    <div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="maincontent">
+
+        <div class="lookdetails">
+            
+            <h3>Necklace</h3>
+            <h4>&pound; 60</h4>
+            <a class="btn btn-primary" ng-click="addtocart(product.id,product.name,product.price,addquantity)"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>
+            <br>
+            <div class="pad"></div>
+            <a href="" class="btn"><span class="glyphicon glyphicon-chevron-left"></span>Previous</a>
+            <a href="" class="btn">Next <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+
+        <div class="text-center pad look-img">
+            <img src="{{activeimage}}" class="img img-2">
+        </div>
+
+        <div class="horizon {{firstshow}}">
+            <div class="horislide">
+
+                <div class="hori-item {{image.active}}" ng-repeat="image in lookbookimages">
+                    <img src="{{image.image}}" class="img" ng-click="changeactivelookbook($index)" alt="">
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+</div>

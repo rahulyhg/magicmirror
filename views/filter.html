@@ -1,0 +1,54 @@
+<div class="filters sorting">
+    <div class="row">
+        <div class="col-xs-8">
+            <h4>Colours</h4>
+            <div class="row">
+                <div class="col-md-6">
+
+
+                    <ul class="list-unstyled">
+                        <li><a ng-click="filtercolor('red')">Red</a>
+                        </li>
+                        <li><a ng-click="filtercolor('pink')">Pink</a>
+                        </li>
+                        <li><a ng-click="filtercolor('white')">White</a>
+                        </li>
+                        <li><a ng-click="filtercolor('brown')">Brown</a>
+                        </li>
+                        <li><a ng-click="filtercolor('black')">Black</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+
+                        <li><a ng-click="filtercolor('purple')">Purple</a>
+                        </li>
+                        <li><a ng-click="filtercolor('blue')">Blue</a>
+                        </li>
+                        <li><a ng-click="filtercolor('green')">Green</a>
+                        </li>
+                        <li><a ng-click="filtercolor('yellow')">Yellow</a>
+                        </li>
+                        <li><a ng-click="filtercolor('orange')">Orange</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-4">
+            <h4>Price</h4>
+            <div class="rangeslider" range-slider min="0" max="30" model-min="filter.pricemin" model-max="filter.pricemax"></div>
+
+        </div>
+    </div>
+    <div class="pull-right">
+        <button class=" btn btn-primary" ng-click="filtersave(filter);">Save</button>
+        <button class="btn btn-danger" ng-click="filterclear();">Clear</button>
+    </div>
+    <div class="clearfix"></div>
+</div>

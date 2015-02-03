@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="contenttop">
+        <div class="row">
+            <div class="col-xs-4">
+                <span class="breadcrumb">
+                    Home / Contact Us
+                </span>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="container cart">
+
+            <div class="row">
+             <div class="col-xs-12 msg">
+                <center> {{msg}} </center>
+             </div>
+            </div>
+            <h3>Contact Us</h3>
+            <div class="row">
+                <div class="col-xs-3">
+                    <h4>Phone</h4>
+                    <p>Monday - Friday 8:00am - 5:00pm
+                        <br>020 71836335</p>
+                    <h4>Email</h4>
+                    <p>lyla@lylaloves.co.uk</p>
+                </div>
+                <div class="col-xs-5 col-xs-offset-4">
+                    <div class="contactthankyou" ng-show="contactsubmit" style="padding: 20%;">
+                       Thank you. Your message has been sent.
+                   </div>
+                    <div ng-hide="contactsubmit">
+                    <h4>Submit query</h4>
+                    <p><input type="text" class="form-control" ng-model="contact.name" placeholder="Name*" required></p>
+                    <p><input type="text" class="form-control" ng-model="contact.email" placeholder="Email Address*" required></p>
+                    <p><input type="text" class="form-control" ng-model="contact.phone" placeholder="Telephone"></p>
+                    <p><textarea name="" class="form-control" ng-model="contact.comment" placeholder="Comment*"></textarea></p>
+                    <a class="btn btn-primary pull-right" href="" ng-click="usercontact(contact)">Submit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

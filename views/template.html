@@ -1,0 +1,8 @@
+<div ng-include src="template.header"></div>
+<div ng-include src="template.navigation"></div>
+<div ng-include src="template.content"></div>
+<div ng-include src="template.slider" style="position:relative;background:white;"></div>
+<div ng-include src="template.footer"></div>
+<div class="lightbox" ng-show="template.lightboximage != ''" ng-controller="lightbox">
+    <img src="{{template.lightboximage}}" ng-click="removelightbox();">
+</div>
