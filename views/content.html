@@ -25,47 +25,174 @@
             </div>
        </div-->
 <!--       <div class="productset">-->
+  
 <div class="product-img">
     <div class="container">
         <div class=catogory> <span>Catergories</span></div>
     </div>
-    <div class="slideup">
-        <img src="img/sliderup.jpg">
+   <div class="bckgrnd-sliderup">
+    <div class="col-xs-8 col-md-offset-2">
+<div class="carousel slide" id="myCarousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="#"><h4>Bangles</h4><img src="img/products/up1.png" class="img-responsive"></a></div>
     </div>
-<!--
-       <div class="bckgrnd-sliderup">
-        <div class="imageset">
-            <a ng-click="slidesetprev(showslideset1);">
-                <div class="toggle left">
-                    <img src="img/leftbanner.png" alt="" ng-show="showslideset1==1">
-                </div>
-            </a>
-            <a ng-click="slidesetnext(showslideset1);">
-                <div class="toggle right">
-                    <img src="img/rightbanner.png" alt="" ng-show="showslideset1==0">
-                </div>
-            </a>
-            <div style="overflow:hidden;height:230px;">
-                <span ng-repeat="slider in sliders">
-                <span ng-show="$index<5" class="pickweek">
-                    <a href="#/product/{{slider.link}}"><img src="{{slider.image|imagepath}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
-                    <div class="proprice proprice2">
-                        <a href="#/product/{{product.id}}">
-                            <h5> {{slider.price|convertprice}}</h5>
-                        </a>
-                    </div>
-                </span>
-                <span ng-show="$index>=5" class="pickweek">
-                    <a href="#/product/{{slider.link}}"><img src="{{slider.image|imagepath}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
-                <div class="proprice proprice2">
-                    <a href="#/product/{{product.id}}">
-                        <h5> {{slider.price|convertprice}}</h5>
-                    </a>
-                </div>
-                </span>
-                </span>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Necklace</h4><img src="img/products/up2.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Rings</h4><img src="img/products/up3.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Earning</h4><img src="img/products/up4.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Bangles</h4><img src="img/products/up1.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Necklace</h4><img src="img/products/up2.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Rings</h4><img src="img/products/up3.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3"><a href="#"><h4>Earning</h4><img src="img/products/up4.png" class="img-responsive"></a></div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <img src="img/leftbanner.png" alt=""></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img src="img/rightbanner.png" alt=""></a>
+</div>
+</div>
+    </div>
+    
+       
+    <script>
+        $('#myCarousel').carousel({
+  interval: 4000
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+    </script>
+</div>
+
+<div class="bind-all">
+<div class="banner-image ng-scope">
+    <a href="#/category/1#JEWELLERY">
+        <center>
+            <img src="img/inpressions.jpg" alt="" class="img-responsive">
+        </center>
+    </a>
+</div>
+
+<div class="text-image">
+    <h4>Impressions of Excellence</h4>
+    <div class="button-view">
+        <a href="#">View All</a>
+    </div>
+</div>
+</div>
+    <div class="product-imgdown">
+        <div class="container">
+            <div class="trending">
+                <span>Whats Trending</span> 
             </div>
         </div>
+        <div class="bckgrnd-sliderdwn">
+    <div class="col-xs-8 col-md-offset-2">
+<div class="carousel1 slide" id="myCarousel1">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p4.png" class="img-responsive"></a></div>
     </div>
--->
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p3.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p2.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p1.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p4.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p3.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p2.png" class="img-responsive"></a></div>
+    </div>
+    <div class="item">
+      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p1.png" class="img-responsive"></a></div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <img src="img/leftbanner.png" alt=""></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img src="img/rightbanner.png" alt=""></a>
+</div>
+</div>
+    </div>
+    
+    
+    <script>
+        $('#myCarousel1').carousel({
+  interval: 4000
+})
+
+$('.carousel1 .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+    </script>          
+</div>
+           <div class="clearfix"></div>
+<div class="jwellerybck">
+    <div class="container">
+        <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4 border-jewell">
+                    <div class="text-jellwery">
+                        <h5>JEWELLERY CARE</h5> 
+                        <p>
+                            ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry & the excellent professional services.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-4 endorse">
+                    <div class="text-client">
+                        <h5>CLIENT ENDORSEMENT</h5>
+                        <p>
+                            I just received my order and love my purchases! This was my first experience buying Magic Mirror jewellery online.Thank you for your support. Look forward to being an ongoing Magic Mirror customer.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+        </div>
+    </div>
 </div>

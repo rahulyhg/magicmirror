@@ -17,7 +17,6 @@ body {
 
 }
 
-/*
 body {
 
     background: -webkit-linear-gradient(left, #e8e8e8, white, white, white, white, white, #e8e8e8);
@@ -29,13 +28,14 @@ body {
     background: linear-gradient(to right, #e8e8e8, white, white, white, white, white, #e8e8e8);
 
 }
-*/
 
 .header-bar {
 
     background: #4d5355;
 
     height: 38px;
+
+    position: relative;
 
 }
 
@@ -53,19 +53,13 @@ body {
 
     font-size: 13px;
 
-    margin-top: -7px;
+    margin-top: 11px;
 
 }
 
 .login-tab li a {
 
-    padding: 0px 8px 0px 5px;
-
-}
-
-.bag a img {
-
-    margin-top: 10px;
+    padding: 0px 20px 0px 14px;
 
 }
 
@@ -193,9 +187,37 @@ img.slideset1 {
 
 }
 
+.bag a i {
+
+    background: url('../../img/bag.png') no-repeat;
+
+    height: 47px;
+
+    width: 38px;
+
+    position: absolute;
+
+    top: -6px;
+
+    left: -20px;
+
+}
+
+ul.nav.nav-pills.mainmenu.homeclass li:last-child a {
+
+    border-right: 0px;
+
+}
+
 a {
 
     cursor: pointer;
+
+}
+
+li.bag {
+
+    padding-left: 3px;
 
 }
 
@@ -411,6 +433,8 @@ input.subscribe-email {
 
     list-style: none;
 
+    position: relative;
+
 }
 
 div#imaginary_container {
@@ -445,7 +469,7 @@ li.welcome {
 
     text-transform: uppercase;
 
-    padding: 20px 0 20px 0;
+    padding: 14px 6px;
 
     background: #fff;
 
@@ -494,6 +518,28 @@ li.welcome {
     font-size: 30px;
 
     padding-bottom: 20px;
+
+}
+
+.text-image {
+
+    position: absolute;
+
+    text-align: center;
+
+    top: 50%;
+
+    width: 100%;
+
+    text-transform: uppercase;
+
+    transform: translatey(-50%);
+
+}
+
+.bind-all.ng-scope {
+
+    position: relative;
 
 }
 
@@ -547,25 +593,17 @@ li.welcome {
 
 }
 
+.login-tab.pull-right ul li i {
+
+    padding-right: 3px;
+
+}
+
 .trending span:after {
 
     right: 0;
 
     left: auto;
-
-}
-
-.text-image.ng-scope {
-
-    text-align: center;
-
-    text-transform: uppercase;
-
-    position: absolute;
-
-    top: 16%;
-
-    left: 40%;
 
 }
 
@@ -591,15 +629,11 @@ li.welcome {
 
 }
 
-{
+.bckgrnd-sliderdwn {
 
-    /* background: -webkit-linear-gradient(left, #e8e8e8, white, white, white, white, white, #e8e8e8); */
+    background: #f5f5f5;
 
-    background: -o-linear-gradient(left, #e8e8e8, white, white, white, white, white, #e8e8e8);
-
-    background: -moz-linear-gradient(left, #e8e8e8, white, white, white, white, white, #e8e8e8);
-
-    /* background: linear-gradient(to right, #e8e8e8, white, white, white, white, white, #e8e8e8); */
+    height: 200px;
 
 }
 
@@ -621,9 +655,9 @@ li.welcome {
 
 }
 
-.login-tab ul li a img {
+.col-xs-3.sldright {
 
-    padding-right: 3px;
+    border-right: 1px solid #dcdcdc;
 
 }
 
@@ -647,7 +681,7 @@ footer h5 {
 
     background: none;
 
-    color: rgb(0, 152, 70);
+    color: rgb(229, 9, 127);
 
     font-size: 14px;
 
@@ -681,7 +715,6 @@ footer h5 {
 
 /*        carousel-inner           */
 
-/*
 .carousel-inner .active.left {
 
     left: -25%;
@@ -777,6 +810,17 @@ footer h5 {
     background: rgba(255, 255, 255, 0);
 
 }
-*/
+
+a:hover {
+
+    color: #E5097F;
+
+}
 
 /*         end carousel-inner         */
+
+.login-tab.pull-right ul {
+
+    position: relative;
+
+}
