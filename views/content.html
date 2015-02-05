@@ -1,10 +1,18 @@
+<!--
     <div class="slidesel" >
-        <div skrollr class="row marginer"  data-0="opacity:1;margin-top:0px;margin-bottom:0px;" data-500="opacity:0.0;margin-top:500px;margin-bottom:-500px;">
-            <div class="col-xs-12 wow fadeInLeft">
-                <a href="#/category/1#JEWELLERY"><center><img src="img/logo.jpg"></center></a>
+        <div skrollr class="row marginer">
+            <div class="col-xs-12">
+                <a href="#/category/1#JEWELLERY"><center><img src="img/inpressions.jpg"></center></a>
             </div>
        </div>
-
+-->
+<div class="banner-image">
+    <a href="#/category/1#JEWELLERY">
+        <center>
+            <img src="img/banner.jpg" class="img-responsive">
+        </center>
+    </a>
+</div>
 <!--div class="row marginer">
             <div class="col-xs-4 wow fadeInLeft">
                 <img class="img" src="img/newin.jpg">
@@ -16,4 +24,48 @@
                 <img class="img" src="img/lookbook.jpg">
             </div>
        </div-->
+<!--       <div class="productset">-->
+<div class="product-img">
+    <div class="container">
+        <div class=catogory> <span>Catergories</span></div>
     </div>
+    <div class="slideup">
+        <img src="img/sliderup.jpg">
+    </div>
+<!--
+       <div class="bckgrnd-sliderup">
+        <div class="imageset">
+            <a ng-click="slidesetprev(showslideset1);">
+                <div class="toggle left">
+                    <img src="img/leftbanner.png" alt="" ng-show="showslideset1==1">
+                </div>
+            </a>
+            <a ng-click="slidesetnext(showslideset1);">
+                <div class="toggle right">
+                    <img src="img/rightbanner.png" alt="" ng-show="showslideset1==0">
+                </div>
+            </a>
+            <div style="overflow:hidden;height:230px;">
+                <span ng-repeat="slider in sliders">
+                <span ng-show="$index<5" class="pickweek">
+                    <a href="#/product/{{slider.link}}"><img src="{{slider.image|imagepath}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
+                    <div class="proprice proprice2">
+                        <a href="#/product/{{product.id}}">
+                            <h5> {{slider.price|convertprice}}</h5>
+                        </a>
+                    </div>
+                </span>
+                <span ng-show="$index>=5" class="pickweek">
+                    <a href="#/product/{{slider.link}}"><img src="{{slider.image|imagepath}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
+                <div class="proprice proprice2">
+                    <a href="#/product/{{product.id}}">
+                        <h5> {{slider.price|convertprice}}</h5>
+                    </a>
+                </div>
+                </span>
+                </span>
+            </div>
+        </div>
+    </div>
+-->
+</div>

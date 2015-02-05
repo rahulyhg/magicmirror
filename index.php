@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="firstapp">
 
 <head ng-controller="headerctrl">
-    <title ng-bind="'Lyla Loves - '+template.title">Lyla Loves</title>
+    <title ng-bind="'Lyla Loves - '+template.title">Magic Mirror</title>
     <meta name="name" content="Lyla Loves">
     <meta name="description" content="Bring your Outfit to Life with Fashion Jewelry by lyla loves! Shop Statement Necklaces, Cuff Bracelets, and Midi Rings! Find the Best Fashion Jewelry at lylaloves.co.uk.">
     <meta name="keywords" content="Jewelry, Fashion Jewelry, Statement Necklaces, Earrings, Rings, Cuff Bracelets.">
@@ -63,10 +63,13 @@
     <link href="lib/css/animate.css" rel="stylesheet" type="text/css">
     <link href="lib/css/image-zoom.min.css" rel="stylesheet">
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/css/main1.css" rel="stylesheet">
+<!--    <link href="lib/css/main1.css" rel="stylesheet">-->
     <link href="lib/range/angular.rangeSlider.css" rel="stylesheet">
     <link href="https://checkout.stripe.com/v3/checkout/button.css" rel="stylesheet">
     <link href="lib/css/custom.css" rel="stylesheet">
+    <link href="lib/css/FUTURAL.TTF" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
@@ -76,7 +79,7 @@
     <script src="lib/js/angular-resource.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 
-    <!--<script src="lib/js/bootstrap.min.js"></script>-->
+    <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="lib/js/jquery.bxslider.min.js"></script>
     <script src="js/app.js"></script>
@@ -95,29 +98,13 @@
     <script src="lib/js/jstorage.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-55688126-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
 
 </head>
 
 <body >
-    <div class="top-bar barheight">
+<!--    <div class="top-bar barheight">-->
 
+<!--
         <div class="row">
             <div class="col-xs-2">
  <div class="input-group headsearch " ng-controller="search">
@@ -150,33 +137,16 @@
                     <a href="#/wishlist" class="fadeInRight wow topicon" ng-class="firstloadclass wow">
                         <img src="img/wishlist.png">
                     </a>
-
-
-
-                    <!--a href="https://twitter.com/ZibaCollection" target="_blank" class="fadeInRight wow" myfirstloadclass data-wow-delay="0.3s">
-                    <img src="img/twitter.png" class="socialicons tadaanimation">
-                </a>
-                <a href="http://pinterest.com/zibacollection/" target="_blank" class="fadeInRight wow" myfirstloadclass data-wow-delay="0.4s">
-                    <img src="img/pinterest.png" class="socialicons tadaanimation">
-                </a>
-                <a href="http://instagram.com/zibacollection" target="_blank" class="wow fadeInRight" data-wow-delay="0.5s">
-                    <img src="img/insta.png" class="socialicons tadaanimation">
-                </a>
-                <a href="https://www.facebook.com/pages/Ziba-Collection/284068054986182" target="_blank" class="wow fadeInRight" data-wow-delay="0.6s">
-                    <img src="img/facebook.png" class="socialicons tadaanimation">
-                </a>
-                <a href="http://zibaacc.tumblr.com/" target="_blank" class="fadeInRight wow" myfirstloadclass data-wow-delay="0.7s">
-                    <img src="img/tumbler.png" class="socialicons tadaanimation">
-                </a-->
                 </div>
 
 
 
             </div>
         </div>
-    </div>
-    <div class="barheight"></div>
-    <div class="container-fluid-non-responsive">
+-->
+<!--    </div>-->
+<!--    <div class="barheight"></div>-->
+    <div>
         <!--        <div ng-view skrollr-tag></div>-->
         <div ng-view></div>
     </div>
@@ -219,6 +189,7 @@ window.addEventListener("beforeunload", function (e) {
     return false;
 }); 
     </script>
+    
 
 </body>
 
