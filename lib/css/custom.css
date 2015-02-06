@@ -59,7 +59,7 @@ body {
 
 .login-tab li a {
 
-    padding: 0px 20px 0px 14px;
+    padding: 0px 10px 0px 10px;
 
 }
 
@@ -69,13 +69,21 @@ body {
 
     display: inline-block;
 
+    margin: auto;
+
+    text-align: center;
+
 }
 
 img.slideset1 {
 
-    width: 190px;
+    width: 80%;
 
     float: left;
+
+    padding: 17px 0px 17px 0px;
+
+    margin: auto;
 
 }
 
@@ -83,11 +91,21 @@ img.slideset1 {
 
     position: absolute;
 
-    left: 53px;
+    top: 10px;
 
-    top: 189px;
+    width: 100%;
 
-    width: 100px;
+    text-align: center;
+
+}
+
+.bckgrnd-sliderup img.slideset1 {
+
+    width: 100%;
+
+    float: left;
+
+    padding-top: 34px;
 
 }
 
@@ -101,17 +119,13 @@ img.slideset1 {
 
 .proprice h5 {
 
-    font-weight: 700;
-
     text-align: center;
 
     padding-top: 10px;
 
     margin-top: -9px;
 
-    color: #96f3f3;
-
-    font-weight: bold;
+    color: #000;
 
     font-size: 150%;
 
@@ -157,7 +171,7 @@ img.slideset1 {
 
 .stylish-input-group .input-group-addon {
 
-    background: white !important;
+    background: rgba(255, 255, 255, 0) !important;
 
 }
 
@@ -179,6 +193,12 @@ img.slideset1 {
 
 }
 
+.input-group.stylish-input-group .form-control {
+
+    background-color: rgba(255, 255, 255, 0);
+
+}
+
 .stylish-input-group button {
 
     border: 0;
@@ -197,9 +217,9 @@ img.slideset1 {
 
     position: absolute;
 
-    top: -6px;
+    top: -7px;
 
-    left: -20px;
+    left: 6px;
 
 }
 
@@ -239,7 +259,7 @@ li.bag {
 
     background-size: cover;
 
-    height: 250px;
+    height: 228px;
 
 }
 
@@ -469,7 +489,7 @@ li.welcome {
 
     text-transform: uppercase;
 
-    padding: 14px 6px;
+    padding: 20px 7px;
 
     background: #fff;
 
@@ -543,7 +563,7 @@ li.welcome {
 
 }
 
-.trending {
+ {
 
     text-align: center;
 
@@ -551,7 +571,7 @@ li.welcome {
 
 }
 
-.trending span {
+ {
 
     font-size: 22px;
 
@@ -563,13 +583,13 @@ li.welcome {
 
 }
 
-.trending span {
+ {
 
     display: inline-block;
 
 }
 
-.trending span:before {
+ {
 
     border-top: 1px solid #060D20;
 
@@ -623,17 +643,11 @@ li.welcome {
 
 }
 
-.product-imgdown .imageset .pickweek img {
-
-    border-right: 1px solid #000;
-
-}
-
 .bckgrnd-sliderdwn {
 
     background: #f5f5f5;
 
-    height: 200px;
+    height: 244px;
 
 }
 
@@ -658,6 +672,12 @@ li.welcome {
 .col-xs-3.sldright {
 
     border-right: 1px solid #dcdcdc;
+
+}
+
+.product-imgdown .pickweek {
+
+    border-right: 1px solid #000;
 
 }
 
@@ -823,4 +843,16 @@ a:hover {
 
     position: relative;
 
+}
+li.bag a {
+    padding: 0px 0px 0px 40px;
+}
+
+.login-tab.pull-right ul li:nth-child(2) a
+{
+    padding: 0px 5px 0 2px;
+}
+.login-tab.pull-right ul li:nth-child(1) a
+{
+    padding: 0px 5px 0 0px;
 }

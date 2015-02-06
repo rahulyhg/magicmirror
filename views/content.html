@@ -2,12 +2,12 @@
     <div class="slidesel" >
         <div skrollr class="row marginer">
             <div class="col-xs-12">
-                <a href="#/category/1#JEWELLERY"><center><img src="img/inpressions.jpg"></center></a>
+                <a href="#"><center><img src="img/inpressions.jpg"></center></a>
             </div>
        </div>
 -->
 <div class="banner-image">
-    <a href="#/category/1#JEWELLERY">
+    <a href="#">
         <center>
             <img src="img/banner.jpg" class="img-responsive">
         </center>
@@ -31,41 +31,49 @@
         <div class=catogory> <span>Catergories</span></div>
     </div>
    <div class="bckgrnd-sliderup">
-    <div class="col-xs-8 col-md-offset-2">
-<div class="carousel slide" id="myCarousel">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="col-xs-3"><a href="#"><h4>Bangles</h4><img src="img/products/up1.png" class="img-responsive"></a></div>
+ <div class="imageset">
+    <a ng-click="slidesetprev(showslideset1);">
+        <div class="toggle left">
+            <img src="img/leftbanner.png" alt="" ng-show="showslideset1==1">
+        </div>
+    </a>
+    <a ng-click="slidesetnext(showslideset1);">
+        <div class="toggle right">
+            <img src="img/rightbanner.png" alt="" ng-show="showslideset1==0">
+        </div>
+    </a>
+    
+    <div style="overflow:hidden;height:250px;text-align: center;">
+        <span ng-repeat="slider in sliders1">
+                <span ng-show="$index<4" class="pickweek">
+                    <div class="proprice proprice2">
+                        <a href="#">
+                            <h5> {{slider.name}}</h5>
+                        </a>
+                    </div>
+                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
+                   
+                </span>
+        <span ng-show="$index>=4" class="pickweek">
+                    <div class="proprice proprice2">
+                    <a href="#">
+                        <h5> {{slider.name}}</h5>
+                    </a>
+                </div>
+                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
+                
+                </span>
+        </span>
+
+
+
     </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Necklace</h4><img src="img/products/up2.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Rings</h4><img src="img/products/up3.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Earning</h4><img src="img/products/up4.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Bangles</h4><img src="img/products/up1.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Necklace</h4><img src="img/products/up2.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Rings</h4><img src="img/products/up3.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><h4>Earning</h4><img src="img/products/up4.png" class="img-responsive"></a></div>
-    </div>
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <img src="img/leftbanner.png" alt=""></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img src="img/rightbanner.png" alt=""></a>
 </div>
-</div>
+
     </div>
     
        
+<!--
     <script>
         $('#myCarousel').carousel({
   interval: 4000
@@ -88,11 +96,12 @@ $('.carousel .item').each(function(){
   }
 });
     </script>
+-->
 </div>
 
 <div class="bind-all">
 <div class="banner-image ng-scope">
-    <a href="#/category/1#JEWELLERY">
+    <a href="#">
         <center>
             <img src="img/inpressions.jpg" alt="" class="img-responsive">
         </center>
@@ -108,46 +117,42 @@ $('.carousel .item').each(function(){
 </div>
     <div class="product-imgdown">
         <div class="container">
-            <div class="trending">
+            <div class="catogory">
                 <span>Whats Trending</span> 
             </div>
         </div>
         <div class="bckgrnd-sliderdwn">
-    <div class="col-xs-8 col-md-offset-2">
-<div class="carousel1 slide" id="myCarousel1">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p4.png" class="img-responsive"></a></div>
+ <div class="imageset">
+    <a ng-click="slidesetprev(showslideset1);">
+        <div class="toggle left">
+            <img src="img/leftbanner.png" alt="" ng-show="showslideset1==1">
+        </div>
+    </a>
+    <a ng-click="slidesetnext(showslideset1);">
+        <div class="toggle right">
+            <img src="img/rightbanner.png" alt="" ng-show="showslideset1==0">
+        </div>
+    </a>
+    
+    <div style="overflow:hidden;height:250px;text-align: center;">
+        <span ng-repeat="slider in sliders">
+                <span ng-show="$index<4" class="pickweek">
+                
+                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
+                </span>
+        <span ng-show="$index>=4" class="pickweek">
+                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
+                </span>
+        </span>
+
+
+
     </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p3.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p2.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p1.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p4.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p3.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p2.png" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3 sldright"><a href="#"><img src="img/products/p1.png" class="img-responsive"></a></div>
-    </div>
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <img src="img/leftbanner.png" alt=""></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img src="img/rightbanner.png" alt=""></a>
-</div>
 </div>
     </div>
     
     
+<!--
     <script>
         $('#myCarousel1').carousel({
   interval: 4000
@@ -170,6 +175,7 @@ $('.carousel1 .item').each(function(){
   }
 });
     </script>          
+-->
 </div>
            <div class="clearfix"></div>
 <div class="jwellerybck">

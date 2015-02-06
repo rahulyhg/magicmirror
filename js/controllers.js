@@ -15,6 +15,24 @@ phonecatControllers.controller('home',
         $scope.ishome = "homeclass";
         $scope.onhome = "onhome";
         $scope.demo = "demodemo";
+    
+        $scope.sliders1 = [{"id":"2","image":"up1.png","link":"766","price":"8","order":"1","name":"Bangles"},
+                          {"id":"3","image":"up2.png","link":"795","price":"5","order":"2","name":"Necklace"},
+                          {"id":"4","image":"up3.png","link":"767","price":"8","order":"3","name":"Rings"},
+                          {"id":"5","image":"up4.png","link":"819","price":"3","order":"4","name":"Earings"},
+                          {"id":"7","image":"up1.png","link":"804","price":"3","order":"5","name":"Bangles"},
+                          {"id":"8","image":"up2.png","link":"806","price":"3","order":"6","name":"Necklace"},
+                          {"id":"9","image":"up3.png","link":"807","price":"3","order":"7","name":"Rings"},
+                          {"id":"10","image":"up4.png","link":"737","price":"3","order":"8","name":"Earings"}];
+    
+        $scope.sliders = [{"id":"2","image":"p1.png","link":"766","price":"8","order":"1"},
+                          {"id":"3","image":"p2.png","link":"795","price":"5","order":"2"},
+                          {"id":"4","image":"p3.png","link":"767","price":"8","order":"3"},
+                          {"id":"5","image":"p4.png","link":"819","price":"3","order":"4"},
+                          {"id":"7","image":"p1.png","link":"804","price":"3","order":"5"},
+                          {"id":"8","image":"p2.png","link":"806","price":"3","order":"6"},
+                          {"id":"9","image":"p3.png","link":"807","price":"3","order":"7"},
+                          {"id":"10","image":"p4.png","link":"737","price":"3","order":"8"}];
 
 
         //start get country from geo location
@@ -107,11 +125,11 @@ phonecatControllers.controller('home',
         };
         MainJson.authenticate().success(authenticate);
 
-        var slidersuccess = function (data, status) {
-            $scope.sliders = data;
-            console.log($scope.sliders);
-        };
-        MainJson.getallslider().success(slidersuccess);
+//        var slidersuccess = function (data, status) {
+//            $scope.sliders = data;
+//            console.log($scope.sliders);
+//        };
+//        MainJson.getallslider().success(slidersuccess);
         //authenticate
         //newsletter
         var newslettersaved = function (data, status) {

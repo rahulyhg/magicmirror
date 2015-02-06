@@ -107,6 +107,18 @@ firstapp.filter('imagepath', function () {
         
     };
 });
+firstapp.filter('imagepath1', function () {
+    return function (input) {
+        return "http://localhost/magicmirror/img/products/"+input;
+        
+    };
+});
+firstapp.filter('imagepath2', function () {
+    return function (input) {
+        return "http://localhost/magicmirror/img/productup/"+input;
+        
+    };
+});
 firstapp.filter('imagepathbig', function () {
     return function (input) {
         return "http://www.lylaloves.co.uk/showimage?size=800&image="+input;
