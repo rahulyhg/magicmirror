@@ -1,5 +1,5 @@
-var adminurl = 'http://www.lylaloves.co.uk/admin/index.php/json/';
-var adminurl2 = 'http://www.lylaloves.co.uk/admin/index.php/json/';
+var adminurl = 'http://wohlig.co.in/magicmirror/admin/index.php/json/';
+var adminurl2 = 'http://wohlig.co.in/magicmirror/admin/index.php/json/';
 
 var conversionrate = [{
     id: "1",

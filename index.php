@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="firstapp">
 
 <head ng-controller="headerctrl">
-    <title ng-bind="'Lyla Loves - '+template.title">Magic Mirror</title>
-    <meta name="name" content="Lyla Loves">
-    <meta name="description" content="Bring your Outfit to Life with Fashion Jewelry by lyla loves! Shop Statement Necklaces, Cuff Bracelets, and Midi Rings! Find the Best Fashion Jewelry at lylaloves.co.uk.">
+    <title ng-bind="'Magic Mirror - '+template.title">Magic Mirror</title>
+    <meta name="name" content="Magic Mirror">
+    <meta name="description" content="Bring your Outfit to Life with Fashion Jewelry by lyla loves! Shop Statement Necklaces, Cuff Bracelets, and Midi Rings! Find the Best Fashion Jewelry at Magic Mirror.">
     <meta name="keywords" content="Jewelry, Fashion Jewelry, Statement Necklaces, Earrings, Rings, Cuff Bracelets.">
     <script>
         var hostname = window.location.hostname;
         if (hostname == "lylaloves.co.uk") {
             console.log(hostname);
-            window.location.replace("http://www.lylaloves.co.uk/");
+            //window.location.replace("http://www.lylaloves.co.uk/");
         } else {
             console.log("other " + hostname);
         }
@@ -39,7 +39,7 @@
         
         if(isMobile.any())
         {
-            window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
+           // window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
         }
     </script>
     <script type="text/javascript">

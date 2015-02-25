@@ -109,13 +109,13 @@ firstapp.filter('imagepath', function () {
 });
 firstapp.filter('imagepath1', function () {
     return function (input) {
-        return "http://localhost/magicmirror/img/products/"+input;
+        return "http://wohlig.co.in/magicmirror/img/products/"+input;
         
     };
 });
 firstapp.filter('imagepath2', function () {
     return function (input) {
-        return "http://localhost/magicmirror/img/productup/"+input;
+        return "http://wohlig.co.in/magicmirror/img/productup/"+input;
         
     };
 });
