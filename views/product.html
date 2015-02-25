@@ -16,7 +16,7 @@
         <div class="affixposition  wow fadeInLeft" data-spy="affix" data-offset-top="0">
             <div class="productdetails pull-right">
                 <div class="productheader">
-                    <h5>{{product.name}}</h5> 
+                    <h5>{{product.name}}</h5>
                     <h4>{{rate|convertprice}}</h4>
                     <!--h4 class="discountprice">£ 400</h4-->
                     <h6 ng-show="product.quantity<=0">OUT OF STOCK</h6>
@@ -36,13 +36,13 @@
                         
                         <span ng-hide="addedtowaitinglist"><input type="email" value="1" class="form-control waitingemail" placeholder="Email" style="width:190px;" ng-model="product.waitingemail">
                             <a class="btn btn-primary " ng-click="addtowaitinglist(product.id,product.waitingemail)">Add to Waiting List</a></span>
-                        <span ng-show="addedtowaitinglist">You have been added to waiting list</span>
+                    <span ng-show="addedtowaitinglist">You have been added to waiting list</span>
                     </span>
 
 
 
 
-                    <a href="" ng-click="addwishlist(id)"><span ng-show="{{wish}}" class="glyphicon glyphicon-heart prowish"></span><span style="color:rgb(39, 240, 232);" ng-hide="{{wish}}" class="glyphicon glyphicon-heart prowish"></span></a>
+                    <a href="" ng-click="addwishlist(id)"><span ng-show="{{wish}}" class="glyphicon glyphicon-heart prowish"></span><span style="color: rgb(229, 9, 127);" ng-hide="{{wish}}" class="glyphicon glyphicon-heart prowish"></span></a>
 
                     <div ng-show="wishlistlogin" class="alert alert-warning" style="margin:20px 0;">Please Login for Wishlist</div>
                     <div ng-show="wishlistadded" class="alert alert-success" style="margin:20px 0;">Added to Wishlist</div>

@@ -21,6 +21,13 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/select2.min.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/sliders.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/sparkline-chart.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/js1/TableTools.min.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/TableTools.min.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/exporting.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/upload/js/main.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/upload/js/app.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/external-dragging-calendar.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/easy-pie-chart.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/common-scripts.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/angular-animate.js"
     ]
 }

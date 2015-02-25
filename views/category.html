@@ -5,7 +5,7 @@
                 <span class="breadcrumb">
 							Home / 
 							<span ng-repeat="br in breadcrumbs" ng-class="{'active':currentcategory == br.id}">
-								<a href="#/category/{{br.id}}">{{br.name}} <span ng-hide="{{$last}}">/</span> 
+								<a href="#/category/{{br.id}}">{{br.name}} <span ng-hide="{{$last}}">/</span>
                 </a>
                 </span>
                 </span>
@@ -16,8 +16,7 @@
                 <div class="pull-right" ng-controller="filterctrl">
                     <a class="btn btn-default" ng-mouseover="showfilter(0)" ng-mouseleave="hidefilter(0)">Filters{{demo}}
                        <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
-                    </a>
-                    &nbsp;&nbsp;&nbsp;
+                    </a> &nbsp;&nbsp;&nbsp;
                     <a class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By<div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div></a>
 
 
@@ -34,11 +33,11 @@
                     <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>
                     <a href="#/product/{{product.id}}">
                         <div class="img1">
-                            <img ng-src="{{product.productimage[0].image|imagepath}}" class="img">
+                            <img src="img/productup/up3.png" class="img">
                         </div>
 
                         <div class="img2" ng-show="product.productimage[1].image">
-                            <img ng-src="{{product.productimage[1].image|imagepath}}" class="img">
+                            <img src="img/productup/up3.png" class="img">
                         </div>
                     </a>
 

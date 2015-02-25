@@ -15,25 +15,128 @@ phonecatControllers.controller('home',
         $scope.ishome = "homeclass";
         $scope.onhome = "onhome";
         $scope.demo = "demodemo";
-    
-        $scope.sliders1 = [{"id":"2","image":"up1.png","link":"766","price":"8","order":"1","name":"Bangles"},
-                          {"id":"3","image":"up2.png","link":"795","price":"5","order":"2","name":"Necklace"},
-                          {"id":"4","image":"up3.png","link":"767","price":"8","order":"3","name":"Rings"},
-                          {"id":"5","image":"up4.png","link":"819","price":"3","order":"4","name":"Earings"},
-                          {"id":"7","image":"up1.png","link":"804","price":"3","order":"5","name":"Bangles"},
-                          {"id":"8","image":"up2.png","link":"806","price":"3","order":"6","name":"Necklace"},
-                          {"id":"9","image":"up3.png","link":"807","price":"3","order":"7","name":"Rings"},
-                          {"id":"10","image":"up4.png","link":"737","price":"3","order":"8","name":"Earings"}];
-    
-        $scope.sliders = [{"id":"2","image":"p1.png","link":"766","price":"8","order":"1"},
-                          {"id":"3","image":"p2.png","link":"795","price":"5","order":"2"},
-                          {"id":"4","image":"p3.png","link":"767","price":"8","order":"3"},
-                          {"id":"5","image":"p4.png","link":"819","price":"3","order":"4"},
-                          {"id":"7","image":"p1.png","link":"804","price":"3","order":"5"},
-                          {"id":"8","image":"p2.png","link":"806","price":"3","order":"6"},
-                          {"id":"9","image":"p3.png","link":"807","price":"3","order":"7"},
-                          {"id":"10","image":"p4.png","link":"737","price":"3","order":"8"}];
 
+        $scope.sliders1 = [{
+                "id": "2",
+                "image": "up1.png",
+                "link": "766",
+                "price": "8",
+                "order": "1",
+                "name": "Bangles"
+            },
+            {
+                "id": "3",
+                "image": "up2.png",
+                "link": "795",
+                "price": "5",
+                "order": "2",
+                "name": "Necklace"
+            },
+            {
+                "id": "4",
+                "image": "up3.png",
+                "link": "767",
+                "price": "8",
+                "order": "3",
+                "name": "Rings"
+            },
+            {
+                "id": "5",
+                "image": "up4.png",
+                "link": "819",
+                "price": "3",
+                "order": "4",
+                "name": "Earings"
+            },
+            {
+                "id": "7",
+                "image": "up1.png",
+                "link": "804",
+                "price": "3",
+                "order": "5",
+                "name": "Bangles"
+            },
+            {
+                "id": "8",
+                "image": "up2.png",
+                "link": "806",
+                "price": "3",
+                "order": "6",
+                "name": "Necklace"
+            },
+            {
+                "id": "9",
+                "image": "up3.png",
+                "link": "807",
+                "price": "3",
+                "order": "7",
+                "name": "Rings"
+            },
+            {
+                "id": "10",
+                "image": "up4.png",
+                "link": "737",
+                "price": "3",
+                "order": "8",
+                "name": "Earings"
+            }];
+
+        $scope.sliders = [{
+                "id": "2",
+                "image": "p1.png",
+                "link": "766",
+                "price": "8",
+                "order": "1"
+            },
+            {
+                "id": "3",
+                "image": "p2.png",
+                "link": "795",
+                "price": "5",
+                "order": "2"
+            },
+            {
+                "id": "4",
+                "image": "p3.png",
+                "link": "767",
+                "price": "8",
+                "order": "3"
+            },
+            {
+                "id": "5",
+                "image": "p4.png",
+                "link": "819",
+                "price": "3",
+                "order": "4"
+            },
+            {
+                "id": "7",
+                "image": "p1.png",
+                "link": "804",
+                "price": "3",
+                "order": "5"
+            },
+            {
+                "id": "8",
+                "image": "p2.png",
+                "link": "806",
+                "price": "3",
+                "order": "6"
+            },
+            {
+                "id": "9",
+                "image": "p3.png",
+                "link": "807",
+                "price": "3",
+                "order": "7"
+            },
+            {
+                "id": "10",
+                "image": "p4.png",
+                "link": "737",
+                "price": "3",
+                "order": "8"
+            }];
 
         //start get country from geo location
         //        $scope.country = false;
@@ -125,11 +228,11 @@ phonecatControllers.controller('home',
         };
         MainJson.authenticate().success(authenticate);
 
-//        var slidersuccess = function (data, status) {
-//            $scope.sliders = data;
-//            console.log($scope.sliders);
-//        };
-//        MainJson.getallslider().success(slidersuccess);
+        //        var slidersuccess = function (data, status) {
+        //            $scope.sliders = data;
+        //            console.log($scope.sliders);
+        //        };
+        //        MainJson.getallslider().success(slidersuccess);
         //authenticate
         //newsletter
         var newslettersaved = function (data, status) {
@@ -220,25 +323,29 @@ phonecatControllers.controller('cart',
             }
             if (data.coupontype == '2') {
                 console.log($scope.cart);
-                
-                var totallength=0;
-                _.each($scope.cart,function(cart) {totallength+=parseInt(cart.qty);} );
-                var xproducts=parseInt(data.xproducts);
-                var yproducts=parseInt(data.yproducts);
-                var itter=Math.floor(totallength/xproducts)*yproducts;
-                console.log("ITTER "+itter);
-                var newcart=_.sortBy($scope.cart, function(cart){ cart.price=parseFloat(cart.price);cart.qty2=parseInt(cart.qty);return parseFloat(cart.price); });
+
+                var totallength = 0;
+                _.each($scope.cart, function (cart) {
+                    totallength += parseInt(cart.qty);
+                });
+                var xproducts = parseInt(data.xproducts);
+                var yproducts = parseInt(data.yproducts);
+                var itter = Math.floor(totallength / xproducts) * yproducts;
+                console.log("ITTER " + itter);
+                var newcart = _.sortBy($scope.cart, function (cart) {
+                    cart.price = parseFloat(cart.price);
+                    cart.qty2 = parseInt(cart.qty);
+                    return parseFloat(cart.price);
+                });
                 //newcart=_.each(newcart, function(cart){  cart.price=parseFloat(cart.price);cart.qty=parseFloat(cart.qty); });
                 console.log(newcart);
-                $scope.discountamount=0;
-                for(var i=0;i<itter;i++)
-                {
-                    if(newcart[i].qty2!=0)
-                    {
+                $scope.discountamount = 0;
+                for (var i = 0; i < itter; i++) {
+                    if (newcart[i].qty2 != 0) {
                         newcart[i].qty2--;
-                        $scope.discountamount+=newcart[i].price;
+                        $scope.discountamount += newcart[i].price;
                     }
-                    
+
                 }
             }
             if (data.coupontype == '4') {
@@ -300,22 +407,22 @@ phonecatControllers.controller('cart',
         MainJson.totalcart().success(getsubtotal);
         //separating cart
         $scope.postcart = function () {
-            $scope.cart = MainJson.getcart();
-            $scope.id = $scope.cart[0].id;
-            $scope.name = $scope.cart[0].name;
-            $scope.price = $scope.cart[0].price;
-            $scope.quantity = $scope.cart[0].quantity;
-            for (var i = 1; i < $scope.cart.length; i++) {
-                $scope.id += "," + $scope.cart[i].id;
-                $scope.name += "," + $scope.cart[i].name;
-                $scope.price += "," + $scope.cart[i].price;
-                $scope.quantity += "," + $scope.cart[i].quantity;
+                $scope.cart = MainJson.getcart();
+                $scope.id = $scope.cart[0].id;
+                $scope.name = $scope.cart[0].name;
+                $scope.price = $scope.cart[0].price;
+                $scope.quantity = $scope.cart[0].quantity;
+                for (var i = 1; i < $scope.cart.length; i++) {
+                    $scope.id += "," + $scope.cart[i].id;
+                    $scope.name += "," + $scope.cart[i].name;
+                    $scope.price += "," + $scope.cart[i].price;
+                    $scope.quantity += "," + $scope.cart[i].quantity;
+                }
+
+
             }
-
-
-        }
-        //separating cart
-        //add to cart
+            //separating cart
+            //add to cart
         var getsubtotal = function (data, status) {
             $scope.subtotal = data;
         };
@@ -929,10 +1036,14 @@ phonecatControllers.controller('checkout',
         TemplateService.navigation = "views/navigation.html";
         TemplateService.changetitle("Checkout");
         TemplateService.content = "views/checkout.html";
-    
+
         TemplateService.slider = "";
-        $scope.buttonsvalidate={billing:0,shipping:0,payment:0};    
-    $scope.loginlogouttext = "Login";
+        $scope.buttonsvalidate = {
+            billing: 0,
+            shipping: 0,
+            payment: 0
+        };
+        $scope.loginlogouttext = "Login";
         $scope.isloggedin = 0;
         $scope.form = {};
         $scope.form.shipdifferent = 1;
@@ -941,13 +1052,13 @@ phonecatControllers.controller('checkout',
         $scope.shippinginfo = 0;
         $scope.paywithcard = 0;
         $scope.hidebilling = 1;
-    
-                
-        
+
+
+
         $scope.paymentorderemail = "";
         $scope.paymentorderid = 0;
-    
-    
+
+
         $scope.focusout = function () {
             console.log("out focus");
         };
@@ -1001,30 +1112,34 @@ phonecatControllers.controller('checkout',
                     $scope.discountamount = $scope.isamount;
                 }
             }
-			if (data.coupontype == '2') {
+            if (data.coupontype == '2') {
                 console.log($scope.cart);
-                
-                var totallength=0;
-                _.each($scope.cart,function(cart) {totallength+=parseInt(cart.qty);} );
-                var xproducts=parseInt(data.xproducts);
-                var yproducts=parseInt(data.yproducts);
-                var itter=Math.floor(totallength/xproducts)*yproducts;
-                console.log("ITTER "+itter);
-                var newcart=_.sortBy($scope.cart, function(cart){ cart.price=parseFloat(cart.price);cart.qty2=parseInt(cart.qty);return parseFloat(cart.price); });
+
+                var totallength = 0;
+                _.each($scope.cart, function (cart) {
+                    totallength += parseInt(cart.qty);
+                });
+                var xproducts = parseInt(data.xproducts);
+                var yproducts = parseInt(data.yproducts);
+                var itter = Math.floor(totallength / xproducts) * yproducts;
+                console.log("ITTER " + itter);
+                var newcart = _.sortBy($scope.cart, function (cart) {
+                    cart.price = parseFloat(cart.price);
+                    cart.qty2 = parseInt(cart.qty);
+                    return parseFloat(cart.price);
+                });
                 //newcart=_.each(newcart, function(cart){  cart.price=parseFloat(cart.price);cart.qty=parseFloat(cart.qty); });
                 console.log(newcart);
-                $scope.discountamount=0;
-                for(var i=0;i<itter;i++)
-                {
-                    if(newcart[i].qty2!=0)
-                    {
+                $scope.discountamount = 0;
+                for (var i = 0; i < itter; i++) {
+                    if (newcart[i].qty2 != 0) {
                         newcart[i].qty2--;
-                        $scope.discountamount+=newcart[i].price;
+                        $scope.discountamount += newcart[i].price;
                     }
-                    
+
                 }
             }
-            
+
             if (data.coupontype == '4') {
                 console.log("FREE DELIVERY APPLIED");
                 $scope.isfreedelivery = "Free Delivery";
@@ -1051,7 +1166,7 @@ phonecatControllers.controller('checkout',
 
         $scope.continuebilling = function () {
             $scope.billinginfo = 1;
-            $scope.buttonsvalidate.billing=1;
+            $scope.buttonsvalidate.billing = 1;
         };
 
         $scope.continueshipping = function () {
@@ -1095,7 +1210,7 @@ phonecatControllers.controller('checkout',
             console.log(check);
             if (check) {
                 $scope.shippinginfo = 1;
-                $scope.buttonsvalidate.shipping=1;
+                $scope.buttonsvalidate.shipping = 1;
                 //$scope.hidebilling = 0;
             }
 
@@ -1151,8 +1266,8 @@ phonecatControllers.controller('checkout',
             console.log(check);
             if (check) {
                 $scope.shippinginfo = 1;
-                
-                $scope.buttonsvalidate.shipping=1;
+
+                $scope.buttonsvalidate.shipping = 1;
                 //$scope.hidebilling = 0;
             }
 
@@ -1197,7 +1312,7 @@ phonecatControllers.controller('checkout',
                 $scope.newquantity[i] = $scope.cart[i].qty;
                 console.log($scope.newquantity[i]);
             }
-            
+
             calcdiscountamount();
         };
         MainJson.getcart().success(showcart);
@@ -1311,18 +1426,18 @@ phonecatControllers.controller('checkout',
         };
 
         // order id and email after payment
-    
+
         var orderplaced = function (data, status) {
             console.log("place order returns");
             console.log(data);
-//            $scope.paymentorderemail = $scope.form.email;
+            //            $scope.paymentorderemail = $scope.form.email;
             $scope.paymentorderid = data;
-//            MainJson.orderemail($scope.form.email, data).success(orderemailsend);
+            //            MainJson.orderemail($scope.form.email, data).success(orderemailsend);
             //alert("Order Placed");
         };
         $scope.continuepayment = function (form) {
             $scope.paywithcard = 1;
-            $scope.buttonsvalidate.payment=1;
+            $scope.buttonsvalidate.payment = 1;
             $scope.form.finalamount = $scope.subtotal;
             $scope.paymentorderemail = $scope.form.email;
             console.log($scope.cart);
@@ -1525,7 +1640,6 @@ phonecatControllers.controller('category',
                 $(this).removeClass("animated tada");
             });
         });
-
     });
 
 phonecatControllers.controller('product',
@@ -1606,13 +1720,13 @@ phonecatControllers.controller('product',
             MainJson.addtocart(id, name, price, quantity).success(cartt);
             $scope.addedtocart = "show";
         };
-        var addedtowaitinglist=function(data) {
+        var addedtowaitinglist = function (data) {
             console.log(data);
-            $scope.addedtowaitinglist=true;
+            $scope.addedtowaitinglist = true;
         };
-        $scope.addedtowaitinglist=false;
-        $scope.addtowaitinglist=function(product,email) {
-            MainJson.addtowaitinglist(product,email).success(addedtowaitinglist);
+        $scope.addedtowaitinglist = false;
+        $scope.addtowaitinglist = function (product, email) {
+            MainJson.addtowaitinglist(product, email).success(addedtowaitinglist);
         };
 
         $scope.$on("$includeContentLoaded", function () {
