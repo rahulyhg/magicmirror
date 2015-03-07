@@ -28,6 +28,7 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/external-dragging-calendar.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/easy-pie-chart.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/common-scripts.js",
-        "C:/xampp/htdocs/magicmirror/lib/js/angular-animate.js"
+        "C:/xampp/htdocs/magicmirror/lib/js/angular-animate.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.js"
     ]
 }

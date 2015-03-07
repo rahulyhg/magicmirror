@@ -303,11 +303,13 @@ firstapp.directive('ngElevateZoom', function() {
 firstapp.run(function($rootScope) {
     $rootScope.isloaded = 0; //global variable
 });
-firstapp.directive('myRepeatDirective', function() {
-    return function(scope, element, attrs) {
-        angular.element(element).css('color', 'blue');
-        if (scope.$last) {
-            new WOW().init();
-        }
-    };
-});
+firstapp.run(['$rootScope', function ($rootScope) {
+
+       //create a new instance
+       new WOW().init();
+
+    $rootScope.$on('$routeChangeStart', function (next, current) {
+        //when the view changes sync wow
+        new WOW().sync();
+    });
+}]);
