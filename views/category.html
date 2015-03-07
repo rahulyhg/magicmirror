@@ -33,11 +33,11 @@
                     <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>
                     <a href="#/product/{{product.id}}">
                         <div class="img1">
-                            <img src="img/productup/up3.png" class="img">
+                            <img src="{{product.productimage[0].image|imagepath}}" class="img">
                         </div>
 
                         <div class="img2" ng-show="product.productimage[1].image">
-                            <img src="img/productup/up3.png" class="img">
+                            <img src="{{product.productimage[1].image|imagepath}}" class="img">
                         </div>
                     </a>
 

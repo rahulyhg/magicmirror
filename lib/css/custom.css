@@ -1,12 +1,12 @@
 @font-face {
-    font-family: fontface;
+    font-family: 'Futura';
     src: url('futura.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: fontface;
+    font-family: 'Futura';
 }
 
 .header-bar {
@@ -98,6 +98,8 @@ img.slideset1 {
 
 .stylish-input-group .form-control {
     border-right: 0;
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
     box-shadow: 0 0 0;
     border: 0px;
 }
@@ -146,6 +148,9 @@ li.bag {
 
 .bckgrnd-sliderup {
     background: url('../../img/bg2.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     height: 228px;
 }
@@ -239,6 +244,8 @@ input.subscribe-email {
     padding: 2px;
     border-bottom: 1px Solid;
     background: #43494B;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     outline: none;
     border-top: 0;
@@ -264,6 +271,10 @@ input.subscribe-email {
 }
 
 .login-tab ul li {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     color: #fff;
     list-style: none;
@@ -327,6 +338,10 @@ li.welcome {
     top: 50%;
     width: 100%;
     text-transform: uppercase;
+    -webkit-transform: translatey(-50%);
+    -moz-transform: translatey(-50%);
+    -ms-transform: translatey(-50%);
+    -o-transform: translatey(-50%);
     transform: translatey(-50%);
 }
 
@@ -546,7 +561,6 @@ li.bag a {
 }
 
 .protitle {
-    font-family: 'Amantic';
     text-transform: uppercase;
     font-size: 20px;
 }

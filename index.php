@@ -4,7 +4,7 @@
 <head ng-controller="headerctrl">
     <title ng-bind="'Magic Mirror - '+template.title">Magic Mirror</title>
     <meta name="name" content="Magic Mirror">
-    <meta name="description" content="Bring your Outfit to Life with Fashion Jewelry by lyla loves! Shop Statement Necklaces, Cuff Bracelets, and Midi Rings! Find the Best Fashion Jewelry at Magic Mirror.">
+    <meta name="description" content="">
     <meta name="keywords" content="Jewelry, Fashion Jewelry, Statement Necklaces, Earrings, Rings, Cuff Bracelets.">
     <script>
         var hostname = window.location.hostname;
@@ -41,6 +41,7 @@
             // window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
         }
     </script>
+<!--
     <script type="text/javascript">
         var _clt = _clt || [];
         _clt["custId"] = "{{email}}";
@@ -55,6 +56,7 @@
             s.parentNode.insertBefore(cl, s);
         })();
     </script>
+-->
 
 
     <link rel="shortcut icon" href="img/logo.jpg" />
