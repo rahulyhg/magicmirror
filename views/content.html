@@ -6,7 +6,7 @@
             </div>
        </div>
 -->
-<div class="wow fadeInDown animated banner-image">
+<div class="wow fadeInDown banner-image">
     <a href="#">
         <center>
             <img src="img/banner.jpg" class="img-responsive">
@@ -31,7 +31,7 @@
         <div class=catogory> <span>Catergories</span>
         </div>
     </div>
-    <div class="wow slideInLeft animated bckgrnd-sliderup">
+    <div class="wow slideInLeft bckgrnd-sliderup">
         <div class="imageset">
             <a ng-click="slidesetprev(showslideset1);">
                 <div class="toggle left">
@@ -52,7 +52,7 @@
                             <h5> {{slider.name}}</h5>
                         </a>
                     </div>
-                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
+                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 slideInLeft" ng-show="showslideset1==0"></a>
                    
                 </span>
                 <span ng-show="$index>=4" class="pickweek">
@@ -61,7 +61,7 @@
                         <h5> {{slider.name}}</h5>
                     </a>
                 </div>
-                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
+                    <a href="#"><img src="{{slider.image|imagepath2}}" class="slideset1 slideInRight" ng-show="showslideset1==1"></a>
                 
                 </span>
                 </span>
@@ -122,7 +122,7 @@ $('.carousel .item').each(function(){
             <span>Whats Trending</span>
         </div>
     </div>
-    <div class="wow slideInLeft animated bckgrnd-sliderdwn">
+    <div class="wow slideInLeft bckgrnd-sliderdwn">
         <div class="imageset">
             <a ng-click="slidesetprev(showslideset1);">
                 <div class="toggle left">
@@ -139,10 +139,10 @@ $('.carousel .item').each(function(){
                 <span ng-repeat="slider in sliders">
                 <span ng-show="$index<4" class="pickweek">
                 
-                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 animated slideInLeft" ng-show="showslideset1==0"></a>
+                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 slideInLeft" ng-show="showslideset1==0"></a>
                 </span>
                 <span ng-show="$index>=4" class="pickweek">
-                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 animated slideInRight" ng-show="showslideset1==1"></a>
+                    <a href="#"><img src="{{slider.image|imagepath1}}" class="slideset1 slideInRight" ng-show="showslideset1==1"></a>
                 </span>
                 </span>
 
@@ -187,7 +187,7 @@ $('.carousel1 .item').each(function(){
                 <div class="text-jellwery">
                     <h5>JEWELLERY CARE</h5>
                     <p>
-                        ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry & the excellent professional services.
+                        ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry &amp; the excellent professional services.
                     </p>
                 </div>
             </div>
