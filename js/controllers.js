@@ -15,6 +15,13 @@ phonecatControllers.controller('home',
         $scope.ishome = "homeclass";
         $scope.onhome = "onhome";
         $scope.demo = "demodemo";
+    
+         $scope.$on('$viewContentLoaded', function () {
+
+            new WOW().init();
+
+
+        });
 
         $scope.sliders1 = [{
                 "id": "2",

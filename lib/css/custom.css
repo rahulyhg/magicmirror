@@ -631,3 +631,6 @@ span.glyphicon.glyphicon-shopping-cart {
     background-color: #009846;
     border-color: #009846;
 }
+.wow {
+   visibility: hidden;
+}

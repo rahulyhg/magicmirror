@@ -36,10 +36,9 @@
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
-        
-        if(isMobile.any())
-        {
-           // window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
+
+        if (isMobile.any()) {
+            // window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
         }
     </script>
     <script type="text/javascript">
@@ -63,17 +62,18 @@
     <link href="lib/css/animate.css" rel="stylesheet" type="text/css">
     <link href="lib/css/image-zoom.min.css" rel="stylesheet">
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
-<!--    <link href="lib/css/main1.css" rel="stylesheet">-->
+    <!--    <link href="lib/css/main1.css" rel="stylesheet">-->
     <link href="lib/range/angular.rangeSlider.css" rel="stylesheet">
     <link href="https://checkout.stripe.com/v3/checkout/button.css" rel="stylesheet">
     <link href="lib/css/custom.css" rel="stylesheet">
     <link href="lib/css/FUTURAL.TTF" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
+
     <script src="lib/js/angular-animate.js"></script>
     <script src="lib/js/angular-route.min.js"></script>
     <script src="lib/js/angular-resource.min.js"></script>
@@ -86,11 +86,13 @@
     <script src="js/controllers.js"></script>
     <script src="js/templateservice.js"></script>
     <script src="js/services.js"></script>
-    <script src="lib/js/wow.min.js"></script>
+
     <script src="lib/js/isotope.js"></script>
     <script src="lib/js/main.js"></script>
     <script src="lib/js/image-zoom.js"></script>
     <script src="lib/js/jquery.elevatezoom.min.js"></script>
+    <script src="lib/js/wow.min.js"></script>
+    
     <script src="lib/js/skrollr.js"></script>
     <script src="lib/js/skrollr.dir.js"></script>
     <script src="lib/range/angular.rangeSlider.js"></script>
@@ -101,10 +103,10 @@
 
 </head>
 
-<body >
-<!--    <div class="top-bar barheight">-->
+<body>
+    <!--    <div class="top-bar barheight">-->
 
-<!--
+    <!--
         <div class="row">
             <div class="col-xs-2">
  <div class="input-group headsearch " ng-controller="search">
@@ -144,8 +146,8 @@
             </div>
         </div>
 -->
-<!--    </div>-->
-<!--    <div class="barheight"></div>-->
+    <!--    </div>-->
+    <!--    <div class="barheight"></div>-->
     <div>
         <!--        <div ng-view skrollr-tag></div>-->
         <div ng-view></div>
@@ -172,6 +174,7 @@
         });
     </script>
 
+
     <script type="text/javascript">
         (function (d, t) {
             if (window.location.hash != '#gleam' && ('' + document.cookie).match(/(^|;)\s*GleamaaA2s=X($|;)/)) {
@@ -183,11 +186,11 @@
             s.parentNode.insertBefore(g, s);
         }(document, "script"));
     </script>
-<script>
-window.addEventListener("beforeunload", function (e) {
-    alert("See You");
-    return false;
-}); 
+    <script>
+        window.addEventListener("beforeunload", function (e) {
+            alert("See You");
+            return false;
+        });
     </script>
     
 
