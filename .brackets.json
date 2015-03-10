@@ -31,6 +31,7 @@
         "C:/xampp/htdocs/magicmirror/lib/js/angular-animate.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.src.js",
-        "moment.js"
+        "moment.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/exporting.src.js"
     ]
 }
