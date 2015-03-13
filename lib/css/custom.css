@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'Futura';
-    src: url('futura.ttf');
+    font-family: 'RaspoutineClassic';
+    src: url('RaspoutineClassic_TB.otf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Futura';
+    font-family: 'RaspoutineClassic';
 }
 
 .header-bar {
@@ -645,6 +645,7 @@ span.glyphicon.glyphicon-shopping-cart {
     background-color: #009846;
     border-color: #009846;
 }
+
 .wow {
-   visibility: hidden;
+    visibility: hidden;
 }

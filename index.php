@@ -41,7 +41,7 @@
             // window.location="http://mobile.lylaloves.co.uk"+window.location.hash;
         }
     </script>
-<!--
+    <!--
     <script type="text/javascript">
         var _clt = _clt || [];
         _clt["custId"] = "{{email}}";
@@ -70,17 +70,17 @@
     <link href="lib/css/custom.css" rel="stylesheet">
     <link href="lib/css/FUTURAL.TTF" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/css/owl.carousel.css" rel="stylesheet">
+    <link href="lib/css/owl.theme.css" rel="stylesheet">
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
-
     <script src="lib/js/angular-animate.js"></script>
     <script src="lib/js/angular-route.min.js"></script>
     <script src="lib/js/angular-resource.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="lib/js/jquery.bxslider.min.js"></script>
@@ -88,13 +88,13 @@
     <script src="js/controllers.js"></script>
     <script src="js/templateservice.js"></script>
     <script src="js/services.js"></script>
-
+    <script src="lib/js/owl.carousel.js"></script>
     <script src="lib/js/isotope.js"></script>
     <script src="lib/js/main.js"></script>
     <script src="lib/js/image-zoom.js"></script>
     <script src="lib/js/jquery.elevatezoom.min.js"></script>
     <script src="lib/js/wow.min.js"></script>
-    
+
     <script src="lib/js/skrollr.js"></script>
     <script src="lib/js/skrollr.dir.js"></script>
     <script src="lib/range/angular.rangeSlider.js"></script>
@@ -194,10 +194,8 @@
             return false;
         });
     </script>
-    
+
 
 </body>
 
 </html>
-
-

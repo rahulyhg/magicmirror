@@ -32,6 +32,16 @@
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.src.js",
         "moment.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/exporting.src.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/exporting.src.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/angular.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/bootstrap.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/image-zoom.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/image-zoom.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/isotope.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/jstorage.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/main.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/map.src.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/paypal-button.min.js"
     ]
 }

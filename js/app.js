@@ -13,7 +13,7 @@ var firstapp = angular.module('firstapp', [
 ]);
 
 firstapp.config(['$routeProvider',
-    function($routeProvider) {
+    function ($routeProvider) {
         $routeProvider.
         when('/home', {
             templateUrl: 'views/template.html',
@@ -102,33 +102,33 @@ firstapp.config(['$routeProvider',
     }
 ]);
 
-firstapp.filter('imagepath', function() {
-    return function(input) {
+firstapp.filter('imagepath', function () {
+    return function (input) {
         return "http://www.lylaloves.co.uk/showimage?size=300&image=" + input;
 
     };
 });
-firstapp.filter('imagepath1', function() {
-    return function(input) {
+firstapp.filter('imagepath1', function () {
+    return function (input) {
         return "http://wohlig.co.in/magicmirror/img/products/" + input;
 
     };
 });
-firstapp.filter('imagepath2', function() {
-    return function(input) {
+firstapp.filter('imagepath2', function () {
+    return function (input) {
         return "http://wohlig.co.in/magicmirror/img/productup/" + input;
 
     };
 });
-firstapp.filter('imagepathbig', function() {
-    return function(input) {
+firstapp.filter('imagepathbig', function () {
+    return function (input) {
         return "http://www.lylaloves.co.uk/showimage?size=800&image=" + input;
 
     };
 });
 
-firstapp.filter('convertprice', function() {
-    return function(input) {
+firstapp.filter('convertprice', function () {
+    return function (input) {
 
         var price = parseFloat(input);
         if (price < 0) {
@@ -196,7 +196,7 @@ function CarouselDemoCtrl($scope) {
 }
 
 function ScrollCtrl($scope, $location, $anchorScroll) {
-    $scope.gotopropertydetails = function() {
+    $scope.gotopropertydetails = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('property-details');
@@ -204,7 +204,7 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
         // call $anchorScroll()
         $anchorScroll();
     };
-    $scope.gotoflats = function() {
+    $scope.gotoflats = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('flat-details');
@@ -212,7 +212,7 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
         // call $anchorScroll()
         $anchorScroll();
     };
-    $scope.gotoflats = function() {
+    $scope.gotoflats = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('flat-details');
@@ -220,7 +220,7 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
         // call $anchorScroll()
         $anchorScroll();
     };
-    $scope.gotolocation = function() {
+    $scope.gotolocation = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('location-details');
@@ -228,7 +228,7 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
         // call $anchorScroll()
         $anchorScroll();
     };
-    $scope.gotoamenities = function() {
+    $scope.gotoamenities = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('amenity-details');
@@ -236,7 +236,7 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
         // call $anchorScroll()
         $anchorScroll();
     };
-    $scope.gotogallery = function() {
+    $scope.gotogallery = function () {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash('gallery-details');
@@ -246,14 +246,14 @@ function ScrollCtrl($scope, $location, $anchorScroll) {
     };
 }
 
-firstapp.directive('resizable', function($window) {
-    return function($scope) {
-        $scope.initializeWindowSize = function() {
+firstapp.directive('resizable', function ($window) {
+    return function ($scope) {
+        $scope.initializeWindowSize = function () {
             $scope.windowHeight = $window.innerHeight;
             return $scope.windowWidth = $window.innerWidth;
         };
         $scope.initializeWindowSize();
-        return angular.element($window).bind('resize', function() {
+        return angular.element($window).bind('resize', function () {
             $scope.initializeWindowSize();
             return $scope.$apply();
         });
@@ -272,14 +272,14 @@ firstapp.directive('ngElevateZoom', function() {
   };
 });*/
 
-firstapp.directive('ngElevateZoom', function() {
+firstapp.directive('ngElevateZoom', function () {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
+        link: function (scope, element, attrs) {
             console.log("Linking")
 
             //Will watch for changes on the attribute
-            attrs.$observe('zoomImage', function() {
+            attrs.$observe('zoomImage', function () {
                 linkElevateZoom();
             })
 
@@ -300,7 +300,7 @@ firstapp.directive('ngElevateZoom', function() {
     };
 });
 
-firstapp.run(function($rootScope) {
+firstapp.run(function ($rootScope) {
     $rootScope.isloaded = 0; //global variable
 });
 firstapp.directive('myRepeatDirective', function () {
@@ -308,6 +308,16 @@ firstapp.directive('myRepeatDirective', function () {
         angular.element(element).css('color', 'blue');
         if (scope.$last) {
             new WOW().init();
+        }
+    };
+});
+
+firstapp.directive('wrapOwlcarousel', function () {
+    return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+            var options = scope.$eval($(element).attr('data-options'));
+            $(element).owlCarousel(options);
         }
     };
 });
