@@ -64,7 +64,6 @@
     <link href="lib/css/animate.css" rel="stylesheet" type="text/css">
     <link href="lib/css/image-zoom.min.css" rel="stylesheet">
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
-    <!--    <link href="lib/css/main1.css" rel="stylesheet">-->
     <link href="lib/range/angular.rangeSlider.css" rel="stylesheet">
     <link href="https://checkout.stripe.com/v3/checkout/button.css" rel="stylesheet">
     <link href="lib/css/custom.css" rel="stylesheet">
@@ -80,6 +79,7 @@
     <script src="lib/js/angular-animate.js"></script>
     <script src="lib/js/angular-route.min.js"></script>
     <script src="lib/js/angular-resource.min.js"></script>
+    <script src="lib/js/parallax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
@@ -102,7 +102,6 @@
     <script src="lib/js/jstorage.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-
 </head>
 
 <body>

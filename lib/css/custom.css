@@ -236,7 +236,7 @@ button.Subscribe {
     text-transform: uppercase;
 }
 
-.bgrnd-nav.ng-scope {
+.bgrnd-nav {
     background: #e2e2e2;
 }
 
@@ -647,5 +647,48 @@ span.glyphicon.glyphicon-shopping-cart {
 }
 
 .wow {
+    visibility: hidden;
+}
+
+.button-view a:hover {
+    color: #fff;
+    background: #E5097F;
+    border: #E5097F;
+}
+
+.headerstuck {
+    visibility: hidden;
+}
+
+.navigation a img {
+    width: 180px;
+}
+
+.bgrnd-nav.cloned {
+    background: #fff;
+    border-bottom: 1px solid #000;
+}
+
+.bgrnd-nav.cloned ul li a {
+    background: #fff;
+}
+
+.bgrnd-nav.cloned ul {
+    padding-top: 21px;
+}
+
+.headerstuck.visible {
+    visibility: visible;
+}
+
+.headerstuck.hide {
+    visibility: hidden;
+}
+
+.headermain.visible {
+    visibility: visible;
+}
+
+.headermain.hide {
     visibility: hidden;
 }

@@ -18,19 +18,16 @@
                        <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
                     </a> &nbsp;&nbsp;&nbsp;
                     <a class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By<div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div></a>
-
-
                 </div>
-
             </div>
         </div>
     </div>
     <div class="maincontent">
-
         <div infinite-scroll='addMoreItems();' ng-style="productsheight">
             <div class="col-xs-3 text-center clearfix" ng-repeat="product in products" my-repeat-directive>
-                <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">
-                    <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>
+                <!--                <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">-->
+                <div class="product">
+                    <!--                    <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>-->
                     <a href="#/product/{{product.id}}">
                         <div class="img1">
                             <img src="{{product.productimage[0].image|imagepath}}" class="img">

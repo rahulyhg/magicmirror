@@ -288,7 +288,6 @@ phonecatControllers.controller('home',
 
 
     });
-
 phonecatControllers.controller('cart',
     function ($scope, TemplateService, MainJson, $rootScope, $location) {
         $(".zoomContainer").remove();
@@ -1831,9 +1830,6 @@ phonecatControllers.controller('returns',
         //authenticate
 
     });
-
-
-
 
 phonecatControllers.controller('zoomCtrl',
     function ($scope) {
