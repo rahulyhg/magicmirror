@@ -96,6 +96,14 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'loginwishlist'
         }).
+        when('/contactus', {
+            templateUrl: 'views/template.html',
+            controller: 'contactus'
+        }).
+        when('/aboutus', {
+            templateUrl: 'views/template.html',
+            controller: 'aboutus'
+        }).
         otherwise({
             redirectTo: '/home'
         });

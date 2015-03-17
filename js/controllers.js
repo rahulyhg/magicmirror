@@ -1831,6 +1831,82 @@ phonecatControllers.controller('returns',
 
     });
 
+phonecatControllers.controller('contactus',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/contactus.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+phonecatControllers.controller('aboutus',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/aboutus.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+         $scope.about = "bold";
+
+        $scope.changebrand = function () {
+            $scope.brand = "bold";
+            $scope.about = "";
+            $scope.fashion = "";
+            $scope.services = "";
+
+        }
+        $scope.changeabout = function () {
+          $scope.brand = "";
+            $scope.about = "bold";
+            $scope.fashion = "";
+            $scope.services = "";
+
+
+        }
+          $scope.changefashion = function () {
+            $scope.brand = "";
+            $scope.about = "";
+            $scope.fashion = "bold";
+            $scope.services = "";
+
+
+        }
+        $scope.changeservices = function () {
+            $scope.brand = "";
+            $scope.about = "";
+            $scope.fashion = "";
+            $scope.services = "bold";
+
+
+        }
+
+    });
+
 phonecatControllers.controller('zoomCtrl',
     function ($scope) {
         $scope.switchImage = function (imageSrc) {

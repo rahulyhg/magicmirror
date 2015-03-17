@@ -43,6 +43,13 @@
         "C:/xampp/htdocs/magicmirror/lib/js/main.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/map.src.js",
         "C:/xampp/htdocs/magicmirror/lib/js/paypal-button.min.js",
-        "C:/xampp/htdocs/magicmirror/lib/js/owl.carousel.js"
+        "C:/xampp/htdocs/magicmirror/lib/js/owl.carousel.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/skrollr.dir.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/skrollr.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/annotations.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/annotations.src.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/wow.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/range/angular.rangeSlider.js",
+        "C:/xampp/htdocs/magicmirror/js/controllers.js"
     ]
 }
