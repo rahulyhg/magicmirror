@@ -1654,6 +1654,11 @@ div.megamenu.megamenu2 {
     left: 3px;
 }
 
+.bgrnd-nav.cloned ul.submenudown li a,
+.bgrnd-nav.cloned ul.submenudown h5 a {
+    background: rgba(227, 227, 227, 0.9) !important;
+}
+
 div.megamenu {
     position: absolute;
     width: 100%;
@@ -1666,14 +1671,9 @@ div.megamenu {
 
 ul.submenudown {
     list-style: none;
-    /*    margin-left: -40px;*/
+    padding: 10px 10px;
 }
-/*
-ul.submenudown li {
-    padding: 5px;
-    margin: 0 0;
-    font-size: 14px;
-    width: 145px;
+
+ul.submenudown h5 a {
+    color: #34A04A;
 }
-*/
-/* my css*/

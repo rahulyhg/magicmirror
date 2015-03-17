@@ -8,16 +8,18 @@
                         <a href="#/category/58">Designer</a>
 
                     </li>
-                    <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:relative;">
-                        <a href="#/category/34">Collections</a>
-                        
+                    <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
+                        <a href="#">Collections</a>
+                        <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
+                        </div>
+
                     </li>
 
                     <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:relative;">
                         <a href="#/category/31">New Arrivals</a>
-                      
+
                     </li>
-                   
+
                     <li>
                         <a class="" href="#/category/57">Store Locator</a>
 
@@ -25,12 +27,10 @@
 
                     <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
                         <a href="#/category/59">Gift Card</a>
-                   
+
                     </li>
                 </ul>
             </div>
-                                    <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
-
         </div>
     </div>
     <div class="bgrnd-nav cloned">
@@ -42,74 +42,57 @@
                 <ul class="nav nav-pills mainmenu pull-right" ng-class="ishome">
 
                     <li>
-                        <a href="#/category/1">Designer</a>
+                        <a href="#/category/58">Designer</a>
 
                     </li>
                     <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:relative;">
-                        <a href="#/category/1">Collections</a>
-                        <!--
-                  <div class="" ng-include src="submenuval[0]" ng-show="submenu[0]">
-</div>
--->
+                        <a href="#">Collections</a>
+                        <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
+                        </div>
                     </li>
 
                     <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:relative;">
-                        <a href="#/category/1">New Arrivals</a>
-                        <!--
-                    <div class="megamenu megamenu2" ng-include src="submenuval[1]" ng-show="submenu[1]">
-                    </div>
--->
+                        <a href="#/category/31">New Arrivals</a>
                     </li>
-                    <!--
- <li ng-mouseover="showsub(2)" ng-mouseleave="hidesub(2)">
-    <a href="#/lookbook">LOOKBOOK</a>
-    <div class="megamenu" ng-include src="submenuval[2]" ng-show="submenu[2]">
-    </div>
-</li>
--->
+
                     <li>
-                        <a class="" href="#/category/47">Store Locator</a>
+                        <a class="" href="#/category/57">Store Locator</a>
 
                     </li>
 
                     <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
-                        <a href="#/category/46">Gift Card</a>
-                        <!--
-                    <div class="megamenu" ng-include src="submenuval[6]" ng-show="submenu[6]">
-</div>
--->
+                        <a href="#/category/59">Gift Card</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').removeClass('original').hide();
+    <script>
+        $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').removeClass('original').hide();
 
-    scrollIntervalID = setInterval(stickIt, 10);
+        scrollIntervalID = setInterval(stickIt, 10);
 
 
-    function stickIt() {
+        function stickIt() {
 
-        var orgElementPos = $('.original').offset();
-        orgElementTop = orgElementPos.top;
+            var orgElementPos = $('.original').offset();
+            orgElementTop = orgElementPos.top;
 
-        if ($(window).scrollTop() >= (orgElementTop)) {
-            // scrolled past the original position; now only show the cloned, sticky element.
+            if ($(window).scrollTop() >= (orgElementTop)) {
+                // scrolled past the original position; now only show the cloned, sticky element.
 
-            // Cloned element should always have same left position and width as original element.     
-            orgElement = $('.original');
-            coordsOrgElement = orgElement.offset();
-            leftOrgElement = coordsOrgElement.left;
-            widthOrgElement = orgElement.css('width');
-            $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
-            $('.original').css('visibility', 'hidden');
-        } else {
-            // not scrolled past the menu; only show the original menu.
-            $('.cloned').hide();
-            $('.original').css('visibility', 'visible');
+                // Cloned element should always have same left position and width as original element.     
+                orgElement = $('.original');
+                coordsOrgElement = orgElement.offset();
+                leftOrgElement = coordsOrgElement.left;
+                widthOrgElement = orgElement.css('width');
+                $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
+                $('.original').css('visibility', 'hidden');
+            } else {
+                // not scrolled past the menu; only show the original menu.
+                $('.cloned').hide();
+                $('.original').css('visibility', 'visible');
+            }
         }
-    }
-</script>
+    </script>
