@@ -17,22 +17,22 @@
     </script>
     <script>
         var isMobile = {
-            Android: function() {
+            Android: function () {
                 return navigator.userAgent.match(/Android/i);
             },
-            BlackBerry: function() {
+            BlackBerry: function () {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            iOS: function() {
+            iOS: function () {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            Opera: function() {
+            Opera: function () {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            Windows: function() {
+            Windows: function () {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function() {
+            any: function () {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
@@ -59,7 +59,7 @@
 -->
 
 
-    <link rel="shortcut icon" href="img/logo.jpg" />
+    <link rel="shortcut icon" href="img/fashionlg.png" />
     <link href="lib/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="lib/css/animate.css" rel="stylesheet" type="text/css">
     <link href="lib/css/image-zoom.min.css" rel="stylesheet">
@@ -159,10 +159,10 @@
     <script>
         var issearch = false;
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
 
-            $(".headsearch .icon ").click(function() {
+            $(".headsearch .icon ").click(function () {
 
                 if (issearch) {
                     issearch = false;
@@ -179,7 +179,7 @@
 
 
     <script type="text/javascript ">
-        (function(d, t) {
+        (function (d, t) {
             if (window.location.hash != '#gleam' && ('' + document.cookie).match(/(^|;)\s*GleamaaA2s=X($|;)/)) {
                 return;
             }
@@ -190,7 +190,7 @@
         }(document, "script "));
     </script>
     <script>
-        window.addEventListener("beforeunload ", function(e) {
+        window.addEventListener("beforeunload ", function (e) {
             alert("See You ");
             return false;
         });

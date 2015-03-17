@@ -1051,6 +1051,7 @@ button.Subscribe {
 
 .bgrnd-nav {
     background: #e2e2e2;
+    position: relative;
 }
 
 input.subscribe-email {
@@ -1667,6 +1668,7 @@ div.megamenu {
     background: rgba(226, 226, 226, 0.9);
     padding: 10px;
     margin: 0 auto;
+    top: 40px;
 }
 
 ul.submenudown {
