@@ -123,7 +123,7 @@ firstapp.filter('imagepath1', function () {
 });
 firstapp.filter('imagepath2', function () {
     return function (input) {
-        return "http://wohlig.co.in/admin/uploads/" + input.trim();
+        return "img/" + input.trim();
     };
 });
 firstapp.filter('imagepathbig', function () {

@@ -50,6 +50,7 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js/modules/annotations.src.js",
         "C:/xampp/htdocs/magicmirror/lib/js/wow.min.js",
         "C:/xampp/htdocs/magicmirror/lib/range/angular.rangeSlider.js",
-        "C:/xampp/htdocs/magicmirror/js/controllers.js"
+        "C:/xampp/htdocs/magicmirror/js/controllers.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.js"
     ]
 }
