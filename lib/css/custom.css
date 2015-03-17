@@ -1217,7 +1217,7 @@ li.welcome {
 }
 
 .nav-pills > li > a {
-    background: #e3e3e3;
+    background: #E2E2E2;
     border-right: 1px solid;
     padding: 0px 14px 0 6px;
     text-transform: uppercase;
@@ -1657,18 +1657,29 @@ div.megamenu.megamenu2 {
 
 .bgrnd-nav.cloned ul.submenudown li a,
 .bgrnd-nav.cloned ul.submenudown h5 a {
-    background: rgba(227, 227, 227, 0.9) !important;
+    background: rgba(242, 232, 224, 0) !important;
+}
+
+.bgrnd-nav.cloned div.megamenu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 999999999;
+    background: rgba(226, 226, 226, 0.8);
+    padding: 10px;
+    margin: 0 auto;
+    top: 40px;
 }
 
 div.megamenu {
     position: absolute;
     width: 100%;
     left: 0;
-    z-index: 100;
-    background: rgba(226, 226, 226, 0.9);
+    z-index: 999999999;
+    background: rgba(226, 226, 226, 0.8);
     padding: 10px;
     margin: 0 auto;
-    top: 40px;
+    top: 30px;
 }
 
 ul.submenudown {
