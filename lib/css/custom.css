@@ -1648,7 +1648,7 @@ textarea.input-width {
     position: absolute;
     top: 35px;
 }
-/*
+
 div.megamenu.megamenu2 {
     width: 200px;
     left: 3px;
@@ -1656,14 +1656,13 @@ div.megamenu.megamenu2 {
 
 div.megamenu {
     position: absolute;
-    width: 160px;
+    width: 100%;
     left: 0;
     z-index: 100;
     background: rgba(226, 226, 226, 0.9);
     padding: 10px;
     margin: 0 auto;
 }
-*/
 
 ul.submenudown {
     list-style: none;
