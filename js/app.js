@@ -104,26 +104,23 @@ firstapp.config(['$routeProvider',
 
 firstapp.filter('imagepath', function () {
     return function (input) {
-        return "http://www.lylaloves.co.uk/showimage?size=300&image=" + input;
-
+        return "http://wohlig.co.in/admin/uploads/" + input.trim();
     };
 });
 firstapp.filter('imagepath1', function () {
     return function (input) {
-        return "http://wohlig.co.in/magicmirror/img/products/" + input;
+        return "http://wohlig.co.in/admin/uploads/" + input.trim();
 
     };
 });
 firstapp.filter('imagepath2', function () {
     return function (input) {
-        return "http://wohlig.co.in/magicmirror/img/productup/" + input;
-
+        return "http://wohlig.co.in/admin/uploads/" + input.trim();
     };
 });
 firstapp.filter('imagepathbig', function () {
     return function (input) {
-        return "http://www.lylaloves.co.uk/showimage?size=800&image=" + input;
-
+        return "http://wohlig.co.in/admin/uploads/" + input.trim();
     };
 });
 
