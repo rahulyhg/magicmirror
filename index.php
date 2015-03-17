@@ -17,22 +17,22 @@
     </script>
     <script>
         var isMobile = {
-            Android: function () {
+            Android: function() {
                 return navigator.userAgent.match(/Android/i);
             },
-            BlackBerry: function () {
+            BlackBerry: function() {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            iOS: function () {
+            iOS: function() {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            Opera: function () {
+            Opera: function() {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            Windows: function () {
+            Windows: function() {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function () {
+            any: function() {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
@@ -94,51 +94,53 @@
     <script src="lib/js/image-zoom.js"></script>
     <script src="lib/js/jquery.elevatezoom.min.js"></script>
     <script src="lib/js/wow.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/plugins/addIndicators.min.js"></script>
 
-    <script src="lib/js/skrollr.js"></script>
-    <script src="lib/js/skrollr.dir.js"></script>
-    <script src="lib/range/angular.rangeSlider.js"></script>
-    <script src="lib/js/ng-infinite-scroll.min.js"></script>
-    <script src="lib/js/jstorage.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src=" lib/js/skrollr.js "></script>
+    <script src="lib/js/skrollr.dir.js "></script>
+    <script src="lib/range/angular.rangeSlider.js "></script>
+    <script src="lib/js/ng-infinite-scroll.min.js "></script>
+    <script src="lib/js/jstorage.js "></script>
+    <script src="https://checkout.stripe.com/checkout.js "></script>
+    <script src="https://maps.googleapis.com/maps/api/js "></script>
 </head>
 
 <body>
-    <!--    <div class="top-bar barheight">-->
+    <!--    <div class="top-bar barheight ">-->
 
     <!--
-        <div class="row">
-            <div class="col-xs-2">
- <div class="input-group headsearch " ng-controller="search">
-                    <span class="input-group-addon icon"><span class="glyphicon glyphicon-search"></span></span>
-                    <input type="text" class="form-control inputbox" ng-model="searchpro" placeholder="Search" ng-change="search(searchpro)">
+        <div class="row ">
+            <div class="col-xs-2 ">
+ <div class="input-group headsearch " ng-controller="search ">
+                    <span class="input-group-addon icon "><span class="glyphicon glyphicon-search "></span></span>
+                    <input type="text " class="form-control inputbox " ng-model="searchpro " placeholder="Search " ng-change="search(searchpro) ">
                 </div>
 
             
             </div>
-            <div class="col-xs-7 padder" ng-controller="newsletter">
-                <p style="text-align:center;">Sign up for our newsletter and get free delivery on your first order! &nbsp;&nbsp;&nbsp;
-                    <input type="email" class="form-control newsletteremail" ng-model="uemail" placeholder="" required> <a style="color:black;" class="btn btn-primary" ng-click="newsletter(uemail)">SIGN UP</a>
+            <div class="col-xs-7 padder " ng-controller="newsletter ">
+                <p style="text-align:center; ">Sign up for our newsletter and get free delivery on your first order! &nbsp;&nbsp;&nbsp;
+                    <input type="email " class="form-control newsletteremail " ng-model="uemail " placeholder=" " required> <a style="color:black; " class="btn btn-primary " ng-click="newsletter(uemail) ">SIGN UP</a>
                 </p>
             </div>
 
-            <div class="col-xs-3">
+            <div class="col-xs-3 ">
                 
                    
-                <div class="pull-right" style="margin-right:15px;" ng-controller="badge">
+                <div class="pull-right " style="margin-right:15px; " ng-controller="badge ">
 
-                    <a href="#/Login" class="fadeInRight wow topicon" ng-class="firstloadclass wow">
-                        <img src="img/account.png">
+                    <a href="#/Login " class="fadeInRight wow topicon " ng-class="firstloadclass wow ">
+                        <img src="img/account.png ">
                     </a>
 
-                    <a href="#" class="badge newbadge" ng-show="template.totalproducts!=0">{{template.totalproducts}}</a>
-                    <a href="#/cart" class="topicon {{template.cartclicked}}">
-                        <img src="img/cart.png">
+                    <a href="# " class="badge newbadge " ng-show="template.totalproducts!=0 ">{{template.totalproducts}}</a>
+                    <a href="#/cart " class="topicon {{template.cartclicked}} ">
+                        <img src="img/cart.png ">
                     </a>
 
-                    <a href="#/wishlist" class="fadeInRight wow topicon" ng-class="firstloadclass wow">
-                        <img src="img/wishlist.png">
+                    <a href="#/wishlist " class="fadeInRight wow topicon " ng-class="firstloadclass wow ">
+                        <img src="img/wishlist.png ">
                     </a>
                 </div>
 
@@ -148,7 +150,7 @@
         </div>
 -->
     <!--    </div>-->
-    <!--    <div class="barheight"></div>-->
+    <!--    <div class="barheight "></div>-->
     <div>
         <!--        <div ng-view skrollr-tag></div>-->
         <div ng-view></div>
@@ -157,39 +159,39 @@
     <script>
         var issearch = false;
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
 
-            $(".headsearch .icon").click(function () {
+            $(".headsearch .icon ").click(function() {
 
                 if (issearch) {
                     issearch = false;
-                    $(".headsearch .inputbox").removeClass("showit");
-                    $(".headsearch .icon").removeClass("showit");
+                    $(".headsearch .inputbox ").removeClass("showit ");
+                    $(".headsearch .icon ").removeClass("showit ");
                 } else {
                     issearch = true;
-                    $(".headsearch .inputbox").addClass("showit");
-                    $(".headsearch .icon").addClass("showit");
+                    $(".headsearch .inputbox ").addClass("showit ");
+                    $(".headsearch .icon ").addClass("showit ");
                 }
             });
         });
     </script>
 
 
-    <script type="text/javascript">
-        (function (d, t) {
+    <script type="text/javascript ">
+        (function(d, t) {
             if (window.location.hash != '#gleam' && ('' + document.cookie).match(/(^|;)\s*GleamaaA2s=X($|;)/)) {
                 return;
             }
             var g = d.createElement(t),
                 s = d.getElementsByTagName(t)[0];
-            g.src = "https://js.gleam.io/aaA2s/ol.js";
+            g.src = "https://js.gleam.io/aaA2s/ol.js ";
             s.parentNode.insertBefore(g, s);
-        }(document, "script"));
+        }(document, "script "));
     </script>
     <script>
-        window.addEventListener("beforeunload", function (e) {
-            alert("See You");
+        window.addEventListener("beforeunload ", function(e) {
+            alert("See You ");
             return false;
         });
     </script>
