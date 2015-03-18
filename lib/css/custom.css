@@ -198,12 +198,13 @@ ul.footer-ul {
 
 .social-iconfoot a i {
     color: #fff;
-    padding: 20px 0px 15px 9px;
-    font-size: 22px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    width:22%;
 }
 
 .social-iconfoot {
-    padding-right: 20.2%;
+    
 }
 
 .text-jellwery h5 {
@@ -660,10 +661,6 @@ span.glyphicon.glyphicon-shopping-cart {
     visibility: hidden;
 }
 
-.navigation a img {
-    width: 180px;
-}
-
 .bgrnd-nav.cloned {
     background: #fff;
     border-bottom: 1px solid #000;
@@ -1007,16 +1004,6 @@ ul.footer-ul {
 
 .text-center.copyright-foot a {
     color: #fff;
-}
-
-.social-iconfoot a i {
-    color: #fff;
-    padding: 20px 0px 15px 9px;
-    font-size: 22px;
-}
-
-.social-iconfoot {
-    padding-right: 20.2%;
 }
 
 .text-jellwery h5 {
@@ -1474,10 +1461,6 @@ span.glyphicon.glyphicon-shopping-cart {
     visibility: hidden;
 }
 
-.navigation a img {
-    width: 180px;
-}
-
 .bgrnd-nav.cloned {
     background: #fff;
     border-bottom: 1px solid #000;
@@ -1668,7 +1651,7 @@ div.megamenu.megamenu2 {
     background: rgba(226, 226, 226, 0.8);
     padding: 10px;
     margin: 0 auto;
-    top: 40px;
+    top: 60px;
 }
 
 div.megamenu {
@@ -1689,4 +1672,83 @@ ul.submenudown {
 
 ul.submenudown h5 a {
     color: #34A04A;
+}
+ul.footer-ul {
+    font-size: 12px;
+}
+.footer-pad{
+    padding-top:30px;
+}
+.ftr_menu_hd{
+    margin:0px 0px 10px 0px;
+    font-size:14px;
+}
+.mtb10{
+    margin:10px 0px;
+}
+.footer-ul .col-xs-8{
+    width:80.66%
+}
+.v-alignimg{
+    vertical-align: bottom;
+}
+.font10{
+    font-size: 10px;
+}
+.footer1-bg{
+    background-color:#343d3f;
+    padding: 10px 0px;
+}
+.footer1-bg ul li{
+    padding-left:35px;
+    padding-right: 35px;
+}
+.payoptions
+{
+    background-image:url('../../img/payoptions.jpg');
+    height: 34px;
+  vertical-align: middle;
+  width: 175px;
+  margin-right: 15px;
+}
+.securepay{
+    background-image:url('../../img/securepay.jpg');
+    height:32px;
+    width:26px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.comment
+{
+     background-image:url('../../img/comment.jpg');
+    height:36px;
+    width:60px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.home{
+     background-image:url('../../img/home.jpg');
+    height:29px;
+    width:33px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.chat{
+      margin: 0px;
+  margin-left: 80px;
+  font-size: 9px;
+  margin-top: -12px;
+  color: #7f3460;
+  font-weight: bold;
+}
+.footer-light{
+    background-color: #e6e7e8;
+      margin-top: -12px;
+  color: #747576;
+}
+.footer_menus li
+{
+    border-right:1px solid dimgrey;
+    padding: 4px 13px;
+  margin-top: 5px;
 }
