@@ -1650,7 +1650,7 @@ phonecatControllers.controller('category',
 //            $scope.subcategory = data.subcategory;
 //            $scope.currentcategory = data.currentcategory;
 //            $scope.productlist = data.product;
-            $location.hash($scope.category.name.replace(/ /g, "_"));
+//            $location.hash($scope.category.name.replace(/ /g, "_"));
 //            $location.replace();
 //            console.log(data);
 //            console.log(data.product);
@@ -1745,8 +1745,8 @@ phonecatControllers.controller('product',
             $scope.productimage = data.productimage;
             $scope.relatedproduct = data.relatedproduct;
             console.log(data);
-            $location.hash($scope.product.name.replace(/ /g, "_"));
-            $location.replace();
+//            $location.hash($scope.product.name.replace(/ /g, "_"));
+//            $location.replace();
         };
         MainJson.getproductdetails($routeParams.ProductId).success(productsuccess);
         var cartt = function (data, status) {
