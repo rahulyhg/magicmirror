@@ -112,7 +112,12 @@ firstapp.config(['$routeProvider',
 
 firstapp.filter('imagepath', function () {
     return function (input) {
-        return "http://wohlig.co.in/admin/uploads/" + input.trim();
+        if(input)
+        {
+            return "http://wohlig.co.in/admin/uploads/" + input.trim();
+        }else{
+            return "http://wohlig.co.in/admin/uploads/" + input;
+        }
     };
 });
 firstapp.filter('imagepath1', function () {
@@ -136,15 +141,19 @@ firstapp.filter('convertprice', function () {
     return function (input) {
 
         var price = parseFloat(input);
+        var currencyshow = "Rs";
         if (price < 0) {
             return 0;
         }
-        var currencyshow = "£";
+//        else{
+//            return currencyshow + " " + (price).toFixed(2);
+//        }
+        
         for (var i = 0; i < conversionrate.length; i++) {
             if (conversionrate[i].name == currency) {
                 //console.log("currency: "+currency+" price ini: "+price+" price new: "+parseFloat(conversionrate[i].conversionrate)*price);
                 if (currency == "USD") {
-                    currencyshow = "$";
+                    currencyshow = "Rs";
                 } else if (currency == "EURO") {
                     currencyshow = "€";
                 }

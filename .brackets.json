@@ -51,6 +51,25 @@
         "C:/xampp/htdocs/magicmirror/lib/js/wow.min.js",
         "C:/xampp/htdocs/magicmirror/lib/range/angular.rangeSlider.js",
         "C:/xampp/htdocs/magicmirror/js/controllers.js",
-        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.js"
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/heatmap.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/heatmap.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/map.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/map.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/morris-script.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/owl.carousel.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/drilldown.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/select2.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/assets/ckeditor/ckeditor.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/drilldown.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/TableTools.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/upload/js/app.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/upload/js/main.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/sparkline-chart.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/sliders.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/assets/js/platform.js"
     ]
 }

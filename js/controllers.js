@@ -1524,6 +1524,12 @@ phonecatControllers.controller('category',
             console.log("get country");
             console.log(data);
         };
+    
+        // DECLARATION 
+        $scope.pageno = 1;
+        $scope.totallength = 0;
+        $scope.check = 0;
+        
         //  MainJson.showcountry().success(getcountry);
         $scope.usercountry = "India";
         //filters
@@ -1595,34 +1601,62 @@ phonecatControllers.controller('category',
         $scope.products = [];
         $scope.productsheight = {};
 
+        var categorysuccesspush = function (data, status){
+            console.log(data);
+            for (var i = 0; i < data.queryresult.length; i++) {
+                $scope.products.push(data.queryresult[i]);
+            }
+//            $scope.addMoreItems();
+        }
+    
         $scope.addMoreItems = function () {
-            console.log("More Products Added " + $scope.products.length);
-            var first = $scope.products.length;
-            var addition = 12;
-            var sum = first + addition;
-            if (sum > $scope.productlist.length) {
-                sum = $scope.productlist.length;
-            }
-            for (var i = first; i < sum; i++) {
-                $scope.products.push($scope.productlist[i]);
-            }
-            $scope.productsheight.height = ($scope.products.length / 4) * 430 + "px";
+//            console.log("More Products Added " + $scope.products.length);
+//            var first = $scope.products.length;
+//            var addition = 12;
+//            var sum = first + addition;
+//            if (sum > $scope.productlist.length) {
+//                sum = $scope.productlist.length;
+//            }
+//            for (var i = first; i < sum; i++) {
+//                $scope.products.push($scope.productlist[i]);
+//            }
+            
+        console.log("loading.....");
+        console.log($scope.products.length);
+        console.log($scope.totallength);
+
+
+//            if($scope.check == 0){
+                if ($scope.products.length <= $scope.totallength) {
+//                    if($scope.products.length == $scope.totallength)
+//                    {
+//                        $scope.check = 1;
+//                    }
+                    $scope.pageno = $scope.pageno + 1;
+                    MainJson.getproductbycategory($routeParams.CategoryId,$scope.pageno).success(categorysuccesspush);
+                }
+//            }
+//            $scope.productsheight.height = ($scope.products.length / 4) * 430 + "px";
         };
         var categorysuccess = function (data, status) {
-            $scope.products = [];
-            $scope.productsheight = {};
-            $scope.category = data.category;
-            $scope.breadcrumbs = data.breadcrumbs;
-            $scope.subcategory = data.subcategory;
-            $scope.currentcategory = data.currentcategory;
-            $scope.productlist = data.product;
-            $location.hash($scope.category.name.replace(/ /g, "_"));
-            $location.replace();
             console.log(data);
-            console.log(data.product);
-            $scope.addMoreItems();
+            $scope.products = data.queryresult;
+            $scope.totallength = data.totalvalues;
+            console.log("first load");
+            console.log($scope.totallength);
+//            $scope.productsheight = {};
+//            $scope.category = data.category;
+//            $scope.breadcrumbs = data.breadcrumbs;
+//            $scope.subcategory = data.subcategory;
+//            $scope.currentcategory = data.currentcategory;
+//            $scope.productlist = data.product;
+            $location.hash($scope.category.name.replace(/ /g, "_"));
+//            $location.replace();
+//            console.log(data);
+//            console.log(data.product);
+//            $scope.addMoreItems();
         };
-        MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccess);
+        MainJson.getproductbycategory($routeParams.CategoryId,$scope.pageno).success(categorysuccess);
 
 
 
