@@ -4,6 +4,21 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'futura';
+    src: url('futura.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,p,span {
+    font-family: 'futura';
+}
 
 body {
     font-family: 'RaspoutineClassic';
@@ -1715,7 +1730,7 @@ ul.footer-ul {
   margin-right: 15px;
 }
 .securepay{
-    background-image:url('../../img/securepay.jpg');
+    background-image:url('../../img/securepay.png');
     height:32px;
     width:26px;
     margin-right: 15px;
