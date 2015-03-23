@@ -1764,10 +1764,10 @@ ul.footer-ul {
       margin-top: -12px;
   color: #747576;
 }
-.footer_menus li
+.footer_menus li+li
 {
-    border-right:1px solid dimgrey;
-    padding: 4px 13px;
+    border-left:1px solid dimgrey;
+    padding: 4px 34px;
   margin-top: 5px;
 }
 ul.nav.nav-pills.mainmenu li:last-child  a
