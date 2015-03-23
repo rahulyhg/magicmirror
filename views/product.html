@@ -1,4 +1,4 @@
-<div class="content container">
+<div class="content">
     <div class="contenttop">
         <div class="row">
             <div class="col-xs-4"><span class="breadcrumb">Home / Jewellery / Necklace / {{product.name}}</span>
@@ -32,7 +32,7 @@
                         <input type="text" value="1" class="hidden quantitybox" ng-model="addquantity">
                         <a class="btn btn-primary " ng-click="addtocart(product.id,product.name,rate,addquantity)"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>
                     </span>
-
+                    
                     <span ng-show="product.quantity<=0">
                         <span ng-hide="addedtowaitinglist"><input type="email" value="1" class="form-control waitingemail" placeholder="Email" style="width:190px;" ng-model="product.waitingemail">
                             <a class="btn btn-primary " ng-click="addtowaitinglist(product.id,product.waitingemail)">Add to Waiting List</a></span>
