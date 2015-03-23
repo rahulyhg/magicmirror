@@ -4,6 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'futura';
     src: url('futura.ttf');
@@ -16,7 +17,9 @@ h2,
 h3,
 h4,
 h5,
-h6,p,span {
+h6,
+p,
+span {
     font-family: 'futura';
 }
 
@@ -215,12 +218,10 @@ ul.footer-ul {
     color: #fff;
     padding-bottom: 20px;
     font-size: 30px;
-    width:22%;
+    width: 22%;
 }
 
-.social-iconfoot {
-    
-}
+.social-iconfoot {}
 
 .text-jellwery h5 {
     text-align: center;
@@ -1481,15 +1482,16 @@ span.glyphicon.glyphicon-shopping-cart {
     border-bottom: 1px solid #000;
 }
 
-.bgrnd-nav.cloned ul li a {
+#comment {
     background: #fff;
 }
 
 .bgrnd-nav.cloned ul {
     padding-top: 55px;
 }
-.bgrnd-nav.cloned ul.submenudown{
-    padding-top:15px;
+
+.bgrnd-nav.cloned ul.submenudown {
+    padding-top: 15px;
 }
 
 .headerstuck.visible {
@@ -1615,7 +1617,7 @@ textarea.input-width {
 }
 
 .bold {
-    color:rgb(52, 160, 74);
+    color: rgb(52, 160, 74);
 }
 
 .designer {
@@ -1666,10 +1668,10 @@ div.megamenu.megamenu2 {
     width: 100%;
     left: 0;
     z-index: 999999999;
-    background: rgba(226, 226, 226, 0.8);
+    background: rgba(255, 255, 255, 0.65);
     padding: 10px;
     margin: 0 auto;
-    top: 99px;
+    top: 85px;
 }
 
 div.megamenu {
@@ -1677,7 +1679,7 @@ div.megamenu {
     width: 100%;
     left: 0;
     z-index: 999999999;
-    background: rgba(226, 226, 226, 0.8);
+    background: rgba(226, 226, 226, 0.9);
     padding: 10px;
     margin: 0 auto;
     top: 30px;
@@ -1691,97 +1693,116 @@ ul.submenudown {
 ul.submenudown h5 a {
     color: #34A04A;
 }
+
 ul.footer-ul {
     font-size: 12px;
 }
-.footer-pad{
-    padding-top:30px;
+
+.footer-pad {
+    padding-top: 30px;
 }
-.ftr_menu_hd{
-    margin:0px 0px 10px 0px;
-    font-size:14px;
+
+.ftr_menu_hd {
+    margin: 0px 0px 10px 0px;
+    font-size: 14px;
 }
-.mtb10{
-    margin:10px 0px;
+
+.mtb10 {
+    margin: 10px 0px;
 }
-.footer-ul .col-xs-8{
-    width:80.66%
+
+.footer-ul .col-xs-8 {
+    width: 80.66%
 }
-.v-alignimg{
+
+.v-alignimg {
     vertical-align: bottom;
 }
-.font10{
+
+.font10 {
     font-size: 10px;
 }
-.footer1-bg{
-    background-color:#343d3f;
+
+.footer1-bg {
+    background-color: #343d3f;
     padding: 10px 0px;
 }
-.footer1-bg ul li{
-    padding-left:35px;
+
+.footer1-bg ul li {
+    padding-left: 35px;
     padding-right: 35px;
 }
-.payoptions
-{
-    background-image:url('../../img/payoptions.jpg');
+
+.payoptions {
+    background-image: url('../../img/payoptions.jpg');
     height: 34px;
-  vertical-align: middle;
-  width: 175px;
-  margin-right: 15px;
+    vertical-align: middle;
+    width: 175px;
+    margin-right: 15px;
 }
-.securepay{
-    background-image:url('../../img/securepay.png');
-    height:32px;
-    width:26px;
+
+.securepay {
+    background-image: url('../../img/securepay.png');
+    height: 32px;
+    width: 26px;
     margin-right: 15px;
     vertical-align: middle;
 }
-.comment
-{
-     background-image:url('../../img/comment.jpg');
-    height:36px;
-    width:60px;
+
+.comment {
+    background-image: url('../../img/comment.jpg');
+    height: 36px;
+    width: 60px;
     margin-right: 15px;
     vertical-align: middle;
 }
-.home{
-     background-image:url('../../img/home.jpg');
-    height:29px;
-    width:33px;
+
+.home {
+    background-image: url('../../img/home.jpg');
+    height: 29px;
+    width: 33px;
     margin-right: 15px;
     vertical-align: middle;
 }
-.chat{
-      margin: 0px;
-  margin-left: 80px;
-  font-size: 9px;
-  margin-top: -12px;
-  color: #7f3460;
-  font-weight: bold;
+
+.chat {
+    margin: 0px;
+    margin-left: 80px;
+    font-size: 9px;
+    margin-top: -12px;
+    color: #7f3460;
+    font-weight: bold;
 }
-.footer-light{
+
+.footer-light {
     background-color: #e6e7e8;
-      margin-top: -12px;
-  color: #747576;
+    margin-top: -12px;
+    color: #747576;
 }
-.footer_menus li
-{
-    border-right:1px solid dimgrey;
+
+.footer_menus li {
+    border-right: 1px solid dimgrey;
     padding: 4px 13px;
-  margin-top: 5px;
+    margin-top: 5px;
 }
-ul.nav.nav-pills.mainmenu li:last-child  a
-{
-  border-right: 0px;
+
+ul.nav.nav-pills.mainmenu li:last-child a {
+    border-right: 0px;
 }
-.bgborder{
+
+.bgborder {
     background-image: url('../../img/bgborder.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-        height:57px;
+    height: 57px;
 }
-.mt20{
-    margin-top:20px;
+
+.mt20 {
+    margin-top: 20px;
 }
+
 ._4s7c {
     background-color: #fff!important;
 }
