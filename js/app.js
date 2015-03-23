@@ -92,6 +92,18 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'returns'
         }).
+         when('/conditions', {
+            templateUrl: 'views/template.html',
+            controller: 'conditions'
+        }).
+          when('/faq', {
+            templateUrl: 'views/template.html',
+            controller: 'faq'
+        }).
+        when('/policy', {
+            templateUrl: 'views/template.html',
+            controller: 'policy'
+        }).
         when('/loginwishlist', {
             templateUrl: 'views/template.html',
             controller: 'loginwishlist'
