@@ -1471,7 +1471,10 @@ span.glyphicon.glyphicon-shopping-cart {
 }
 
 .bgrnd-nav.cloned ul {
-    padding-top: 21px;
+    padding-top: 55px;
+}
+.bgrnd-nav.cloned ul.submenudown{
+    padding-top:15px;
 }
 
 .headerstuck.visible {
@@ -1597,7 +1600,7 @@ textarea.input-width {
 }
 
 .bold {
-    font-weight: 900;
+    color:rgb(52, 160, 74);
 }
 
 .designer {
@@ -1618,7 +1621,7 @@ textarea.input-width {
 }
 
 .details {
-    padding: 30px 0px;
+    padding: 10px 0px;
 }
 
 .lefticon {
@@ -1651,7 +1654,7 @@ div.megamenu.megamenu2 {
     background: rgba(226, 226, 226, 0.8);
     padding: 10px;
     margin: 0 auto;
-    top: 60px;
+    top: 99px;
 }
 
 div.megamenu {
@@ -1751,4 +1754,19 @@ ul.footer-ul {
     border-right:1px solid dimgrey;
     padding: 4px 13px;
   margin-top: 5px;
+}
+ul.nav.nav-pills.mainmenu li:last-child  a
+{
+  border-right: 0px;
+}
+.bgborder{
+    background-image: url('../../img/bgborder.jpg');
+    background-size: cover;
+        height:57px;
+}
+.mt20{
+    margin-top:20px;
+}
+._4s7c {
+    background: #fff!important;
 }
