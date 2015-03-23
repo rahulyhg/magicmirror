@@ -3,23 +3,31 @@
         <div class="container">
             <div class="navigation fadeInDown" skrollr class="row marginer">
                 <ul class="nav nav-pills mainmenu" ng-class="ishome">
+
                     <li>
                         <a href="#/category/58">Designer</a>
+
                     </li>
                     <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
                         <a href="#">Collections</a>
                         <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
                         </div>
+
                     </li>
-                    <li ng-mouseover="showsub(34)" ng-mouseleave="hidesub(1)" style="position:relative;">
+
+                    <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:relative;">
                         <a href="#/category/31">New Arrivals</a>
+
                     </li>
+
                     <li>
                         <a class="" href="#/category/57">Store Locator</a>
 
                     </li>
+
                     <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
-                        <a href="#/category/46">Gift Card</a>
+                        <a href="#/category/59">Gift Card</a>
+
                     </li>
                 </ul>
             </div>
@@ -32,23 +40,26 @@
                     <img src="img/logo.png">
                 </a>
                 <ul class="nav nav-pills mainmenu pull-right" ng-class="ishome">
+
                     <li>
                         <a href="#/category/58">Designer</a>
 
                     </li>
                     <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
                         <a href="#">Collections</a>
+                        <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
+                        </div>
                     </li>
 
                     <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:relative;">
-                        <a href="#/category/31">New Arrivals</a>
-
+                        <a href="#">New Arrivals</a>
                     </li>
-
 
                     <li>
-                        <a class="" href="#/category/47">Store Locator</a>
+                        <a class="" href="#/category/57">Store Locator</a>
+
                     </li>
+
                     <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
                         <a href="#/category/59">Gift Card</a>
                     </li>
@@ -56,33 +67,32 @@
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').removeClass('original').hide();
+    <script>
+        $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').removeClass('original').hide();
 
-    scrollIntervalID = setInterval(stickIt, 10);
+        scrollIntervalID = setInterval(stickIt, 10);
 
 
-    function stickIt() {
+        function stickIt() {
 
-        var orgElementPos = $('.original').offset();
-        orgElementTop = orgElementPos.top;
+            var orgElementPos = $('.original').offset();
+            orgElementTop = orgElementPos.top;
 
-        if ($(window).scrollTop() >= (orgElementTop)) {
-            // scrolled past the original position; now only show the cloned, sticky element.
+            if ($(window).scrollTop() >= (orgElementTop)) {
+                // scrolled past the original position; now only show the cloned, sticky element.
 
-            // Cloned element should always have same left position and width as original element.     
-            orgElement = $('.original');
-            coordsOrgElement = orgElement.offset();
-            leftOrgElement = coordsOrgElement.left;
-            widthOrgElement = orgElement.css('width');
-            $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
-            $('.original').css('visibility', 'hidden');
-        } else {
-            // not scrolled past the menu; only show the original menu.
-            $('.cloned').hide();
-            $('.original').css('visibility', 'visible');
+                // Cloned element should always have same left position and width as original element.     
+                orgElement = $('.original');
+                coordsOrgElement = orgElement.offset();
+                leftOrgElement = coordsOrgElement.left;
+                widthOrgElement = orgElement.css('width');
+                $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
+                $('.original').css('visibility', 'hidden');
+            } else {
+                // not scrolled past the menu; only show the original menu.
+                $('.cloned').hide();
+                $('.original').css('visibility', 'visible');
+            }
         }
-    }
-</script>
+    </script>
