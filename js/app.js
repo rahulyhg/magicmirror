@@ -88,6 +88,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'delivery'
         }).
+        when('/sitemap', {
+            templateUrl: 'views/template.html',
+            controller: 'sitemap'
+        }).
         when('/returns', {
             templateUrl: 'views/template.html',
             controller: 'returns'
