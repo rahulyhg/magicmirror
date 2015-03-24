@@ -216,9 +216,8 @@ ul.footer-ul {
 
 .social-iconfoot a i {
     color: #fff;
-    padding-bottom: 20px;
-    font-size: 30px;
-    width: 22%;
+    padding: 20px 0px 15px 9px;
+    font-size: 22px;
 }
 
 .social-iconfoot {}
@@ -1845,4 +1844,17 @@ ul.sitemap-ul1 {
 
 ul.sitemap-menu h5 {
     font-size: 17px;
+}
+
+.social-iconfoot {
+    padding-right: 56px;
+}
+
+a.Subscribe {
+    background: #fff;
+    color: #000;
+    border: none;
+    margin: 4px 6px 0 0;
+    text-transform: uppercase;
+    padding: 2px 5px;
 }
