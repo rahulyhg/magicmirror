@@ -1803,8 +1803,16 @@ ul.nav.nav-pills.mainmenu li:last-child a {
     margin-top: 20px;
 }
 
-._4s7c {
-    background-color: #fff!important;
+ul.fb-link li {
+    list-style: none;
+}
+
+ul.fb-link {
+    padding: 0;
+}
+
+.fb-like-box {
+    background: #fff;
 }
 
 .ftr-menus {
