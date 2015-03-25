@@ -285,8 +285,6 @@ phonecatControllers.controller('home',
         }, {
             image: "img/slide2.jpg"
         }];
-
-
     });
 phonecatControllers.controller('cart',
     function ($scope, TemplateService, MainJson, $rootScope, $location) {
@@ -1524,12 +1522,12 @@ phonecatControllers.controller('category',
             console.log("get country");
             console.log(data);
         };
-    
+
         // DECLARATION 
         $scope.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;
-        
+
         //  MainJson.showcountry().success(getcountry);
         $scope.usercountry = "India";
         //filters
@@ -1601,42 +1599,42 @@ phonecatControllers.controller('category',
         $scope.products = [];
         $scope.productsheight = {};
 
-        var categorysuccesspush = function (data, status){
+        var categorysuccesspush = function (data, status) {
             console.log(data);
             for (var i = 0; i < data.queryresult.length; i++) {
                 $scope.products.push(data.queryresult[i]);
             }
-//            $scope.addMoreItems();
+            //            $scope.addMoreItems();
         }
-    
+
         $scope.addMoreItems = function () {
-//            console.log("More Products Added " + $scope.products.length);
-//            var first = $scope.products.length;
-//            var addition = 12;
-//            var sum = first + addition;
-//            if (sum > $scope.productlist.length) {
-//                sum = $scope.productlist.length;
-//            }
-//            for (var i = first; i < sum; i++) {
-//                $scope.products.push($scope.productlist[i]);
-//            }
-            
-        console.log("loading.....");
-        console.log($scope.products.length);
-        console.log($scope.totallength);
+            //            console.log("More Products Added " + $scope.products.length);
+            //            var first = $scope.products.length;
+            //            var addition = 12;
+            //            var sum = first + addition;
+            //            if (sum > $scope.productlist.length) {
+            //                sum = $scope.productlist.length;
+            //            }
+            //            for (var i = first; i < sum; i++) {
+            //                $scope.products.push($scope.productlist[i]);
+            //            }
+
+            console.log("loading.....");
+            console.log($scope.products.length);
+            console.log($scope.totallength);
 
 
-//            if($scope.check == 0){
-                if ($scope.products.length <= $scope.totallength) {
-//                    if($scope.products.length == $scope.totallength)
-//                    {
-//                        $scope.check = 1;
-//                    }
-                    $scope.pageno = $scope.pageno + 1;
-                    MainJson.getproductbycategory($routeParams.CategoryId,$scope.pageno).success(categorysuccesspush);
-                }
-//            }
-//            $scope.productsheight.height = ($scope.products.length / 4) * 430 + "px";
+            //            if($scope.check == 0){
+            if ($scope.products.length <= $scope.totallength) {
+                //                    if($scope.products.length == $scope.totallength)
+                //                    {
+                //                        $scope.check = 1;
+                //                    }
+                $scope.pageno = $scope.pageno + 1;
+                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
+            }
+            //            }
+            //            $scope.productsheight.height = ($scope.products.length / 4) * 430 + "px";
         };
         var categorysuccess = function (data, status) {
             console.log(data);
@@ -1644,19 +1642,19 @@ phonecatControllers.controller('category',
             $scope.totallength = data.totalvalues;
             console.log("first load");
             console.log($scope.totallength);
-//            $scope.productsheight = {};
-//            $scope.category = data.category;
-//            $scope.breadcrumbs = data.breadcrumbs;
-//            $scope.subcategory = data.subcategory;
-//            $scope.currentcategory = data.currentcategory;
-//            $scope.productlist = data.product;
-//            $location.hash($scope.category.name.replace(/ /g, "_"));
-//            $location.replace();
-//            console.log(data);
-//            console.log(data.product);
-//            $scope.addMoreItems();
+            //            $scope.productsheight = {};
+            //            $scope.category = data.category;
+            //            $scope.breadcrumbs = data.breadcrumbs;
+            //            $scope.subcategory = data.subcategory;
+            //            $scope.currentcategory = data.currentcategory;
+            //            $scope.productlist = data.product;
+            //            $location.hash($scope.category.name.replace(/ /g, "_"));
+            //            $location.replace();
+            //            console.log(data);
+            //            console.log(data.product);
+            //            $scope.addMoreItems();
         };
-        MainJson.getproductbycategory($routeParams.CategoryId,$scope.pageno).success(categorysuccess);
+        MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccess);
 
 
 
@@ -1745,8 +1743,8 @@ phonecatControllers.controller('product',
             $scope.productimage = data.productimage;
             $scope.relatedproduct = data.relatedproduct;
             console.log(data);
-//            $location.hash($scope.product.name.replace(/ /g, "_"));
-//            $location.replace();
+            //            $location.hash($scope.product.name.replace(/ /g, "_"));
+            //            $location.replace();
         };
         MainJson.getproductdetails($routeParams.ProductId).success(productsuccess);
         var cartt = function (data, status) {
@@ -1953,6 +1951,48 @@ phonecatControllers.controller('sitemap',
 
     });
 
+phonecatControllers.controller('celebrities',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/celebrities.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+phonecatControllers.controller('feedback',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/feedback.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
 phonecatControllers.controller('contactus',
     function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
@@ -1993,7 +2033,7 @@ phonecatControllers.controller('aboutus',
         };
         MainJson.authenticate().success(authenticate);
         //authenticate
-         $scope.about = "bold";
+        $scope.about = "bold";
 
         $scope.changebrand = function () {
             $scope.brand = "bold";
@@ -2003,14 +2043,14 @@ phonecatControllers.controller('aboutus',
 
         }
         $scope.changeabout = function () {
-          $scope.brand = "";
+            $scope.brand = "";
             $scope.about = "bold";
             $scope.fashion = "";
             $scope.services = "";
 
 
         }
-          $scope.changefashion = function () {
+        $scope.changefashion = function () {
             $scope.brand = "";
             $scope.about = "";
             $scope.fashion = "bold";

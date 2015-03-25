@@ -92,15 +92,23 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'sitemap'
         }).
+        when('/celebrities', {
+            templateUrl: 'views/template.html',
+            controller: 'celebrities'
+        }).
+        when('/feedback', {
+            templateUrl: 'views/template.html',
+            controller: 'feedback'
+        }).
         when('/returns', {
             templateUrl: 'views/template.html',
             controller: 'returns'
         }).
-         when('/conditions', {
+        when('/conditions', {
             templateUrl: 'views/template.html',
             controller: 'conditions'
         }).
-          when('/faq', {
+        when('/faq', {
             templateUrl: 'views/template.html',
             controller: 'faq'
         }).
@@ -128,10 +136,9 @@ firstapp.config(['$routeProvider',
 
 firstapp.filter('imagepath', function () {
     return function (input) {
-        if(input)
-        {
+        if (input) {
             return "http://wohlig.co.in/admin/uploads/" + input.trim();
-        }else{
+        } else {
             return "http://wohlig.co.in/admin/uploads/" + input;
         }
     };
@@ -161,10 +168,10 @@ firstapp.filter('convertprice', function () {
         if (price < 0) {
             return 0;
         }
-//        else{
-//            return currencyshow + " " + (price).toFixed(2);
-//        }
-        
+        //        else{
+        //            return currencyshow + " " + (price).toFixed(2);
+        //        }
+
         for (var i = 0; i < conversionrate.length; i++) {
             if (conversionrate[i].name == currency) {
                 //console.log("currency: "+currency+" price ini: "+price+" price new: "+parseFloat(conversionrate[i].conversionrate)*price);
