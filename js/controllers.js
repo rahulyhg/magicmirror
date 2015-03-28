@@ -155,7 +155,7 @@ phonecatControllers.controller('home',
         //            for (var i = 0; i < address.length; i++) {
         //                if (address[i].types.indexOf("country") >= 0) {
         //                    $scope.country = address[i].short_name;
-        //                    
+        //
         //
         //
         //                    var countries = ['AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
@@ -178,7 +178,7 @@ phonecatControllers.controller('home',
         //                    {
         //                        currency="EURO";
         //                    }
-        //                    else 
+        //                    else
         //                    {
         //                        currency="USD";
         //                    }
@@ -801,9 +801,9 @@ phonecatControllers.controller('lylaloves',
         //authenticate
         //        $scope.$on('$includeContentLoaded', function () {
         //            console.log("content loaded");
-        //        
+        //
         //            var $container = $('#isotope');
-        //            
+        //
         //            // init
         //            $container.isotope({
         //                // options
@@ -1448,7 +1448,7 @@ phonecatControllers.controller('checkout',
             //MainJson.orderitem($scope.cart);
             $scope.form.cart = $scope.cart;
             $scope.form.user = $scope.id;
-            $scope.form.status = $scope.status; //MainJson.placeorder(form.firstname,form.lastname,form.email,form.company,form.billingaddress,form.billingcity,form.billingstate,form.billingpincode,form.billingcountry,form.phone,form.fax,form.shippingaddress,form.shippingcity,form.shippingstate,form.shippingpincode,form.shippingcountry,$scope.id,$scope.status).success(orderplaced); 
+            $scope.form.status = $scope.status; //MainJson.placeorder(form.firstname,form.lastname,form.email,form.company,form.billingaddress,form.billingcity,form.billingstate,form.billingpincode,form.billingcountry,form.phone,form.fax,form.shippingaddress,form.shippingcity,form.shippingstate,form.shippingpincode,form.shippingcountry,$scope.id,$scope.status).success(orderplaced);
             MainJson.placeorder(form).success(orderplaced);
         }
 
@@ -1457,7 +1457,7 @@ phonecatControllers.controller('checkout',
             //MainJson.orderitem($scope.cart);
             $scope.form.cart = $scope.cart;
             $scope.form.user = $scope.id;
-            $scope.form.status = $scope.status; //MainJson.placeorder(form.firstname,form.lastname,form.email,form.company,form.billingaddress,form.billingcity,form.billingstate,form.billingpincode,form.billingcountry,form.phone,form.fax,form.shippingaddress,form.shippingcity,form.shippingstate,form.shippingpincode,form.shippingcountry,$scope.id,$scope.status).success(orderplaced); 
+            $scope.form.status = $scope.status; //MainJson.placeorder(form.firstname,form.lastname,form.email,form.company,form.billingaddress,form.billingcity,form.billingstate,form.billingpincode,form.billingcountry,form.phone,form.fax,form.shippingaddress,form.shippingcity,form.shippingstate,form.shippingpincode,form.shippingcountry,$scope.id,$scope.status).success(orderplaced);
             MainJson.placeorder(form).success(orderplaced);
         };
     });
@@ -1523,7 +1523,7 @@ phonecatControllers.controller('category',
             console.log(data);
         };
 
-        // DECLARATION 
+        // DECLARATION
         $scope.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;

@@ -304,7 +304,7 @@ firstapp.directive('ngElevateZoom', function() {
     link: function(scope, element, attrs) {
       element.attr('data-zoom-image',attrs.zoomImage);
       //$(element).elevateZoom();
-        $(element).elevateZoom({ zoomType	 : "inner", cursor: "crosshair" }); 
+        $(element).elevateZoom({ zoomType	 : "inner", cursor: "crosshair" });
     }
   };
 });*/

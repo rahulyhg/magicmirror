@@ -52,10 +52,10 @@ var showlocationdata = function (data, status) {
                 currency = "USD";
             }
             console.log("Currency: " + currency);
-            
+
             break;
         }
-        
+
     }
     //$.holdReady(false);
 };
@@ -64,7 +64,7 @@ var ongettingdata = function (data) {
         console.log("in location success");
         console.log(data);
         country = data.country_code;
-        
+
             if (data) {
                 country = data.country_code;
 
@@ -92,20 +92,20 @@ var ongettingdata = function (data) {
                 if(currency=="USD" || currency=="EURO")
                 {
                     console.log("Show Popup");
-                    
+
                     //POPup to be here
                 }
-            
+
             }
         }
         $.holdReady(false);
-    
+
 
 
 //start get country from geo location
 function CommonCode() {
 
-    
+
 
     function showPosition2(position) {
         var latlon = position.coords.latitude + "," + position.coords.longitude;
@@ -336,14 +336,14 @@ service.factory('MainJson', function ($http, TemplateService) {
                 {
                     isedit=i;
                 }
-                
+
             }
             if(isedit==-1)
             {
 		 	    cart.push({id:id,name:name,price:price,quantity:quantity});
-                
+
             }
-            else 
+            else
             {
                 cart[isedit].quantity+=quantity;
             }
