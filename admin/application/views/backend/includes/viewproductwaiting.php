@@ -8,7 +8,7 @@
 			<thead>
 				<tr>
 					<!--<th>Id</th>-->
-					<th>Product</th>
+<!--					<th>Product</th>-->
 					<th>User</th>
 					<th>Email</th>
 					<th>Time Stamp</th>
@@ -20,7 +20,7 @@
 			   <?php foreach($table as $row) { ?>
 					<tr>
 						<!--<td><?php echo $row->id; ?></td>-->
-						<td><?php echo $row->productname; ?></td>
+<!--						<td><?php echo $row->productname; ?></td>-->
 						<td><?php echo $row->firstname." ".$row->lastname; ?></td>
 						<td><?php echo $row->email;  ?></td>
 						<td><?php echo $row->timestamp; ?></td>

@@ -365,7 +365,7 @@ class Product_model extends CI_Model
 		INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` 
 		INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` 
 		LEFT JOIN `productimage` ON `productimage`.`product`=`product`.`id`
-		WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter
+		WHERE  `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter
         AND (   `productcategory`.`category`=$category $where )
 		GROUP BY `product`.`id`
 		ORDER BY `product`.`id` DESC")->result();
@@ -545,6 +545,7 @@ LEFT OUTER JOIN `category` ON `productcategory`.`category`=`category`.`id`");
     
 	public function createbycsv($file)
 	{
+            print_r($file);
         foreach ($file as $row)
         {
             
@@ -553,6 +554,13 @@ LEFT OUTER JOIN `category` ON `productcategory`.`category`=`category`.`id`");
 			if($row['specialpriceto'] != "")
 				$specialpriceto = date("Y-m-d",strtotime($row['specialpriceto']));
             $sku=$row['sku'];
+            $productfeatures=$row['productfeatures'];
+            $image=$row['image'];
+            $allimages=explode(",",$image);
+            $category=$row['category'];
+            $allcategories=explode(",",$category);
+            
+            $category=$row['category'];
             $data  = array(
                 'name' => $row['name'],
                 'sku' => $row['sku'],
@@ -571,10 +579,41 @@ LEFT OUTER JOIN `category` ON `productcategory`.`category`=`category`.`id`");
                 'status' => 1
             );
             $checkproductpresent=$this->db->query("SELECT COUNT(`id`) as `count1` FROM `product` WHERE `sku`='$sku'")->row();
+//            print_r($data);
             if($checkproductpresent->count1 == 0)
             {
-            $query=$this->db->insert( 'product', $data );
+                $query=$this->db->insert( 'product', $data );
+                $productid=$this->db->insert_id();
             }
+            
+			foreach($allimages as $key => $image)
+			{
+				$data1  = array(
+					'product' => $productid,
+					'image' => $image,
+				);
+				$queryproductimage=$this->db->insert( 'productimage', $data1 );
+			}
+            
+			foreach($allcategories as $key => $category)
+			{
+                $categoryquery=$this->db->query("SELECT * FROM `category` where `name`LIKE '$category'")->row();
+                if(empty($categoryquery))
+                {
+                    $this->db->query("INSERT INTO `category`(`name`) VALUES ('$category')");
+                    $categoryid=$this->db->insert_id();
+                }
+                else
+                {
+                    $categoryid=$categoryquery->id;
+                }
+            
+				$data2  = array(
+					'product' => $productid,
+					'category' => $categoryid,
+				);
+				$queryproductimage=$this->db->insert( 'productcategory', $data2 );
+			}
         }
 		if(!$query)
 			return  0;

@@ -411,22 +411,22 @@ phonecatControllers.controller('cart',
         MainJson.totalcart().success(getsubtotal);
         //separating cart
         $scope.postcart = function () {
-                $scope.cart = MainJson.getcart();
-                $scope.id = $scope.cart[0].id;
-                $scope.name = $scope.cart[0].name;
-                $scope.price = $scope.cart[0].price;
-                $scope.quantity = $scope.cart[0].quantity;
-                for (var i = 1; i < $scope.cart.length; i++) {
-                    $scope.id += "," + $scope.cart[i].id;
-                    $scope.name += "," + $scope.cart[i].name;
-                    $scope.price += "," + $scope.cart[i].price;
-                    $scope.quantity += "," + $scope.cart[i].quantity;
-                }
-
-
+            $scope.cart = MainJson.getcart();
+            $scope.id = $scope.cart[0].id;
+            $scope.name = $scope.cart[0].name;
+            $scope.price = $scope.cart[0].price;
+            $scope.quantity = $scope.cart[0].quantity;
+            for (var i = 1; i < $scope.cart.length; i++) {
+                $scope.id += "," + $scope.cart[i].id;
+                $scope.name += "," + $scope.cart[i].name;
+                $scope.price += "," + $scope.cart[i].price;
+                $scope.quantity += "," + $scope.cart[i].quantity;
             }
-            //separating cart
-            //add to cart
+
+
+        }
+        //separating cart
+        //add to cart
         var getsubtotal = function (data, status) {
             $scope.subtotal = data;
         };
@@ -1598,24 +1598,23 @@ phonecatControllers.controller('category',
 
         $scope.products = [];
         $scope.productsheight = {};
-        $scope.shouldscroll=false;
+        $scope.shouldscroll = false;
         var categorysuccesspush = function (data, status) {
             console.log(data);
             for (var i = 0; i < data.queryresult.length; i++) {
                 $scope.products.push(data.queryresult[i]);
             }
-            if(data.lastpage<$scope.pageno)
-            {
-                $scope.shouldscroll=true;
+            if (data.lastpage < $scope.pageno) {
+                $scope.shouldscroll = true;
             }
-            
+
         }
 
         $scope.addMoreItems = function () {
             MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
             $scope.pageno = $scope.pageno + 1;
         };
-        
+
 
 
 
@@ -1624,7 +1623,7 @@ phonecatControllers.controller('category',
 
             new WOW().init();
 
-
+            $scope.addMoreItems();
             TemplateService.firsttimeloaded();
             $(".zoomContainer").remove();
             $(".pulseanimation").hover(function () {

@@ -8,7 +8,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.html">
 
-    <title>Lyla Loves Admin | Login</title>
+    <title>Magic Mirror Admin | Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -36,7 +36,7 @@
             <?php echo $alerterror;	?>
             </div>
             <?php } ?>
-        <h2 class="form-signin-heading">Lyla Loves Admin</h2>
+        <h2 class="form-signin-heading">Magic Mirror Admin</h2>
         <div class="login-wrap">
             <input type="text" class="form-control" placeholder="User ID" autofocus name="username">
             <input type="password" class="form-control" placeholder="Password" name="password">

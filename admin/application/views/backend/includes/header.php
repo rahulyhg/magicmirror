@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Lyla Loves Admin | <?php echo $title; ?></title>
+<title>Magic Mirror Admin | <?php echo $title; ?></title>
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap-reset.css'); ?>" rel="stylesheet">
     <!--external css-->
@@ -26,6 +26,7 @@
     <script src="<?php echo base_url('assets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js'); ?> "></script>
 	 <script src="<?php echo base_url('assets/js/sparkline-chart.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/easy-pie-chart.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/chintantable.js'); ?>"></script>
 <script>
 $(document).ready(function(){
 		$('.datetime').datepicker({
@@ -73,7 +74,7 @@ $(document).ready(function(){
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="#" class="logo">Lyla Loves</a>
+            <a href="#" class="logo">Magic Mirror</a>
             <!--logo end-->
             <div class="top-nav ">
                 <!--search & user info start-->

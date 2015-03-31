@@ -3119,27 +3119,27 @@ class Site extends CI_Controller
         $access = array("1");
 		$this->checkaccess($access);
         
-//        $config['upload_path'] = './uploads/';
-//        $config['allowed_types'] = '*';
-//        $this->load->library('upload', $config);
-//        $filename="file";
-//        $file="";
-//        if (  $this->upload->do_upload($filename))
-//        {
-//            $uploaddata = $this->upload->data();
-//            $file=$uploaddata['file_name'];
-//            $filepath=$uploaddata['file_path'];
-//        }
-//        $fullfilepath=$filepath."".$file;
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = '*';
+        $this->load->library('upload', $config);
+        $filename="file";
+        $file="";
+        if (  $this->upload->do_upload($filename))
+        {
+            $uploaddata = $this->upload->data();
+            $file=$uploaddata['file_name'];
+            $filepath=$uploaddata['file_path'];
+        }
+        $fullfilepath=$filepath."".$file;
         //"http://storage.googleapis.com/lylalovescsv/product.csv"
         
-		$this->form_validation->set_rules('url','url','trim');
-        $path=$this->input->get_post('url');
+//		$this->form_validation->set_rules('url','url','trim');
+//        $path=$this->input->get_post('url');
 //        $fullfilepath=file_get_contents($path); 
-        $file = $this->csvreader->parse_file($path);
+//        $file = $this->csvreader->parse_file($fullfilepath);
 //        print_r($file);
         
-//        $file = $this->csvreader->parse_file($fullfilepath);
+        $file = $this->csvreader->parse_file($fullfilepath);
         $id1=$this->product_model->createbycsv($file);
 //        echo $id1;
         if($id1==0)
@@ -3147,9 +3147,237 @@ class Site extends CI_Controller
 		else
 		$data['alertsuccess']="products Uploaded Successfully.";
         
-        $data['redirect']="site/viewproduct";
-        $this->load->view("redirect",$data);
+//        $data['redirect']="site/viewproduct";
+//        $this->load->view("redirect",$data);
     }
    
+    function uploadproductcsvsubmitw()
+	{
+        $access = array("1");
+		$this->checkaccess($access);
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = '*';
+        $this->load->library('upload', $config);
+        $filename="file";
+        $file="";
+        if (  $this->upload->do_upload($filename))
+        {
+            $uploaddata = $this->upload->data();
+            $file=$uploaddata['file_name'];
+            $filepath=$uploaddata['file_path'];
+        }
+        $fullfilepath=$filepath."".$file;
+        $file = $this->csvreader->parse_file($fullfilepath);
+        $category=$this->input->get_post('category');
+        $id1=$this->listing_model->createbycsv($file,$category);
+//        echo $id1;
+        
+        if($id1==0)
+        $data['alerterror']="New listings could not be Uploaded.";
+		else
+		$data['alertsuccess']="listings Uploaded Successfully.";
+        
+        $data['redirect']="site/viewlisting";
+        $this->load->view("redirect",$data);
+    }
+    
+    //productimage
+    
+    function viewproductimage()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+        $productid=$this->input->get('id');
+		$data['before']=$this->product_model->beforeeditproduct($productid);
+		$data['table']=$this->productimage_model->viewproductimagebyproduct($productid);
+		$data['page']='viewproductimage';
+		$data['page2']='block/productblock';
+        $data['title']='View product Image';
+		$this->load->view('templatewith2',$data);
+	}
+    
+    
+    
+    public function createproductimage()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+		$data[ 'page' ] = 'createproductimage';
+		$data[ 'title' ] = 'Create productimage';
+		$data[ 'productid' ] = $this->input->get('id');
+        $data['isdefault']=$this->productimage_model->getisdefaultdropdown();
+		$this->load->view( 'template', $data );	
+	}
+    function createproductimagesubmit()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+		$this->form_validation->set_rules('product','product','trim|required');
+		$this->form_validation->set_rules('order','order','trim');
+		$this->form_validation->set_rules('isdefault','isdefault','trim');
+
+		if($this->form_validation->run() == FALSE)	
+		{
+            
+			$data['alerterror'] = validation_errors();
+			$data[ 'page' ] = 'createproductimage';
+            $data[ 'title' ] = 'Create productimage';
+            $data[ 'productid' ] = $this->input->get_post('id');
+            $data['isdefault']=$this->productimage_model->getisdefaultdropdown();
+//            $data['product']=$this->productimage_model->getproductdropdown();
+            $this->load->view( 'template', $data );	
+		}
+		else
+		{
+			$product=$this->input->post('product');
+			$order=$this->input->post('order');
+			$isdefault=$this->input->post('isdefault');
+           
+            $config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$this->load->library('upload', $config);
+			$filename="image";
+			$image="";
+			if (  $this->upload->do_upload($filename))
+			{
+				$uploaddata = $this->upload->data();
+				$image=$uploaddata['file_name'];
+                
+                $config_r['source_image']   = './uploads/' . $uploaddata['file_name'];
+                $config_r['maintain_ratio'] = TRUE;
+                $config_t['create_thumb'] = FALSE;///add this
+                $config_r['width']   = 800;
+                $config_r['height'] = 800;
+                $config_r['quality']    = 100;
+                //end of configs
+
+                $this->load->library('image_lib', $config_r); 
+                $this->image_lib->initialize($config_r);
+                if(!$this->image_lib->resize())
+                {
+                    echo "Failed." . $this->image_lib->display_errors();
+                }  
+                else
+                {
+                    $image=$this->image_lib->dest_image;
+                }
+                
+			}
+            
+            
+            if($this->productimage_model->create($product,$image,$order,$isdefault)==0)
+               $data['alerterror']="New productimage could not be created.";
+            else
+               $data['alertsuccess']="productimage created Successfully.";
+			
+			$data['redirect']="site/viewproductimage?id=".$product;
+			$this->load->view("redirect2",$data);
+		}
+	}
+    
+    function editproductimage()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+        $productid=$this->input->get('id');
+        $data['productid']=$productid;
+        $productimageid=$this->input->get('productimageid');
+        $data['isdefault']=$this->productimage_model->getisdefaultdropdown();
+		$data['before']=$this->productimage_model->beforeedit($this->input->get('productimageid'));
+        $data['product']=$this->productimage_model->getproductdropdown();
+		$data['page']='editproductimage';
+		$data['title']='Edit productimage';
+		$this->load->view('template',$data);
+	}
+	function editproductimagesubmit()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+        
+		$this->form_validation->set_rules('product','product','trim|required');
+		$this->form_validation->set_rules('order','order','trim');
+		$this->form_validation->set_rules('isdefault','isdefault','trim');
+        
+		if($this->form_validation->run() == FALSE)	
+		{
+			$data['alerterror'] = validation_errors();
+            $productid=$this->input->post('product');
+            $productimageid=$this->input->post('productimageid');
+            $data['productid']=$productid;
+            $data['isdefault']=$this->productimage_model->getisdefaultdropdown();
+			$data['before']=$this->productimage_model->beforeeditproduct($this->input->post('productimageid'));
+            $data['isdefault']=$this->productimage_model->getisdefaultdropdown();
+//			$data['page2']='block/eventblock';
+			$data['page']='editproductimage';
+			$data['title']='Edit productimage';
+			$this->load->view('template',$data);
+		}
+		else
+		{
+            
+			$id=$this->input->post('productimageid');
+            $product=$this->input->post('product');
+            $order=$this->input->post('order');
+            $isdefault=$this->input->post('isdefault');
+            
+            $config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$this->load->library('upload', $config);
+			$filename="image";
+			$image="";
+			if (  $this->upload->do_upload($filename))
+			{
+				$uploaddata = $this->upload->data();
+				$image=$uploaddata['file_name'];
+                
+                $config_r['source_image']   = './uploads/' . $uploaddata['file_name'];
+                $config_r['maintain_ratio'] = TRUE;
+                $config_t['create_thumb'] = FALSE;///add this
+                $config_r['width']   = 800;
+                $config_r['height'] = 800;
+                $config_r['quality']    = 100;
+                //end of configs
+
+                $this->load->library('image_lib', $config_r); 
+                $this->image_lib->initialize($config_r);
+                if(!$this->image_lib->resize())
+                {
+                    echo "Failed." . $this->image_lib->display_errors();
+                }  
+                else
+                {
+                    $image=$this->image_lib->dest_image;
+                }
+                
+			}
+            if($image=="")
+            {
+                $image=$this->productimage_model->getproductimagebyid($id);
+                $image=$image->image;
+            }
+            
+			if($this->productimage_model->edit($id,$product,$image,$order,$isdefault)==0)
+			$data['alerterror']="productimage Editing was unsuccesful";
+			else
+			$data['alertsuccess']="productimage edited Successfully.";
+			
+			$data['redirect']="site/viewproductimage?id=".$product;
+			$this->load->view("redirect2",$data);
+			
+		}
+	}
+    
+	function deleteproductimage()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+        $productid=$this->input->get('id');
+        $productimageid=$this->input->get('productimageid');
+		$this->productimage_model->deleteproductimage($this->input->get('productimageid'));
+		$data['alertsuccess']="productimage Deleted Successfully";
+		$data['redirect']="site/viewproductimage?id=".$productid;
+		$this->load->view("redirect2",$data);
+	}
+    
 }
 ?>
