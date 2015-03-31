@@ -77,8 +77,8 @@ $db['testing']['stricton'] = FALSE;
 // Production (App Engine Cloud SQL) DB Settings
 $db['production']['hostname'] = 'localhost';
 $db['production']['username'] = 'root';
-$db['production']['password'] = 'chintan123';
-$db['production']['database'] = 'lylaadmin';
+$db['production']['password'] = '';
+$db['production']['database'] = 'website';
 $db['production']['dbdriver'] = 'mysqli';
 $db['production']['pconnect'] = FALSE;
 $db['production']['dbprefix'] = '';
@@ -89,7 +89,7 @@ $db['production']['autoinit'] = FALSE;
 $db['production']['char_set'] = 'utf8';
 $db['production']['dbcollat'] = 'utf8_general_ci';
 $db['production']['cachedir'] = ”;
-$db['production']['socket'] = '/cloudsql/lylalovescouk:admin';
+$db['production']['socket'] = '/cloudsql/magicmirrornew:site';
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
