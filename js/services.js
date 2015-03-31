@@ -1,5 +1,5 @@
-var adminurl = 'http://magicmirrornew.appspot.com/admin/index.php/json/';
-var adminurl2 = 'http://magicmirrornew.appspot.com/admin/index.php/json/';
+var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
+var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
 
 var conversionrate = [{
     id: "1",
