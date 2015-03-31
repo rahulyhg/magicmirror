@@ -1606,31 +1606,29 @@ phonecatControllers.controller('category',
             }
             if (data.lastpage > $scope.pageno) {
                 $scope.pageno = $scope.pageno + 1;
-            }
-            else
-            {
+            } else {
                 $scope.shouldscroll = true;
             }
         }
-        var oldpage=0;
+        var oldpage = 0;
         $scope.addMoreItems = function () {
-            if(oldpage!=$scope.pageno)
-            {
-                oldpage=$scope.pageno;
+            console.log("ADD MORE: "+oldpage);
+            if (oldpage != $scope.pageno) {
+                oldpage = $scope.pageno;
                 MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
             }
-            
+
         };
 
 
 
-
+        $scope.addMoreItems();
 
         $scope.$on('$viewContentLoaded', function () {
 
-            new WOW().init();
-
             $scope.addMoreItems();
+
+
             TemplateService.firsttimeloaded();
             $(".zoomContainer").remove();
             $(".pulseanimation").hover(function () {
