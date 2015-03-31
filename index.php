@@ -102,7 +102,7 @@
     <script src="lib/range/angular.rangeSlider.js "></script>
     <script src="lib/js/ng-infinite-scroll.min.js "></script>
     <script src="lib/js/jstorage.js "></script>
-    <script src="https://checkout.stripe.com/checkout.js "></script>
+<!--    <script src="https://checkout.stripe.com/checkout.js "></script>-->
     <script src="https://maps.googleapis.com/maps/api/js "></script>
 </head>
 
