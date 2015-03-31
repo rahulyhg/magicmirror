@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','session','form_validation','cart','csvreader','MY_Session');
+$autoload['libraries'] = array('database','session','form_validation','cart','csvreader','MY_Session','chintantable');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('user_model','category_model','wishlist_model','cart_model','product_model','order_model','page_model','slider_model','banner_model','celebcorner_model','bloggerscorner_model','navigation_model','currency_model','paymentgateway_model','discountcoupon_model','newsletter_model','pickofweak_model');
+$autoload['model'] = array('user_model','category_model','wishlist_model','cart_model','product_model','order_model','page_model','slider_model','banner_model','celebcorner_model','bloggerscorner_model','navigation_model','currency_model','paymentgateway_model','discountcoupon_model','newsletter_model','pickofweak_model','productimage_model');
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */
