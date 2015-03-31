@@ -52,16 +52,16 @@ if(isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Goo
 }
 else
 {
-  	$active_group = 'testing';
+  	$active_group = 'production';
 }
 
 $active_record = TRUE;
 
 // Testing (local) DB settings
-$db['testing']['hostname'] = '173.194.110.226';
+$db['testing']['hostname'] = '2001:4860:4864:1:97e3:e270:dc7c:9778';
 $db['testing']['username'] = 'root';
 $db['testing']['password'] = 'chintan123';
-$db['testing']['database'] = 'lylaadmin';
+$db['testing']['database'] = 'website';
 $db['testing']['dbdriver'] = 'mysql';
 $db['testing']['dbprefix'] = '';
 $db['testing']['pconnect'] = TRUE;
@@ -77,7 +77,7 @@ $db['testing']['stricton'] = FALSE;
 // Production (App Engine Cloud SQL) DB Settings
 $db['production']['hostname'] = 'localhost';
 $db['production']['username'] = 'root';
-$db['production']['password'] = '';
+$db['production']['password'] = 'chintan123';
 $db['production']['database'] = 'website';
 $db['production']['dbdriver'] = 'mysqli';
 $db['production']['pconnect'] = FALSE;
@@ -88,7 +88,7 @@ $db['production']['cache_on'] = FALSE;
 $db['production']['autoinit'] = FALSE;
 $db['production']['char_set'] = 'utf8';
 $db['production']['dbcollat'] = 'utf8_general_ci';
-$db['production']['cachedir'] = ”;
+$db['production']['cachedir'] = '';
 $db['production']['socket'] = '/cloudsql/magicmirrornew:site';
 
 /* End of file database.php */
