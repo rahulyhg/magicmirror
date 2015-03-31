@@ -1577,7 +1577,7 @@ phonecatControllers.controller('category',
             $scope.filter = {
                 color: "",
                 pricemin: 0,
-                pricemax: 230000
+                pricemax: 23000000
             };
             MainJson.setfilter($scope.filter);
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccess);
@@ -1604,15 +1604,22 @@ phonecatControllers.controller('category',
             for (var i = 0; i < data.queryresult.length; i++) {
                 $scope.products.push(data.queryresult[i]);
             }
-            if (data.lastpage < $scope.pageno) {
+            if (data.lastpage > $scope.pageno) {
+                $scope.pageno = $scope.pageno + 1;
+            }
+            else
+            {
                 $scope.shouldscroll = true;
             }
-
         }
-
+        var oldpage=0;
         $scope.addMoreItems = function () {
-            MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
-            $scope.pageno = $scope.pageno + 1;
+            if(oldpage!=$scope.pageno)
+            {
+                oldpage=$scope.pageno;
+                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
+            }
+            
         };
 
 
