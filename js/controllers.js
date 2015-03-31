@@ -1626,22 +1626,8 @@ phonecatControllers.controller('category',
 
         $scope.$on('$viewContentLoaded', function () {
 
-            $scope.addMoreItems();
+           
 
-
-            TemplateService.firsttimeloaded();
-            $(".zoomContainer").remove();
-            $(".pulseanimation").hover(function () {
-                $(this).addClass("animated pulse");
-            }, function () {
-                $(this).removeClass("animated pulse");
-            });
-
-            $(".tadaanimation").hover(function () {
-                $(this).addClass("animated tada");
-            }, function () {
-                $(this).removeClass("animated tada");
-            });
         });
     });
 
