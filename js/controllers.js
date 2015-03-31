@@ -1598,63 +1598,24 @@ phonecatControllers.controller('category',
 
         $scope.products = [];
         $scope.productsheight = {};
-
+        $scope.shouldscroll=false;
         var categorysuccesspush = function (data, status) {
             console.log(data);
             for (var i = 0; i < data.queryresult.length; i++) {
                 $scope.products.push(data.queryresult[i]);
             }
-            //            $scope.addMoreItems();
+            if(data.lastpage<$scope.pageno)
+            {
+                $scope.shouldscroll=true;
+            }
+            
         }
 
         $scope.addMoreItems = function () {
-            //            console.log("More Products Added " + $scope.products.length);
-            //            var first = $scope.products.length;
-            //            var addition = 12;
-            //            var sum = first + addition;
-            //            if (sum > $scope.productlist.length) {
-            //                sum = $scope.productlist.length;
-            //            }
-            //            for (var i = first; i < sum; i++) {
-            //                $scope.products.push($scope.productlist[i]);
-            //            }
-
-            console.log("loading.....");
-            console.log($scope.products.length);
-            console.log($scope.totallength);
-
-
-            //            if($scope.check == 0){
-            if ($scope.products.length <= $scope.totallength) {
-                //                    if($scope.products.length == $scope.totallength)
-                //                    {
-                //                        $scope.check = 1;
-                //                    }
-                $scope.pageno = $scope.pageno + 1;
-                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
-            }
-            //            }
-            //            $scope.productsheight.height = ($scope.products.length / 4) * 430 + "px";
+            MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
+            $scope.pageno = $scope.pageno + 1;
         };
-        var categorysuccess = function (data, status) {
-            console.log(data);
-            $scope.products = data.queryresult;
-            $scope.totallength = data.totalvalues;
-            console.log("first load");
-            console.log($scope.totallength);
-            //            $scope.productsheight = {};
-            //            $scope.category = data.category;
-            //            $scope.breadcrumbs = data.breadcrumbs;
-            //            $scope.subcategory = data.subcategory;
-            //            $scope.currentcategory = data.currentcategory;
-            //            $scope.productlist = data.product;
-            //            $location.hash($scope.category.name.replace(/ /g, "_"));
-            //            $location.replace();
-            //            console.log(data);
-            //            console.log(data.product);
-            //            $scope.addMoreItems();
-        };
-        MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccess);
+        
 
 
 
