@@ -136,16 +136,12 @@ firstapp.config(['$routeProvider',
 
 firstapp.filter('imagepath', function () {
     return function (input) {
-        if (input) {
-            return "http://wohlig.co.in/admin/uploads/" + input.trim();
-        } else {
-            return "http://wohlig.co.in/admin/uploads/" + input;
-        }
+        return "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/"+input;
     };
 });
 firstapp.filter('imagepath1', function () {
     return function (input) {
-        return "http://wohlig.co.in/admin/uploads/" + input.trim();
+        return "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/"+input;
 
     };
 });
@@ -156,7 +152,7 @@ firstapp.filter('imagepath2', function () {
 });
 firstapp.filter('imagepathbig', function () {
     return function (input) {
-        return "http://wohlig.co.in/admin/uploads/" + input.trim();
+        return "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/"+input;
     };
 });
 
