@@ -38,7 +38,7 @@
         };
 
         if (isMobile.any()) {
-            window.location="http://mobile.magicmirror.in"+window.location.hash;
+           // window.location="http://magicmirrormobile.appspot.com/"+window.location.hash;
         }
     </script>
     <!--
