@@ -10,7 +10,6 @@
         var hostname = window.location.hostname;
         if (hostname == "lylaloves.co.uk") {
             console.log(hostname);
-            //window.location.replace("http://www.lylaloves.co.uk/");
         } else {
             console.log("other " + hostname);
         }
@@ -38,7 +37,7 @@
         };
 
         if (isMobile.any()) {
-           // window.location="http://magicmirrormobile.appspot.com/"+window.location.hash;
+            window.location="http://mobile.magicmirror.in/"+window.location.hash;
         }
     </script>
     <!--
