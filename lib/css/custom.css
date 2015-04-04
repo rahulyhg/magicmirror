@@ -169,6 +169,15 @@ a.btn.btn-primary.fb-login {
     background: #3c5a98;
 }
 
+.proprice.proprice2 h5 {
+    text-align: center;
+    padding-top: 10px;
+    margin: -3px;
+    float: none;
+    color: #838383;
+    font-size: 20px;
+}
+
 a.btn.btn-primary.g-login:hover {
     background: #dd4d3b;
 }
@@ -476,6 +485,7 @@ li.welcome {
     text-transform: uppercase;
     padding: 20px 7px;
     background: #fff;
+    color: #838383;
 }
 
 .catogory span {
@@ -483,7 +493,7 @@ li.welcome {
 }
 
 .catogory span:before {
-    border-top: 1px solid #060D20;
+    border-top: 1px solid #838383;
     content: "";
     margin: 0 auto;
     position: absolute;
