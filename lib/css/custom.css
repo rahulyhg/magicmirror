@@ -1288,6 +1288,13 @@ textarea.input-widths {
     padding: 0;
 }
 
+.filters {
+    position: absolute;
+    z-index: 99999;
+    background: #fff;
+    top: 30px;
+}
+
 .g-login,
 .fb-login,
 .normal-login {
@@ -1302,6 +1309,14 @@ textarea.input-widths {
 
 .prd-code h6 {
     font-size: 100%;
+}
+
+.sortby.sorting {
+    position: absolute;
+    z-index: 99999;
+    background: #fff;
+    top: 30px;
+    right: 0px;
 }
 
 .prd-code {
