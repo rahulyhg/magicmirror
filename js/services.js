@@ -1,7 +1,7 @@
-//var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
-//var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
-var adminurl = 'http://localhost/admin/index.php/json/';
-var adminurl2 = 'http://localhost/admin/index.php/json/';
+var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
+var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
+//var adminurl = 'http://localhost/admin/index.php/json/';
+//var adminurl2 = 'http://localhost/admin/index.php/json/';
 
 var conversionrate = [{
     id: "1",
@@ -63,44 +63,43 @@ var showlocationdata = function (data, status) {
 };
 
 var ongettingdata = function (data) {
-        console.log("in location success");
-        console.log(data);
+    console.log("in location success");
+    console.log(data);
+    country = data.country_code;
+
+    if (data) {
         country = data.country_code;
 
-            if (data) {
-                country = data.country_code;
 
 
-
-                var countries = ['AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
+        var countries = ['AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
   'DK', 'EE', 'ES', 'FO', 'FI', 'FR', 'GE', 'GI', 'GR', 'HU', 'HR',
   'IE', 'IS', 'IT', 'LT', 'LU', 'LV', 'MC', 'MK', 'MT', 'NO', 'NL', 'PL',
   'PT', 'RO', 'RU', 'SE', 'SI', 'SK', 'SM', 'TR', 'UA', 'VA'];
 
-                if (countries.indexOf(country) >= 0) {
-                    country = "EUROPE";
-                }
-                console.log("Country ////////////////////////");
-                //case1 : short name: GB
-                console.log(country);
-                if (country == "GB") {
-                    currency = "GBP";
-                } else if (country == "EUROPE") {
-                    currency = "EURO";
-                } else {
-                    currency = "USD";
-                }
-                console.log("Currency: " + currency);
-                if(currency=="USD" || currency=="EURO")
-                {
-                    console.log("Show Popup");
-
-                    //POPup to be here
-                }
-
-            }
+        if (countries.indexOf(country) >= 0) {
+            country = "EUROPE";
         }
-        $.holdReady(false);
+        console.log("Country ////////////////////////");
+        //case1 : short name: GB
+        console.log(country);
+        if (country == "GB") {
+            currency = "GBP";
+        } else if (country == "EUROPE") {
+            currency = "EURO";
+        } else {
+            currency = "USD";
+        }
+        console.log("Currency: " + currency);
+        if (currency == "USD" || currency == "EURO") {
+            console.log("Show Popup");
+
+            //POPup to be here
+        }
+
+    }
+}
+$.holdReady(false);
 
 
 
@@ -277,9 +276,9 @@ service.factory('MainJson', function ($http, TemplateService) {
             });
         },
         loginuser: function (email, password) {
-//            return $http.post(adminurl + 'loginuser?email=' + email + '&password=' + password, {}, {
-//                withCredentials: true
-//            });
+            //            return $http.post(adminurl + 'loginuser?email=' + email + '&password=' + password, {}, {
+            //                withCredentials: true
+            //            });
             return $http({
                 url: adminurl + "loginuser",
                 method: "POST",
@@ -307,7 +306,7 @@ service.factory('MainJson', function ($http, TemplateService) {
         getproductbycategory: function (category, pageno, search) {
             return $http.get(adminurl + 'getproductbycategory', {
                 params: {
-                    pageno : pageno,
+                    pageno: pageno,
                     category: category,
                     color: filters.color,
                     price1: filters.pricemin,
