@@ -738,7 +738,8 @@ li.bag a {
 .productdetails {
     position: fixed;
     right: 10px;
-    background: rgba(226, 226, 226, 0.29);
+    /* background: rgba(226, 226, 226, 0.29); */
+    
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -755,17 +756,21 @@ li.bag a {
 .productheader h5 {
     font-weight: 500;
     font-size: 140%;
+    border-bottom: 1px solid #DADADA;
+    color: #ED3278;
 }
 
 .productheader h4 {
     font-weight: 500;
-    font-size: 20px;
-    color: rgb(0, 152, 70);
+    font-size: 18px;
+    color: rgb(77, 83, 85);
 }
 
 .productdesc {
     border-bottom: 1px solid #DADADA;
     margin-bottom: 10px;
+    font-size: 130%;
+    padding-bottom: 10px;
 }
 
 .quantitybox {
@@ -1286,4 +1291,12 @@ textarea.input-widths {
 .fb-login i,
 .normal-login i {
     padding-right: 7px;
+}
+
+.prd-code h6 {
+    font-size: 130%;
+}
+
+.prd-code {
+    padding-bottom: 10px;
 }

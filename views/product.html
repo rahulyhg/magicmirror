@@ -19,16 +19,20 @@
                 <div class="productdetails pull-right">
                     <div class="productheader">
                         <h5>{{product.name}}</h5>
-                        <h4>{{rate|convertprice}}</h4>
-                        <!--h4 class="discountprice">£ 400</h4-->
-                        <h6 ng-show="product.quantity<=0">OUT OF STOCK</h6>
-                        <h6 ng-show="product.quantity>0">IN STOCK</h6>
-                        <!--h6>Available {{product.quantity}} pcs</h6-->
-                    </div>
-                    <div class="prodcutcontent">
                         <div class="productdesc">
                             {{product.description}}
                         </div>
+                        <div class="prd-code">
+                            <h6>Product Code:{{product.sku}}</h6>
+                        </div>
+                        <h4 ng-show="product.quantity<=0">Avability:Out Of Stock</h4>
+                        <h4 ng-show="product.quantity>0">Avability:In Stock</h4>
+                        <h4>{{rate|convertprice}}</h4>
+                        <!--h4 class="discountprice">£ 400</h4-->
+
+                        <!--h6>Available {{product.quantity}} pcs</h6-->
+                    </div>
+                    <div class="prodcutcontent">
                         <span ng-show="product.quantity>0">
                         <label class="hidden">Qty :</label>
                         <input type="text" value="1" class="hidden quantitybox" ng-model="addquantity">
