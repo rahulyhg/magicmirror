@@ -13,12 +13,16 @@
                 <div class="col-xs-9">
                     <div class="login-tab pull-right">
                         <ul>
-                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a href="#/profile">Welcome, {{alldata.email}} </a></li>
-                            <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a></li>
-                            
-                            <li class="welcome" ng-if="loginlogouttext=='Login'"><a href="#/Login">Login </a></li>
-                            <li><a href="#/Login" ng-if="loginlogouttext=='Login'">New User</a></li>
-                            
+                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a href="#/profile">Welcome, {{alldata.email}} </a>
+                            </li>
+                            <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a>
+                            </li>
+
+                            <li class="welcome" ng-if="loginlogouttext=='Login'"><a href="#/Login">Login </a>
+                            </li>
+                            <li><a href="#/Login" ng-if="loginlogouttext=='Login'">New User</a>
+                            </li>
+
                             <li class="wish-list"><a href="#/wishlist"><i class="fa fa-star"></i>Wish List</a>
                             </li>
                             <li><a href="#"><i class="fa fa-gift"></i>Gift Card</a>
@@ -42,13 +46,13 @@
             <div class="col-xs-6">
                 <div id="imaginary_container">
                     <div class="input-group stylish-input-group pull-right">
-                    <form ng-submit="searchclick(search)">
+                        <form ng-submit="searchclick(search)">
+                            <span class="input-group-addon">
                         <input type="text" class="form-control" ng-model="search" placeholder="">
-                        <span class="input-group-addon">
                         <button type="submit">
                             <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+                            </button>
+                            </span>
                         </form>
                     </div>
                 </div>

@@ -1052,7 +1052,7 @@ ul.footer-ul {
 }
 
 .footer-pad {
-    padding-top: 30px;
+    padding-top: 0px;
 }
 
 .ftr_menu_hd {
@@ -1236,7 +1236,7 @@ a.Subscribe {
 }
 
 .cart {
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 25px;
 }
 
@@ -1275,6 +1275,12 @@ textarea.input-widths {
     position: absolute;
     bottom: 20px;
     width: 100%;
+}
+
+.making h2 {
+    text-align: center;
+    padding: 10%;
+    font-size: 36px;
 }
 
 .cls-magic .col-xs-4 {

@@ -5,7 +5,7 @@ phonecatControllers.controller('home',
         $scope.template = TemplateService;
         TemplateService.changetitle("Home");
         $scope.template = TemplateService;
-    console.log($scope.template);
+        console.log($scope.template);
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/headerhome.html";
         TemplateService.navigation = "views/navigationhome.html";
@@ -227,9 +227,9 @@ phonecatControllers.controller('home',
             console.log("Prev Clicked");
             $scope.showslideset1 = 0;
         };
-        
+
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -307,7 +307,7 @@ phonecatControllers.controller('cart',
         $scope.cart = [];
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -534,7 +534,7 @@ phonecatControllers.controller('login',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -608,7 +608,7 @@ phonecatControllers.controller('loginwishlist',
         //authenticate
         $scope.alert2 = "Login or signup for wishlist";
 
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -681,7 +681,34 @@ phonecatControllers.controller('xoxo',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+
+    });
+phonecatControllers.controller('comingsoon',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Login");
+        $scope.homeactive = "active";
+        TemplateService.content = "views/comingsoon.html";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -709,7 +736,7 @@ phonecatControllers.controller('contact',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -764,7 +791,7 @@ phonecatControllers.controller('wholesaler',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -806,7 +833,7 @@ phonecatControllers.controller('profile',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -814,7 +841,7 @@ phonecatControllers.controller('profile',
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
-            }else{
+            } else {
                 $location.url("/home");
             }
         };
@@ -835,7 +862,7 @@ phonecatControllers.controller('lylaloves',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -876,7 +903,7 @@ phonecatControllers.controller('thankyou',
         $scope.loginlogouttext = "Login";
         MainJson.destroycart().success(MainJson.gettotalproductsincart);
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -898,7 +925,7 @@ phonecatControllers.controller('newsletter',
         $scope.msgg = "Message here..........";
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -942,7 +969,7 @@ phonecatControllers.controller('badge',
         $scope.msgg = "Message here..........";
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -972,7 +999,7 @@ phonecatControllers.controller('search',
         $scope.msgg = "Message here..........";
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1017,7 +1044,7 @@ phonecatControllers.controller('searchpage',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1056,7 +1083,7 @@ phonecatControllers.controller('lookbook',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1366,7 +1393,7 @@ phonecatControllers.controller('checkout',
         }
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1665,7 +1692,7 @@ phonecatControllers.controller('category',
 
 
         //  SEARCH PRODUCT
-        $scope.searchclick = function (search){
+        $scope.searchclick = function (search) {
             console.log(search);
             $scope.search = search;
             $scope.products = [];
@@ -1673,7 +1700,7 @@ phonecatControllers.controller('category',
         }
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1741,7 +1768,7 @@ phonecatControllers.controller('product',
 
 
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1790,7 +1817,8 @@ phonecatControllers.controller('product',
             $scope.product.quantity = parseInt($scope.product.quantity);
             $scope.breadcrumbs = data.breadcrumbs;
             $scope.productimage = data.productimage;
-            $scope.relatedproduct = data.relatedproduct;console.log(data);
+            $scope.relatedproduct = data.relatedproduct;
+            console.log(data);
             //            $location.hash($scope.product.name.replace(/ /g, "_"));
             //            $location.replace();
         };
@@ -1848,7 +1876,7 @@ phonecatControllers.controller('delivery',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1875,7 +1903,7 @@ phonecatControllers.controller('wishlist',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1910,7 +1938,7 @@ phonecatControllers.controller('returns',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1937,7 +1965,7 @@ phonecatControllers.controller('conditions',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-    $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1964,7 +1992,7 @@ phonecatControllers.controller('faq',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -1991,7 +2019,7 @@ phonecatControllers.controller('policy',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -2018,7 +2046,7 @@ phonecatControllers.controller('sitemap',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -2045,7 +2073,7 @@ phonecatControllers.controller('celebrities',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -2071,7 +2099,7 @@ phonecatControllers.controller('feedback',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -2097,7 +2125,7 @@ phonecatControllers.controller('contactus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
@@ -2123,7 +2151,7 @@ phonecatControllers.controller('aboutus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function(){
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
