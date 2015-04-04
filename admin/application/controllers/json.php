@@ -505,7 +505,7 @@ class Json extends CI_Controller
             $orderorder="ASC";
         }
        
-        $data["message"]=$this->chintantable->query($pageno,$maxrow,$orderby,$orderorder,$search,$elements,"FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1","WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter AND (   `productcategory`.`category`=$category $where )");
+        $data["message"]=$this->chintantable->query($pageno,$maxrow,$orderby,$orderorder,$search,$elements,"FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1","WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter AND (   `productcategory`.`category`=$category $where )"," WHERE 1 ","GROUP BY `product`.`id`");
         
 		$this->load->view("json",$data);
 	} 
