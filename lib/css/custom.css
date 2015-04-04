@@ -1292,7 +1292,9 @@ textarea.input-widths {
     position: absolute;
     z-index: 99999;
     background: #fff;
-    top: 30px;
+    top: 25px;
+    left: 150px;
+    width: 75%;
 }
 
 .g-login,
