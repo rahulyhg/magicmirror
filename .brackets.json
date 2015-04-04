@@ -71,6 +71,16 @@
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/sparkline-chart.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/sliders.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/assets/js/platform.js",
-        "C:/xampp/htdocs/magicmirror/lib/js/wow.js"
+        "C:/xampp/htdocs/magicmirror/lib/js/wow.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/data.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/data.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/angular-animate.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/angular-resource.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/angular-route.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/angular.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/canvas-tools.src.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/image-zoom.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/image-zoom.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/isotope.js"
     ]
 }

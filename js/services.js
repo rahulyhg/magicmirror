@@ -1,5 +1,7 @@
-var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
-var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
+//var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
+//var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
+var adminurl = 'http://localhost/admin/index.php/json/';
+var adminurl2 = 'http://localhost/admin/index.php/json/';
 
 var conversionrate = [{
     id: "1",
@@ -275,9 +277,18 @@ service.factory('MainJson', function ($http, TemplateService) {
             });
         },
         loginuser: function (email, password) {
-            return $http.post(adminurl + 'loginuser?email=' + email + '&password=' + password, {}, {
-                withCredentials: true
-            });
+//            return $http.post(adminurl + 'loginuser?email=' + email + '&password=' + password, {}, {
+//                withCredentials: true
+//            });
+            return $http({
+                url: adminurl + "loginuser",
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    "email": email,
+                    "password": password
+                }
+            })
         },
         getnavigation: function () {
             return $http.post(adminurl + 'getnavigation', {}, {

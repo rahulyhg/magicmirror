@@ -13,12 +13,12 @@
                 <div class="col-xs-9">
                     <div class="login-tab pull-right">
                         <ul>
-<!--
-                            <li class="welcome"><a href="#">Welcome Guest Login</a>
-</li>
--->
-                            <li><a href="#/Login">New User</a>
-                            </li>
+                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a href="#/profile">Welcome, {{alldata.email}} </a></li>
+                            <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a></li>
+                            
+                            <li class="welcome" ng-if="loginlogouttext=='Login'"><a href="#/Login">Login </a></li>
+                            <li><a href="#/Login" ng-if="loginlogouttext=='Login'">New User</a></li>
+                            
                             <li class="wish-list"><a href="#/wishlist"><i class="fa fa-star"></i>Wish List</a>
                             </li>
                             <li><a href="#"><i class="fa fa-gift"></i>Gift Card</a>

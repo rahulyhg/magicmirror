@@ -227,9 +227,13 @@ phonecatControllers.controller('home',
             $scope.showslideset1 = 0;
         };
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
-                $scope.alldate = data;
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -299,9 +303,14 @@ phonecatControllers.controller('cart',
         $scope.cart = [];
         $scope.loginlogouttext = "Login";
         //authenticate
-
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
+            console.log(data);
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
                 $scope.uid = data.id;
             }
@@ -521,7 +530,10 @@ phonecatControllers.controller('login',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var cartt = function (data, status) {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         };
@@ -533,10 +545,12 @@ phonecatControllers.controller('login',
             }
         };
         var authenticate = function (data, status) {
+            console.log(data);
             MainJson.getusercart(data.id).success(cartdata);
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
-
+                $location.url("/home");
 
             }
         };
@@ -560,6 +574,7 @@ phonecatControllers.controller('login',
             MainJson.registeruser(register.firstname, register.lastname, register.email, register.password).success(getsignup);
         };
         var getlogin = function (data, status) {
+            console.log(data);
             if (data != "false") {
                 $scope.msg = "Login Successful";
                 $location.url("/home");
@@ -589,6 +604,10 @@ phonecatControllers.controller('loginwishlist',
         //authenticate
         $scope.alert2 = "Login or signup for wishlist";
 
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var cartt = function (data, status) {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         };
@@ -602,6 +621,7 @@ phonecatControllers.controller('loginwishlist',
         var authenticate = function (data, status) {
             MainJson.getusercart(data.id).success(cartdata);
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
 
 
@@ -657,6 +677,10 @@ phonecatControllers.controller('xoxo',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
@@ -681,6 +705,10 @@ phonecatControllers.controller('contact',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
@@ -732,6 +760,10 @@ phonecatControllers.controller('wholesaler',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
@@ -770,9 +802,16 @@ phonecatControllers.controller('profile',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
+            }else{
+                $location.url("/home");
             }
         };
         MainJson.authenticate().success(authenticate);
@@ -792,8 +831,13 @@ phonecatControllers.controller('lylaloves',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
             }
         };
@@ -828,8 +872,13 @@ phonecatControllers.controller('thankyou',
         $scope.loginlogouttext = "Login";
         MainJson.destroycart().success(MainJson.gettotalproductsincart);
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
             }
         };
@@ -845,6 +894,10 @@ phonecatControllers.controller('newsletter',
         $scope.msgg = "Message here..........";
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
@@ -885,6 +938,10 @@ phonecatControllers.controller('badge',
         $scope.msgg = "Message here..........";
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
@@ -911,6 +968,10 @@ phonecatControllers.controller('search',
         $scope.msgg = "Message here..........";
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
@@ -952,8 +1013,13 @@ phonecatControllers.controller('searchpage',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
             }
         };
@@ -986,8 +1052,13 @@ phonecatControllers.controller('lookbook',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
             }
         };
@@ -1291,6 +1362,10 @@ phonecatControllers.controller('checkout',
         }
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
@@ -1586,9 +1661,14 @@ phonecatControllers.controller('category',
 
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
                 $scope.accesslevel = data.accesslevel;
             }
@@ -1649,8 +1729,13 @@ phonecatControllers.controller('product',
 
 
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.accesslevel = data.accesslevel;
                 $scope.id = data.id;
                 $scope.loginlogouttext = data.email;
@@ -1751,8 +1836,13 @@ phonecatControllers.controller('delivery',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1773,13 +1863,17 @@ phonecatControllers.controller('wishlist',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var userwishlist = function (data, status) {
             $scope.find = data;
         };
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
+                $scope.alldata = data;
                 MainJson.showwishlist(data.id).success(userwishlist)
                 $scope.loginlogouttext = "Logout";
             } else {
@@ -1804,8 +1898,13 @@ phonecatControllers.controller('returns',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1826,8 +1925,13 @@ phonecatControllers.controller('conditions',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+    $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1848,8 +1952,13 @@ phonecatControllers.controller('faq',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1870,8 +1979,13 @@ phonecatControllers.controller('policy',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1892,8 +2006,13 @@ phonecatControllers.controller('sitemap',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1914,8 +2033,13 @@ phonecatControllers.controller('celebrities',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1935,8 +2059,13 @@ phonecatControllers.controller('feedback',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1956,8 +2085,13 @@ phonecatControllers.controller('contactus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
@@ -1977,8 +2111,13 @@ phonecatControllers.controller('aboutus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+        $scope.logout = function(){
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
         var authenticate = function (data, status) {
             if (data != "false") {
+                $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
             }
         };
