@@ -142,6 +142,28 @@ a.header-logo img {
     top: 17%;
     right: -16px;
 }
+.btnsoc {
+  font-size: 15px;
+  padding: 10px 0 0px;
+  color: #fff;
+  margin-top: 0;
+  width: 100%;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  text-align: center;
+  height: 45px;
+    margin-bottom: 10px;
+}
+.gogbtn {
+  margin: 15% 0 0;
+}
+.fbook {
+  background: #3c5a98 url(http://localhost/angular-powerforone/images/fbplus.png) no-repeat;
+}
+
+.gplus {
+  background: #dd4d3b url(http://localhost/angular-powerforone/images/gplus.png) no-repeat;
+}
 
 .about-cont:before {
     content: '';
