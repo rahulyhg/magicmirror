@@ -21,7 +21,7 @@
                     </li>
 
                     <li>
-                        <a class="" href="#/category/57">Store Locator</a>
+                        <a class="" href="#/contactus">Store Locator</a>
 
                     </li>
 
@@ -36,9 +36,11 @@
     <div class="bgrnd-nav cloned">
         <div class="container">
             <div class="navigation fadeInDown" skrollr class="row marginer">
-                <a href="/magicmirror">
-                    <img src="img/logo.png">
-                </a>
+                <div class="col-xs-3">
+                    <a href="/magicmirror" class="head-logo">
+                        <img src="img/logo.png" class="pull-right">
+                    </a>
+                </div>
                 <ul class="nav nav-pills mainmenu pull-right" ng-class="ishome">
 
                     <li>
@@ -56,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a class="" href="#/category/57">Store Locator</a>
+                        <a class="" href="#/contactus">Store Locator</a>
 
                     </li>
 
@@ -69,7 +71,7 @@
     </div>
 
     <script>
-        $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '500').removeClass('original').hide();
+        $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '99999').removeClass('original').hide();
 
         scrollIntervalID = setInterval(stickIt, 10);
 

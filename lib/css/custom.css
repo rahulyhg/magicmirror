@@ -7,8 +7,21 @@
 
 @font-face {
     font-family: 'futura';
-    src: url('futura.ttf');
-    font-weight: normal;
+    src: url('futura-light.woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('futura-book.woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('futura-bold.woff');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -17,14 +30,17 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+    font-family: 'futura'!important;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
 p,
 span {
     font-family: 'futura';
-}
-
-body {
-    font-family: 'RaspoutineClassic';
+    -webkit-font-smoothing: antialiased;
 }
 
 .header-bar {
@@ -32,7 +48,6 @@ body {
     height: 38px;
     position: relative;
 }
-
 
 .login-tab.pull-right {
     font-size: 13px;
@@ -58,6 +73,7 @@ img.slideset1 {
 a {
     cursor: pointer;
 }
+
 .social-iconfoot a i {
     color: #fff;
     padding: 20px 0px 15px 9px;
@@ -66,23 +82,23 @@ a {
 
 .bgrnd-nav.cloned ul li a {
     background: #fff;
+    padding: 0px 14px 0px 4px
 }
 
 .brand-img img {
     width: 100%;
 }
 
-
 .input-name {
     width: 90px;
     float: left;
     color: #c0c0c0;
 }
+
 .address b,
 .address1 b {
     color: #000;
 }
-
 
 .address-cont:before {
     content: '';
@@ -101,6 +117,14 @@ a {
     border-right: 1px solid #ececec;
     position: relative;
     height: 300px;
+}
+
+a.head-logo img {
+    padding: 9px 0;
+}
+
+a.header-logo img {
+    padding: 15px 0;
 }
 
 .about-cont:after {
@@ -134,9 +158,11 @@ a {
     cursor: pointer;
 }
 
+/*
 .conct {
-    padding: 40px 0;
+    padding: 10px 0;
 }
+*/
 
 .address-cont {
     border-right: 1px solid #ececec;
@@ -686,13 +712,13 @@ li.bag a {
 }
 
 .productheader h5 {
-    font-weight: 300;
-    font-size: 150%;
+    font-weight: 500;
+    font-size: 140%;
 }
 
 .productheader h4 {
-    font-weight: 300;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 20px;
     color: rgb(0, 152, 70);
 }
 
@@ -750,9 +776,19 @@ span.glyphicon.glyphicon-shopping-cart {
     visibility: hidden;
 }
 
+.bgrnd-nav.cloned a.head-logo img {
+    padding: 10px;
+    height: 65px;
+    vertical-align: middle;
+}
+
 .bgrnd-nav.cloned {
     background: #fff;
     border-bottom: 1px solid #000;
+    -webkit-transition: all 700ms ease;
+    -moz-transition: all 700ms ease;
+    -o-transition: all 700ms ease;
+    transition: all 700ms ease;
 }
 
 #comment {
@@ -760,7 +796,7 @@ span.glyphicon.glyphicon-shopping-cart {
 }
 
 .bgrnd-nav.cloned ul {
-    padding-top: 55px;
+    padding-top: 28px;
 }
 
 .bgrnd-nav.cloned ul.submenudown {
@@ -836,15 +872,14 @@ textarea.input-width {
     float: left;
     margin-bottom: 8px;
 }
-
+/*
 .cont-content {
     padding: 20px;
-    /*
     -webkit-box-shadow: 1px 10px 2px #888888;
- -moz-box-shadow: 1px 10px 2px #888888;
- box-shadow: 1px 10px 2px #888888;
-*/
+    -moz-box-shadow: 1px 10px 2px #888888;
+    box-shadow: 1px 10px 2px #888888;
 }
+*/
 
 .googlemaps {
     background: #c8d3d9;
@@ -939,7 +974,11 @@ div.megamenu.megamenu2 {
     background: rgba(255, 255, 255, 0.65);
     padding: 10px;
     margin: 0 auto;
-    top: 85px;
+    top: 47px;
+}
+
+.bgrnd-nav.cloned .navigation {
+    margin: 0px;
 }
 
 div.megamenu {
@@ -1129,7 +1168,7 @@ ul.sitemap-menu h5 {
 
 .get-in h2 {
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: 300;
     padding-top: 20px;
 }
 
@@ -1148,6 +1187,11 @@ a.Subscribe {
 
 .celebritycont2 {
     padding-bottom: 20px;
+}
+
+.cart {
+    padding-top: 20px;
+    padding-bottom: 25px;
 }
 
 .btn.feedback {
@@ -1170,4 +1214,9 @@ a.Subscribe {
 
 textarea.input-widths {
     height: 50px;
+}
+
+.breadcrumb {
+    padding: 9px 5px;
+    margin: 0;
 }

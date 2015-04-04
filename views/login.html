@@ -3,51 +3,52 @@
         <div class="contenttop">
             <div class="row">
                 <div class="col-xs-4">
-                    <span class="breadcrumb">
-                    Home / Login</a>
-                </span>
+                    <div class="breadcrumb">
+                        Home / Login</a>
+                    </div>
                     </span>
                 </div>
 
             </div>
 
-            <div class="container cart">
+            <div class="container">
+                <div class="cart">
+                    <h2 ng-show="alert2">{{alert2}}</h2>
 
-                <h2 ng-show="alert2">{{alert2}}</h2>
-
-                <div class="row">
-                    <div class="col-xs-5">
-                        <h4>Resgister</h4>
-                        <h5>{{msgr}}</h5>
-                        <p>
-                            <input type="text" class="form-control" ng-model="register.firstname" placeholder="First Name*" required>
-                        </p>
-                        <p>
-                            <input type="text" class="form-control" ng-model="register.lastname" placeholder="Last Name*" required>
-                        </p>
-                        <p>
-                            <input type="email" class="form-control" ng-model="register.email" placeholder="Email Address*" required>
-                        </p>
-                        <p>
-                            <input type="password" class="form-control" ng-model="register.password" placeholder="Password*" required>
-                        </p>
-                        <p>
-                            <input type="password" class="form-control" ng-model="confirmpassword" placeholder="Re-enter Password*" required>
-                        </p>
-                        <p><span>Required fields *</span><a class="btn btn-primary pull-right" ng-click="signup(register)" href="">Signup</a>
-                        </p>
-                    </div>
-                    <div class="col-xs-5 col-xs-offset-2">
-                        <h4>Login</h4>
-                        <h5>{{msg}}</h5>
-                        <p>
-                            <input type="email" class="form-control" ng-model="login.email" placeholder="Email Address">
-                        </p>
-                        <p>
-                            <input type="password" class="form-control" ng-model="login.password" placeholder="Password">
-                        </p>
-                        <p><span><a href="">Forgot password ?</a></span><a class="btn btn-primary pull-right" ng-click="userlogin(login)" href="">Login</a>
-                        </p>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <h4>Resgister</h4>
+                            <h5>{{msgr}}</h5>
+                            <p>
+                                <input type="text" class="form-control" ng-model="register.firstname" placeholder="First Name*" required>
+                            </p>
+                            <p>
+                                <input type="text" class="form-control" ng-model="register.lastname" placeholder="Last Name*" required>
+                            </p>
+                            <p>
+                                <input type="email" class="form-control" ng-model="register.email" placeholder="Email Address*" required>
+                            </p>
+                            <p>
+                                <input type="password" class="form-control" ng-model="register.password" placeholder="Password*" required>
+                            </p>
+                            <p>
+                                <input type="password" class="form-control" ng-model="confirmpassword" placeholder="Re-enter Password*" required>
+                            </p>
+                            <p><span>Required fields *</span><a class="btn btn-primary pull-right" ng-click="signup(register)" href="">Signup</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-2">
+                            <h4>Login</h4>
+                            <h5>{{msg}}</h5>
+                            <p>
+                                <input type="email" class="form-control" ng-model="login.email" placeholder="Email Address">
+                            </p>
+                            <p>
+                                <input type="password" class="form-control" ng-model="login.password" placeholder="Password">
+                            </p>
+                            <p><span><a href="">Forgot password ?</a></span><a class="btn btn-primary pull-right" ng-click="userlogin(login)" href="">Login</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

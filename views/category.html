@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xs-4">
                     <span class="breadcrumb">
-							Home / 
+							Home /
 							<span ng-repeat="br in breadcrumbs" ng-class="{'active':currentcategory == br.id}">
 								<a href="#/category/{{br.id}}">{{br.name}} <span ng-hide="{{$last}}">/</span>
                     </a>
@@ -57,4 +57,4 @@
         </div>
     </div>
 </div>
-<a class="gototop btn btn-default"  ng-click="gototop();"><span class="glyphicon glyphicon-chevron-up"></span></a>
+<a class="gototop btn btn-default" ng-click="gototop();"><span class="glyphicon glyphicon-chevron-up"></span></a>
