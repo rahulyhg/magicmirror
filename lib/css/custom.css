@@ -120,6 +120,7 @@ a {
     border-right: 1px solid #ececec;
     position: relative;
     height: 300px;
+    padding-left: 10px;
 }
 
 a.head-logo img {
@@ -1143,14 +1144,19 @@ ul.footer-ul {
 ul.nav.nav-pills.mainmenu li:last-child a {
     border-right: 0px;
 }
-
-.bgborder {
+/*
+ .bgborder {
     background-image: url('../../img/bgborder.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 57px;
+}
+*/
+
+.brand-cont.cont-design {
+    padding: 20px 0;
 }
 
 .mt20 {
