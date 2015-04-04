@@ -81,6 +81,8 @@
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/canvas-tools.src.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/image-zoom.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/image-zoom.min.js",
-        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/isotope.js"
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/isotope.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/canvas-tools.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/annotations.src.js"
     ]
 }

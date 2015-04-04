@@ -304,7 +304,7 @@ service.factory('MainJson', function ($http, TemplateService) {
                 withCredentials: true
             });
         },
-        getproductbycategory: function (category, pageno) {
+        getproductbycategory: function (category, pageno, search) {
             return $http.get(adminurl + 'getproductbycategory', {
                 params: {
                     pageno : pageno,
@@ -312,6 +312,7 @@ service.factory('MainJson', function ($http, TemplateService) {
                     color: filters.color,
                     price1: filters.pricemin,
                     price2: filters.pricemax,
+                    search: search
                 }
             }, {
                 withCredentials: true

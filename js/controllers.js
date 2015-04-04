@@ -226,6 +226,7 @@ phonecatControllers.controller('home',
             console.log("Prev Clicked");
             $scope.showslideset1 = 0;
         };
+        
         //authenticate
         $scope.logout = function(){
             MainJson.logout();
@@ -264,7 +265,9 @@ phonecatControllers.controller('home',
         //newsletter
         //cart badge
         var totalcart = function (data, status) {
+            console.log("cart data");
             $scope.badge = data;
+            console.log($scope.badge);
         };
         MainJson.gettotalcart().success(totalcart);
         //cart badge
@@ -1602,6 +1605,7 @@ phonecatControllers.controller('category',
         $scope.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;
+        $scope.search = "";
 
         //  MainJson.showcountry().success(getcountry);
         $scope.usercountry = "India";
@@ -1659,6 +1663,13 @@ phonecatControllers.controller('category',
         };
 
 
+        //  SEARCH PRODUCT
+        $scope.searchclick = function (search){
+            console.log(search);
+            $scope.search = search;
+            $scope.products = [];
+            MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno, $scope.search).success(categorysuccesspush);
+        }
 
         //authenticate
         $scope.logout = function(){
@@ -1696,7 +1707,7 @@ phonecatControllers.controller('category',
             console.log("ADD MORE: " + oldpage);
             if (oldpage != $scope.pageno) {
                 oldpage = $scope.pageno;
-                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno).success(categorysuccesspush);
+                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno, $scope.search).success(categorysuccesspush);
             }
 
         };
