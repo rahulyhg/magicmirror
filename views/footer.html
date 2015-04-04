@@ -67,8 +67,12 @@
                     <p>
                         Join our mailing list to receive updates
                     </p>
-                    <input type="text" placeholder="Enter Email" class="subscribe-email">
-                    <a class="Subscribe pull-right">Subscribe</a>
+                    <div ng-if="msgg==''">
+                    <input type="text" placeholder="Enter Email" ng-model="uemail" class="subscribe-email">
+                    <a class="Subscribe pull-right" ng-click="newsletter(uemail)">Subscribe</a>
+                    </div>
+                    <div class="text-center" ng-if="msgg!=''">{{msgg}}
+                </div>
                 </div>
                 <div class="col-xs-2">
 <!--

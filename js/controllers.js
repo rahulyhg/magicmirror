@@ -5,6 +5,7 @@ phonecatControllers.controller('home',
         $scope.template = TemplateService;
         TemplateService.changetitle("Home");
         $scope.template = TemplateService;
+    console.log($scope.template);
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/headerhome.html";
         TemplateService.navigation = "views/navigationhome.html";
@@ -247,8 +248,9 @@ phonecatControllers.controller('home',
         //        MainJson.getallslider().success(slidersuccess);
         //authenticate
         //newsletter
+        $scope.msgg = "";
         var newslettersaved = function (data, status) {
-            if (data == "true") {
+            if (data == true) {
                 $scope.msgg = "Thank You For Subscribe";
             } else {
                 $scope.msgg = "Thank You For Subscribe";
@@ -258,7 +260,6 @@ phonecatControllers.controller('home',
             if (!uemail) {
                 alert("Please Enter Email");
             } else {
-                console.log($scope.alldate);
                 MainJson.newsletter("", uemail, "").success(newslettersaved);
             }
         };
