@@ -40,16 +40,19 @@
                         </div>
 -->
                         </a>
-
-                        <div class="protitle">
-                            <a href="#/product/{{product.id}}"><h5>{{product.name}}</h5></a>
-                        </div>
-                        <div class="proprice">
-                            <a href="#/product/{{product.id}}">
-                                <h5 ng-show="(accesslevel!=3)">{{product.price|convertprice}}</h5>
-                                <h5 ng-show="(accesslevel==3)">{{product.wholesaleprice|convertprice}}</h5>
-                                <!--h5 class="discountprice">£ {{product.price}}</h5-->
-                            </a>
+                        <div class="top-product">
+                            <div class="protitle">
+                                <a href="#/product/{{product.id}}"><h5>{{product.name}}</h5></a>
+                            </div>
+                            <hr class="horiztal-hr">
+                            <div class="proprice">
+                                <a href="#/product/{{product.id}}">
+                                    <h5 ng-show="(accesslevel!=3)">{{product.price|convertprice}}</h5>
+                                    <h5 ng-show="(accesslevel==3)">{{product.wholesaleprice|convertprice}}</h5>
+                                    <!--                                    <img src="img/product-logo.jpg" class="pull-right">-->
+                                    <!--h5 class="discountprice">£ {{product.price}}</h5-->
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

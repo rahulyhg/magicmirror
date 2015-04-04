@@ -142,27 +142,30 @@ a.header-logo img {
     top: 17%;
     right: -16px;
 }
+
 .btnsoc {
-  font-size: 15px;
-  padding: 10px 0 0px;
-  color: #fff;
-  margin-top: 0;
-  width: 100%;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  display: block;
-  text-align: center;
-  height: 45px;
+    font-size: 15px;
+    padding: 10px 0 0px;
+    color: #fff;
+    margin-top: 0;
+    width: 100%;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    text-align: center;
+    height: 45px;
     margin-bottom: 10px;
 }
+
 .gogbtn {
-  margin: 15% 0 0;
+    margin: 15% 0 0;
 }
+
 .fbook {
-  background: #3c5a98 url(http://localhost/angular-powerforone/images/fbplus.png) no-repeat;
+    background: #3c5a98 url(http://localhost/angular-powerforone/images/fbplus.png) no-repeat;
 }
 
 .gplus {
-  background: #dd4d3b url(http://localhost/angular-powerforone/images/gplus.png) no-repeat;
+    background: #dd4d3b url(http://localhost/angular-powerforone/images/gplus.png) no-repeat;
 }
 
 .about-cont:before {
@@ -249,11 +252,23 @@ ul.submenudown {
 }
 
 .proprice h5 {
-    text-align: center;
+    text-align: left;
     padding-top: 10px;
-    margin-top: -9px;
-    color: #000;
-    font-size: 150%;
+    margin-top: -3px;
+    float: left;
+    color: #838383;
+}
+
+hr.horiztal-hr {
+    width: 114%;
+    margin: 0;
+}
+
+.protitle h5 {
+    font-size: 13px;
+    text-transform: capitalize;
+    text-wrap: none!important;
+    overflow: hidden;
 }
 
 .rupee select {
@@ -702,6 +717,8 @@ li.bag a {
 .protitle {
     text-transform: uppercase;
     font-size: 20px;
+    overflow-y: hidden;
+    float: left;
 }
 
 .product {
@@ -713,8 +730,9 @@ li.bag a {
 }
 
 .product {
-    margin-bottom: 30px;
-    height: 400px;
+    /*    margin-bottom: 30px;*/
+    
+    height: 350px;
 }
 
 .productdetails {
@@ -1242,4 +1260,18 @@ textarea.input-widths {
 .breadcrumb {
     padding: 9px 5px;
     margin: 0;
+}
+
+.mid-magic img {
+    width: 100%;
+}
+
+.top-product {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.cls-magic .col-xs-4 {
+    padding: 0;
 }
