@@ -69,7 +69,7 @@ a {
 }
 
 .content {
-    padding: 20px 0;
+    padding: 0px 0;
 }
 
 .btn-default {
@@ -1291,7 +1291,7 @@ textarea.input-widths {
 .filters {
     position: absolute;
     z-index: 99999;
-    background: #fff;
+    background: rgba(245, 245, 245, 0.9);
     top: 25px;
     left: 150px;
     width: 75%;
@@ -1301,6 +1301,10 @@ textarea.input-widths {
 .fb-login,
 .normal-login {
     margin-right: 10px;
+}
+
+.bg-grnds {
+    background: rgba(241, 241, 241, 0.4);
 }
 
 .g-login i,
@@ -1316,9 +1320,13 @@ textarea.input-widths {
 .sortby.sorting {
     position: absolute;
     z-index: 99999;
-    background: #fff;
-    top: 30px;
-    right: 0px;
+    background: rgba(245, 245, 245, 0.9);
+    top: 27px;
+    right: 5px;
+}
+
+.bg-grnds {
+    background: rgba(241, 241, 241, 0.7);
 }
 
 .prd-code {
