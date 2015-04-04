@@ -161,34 +161,25 @@ a.header-logo img {
     cursor: pointer;
 }
 
-.g-login {
+a.btn.btn-primary.g-login {
     background: #dd4d3b;
 }
 
-.fb-login {
+a.btn.btn-primary.fb-login {
     background: #3c5a98;
 }
 
-.g-login:hover {
+a.btn.btn-primary.g-login:hover {
     background: #dd4d3b;
 }
 
-.fb-login:hover {
+a.btn.btn-primary.fb-login:hover {
     background: #3c5a98;
 }
 
-.g-login {
-    background: #dd4d3b;
+a.btn.btn-primary.normal-login:hover {
+    background: #4D5355;
 }
-
-.fb-login {
-    background: #3c5a98;
-}
-/*
-.conct {
-    padding: 10px 0;
-}
-*/
 
 .address-cont {
     border-right: 1px solid #ececec;
