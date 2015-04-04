@@ -1,28 +1,18 @@
 @font-face {
-    font-family: 'RaspoutineClassic';
-    src: url('RaspoutineClassic_TB.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'futura';
     src: url('futura-light.woff');
     font-weight: 300;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'futura';
     src: url('futura-book.woff');
-    font-weight: 500;
 }
 
 @font-face {
     font-family: 'futura';
     src: url('futura-bold.woff');
     font-weight: 700;
-    font-style: normal;
 }
 
 h1,
@@ -65,6 +55,10 @@ img.slideset1 {
     margin: auto;
 }
 
+.contenttop {
+    padding: 10px 0;
+}
+
 .header-bar .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -72,6 +66,15 @@ img.slideset1 {
 
 a {
     cursor: pointer;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.btn-default {
+    color: #A8A8A8;
+    background-color: #f5f5f5;
 }
 
 .social-iconfoot a i {
@@ -157,7 +160,6 @@ a.header-logo img {
     line-height: 2.5;
     cursor: pointer;
 }
-
 /*
 .conct {
     padding: 10px 0;
@@ -187,13 +189,6 @@ textarea.input-width {
     margin-bottom: 8px;
 }
 
-@font-face {
-    font-family: 'RaspoutineClassic';
-    src: url('RaspoutineClassic_TB.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .login-tab.pull-right li a {
     color: white;
     text-transform: capitalize;
@@ -205,6 +200,12 @@ textarea.input-width {
     display: inline-block;
     margin: auto;
     text-align: center;
+}
+
+ul.submenudown {
+    width: auto;
+    float: left;
+    /* padding-left: 25px; */
 }
 
 .proprice.proprice2 {
@@ -777,7 +778,7 @@ span.glyphicon.glyphicon-shopping-cart {
 }
 
 .bgrnd-nav.cloned a.head-logo img {
-    padding: 10px;
+    padding: 10px 0;
     height: 65px;
     vertical-align: middle;
 }
@@ -994,11 +995,11 @@ div.megamenu {
 
 ul.submenudown {
     list-style: none;
-    padding: 10px 10px;
+    padding: 10px 0 0 26px;
 }
 
 ul.submenudown h5 a {
-    color: #34A04A;
+    color: #EA1665;
 }
 
 ul.footer-ul {
