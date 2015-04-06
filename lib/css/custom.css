@@ -797,8 +797,8 @@ span.glyphicon.glyphicon-shopping-cart {
 
 .btn-primary {
     color: #fff;
-    background-color: #4D5355;
-    border-color: #4D5355;
+    background-color: #65BA7A;
+    border-color: #65BA7A;
 }
 
 .btn-primary:hover,
@@ -1441,48 +1441,6 @@ h2.articleheader {
     
     margin-top: 25px;
 }
-/*
-object.embed-responsive-item {
-    top: 0;
-    left: 0;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    overflow: hidden;
-    z-index: -1;
-}
-*/
-/*
-video#video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-*/
-/*
-video {
-    width: 100%;
-    height: 25%;
-    max-height: 25%;
-}*/
 
 .btns {
     display: inline-block;
