@@ -1524,6 +1524,17 @@ button.btnss-primary {
     color: #a8a8a8;
 }
 
+li.wish-list .making-list:hover {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.making-list {
+    display: none;
+}
+
 .table-hover tr:hover>td {
     color: rgba(0, 152, 70, 0.9);
 }
@@ -1531,4 +1542,9 @@ button.btnss-primary {
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 5px;
+}
+
+.banner-image {
+    height: 430px;
+    overflow: hidden;
 }
