@@ -671,6 +671,7 @@ footer h5 {
 
 a:hover {
     color: #E5097F;
+    outline: none;
 }
 /*         end carousel-inner         */
 
@@ -797,8 +798,8 @@ span.glyphicon.glyphicon-shopping-cart {
 
 .btn-primary {
     color: #fff;
-    background-color: #65BA7A;
-    border-color: #65BA7A;
+    background-color: rgba(0, 152, 70, 0.9);
+    border-color: rgba(0, 152, 70, 0.9);
 }
 
 .btn-primary:hover,
@@ -1467,4 +1468,67 @@ h2.articleheader {
 video#video {
     width: 100%;
     height: auto;
+}
+
+.billing {
+    margin: 20px 0;
+}
+
+.billing .panel-group .panel {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-color: transparent;
+}
+
+.billing-info .row {
+    margin: 10px 0;
+}
+
+.form-control:focus {
+    border-color: #18A157;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #FFFFFF;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #18A157;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #18A157;
+}
+
+.billing>.panel-group .panel-heading + .panel-collapse .panel-body {
+    border-top: 1px solid transparent;
+}
+
+.errormsg {
+    color: red;
+}
+
+button.btnss-primary {
+    color: #fff;
+    background-color: #FF99BC;
+    font-weight: 600;
+}
+
+.red {
+    color: red;
+    position: absolute;
+    font-size: 24px;
+    margin-top: -10px;
+    margin-left: 0px;
+}
+
+.billing .panel-heading {
+    background-color: #fcfcfc;
+}
+
+.billing h3 {
+    margin-top: 10px;
+    color: #a8a8a8;
+}
+
+.table-hover tr:hover>td {
+    color: rgba(0, 152, 70, 0.9);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
 }
