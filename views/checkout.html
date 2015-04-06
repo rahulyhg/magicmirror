@@ -67,6 +67,7 @@
                             </div>
                         </div>
                     </div>
+                    <form method="post" action="admin/Checkout.php">
                     <div class="panel panel-default" ng-show="(billinginfo=='1')">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -83,7 +84,7 @@
                                         </p>
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <input type="text" placeholder="First Name" ng-model="form.firstname" class="form-control" ng-class="allvalidation[0].validation" required><span class="red">*</span>
+                                                <input type="text" placeholder="First Name" ng-model="form.firstname" class="form-control" ng-class="allvalidation[0].validation" name="billing_cust_name" required><span class="red">*</span>
                                             </div>
                                             <div class="col-xs-4">
 
@@ -100,36 +101,36 @@
                                             </div>
                                             <div class="col-xs-4">
 
-                                                <input type="email" placeholder="Email" ng-model="form.email" class="form-control" ng-class="allvalidation[2].validation" required><span class="red">*</span>
+                                                <input type="email" placeholder="Email" ng-model="form.email" class="form-control" ng-class="allvalidation[2].validation" name="billing_cust_email" required><span class="red">*</span>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-xs-8">
-                                                <textarea name="" id="" class="form-control" ng-model="form.billingaddress" placeholder="Address" ng-class="allvalidation[3].validation" required></textarea><span class="red">*</span>
+                                                <textarea id="" class="form-control" ng-model="form.billingaddress" placeholder="Address" ng-class="allvalidation[3].validation" name="billing_cust_address" required></textarea><span class="red">*</span>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <input type="text" placeholder="City" ng-model="form.billingcity" class="form-control" ng-class="allvalidation[4].validation" required><span class="red">*</span>
+                                                <input type="text" placeholder="City" ng-model="form.billingcity" class="form-control" ng-class="allvalidation[4].validation" name="billing_city" required><span class="red">*</span>
 
                                             </div>
                                             <div class="col-xs-4">
 
-                                                <input type="text" placeholder="State/Province" ng-model="form.billingstate" class="form-control">
+                                                <input type="text" placeholder="State/Province" ng-model="form.billingstate" name="billing_cust_state" class="form-control">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <input type="text" placeholder="Zip/Postal Code" ng-model="form.billingpincode" class="form-control" ng-class="allvalidation[5].validation" required><span class="red">*</span>
+                                                <input type="text" placeholder="Zip/Postal Code" ng-model="form.billingpincode" class="form-control" ng-class="allvalidation[5].validation" name="billing_zip" required><span class="red">*</span>
 
                                             </div>
                                             <div class="col-xs-4">
 
 
-                                                <select placeholder="Country" ng-model="form.billingcountry" ng-change="free(form.billingcountry,subtotal,form.shipdifferent)" class="form-control" ng-class="allvalidation[6].validation" required>
+                                                <select placeholder="Country" ng-model="form.billingcountry" ng-change="free(form.billingcountry,subtotal,form.shipdifferent)" class="form-control" ng-class="allvalidation[6].validation" name="billing_cust_country" required>
                                                     <option value="">Select Country</option>
                                                     <option value="Afganistan">Afghanistan</option>
                                                     <option value="Albania">Albania</option>
@@ -384,7 +385,7 @@
 
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <input type="tel" placeholder="Telephone" ng-model="form.phone" class="form-control" ng-class="allvalidation[7].validation" required><span class="red">*</span>
+                                                <input type="tel" placeholder="Telephone" ng-model="form.phone" class="form-control" ng-class="allvalidation[7].validation" name="billing_cust_tel" required><span class="red">*</span>
 
                                             </div>
 
@@ -407,7 +408,7 @@
 
                                         <div class="row">
                                             <div class="col-xs-8">
-                                                <textarea name="" id="" class="form-control" ng-model="form.shippingaddress" placeholder="Address" ng-class="allvalidation[8].validation" required></textarea><span class="red">*</span>
+                                                <textarea id="" class="form-control" ng-model="form.shippingaddress" placeholder="Address" ng-class="allvalidation[8].validation" name="delivery_cust_address" required></textarea><span class="red">*</span>
                                             </div>
                                         </div>
 
@@ -418,7 +419,7 @@
                                             </div>
                                             <div class="col-xs-4">
 
-                                                <input type="text" placeholder="State/Province" ng-model="form.shippingstate" class="form-control">
+                                                <input type="text" placeholder="State/Province" ng-model="form.shippingstate" class="form-control" name="delivery_cust_state">
                                             </div>
                                         </div>
 
@@ -722,7 +723,10 @@
                                     <input type="radio" name="shipping" value="7" ng-model="form.shippingmethod" ng-change="changeshippingcost(10)">Express International Delivery £ 10.00
                                 </p>
 
-                                <a class="btns btns-primary pull-right" ng-click="continuepayment(form)" ng-show="buttonsvalidate.payment==0">Continue</a>
+<!--                                <a class="btns btns-primary pull-right" ng-click="continuepayment(form)" ng-show="buttonsvalidate.payment==0">Continue</a>-->
+                               
+                               <input type="submit" class="btns btns-primary pull-right"  value="submit">
+                               
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -766,6 +770,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
