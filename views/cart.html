@@ -1,6 +1,7 @@
 <div class="content">
-    <div class="contenttop">
-        <!--
+    <div class="container">
+        <div class="contenttop">
+            <!--
     <div class="row">
     <div class="col-xs-4">
         <span class="breadcrumb">
@@ -12,60 +13,60 @@
 </div>
 -->
 
-        <div class="container cart">
-            <table class="table table-hover content-static">
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Unit Price</th>
-                        <th>Qty</th>
-                        <th>Subtotal</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="singlecart in cart">
-                        <td>{{singlecart.name}}</td>
-
-                        <td>{{singlecart.price|convertprice}}</td>
-                        <td>
-                            <span class="cartspace" ng-hide="newquantity[$index]!=1"></span>
-                            <a class="btn btn-default carticon" ng-click="subproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)" ng-show="newquantity[$index]!=1">-</a>
-                            <input type="text" ng-model="newquantity[$index]" class="form-control cartinput" readonly><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
-                        </td>
-                        <td>{{singlecart.subtotal|convertprice}}</td>
-                        <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
-                        </td>
-
-                    </tr>
-
-                </tbody>
-            </table>
-            <h3>Discount Codes</h3>
-            <p>
-                <input type="text" placeholder="Enter your coupon code" ng-model="couponcode" class="discountcoupon form-control newsletteremail " style="margin-right:5px;"><a class="btn btn-primary {{'valid'+validcouponcode}}" ng-click="checkcoupon(couponcode)"><span ng-hide="validcouponcode==1">Apply Coupon</span> <span ng-show="validcouponcode==1">Coupon Code Applied</span></a>
-
-                <a href="#/checkout" class="btns btns-primary pull-right">Proceed to checkout</a>
-            </p>
-
-            <div class="checkout row">
-                <div class="col-xs-8"></div>
-                <div class="col-xs-4">
-                    <table class="table table-bordered ">
+            <div class="container cart">
+                <table class="table table-hover content-static">
+                    <thead>
                         <tr>
-                            <th>Sub Total</th>
-                            <th>Discount</th>
-                            <th>Grand Total</th>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                            <th></th>
                         </tr>
-                        <tr>
-                            <td>{{subtotal|convertprice}}</td>
-                            <td>{{discountamount|convertprice}}</td>
-                            <td>{{subtotal-discountamount|convertprice}}</td>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="singlecart in cart">
+                            <td>{{singlecart.name}}</td>
+
+                            <td>{{singlecart.price|convertprice}}</td>
+                            <td>
+                                <span class="cartspace" ng-hide="newquantity[$index]!=1"></span>
+                                <a class="btn btn-default carticon" ng-click="subproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)" ng-show="newquantity[$index]!=1">-</a>
+                                <input type="text" ng-model="newquantity[$index]" class="form-control cartinput" readonly><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
+                            </td>
+                            <td>{{singlecart.subtotal|convertprice}}</td>
+                            <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
+                            </td>
+
                         </tr>
-                    </table>
+
+                    </tbody>
+                </table>
+                <h3>Discount Codes</h3>
+                <p>
+                    <input type="text" placeholder="Enter your coupon code" ng-model="couponcode" class="discountcoupon form-control newsletteremail " style="margin-right:5px;"><a class="btn btn-primary {{'valid'+validcouponcode}}" ng-click="checkcoupon(couponcode)"><span ng-hide="validcouponcode==1">Apply Coupon</span> <span ng-show="validcouponcode==1">Coupon Code Applied</span></a>
+
+                    <a href="#/checkout" class="btns btns-primary pull-right">Proceed to checkout</a>
+                </p>
+
+                <div class="checkout row">
+                    <div class="col-xs-8"></div>
+                    <div class="col-xs-4">
+                        <table class="table table-bordered ">
+                            <tr>
+                                <th>Sub Total</th>
+                                <th>Discount</th>
+                                <th>Grand Total</th>
+                            </tr>
+                            <tr>
+                                <td>{{subtotal|convertprice}}</td>
+                                <td>{{discountamount|convertprice}}</td>
+                                <td>{{subtotal-discountamount|convertprice}}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
