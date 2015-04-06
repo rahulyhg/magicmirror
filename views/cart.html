@@ -1,6 +1,6 @@
-<div class="content">
+<div class="content content-static">
     <div class="contenttop">
-<!--
+        <!--
     <div class="row">
     <div class="col-xs-4">
         <span class="breadcrumb">
@@ -31,7 +31,7 @@
                         <td>
                             <span class="cartspace" ng-hide="newquantity[$index]!=1"></span>
                             <a class="btn btn-default carticon" ng-click="subproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)" ng-show="newquantity[$index]!=1">-</a>
-                            <input type="text" ng-model="newquantity[$index]" class="form-control cartinput" readonly><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a> 
+                            <input type="text" ng-model="newquantity[$index]" class="form-control cartinput" readonly><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
                         </td>
                         <td>{{singlecart.subtotal|convertprice}}</td>
                         <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
@@ -41,13 +41,11 @@
 
                 </tbody>
             </table>
-
-
             <h3>Discount Codes</h3>
             <p>
                 <input type="text" placeholder="Enter your coupon code" ng-model="couponcode" class="discountcoupon form-control newsletteremail " style="margin-right:5px;"><a class="btn btn-primary {{'valid'+validcouponcode}}" ng-click="checkcoupon(couponcode)"><span ng-hide="validcouponcode==1">Apply Coupon</span> <span ng-show="validcouponcode==1">Coupon Code Applied</span></a>
 
-                <a href="#/checkout" class="btn btn-primary pull-right">Proceed to checkout</a>
+                <a href="#/checkout" class="btns btns-primary pull-right">Proceed to checkout</a>
             </p>
 
             <div class="checkout row">
@@ -70,5 +68,4 @@
 
         </div>
     </div>
-
 </div>

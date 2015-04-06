@@ -37,7 +37,7 @@
         };
 
         if (isMobile.any()) {
-            window.location="http://mobile.magicmirror.in/"+window.location.hash;
+            window.location = "http://mobile.magicmirror.in/" + window.location.hash;
         }
     </script>
     <!--
@@ -101,8 +101,11 @@
     <script src="lib/range/angular.rangeSlider.js "></script>
     <script src="lib/js/ng-infinite-scroll.min.js "></script>
     <script src="lib/js/jstorage.js "></script>
-<!--    <script src="https://checkout.stripe.com/checkout.js "></script>-->
+    <!--    <script src="https://checkout.stripe.com/checkout.js "></script>-->
     <script src="https://maps.googleapis.com/maps/api/js "></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="http://durated.github.io/angular-scroll/0.6.1/angular-scroll.min.js"></script>
+    <script src="../angular-parallax.js"></script>
 </head>
 
 <body>
@@ -195,7 +198,12 @@
         });
     </script>
 
-
+    <script>
+        angular.module('myApp', ['duParallax']).
+        controller('MyCtrl', function ($scope, parallaxHelper) {
+            $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
+        });
+    </script>
 </body>
 
 </html>
