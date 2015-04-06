@@ -17,6 +17,11 @@ phonecatControllers.controller('home',
         $scope.onhome = "onhome";
         $scope.demo = "demodemo";
 
+        MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
+        console.log("totalproducts");
+        console.log($scope.template.totalproducts);
+        console.log(TemplateService.totalproducts);    
+    
         $scope.$on('$viewContentLoaded', function () {
 
             new WOW().init();
@@ -606,6 +611,9 @@ phonecatControllers.controller('loginwishlist',
         TemplateService.lightboximage = "";
         $scope.loginlogouttext = "Login";
         //authenticate
+    
+        console.log("totalproducts");
+        console.log(TemplateService.totalproducts);
         $scope.alert2 = "Login or signup for wishlist";
 
         $scope.logout = function () {
@@ -1173,30 +1181,30 @@ phonecatControllers.controller('checkout',
             MainJson.orderemail($scope.paymentorderemail, $scope.paymentorderid).success(orderemailsend);
             window.location.href = "http://www.lylaloves.co.uk/#/thankyou";
         };
-        var handler = StripeCheckout.configure({
-            key: 'pk_live_I1udSOaNJK4si3FCMwvHsY4g',
-            //key: 'pk_test_4etgLi16WbODEDr4YBFdcbP0',
-            image: 'img/logo.jpg',
-            currency: 'GBP',
-            token: function (token) {
-                MainJson.chargestripe(token.id, $scope.form.email, ($scope.subtotal + $scope.form.shippingcost - $scope.discountamount), ($scope.form.firstname + " " + $scope.form.lastname)).success(paymentcomplete);
-                //window.location.href="http://www.lylaloves.co.uk/#/thankyou";
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-            }
-        });
-
-        $scope.StipePaymentGen = function (amount) {
-
-
-            handler.open({
-                name: 'Lyla Loves',
-                description: 'Total Amount: £ ' + amount,
-                amount: amount * 100,
-
-            });
-
-        };
+//        var handler = StripeCheckout.configure({
+//            key: 'pk_live_I1udSOaNJK4si3FCMwvHsY4g',
+//            //key: 'pk_test_4etgLi16WbODEDr4YBFdcbP0',
+//            image: 'img/logo.jpg',
+//            currency: 'GBP',
+//            token: function (token) {
+//                MainJson.chargestripe(token.id, $scope.form.email, ($scope.subtotal + $scope.form.shippingcost - $scope.discountamount), ($scope.form.firstname + " " + $scope.form.lastname)).success(paymentcomplete);
+//                //window.location.href="http://www.lylaloves.co.uk/#/thankyou";
+//                // Use the token to create the charge with a server-side script.
+//                // You can access the token ID with `token.id`
+//            }
+//        });
+//
+//        $scope.StipePaymentGen = function (amount) {
+//
+//
+//            handler.open({
+//                name: 'Lyla Loves',
+//                description: 'Total Amount: £ ' + amount,
+//                amount: amount * 100,
+//
+//            });
+//
+//        };
 
 
 
