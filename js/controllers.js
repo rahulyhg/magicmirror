@@ -930,8 +930,17 @@ phonecatControllers.controller('newsletter',
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
-        $scope.msgg = "Message here..........";
-
+        $scope.msgg = "";
+    
+        //cart badge
+        var totalcart = function (data, status) {
+            console.log("cart data");
+            $scope.badge = data;
+            console.log($scope.badge);
+        };
+        MainJson.gettotalcart().success(totalcart);
+        //cart badge    
+    
         //authenticate
         $scope.logout = function () {
             MainJson.logout();
@@ -976,6 +985,15 @@ phonecatControllers.controller('badge',
         TemplateService.navigation = "views/navigation.html";
         $scope.msgg = "Message here..........";
 
+        //cart badge
+        var totalcart = function (data, status) {
+            console.log("cart data");
+            $scope.badge = data;
+            console.log($scope.badge);
+        };
+        MainJson.gettotalcart().success(totalcart);
+        //cart badge
+    
         //authenticate
         $scope.logout = function () {
             MainJson.logout();
