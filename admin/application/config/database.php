@@ -44,100 +44,52 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
-//
 
-$active_group = 'default';
+
+if(isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false)
+{
+  	$active_group = 'production';
+}
+else
+{
+  	$active_group = 'testing';
+}
+
 $active_record = TRUE;
-
-//$myserver=$_SERVER['SERVER_NAME'];
 //
-//if($myserver!="localhost")
-//{
-//$myconfig= file_get_contents("/home/mafiawarloots/config/demo.json");
-//}
-//else
-//{
-//$myconfig= file_get_contents("C:/xampp/htdocs/config/config.json");
-//}
-//$myconfig=json_decode($myconfig);
-//
-//$dbname	= $myconfig->database;
+//// Testing (local) DB settings
+//$db['testing']['hostname'] = 'localhost';
+//$db['testing']['username'] = 'root';
+//$db['testing']['password'] = '';
+//$db['testing']['database'] = 'lylaadmin';
+//$db['testing']['dbdriver'] = 'mysql';
+//$db['testing']['dbprefix'] = '';
+//$db['testing']['pconnect'] = TRUE;
+//$db['testing']['db_debug'] = TRUE;
+//$db['testing']['cache_on'] = FALSE;
+//$db['testing']['cachedir'] = '';
+//$db['testing']['char_set'] = 'utf8';
+//$db['testing']['dbcollat'] = 'utf8_general_ci';
+//$db['testing']['swap_pre'] = '';
+//$db['testing']['autoinit'] = TRUE;
+//$db['testing']['stricton'] = FALSE;
 
-$myserver=$_SERVER['SERVER_NAME'];
-
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'magicmirror';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
-
-//$db['default']['hostname'] = getconfig("hostname");
-//$db['default']['username'] = getconfig("username");
-//$db['default']['password'] = getconfig("password");
-//$db['default']['database'] = getconfig("database");
-//$db['default']['dbdriver'] = 'mysql';
-//$db['default']['dbprefix'] = '';
-//$db['default']['pconnect'] = TRUE;
-//$db['default']['db_debug'] = TRUE;
-//$db['default']['cache_on'] = FALSE;
-//$db['default']['cachedir'] = '';
-//$db['default']['char_set'] = 'utf8';
-//$db['default']['dbcollat'] = 'utf8_general_ci';
-//$db['default']['swap_pre'] = '';
-//$db['default']['autoinit'] = TRUE;
-//$db['default']['stricton'] = FALSE;
-
-
-
-//$active_group = 'default';
-//$active_record = TRUE;
-//
-////
-////$db['default']['hostname'] = 'localhost';
-////$db['default']['username'] = 'mafiawar_getall';
-////$db['default']['password'] = 'chintan123';
-////$db['default']['database'] = 'mafiawar_getall';
-////$db['default']['dbdriver'] = 'mysql';
-////$db['default']['dbprefix'] = '';
-////$db['default']['pconnect'] = TRUE;
-////$db['default']['db_debug'] = TRUE;
-////$db['default']['cache_on'] = FALSE;
-////$db['default']['cachedir'] = '';
-////$db['default']['char_set'] = 'utf8';
-////$db['default']['dbcollat'] = 'utf8_general_ci';
-////$db['default']['swap_pre'] = '';
-////$db['default']['autoinit'] = TRUE;
-////$db['default']['stricton'] = FALSE;
-//
-//
-//$db['default']['hostname'] = 'localhost';
-//$db['default']['username'] = 'root';
-//$db['default']['password'] = '';
-//$db['default']['database'] = 'videoadmin';
-//$db['default']['dbdriver'] = 'mysql';
-//$db['default']['dbprefix'] = '';
-//$db['default']['pconnect'] = TRUE;
-//$db['default']['db_debug'] = TRUE;
-//$db['default']['cache_on'] = FALSE;
-//$db['default']['cachedir'] = '';
-//$db['default']['char_set'] = 'utf8';
-//$db['default']['dbcollat'] = 'utf8_general_ci';
-//$db['default']['swap_pre'] = '';
-//$db['default']['autoinit'] = TRUE;
-//$db['default']['stricton'] = FALSE;
-
-
-
+// Production (App Engine Cloud SQL) DB Settings
+$db['production']['hostname'] = 'localhost';
+$db['production']['username'] = 'root';
+$db['production']['password'] = '';
+$db['production']['database'] = 'website';
+$db['production']['dbdriver'] = 'mysqli';
+$db['production']['pconnect'] = FALSE;
+$db['production']['dbprefix'] = '';
+$db['production']['swap_pre'] = '';
+$db['production']['db_debug'] = FALSE;
+$db['production']['cache_on'] = FALSE;
+$db['production']['autoinit'] = FALSE;
+$db['production']['char_set'] = 'utf8';
+$db['production']['dbcollat'] = 'utf8_general_ci';
+$db['production']['cachedir'] = '';
+$db['production']['socket'] = '/cloudsql/magicmirrornew:site';
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
