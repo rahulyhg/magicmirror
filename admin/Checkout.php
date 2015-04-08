@@ -14,10 +14,12 @@
 <?php 
 
 error_reporting(0);
-$merchant_id=$_POST['Merchant_Id'];  // Merchant id(also User_Id) 
-//$merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
-$amount=$_POST['Amount'];            // your script should substitute the amount here in the quotes provided here
-$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
+//$merchant_id=$_POST['Merchant_Id'];  // Merchant id(also User_Id) 
+$merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
+//$amount=$_POST['Amount'];            // your script should substitute the amount here in the quotes provided here
+$amount="56";            // your script should substitute the amount here in the quotes provided here
+//$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
+$order_id="1";        //your script should substitute the order description here in the quotes provided here
 $url=$_POST['Redirect_Url'];         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
 $billing_cust_name=$_POST['billing_cust_name'];
 $billing_cust_address=$_POST['billing_cust_address'];
