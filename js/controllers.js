@@ -22,12 +22,7 @@ phonecatControllers.controller('home',
         console.log($scope.template.totalproducts);
         console.log(TemplateService.totalproducts);    
     
-        $scope.$on('$viewContentLoaded', function () {
-
-            new WOW().init();
-
-
-        });
+       
 
         $scope.sliders1 = [{
                 "id": "2",
