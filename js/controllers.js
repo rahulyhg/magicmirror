@@ -8,7 +8,7 @@ phonecatControllers.controller('home',
         console.log($scope.template);
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/headerhome.html";
-        TemplateService.navigation = "views/navigationhome.html";
+        TemplateService.navigation = "views/navigation.html";
         TemplateService.content = "views/content.html";
         $scope.homeactive = "active";
         $scope.loginlogouttext = "Login";
