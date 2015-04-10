@@ -137,13 +137,17 @@ firstapp.config(['$routeProvider',
 
 firstapp.filter('imagepath', function () {
     return function (input) {
-        return "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
+        
+        var image="http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
+        image=image.replace(" ","_");
+        return image;
     };
 });
 firstapp.filter('imagepath1', function () {
     return function (input) {
-        return "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
-
+        var image = "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
+        image=image.replace(" ","_");
+        return image;
     };
 });
 firstapp.filter('imagepath2', function () {
@@ -153,7 +157,9 @@ firstapp.filter('imagepath2', function () {
 });
 firstapp.filter('imagepathbig', function () {
     return function (input) {
-        return "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/" + input.trim();
+        var image = "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/" + input.trim();
+        image=image.replace(" ","_");
+        return image;
     };
 });
 

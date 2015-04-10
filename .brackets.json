@@ -89,6 +89,7 @@
         "C:/xampp/htdocs/magicmirror/lib/js/ui-bootstrap-tpls-0.11.0.min.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/select2.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/ng-infinite-scroll.min.js",
-        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/owl.carousel.js"
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/lib/js/owl.carousel.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/heatmap.src.js"
     ]
 }

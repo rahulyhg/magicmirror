@@ -37,6 +37,9 @@
                                 <img src="{{product.image1|imagepath}}" class="img">
                             </div>
 
+                            <div class="img1" ng-if="!product.image1">
+                                <img src="{{product.image2|imagepath}}" class="img">
+                            </div>
 
                             <div class="img2" ng-if="product.image2">
                                 <img src="{{product.image2|imagepath}}" class="img">
