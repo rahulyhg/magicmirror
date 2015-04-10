@@ -3,7 +3,7 @@
         <div class="contenttop">
             <div class="row">
                 <div class="col-xs-4">
-<!--
+                    <!--
                    <span class="breadcrumb">
 							Home /
 							<span ng-repeat="br in breadcrumbs" ng-class="{'active':currentcategory == br.id}">
@@ -26,6 +26,7 @@
             </div>
         </div>
         <div class="maincontent">
+            
             <div infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
                 <div class="col-xs-3 text-center clearfix" ng-repeat="product in products" my-repeat-directive>
                     <!--                <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">-->
@@ -33,14 +34,14 @@
                         <!--                    <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>-->
                         <a href="#/product/{{product.id}}">
                             <div class="img1">
+                                <img src="{{product.image1|imagepath}}" class="img">
+                            </div>
+
+
+                            <div class="img2" ng-if="product.image2">
                                 <img src="{{product.image2|imagepath}}" class="img">
                             </div>
-                            <!--
 
-                        <div class="img2" ng-show="product.productimage[1].image">
-                            <img src="{{product.image1|imagepath}}" class="img">
-                        </div>
--->
                         </a>
                         <div class="top-product">
                             <div class="protitle">
@@ -51,6 +52,7 @@
                                 <a href="#/product/{{product.id}}">
                                     <h5 ng-show="(accesslevel!=3)">{{product.price|convertprice}}</h5>
                                     <h5 ng-show="(accesslevel==3)">{{product.wholesaleprice|convertprice}}</h5>
+                                    <h5 class="sku pull-right">{{product.sku}}</h6>
                                     <!--                                    <img src="img/product-logo.jpg" class="pull-right">-->
                                     <!--h5 class="discountprice">£ {{product.price}}</h5-->
                                 </a>
