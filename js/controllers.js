@@ -7,7 +7,7 @@ phonecatControllers.controller('home',
         $scope.template = TemplateService;
         console.log($scope.template);
         TemplateService.slider = "views/slider.html";
-        TemplateService.header = "views/headerhome.html";
+        TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
         TemplateService.content = "views/content.html";
         $scope.homeactive = "active";
@@ -1717,7 +1717,7 @@ phonecatControllers.controller('category',
             console.log(search);
             $scope.search = search;
             $scope.products = [];
-            MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno, $scope.search).success(categorysuccesspush);
+            MainJson.getproductbycategory("", $scope.pageno, $scope.search).success(categorysuccesspush);
         }
 
         //authenticate
@@ -2228,6 +2228,17 @@ phonecatControllers.controller('zoomCtrl',
         };
     }
 );
+
+
+phonecatControllers.controller('searchbuttonCtrl',
+    function ($scope,$location) {
+        $scope.searchproducts = function (text) {
+            $location.url("/search/"+text);
+        };
+    }
+);
+
+
 
 function CarouselDemoCtrl($scope) {
 

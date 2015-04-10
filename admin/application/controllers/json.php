@@ -399,7 +399,14 @@ class Json extends CI_Controller
 		$price1=$this->input->get_post("price1");
 		$price2=$this->input->get_post("price2");
 		$category=$this->input->get_post("category");
+        $iscategory=" 1 ";
+        if($category!="")
+        {
+            $iscategory=" `productcategory`.`category`=$category ";
+        }
+                
         
+
 		$where = "";
 		if($price1!="")
 		{
@@ -409,11 +416,12 @@ class Json extends CI_Controller
 		{
 		$pricefilter="";
 		}
-		$q3 = $this->db->query("SELECT COUNT(*) as `cnt` FROM `category` WHERE `category`.`parent`= '$category'")->row();
-		if($q3->cnt > 0)
-			$where .= " OR `category`.`parent`='$category' ";
-		$query['category']=$this->db->query("SELECT `category`.`name` ,`category`.`image1` FROM `category`
-		WHERE `category`.`id`='$category'")->row();
+        
+//		$q3 = $this->db->query("SELECT COUNT(*) as `cnt` FROM `category` WHERE `category`.`parent`= '$category'")->row();
+//		if($q3->cnt > 0)
+//			$where .= " OR `category`.`parent`='$category' ";
+//		$query['category']=$this->db->query("SELECT `category`.`name` ,`category`.`image1` FROM `category`
+//		WHERE `category`.`id`='$category'")->row();
         
         
         $elements=array();
@@ -505,7 +513,7 @@ class Json extends CI_Controller
             $orderorder="ASC";
         }
        
-        $data["message"]=$this->chintantable->query($pageno,$maxrow,$orderby,$orderorder,$search,$elements,"FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1","WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter AND (   `productcategory`.`category`=$category $where )",' GROUP BY `product`.`id` ');
+        $data["message"]=$this->chintantable->query($pageno,$maxrow,$orderby,$orderorder,$search,$elements,"FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1","WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter AND (   $iscategory )",' GROUP BY `product`.`id` ');
         
 		$this->load->view("json",$data);
 	} 

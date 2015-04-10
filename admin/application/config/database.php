@@ -58,21 +58,21 @@ else
 $active_record = TRUE;
 //
 //// Testing (local) DB settings
-//$db['testing']['hostname'] = 'localhost';
-//$db['testing']['username'] = 'root';
-//$db['testing']['password'] = '';
-//$db['testing']['database'] = 'lylaadmin';
-//$db['testing']['dbdriver'] = 'mysql';
-//$db['testing']['dbprefix'] = '';
-//$db['testing']['pconnect'] = TRUE;
-//$db['testing']['db_debug'] = TRUE;
-//$db['testing']['cache_on'] = FALSE;
-//$db['testing']['cachedir'] = '';
-//$db['testing']['char_set'] = 'utf8';
-//$db['testing']['dbcollat'] = 'utf8_general_ci';
-//$db['testing']['swap_pre'] = '';
-//$db['testing']['autoinit'] = TRUE;
-//$db['testing']['stricton'] = FALSE;
+$db['testing']['hostname'] = 'localhost';
+$db['testing']['username'] = 'root';
+$db['testing']['password'] = '';
+$db['testing']['database'] = 'magicmirror';
+$db['testing']['dbdriver'] = 'mysql';
+$db['testing']['dbprefix'] = '';
+$db['testing']['pconnect'] = TRUE;
+$db['testing']['db_debug'] = TRUE;
+$db['testing']['cache_on'] = FALSE;
+$db['testing']['cachedir'] = '';
+$db['testing']['char_set'] = 'utf8';
+$db['testing']['dbcollat'] = 'utf8_general_ci';
+$db['testing']['swap_pre'] = '';
+$db['testing']['autoinit'] = TRUE;
+$db['testing']['stricton'] = FALSE;
 
 // Production (App Engine Cloud SQL) DB Settings
 $db['production']['hostname'] = 'localhost';

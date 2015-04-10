@@ -51,10 +51,10 @@
             </div>
             <div class="col-xs-6">
                 <div id="imaginary_container">
-                    <div class="input-group stylish-input-group pull-right" style="width:200px;">
-                        <form ng-submit="searchclick(search)">
+                    <div class="input-group stylish-input-group pull-right" style="width:200px;" ng-controller="searchbuttonCtrl">
+                        <form ng-submit="searchproducts(text.search)">
                             <span class="input-group-addon">
-                       <input type="text" class="form-control" ng-model="search" placeholder="Search..." >
+                       <input type="text" class="form-control" ng-model="text.search" placeholder="Search..." >
                         <button type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                             </button>
