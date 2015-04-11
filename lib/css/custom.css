@@ -1332,7 +1332,9 @@ textarea.input-widths {
 }
 
 .bg-grnds {
-    background: rgba(241, 241, 241, 0.4);
+     background: url("../../img/back-set.jpg") no-repeat fixed 0 center / cover transparent;
+    height: 400px;
+    
 }
 
 .g-login i,
@@ -1352,10 +1354,24 @@ textarea.input-widths {
     top: 27px;
     right: 5px;
 }
+.img-title {
+    text-align: center;
+    position: relative;
+    top: 130px;
+}
+.img-title a {
+    text-transform: uppercase;
+    border: 1px solid grey;
+    padding: 6px 18px 6px 18px;
+    position: relative;
+    top: 15px;
+}
 
+/*
 .bg-grnds {
     background: rgba(241, 241, 241, 0.7);
 }
+*/
 
 .prd-code {
     padding-bottom: 10px;
@@ -1647,4 +1663,7 @@ input[type="checkbox"] {
     float: right;
     margin-right: 4px;
     padding: 1px 5px;
+}
+.img-title h3 {
+    font-size: 2.5em;
 }
