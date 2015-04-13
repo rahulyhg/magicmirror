@@ -1332,9 +1332,10 @@ textarea.input-widths {
 }
 
 .bg-grnds {
-     background: url("../../img/back-set.jpg") no-repeat fixed 0 center / cover transparent;
+     background: url("../../img/back-set.jpg") no-repeat fixed 0 center transparent;
     height: 400px;
     
+     background-size: 100%;
 }
 
 .g-login i,
