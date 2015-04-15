@@ -93,6 +93,7 @@
         </div>
     </div>
 </div>
+<!--
 <div class="row bg-grnds">
     <div class="container">
         <div class="cls-magic">
@@ -114,16 +115,13 @@
         </div>
     </div>
 
-    <!--        <img src="http://lorempixel.com/1000/800/" alt="" du-parallax y="background" />-->
 </div>
-<!--
+-->
 <div class="bind-all">
-    <div class="banner-image ng-scope">
-        <a >
-            <center>
-                <img src="img/inpressions.jpg" alt="" class="img-responsive">
+    <div class="banner-image ng-scope parallax-effect">
+            <center class="in-parallax">
+                <img src="img/back2.jpg" alt="" class="img-responsive ">
             </center>
-        </a>
     </div>
     <div class="text-image">
         <h4>Impressions of Excellence</h4>
@@ -132,14 +130,13 @@
         </div>
     </div>
 </div>
--->
 <div class="product-imgdown">
     <div class="container">
         <div class="catogory">
             <span>Whats Trending</span>
         </div>
     </div>
-    <div class="bckgrnd-sliderdwn">
+    <div class="bckgrnd-sliderdwn" >
         <div class="imageset">
             <a ng-click="slidesetprev(showslideset1);">
                 <div class="toggle left">
@@ -220,20 +217,36 @@ $('.carousel1 .item').each(function(){
         </div>
     </div>
 </div>
-<!--
-
 <script>
-    $(document).ready(function () {
-        $(".testimonials").owlCarousel({
-
-            //      navigation : true, // Show next and prev buttons
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            singleItem: true,
-            pagination: false,
-            autoPlay: true,
-
-        });
-
-    });
-</script>-->
+   
+jQuery(window).ready(function() {
+	var $onlyhome={};
+	$onlyhome=jQuery(".parallax-effect");
+	if($onlyhome.length>0) {
+		var child=".in-parallax";
+		$onlyhome.css("overflow","hidden");
+		var barheight=400;
+		$onlyhome.height(barheight);
+		var $window=jQuery(window);
+		var top=$onlyhome.offset().top;
+		var height=$onlyhome.height();
+		var windowheight=$window.height();
+		console.log($onlyhome.offset());
+		jQuery(window).scroll( function() {
+			var $window=jQuery(window);
+			var scrolltop=$window.scrollTop();
+			var top=$onlyhome.offset().top;
+			var height=$onlyhome.children(child).height();
+			var windowheight=$window.height();
+			
+			if((scrolltop) > (top-windowheight) && (scrolltop) < (top+height))
+			{
+				var difference=(scrolltop) - (top-windowheight);
+				var pullup=(height-barheight)*difference/(windowheight+height)*(-1.4);
+				$onlyhome.children(child).css("transform","translateY("+pullup+"px)");
+			}
+		});
+	}
+	jQuery(window).scroll(0);
+});
+</script>
