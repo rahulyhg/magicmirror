@@ -16,22 +16,22 @@
     </script>
     <script>
         var isMobile = {
-            Android: function () {
+            Android: function() {
                 return navigator.userAgent.match(/Android/i);
             },
-            BlackBerry: function () {
+            BlackBerry: function() {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            iOS: function () {
+            iOS: function() {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            Opera: function () {
+            Opera: function() {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            Windows: function () {
+            Windows: function() {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function () {
+            any: function() {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
@@ -75,6 +75,8 @@
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
 -->
+    <script src="lib/js/skrollr.js"></script>
+    <script src="lib/js/skrollr.dir.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/templateservice.js"></script>

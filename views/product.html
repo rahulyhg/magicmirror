@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="maincontent">
-            <div class="affixposition  wow fadeInLeft">
-                <div class="productdetails pull-right">
+            <div class="affixposition  wow fadeInLeft" >
+                <div class="productdetails pull-right" >
                     <div class="productheader">
                         <h5>{{product.name}}</h5>
                         <div class="productdesc">
@@ -25,40 +25,40 @@
                         <div class="prd-code">
                             <h6>Product Code:{{product.sku}}</h6>
                         </div>
-                        <h4 ng-show="product.quantity<=0">Avability:Out Of Stock</h4>
-                        <h4 ng-show="product.quantity>0">Avability:In Stock</h4>
+                        <h4 ng-if="product.quantity<=0">Avability:Out Of Stock</h4>
+                        <h4 ng-if="product.quantity>0">Avability:In Stock</h4>
                         <h4>{{rate|convertprice}}</h4>
                         <!--h4 class="discountprice">£ 400</h4-->
 
                         <!--h6>Available {{product.quantity}} pcs</h6-->
                     </div>
                     <div class="prodcutcontent">
-                        <span ng-show="product.quantity>0">
+                        <span ng-if="product.quantity>0">
                         <label class="hidden">Qty :</label>
                         <input type="text" value="1" class="hidden quantitybox" ng-model="addquantity">
                         <a class="btn btn-primary " ng-click="addtocart(product.id,product.name,rate,addquantity)"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>
                         </span>
 
-                        <span ng-show="product.quantity<=0">
+                        <span ng-if="product.quantity<=0">
                         <span ng-hide="addedtowaitinglist"><input type="email" value="1" class="form-control waitingemail" placeholder="Email" style="width:190px;" ng-model="product.waitingemail">
                             <a class="btn btn-primary " ng-click="addtowaitinglist(product.id,product.waitingemail)">Add to Waiting List</a></span>
-                        <span ng-show="addedtowaitinglist">You have been added to waiting list</span>
+                        <span ng-if="addedtowaitinglist">You have been added to waiting list</span>
                         </span>
 
 
 
 
-                        <a href="" ng-click="addwishlist(id)"><span ng-show="{{wish}}" class="glyphicon glyphicon-heart prowish"></span><span style="color: rgb(229, 9, 127);font-size: 20px;" ng-hide="{{wish}}" class="glyphicon glyphicon-heart prowish"></span></a>
+                        <a href="" ng-click="addwishlist(id)"><span ng-if="{{wish}}" class="glyphicon glyphicon-heart prowish"></span><span style="color: rgb(229, 9, 127);font-size: 20px;" ng-hide="{{wish}}" class="glyphicon glyphicon-heart prowish"></span></a>
 
-                        <div ng-show="wishlistlogin" class="alert alert-warning" style="margin:20px 0;">Please Login for Wishlist</div>
-                        <div ng-show="wishlistadded" class="alert alert-success" style="margin:20px 0;">Added to Wishlist</div>
-                        <span ng-show="product.quantity>0"><div ng-show="addedtocart=='show'" class="alert alert-success" style="margin:20px 0;">Added to Cart</div></span>
+                        <div ng-if="wishlistlogin" class="alert alert-warning" style="margin:20px 0;">Please Login for Wishlist</div>
+                        <div ng-if="wishlistadded" class="alert alert-success" style="margin:20px 0;">Added to Wishlist</div>
+                        <span ng-if="product.quantity>0"><div ng-if="addedtocart=='show'" class="alert alert-success" style="margin:20px 0;">Added to Cart</div></span>
                     </div>
 
 
                 </div>
             </div>
-            <span class="pronew2" ng-show="product.isnew=='1'"><img src="img/new.png"></span>
+            <span class="pronew2" ng-if="product.isnew=='1'"><img src="img/new.png"></span>
             <!--<span ng-repeat="image in productimage">-->
             <span>
                
@@ -75,55 +75,62 @@
                         </div>
                     </div>-->
                      <!--<img src="{{image.image|imagepath}}"  class=" imgback wow fadeInLeft" resizable ng-style="{  height: windowHeight }">-->
-            <div class="row" ng-show="productimage[0].image">
+            <div class="row" ng-if="productimage[0].image && (productimage.length-1)!=0">
                         <div class="col-md-6">
 <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
                          
-                            <img   ng-src="{{productimage[0].image|imagepathbig}}" style="max-height:650px;"  data-350="opacity:1;margin-top:0px;margin-bottom:0px;" data-1150="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                            <img   ng-src="{{productimage[0].image|imagepathbig}}" style="max-height:650px;" skrollr  data-350="opacity:1;margin-top:0px;margin-bottom:0px;" data-1150="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                           </div>
                     </div>
-            <div class="row" ng-show="productimage[1].image">
+            <div class="row" ng-if="productimage[1].image && (productimage.length-1)!=1">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[1].image|imagepathbig}}" style="max-height:650px;"  data-1150="opacity:1;margin-top:0px;margin-bottom:0px;" data-1950="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[1].image|imagepathbig}}" style="max-height:650px;" skrollr data-1150="opacity:1;margin-top:0px;margin-bottom:0px;" data-1800="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
-            <div class="row" ng-show="productimage[2].image">
+            <div class="row" ng-if="productimage[2].image && (productimage.length-1)!=2">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[2].image|imagepathbig}}" style="max-height:650px;"  data-1950="opacity:1;margin-top:0px;margin-bottom:0px;" data-2750="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[2].image|imagepathbig}}" style="max-height:650px;" skrollr data-1800="opacity:1;margin-top:0px;margin-bottom:0px;" data-2450="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
-            <div class="row" ng-show="productimage[3].image">
+            <div class="row" ng-if="productimage[3].image && (productimage.length-1)!=3">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[3].image|imagepathbig}}" style="max-height:650px;"  data-2750="opacity:1;margin-top:0px;margin-bottom:0px;" data-3550="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[3].image|imagepathbig}}" style="max-height:650px;" skrollr data-2750="opacity:1;margin-top:0px;margin-bottom:0px;" data-3550="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
-            <div class="row" ng-show="productimage[4].image">
+            <div class="row" ng-if="productimage[4].image && (productimage.length-1)!=4">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[4].image|imagepathbig}}" style="max-height:650px;"  data-3550="opacity:1;margin-top:0px;margin-bottom:0px;" data-4350="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[4].image|imagepathbig}}" style="max-height:650px;" skrollr data-3550="opacity:1;margin-top:0px;margin-bottom:0px;" data-4350="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
-            <div class="row" ng-show="productimage[5].image">
+            <div class="row" ng-if="productimage[5].image && (productimage.length-1)!=5">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[5].image|imagepathbig}}" style="max-height:650px;"  data-4350="opacity:1;margin-top:0px;margin-bottom:0px;" data-5150="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[5].image|imagepathbig}}" style="max-height:650px;" skrollr data-4350="opacity:1;margin-top:0px;margin-bottom:0px;" data-5150="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
-            <div class="row" ng-show="productimage[6].image">
+            <div class="row" ng-if="productimage[6].image && (productimage.length-1)!=6">
                 <div class="col-md-6">
                     <!--                              <img ng-elevate-zoom ng-src="{{image.image|imagepath}}"  zoom-image="{{image.image|imagepath}}" class=" imgback wow fadeInLeft zoomimg" resizable ng-style="{  height: windowHeight }" />-->
 
-                    <img   ng-src="{{productimage[6].image|imagepathbig}}" style="max-height:650px;"  data-350="opacity:1;margin-top:0px;margin-bottom:0px;" data-1100="opacity:1;margin-top:800px;margin-bottom:-800px;"  class=" imgback wow fadeInLeft zoomimg" />
+                    <img   ng-src="{{productimage[6].image|imagepathbig}}" style="max-height:650px;" skrollr data-350="opacity:1;margin-top:0px;margin-bottom:0px;" data-1100="opacity:0;margin-top:600px;margin-bottom:-600px;"  class=" imgback wow fadeInLeft zoomimg" />
                 </div>
             </div>
+              
+              <div class="row" >
+                <div class="col-md-6">
+                      <img   ng-src="{{productimage[productimage.length-1].image|imagepathbig}}" style="max-height:650px;"  class=" imgback wow fadeInLeft zoomimg" />
+                </div>
+            </div>
+              
                </span>
 
 
