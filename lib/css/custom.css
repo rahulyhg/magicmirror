@@ -383,6 +383,8 @@ footer.ng-scope {
     background: #43494b;
     color: #fff;
     padding-top: 12px;
+    z-index: 10;
+    position: relative;
 }
 
 ul.footer-ul li {
@@ -757,8 +759,9 @@ li.bag a {
 }
 
 .productdetails {
-    /* position: fixed; */
-    /* right: 10px; */
+    position: fixed;
+    right: 10px;
+    z-index: 1;
     /* background: rgba(226, 226, 226, 0.29); */
     /* -webkit-border-radius: 2px; */
     
