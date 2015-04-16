@@ -20,7 +20,7 @@
 				 
 				 
 -->
-                <form action="http://www.lylaloves.co.uk" method="post" enctype="multipart/form-data" id="MyUploadForm">
+                <form action="http://www.magicmirror.in" method="post" enctype="multipart/form-data" id="MyUploadForm">
                     <label class="col-sm-2 control-label">Image Upload</label>
                     <div class="col-sm-4">
                         <input name="uploaded_files" id="imageInput" type="file" />
@@ -42,7 +42,7 @@
                         $(table).html("");
                         for(var i=0;i<data.length;i++)
                         {
-                            $(table).append("<tr><td style='display:none;' class='rowid'>"+data[i].id+"</td><td><img src='http://www.lylaloves.co.uk/showimage?size=300&image="+data[i].productimage+"' style='height:100px;width:100px;'></td><td>Image is default</td><td><a style='' class='btn btn-primary' href2='http://localhost:10080/admin/index.php/site/defaultimage?imageid="+data[i].id+" &amp;&amp; id=10'>Default</a></td><td><input type='text' id='normal-field' class='order3 form-control' value='"+data[i].order+"' class='form-control' name='ordernumber'><td style='width:30px;'></td><td class='ms'><div class='btn-group'><a href2='http://localhost:10080/admin/index.php/site/deleteimage?imageid="+data[i].id+" &amp;&amp; id=10' class='button red deleteimage btn btn-danger btn-xs' rel='tooltip'><i class='icon-trash'></i></a></div></td></tr>");
+                            $(table).append("<tr><td style='display:none;' class='rowid'>"+data[i].id+"</td><td><img src='http://www.magicmirror.in/showimage?size=300&image="+data[i].productimage+"' style='height:100px;width:100px;'></td><td>Image is default</td><td><a style='' class='btn btn-primary' href2='http://localhost:10080/admin/index.php/site/defaultimage?imageid="+data[i].id+" &amp;&amp; id=10'>Default</a></td><td><input type='text' id='normal-field' class='order3 form-control' value='"+data[i].order+"' class='form-control' name='ordernumber'><td style='width:30px;'></td><td class='ms'><div class='btn-group'><a href2='http://localhost:10080/admin/index.php/site/deleteimage?imageid="+data[i].id+" &amp;&amp; id=10' class='button red deleteimage btn btn-danger btn-xs' rel='tooltip'><i class='icon-trash'></i></a></div></td></tr>");
                         }
                     };
                     
@@ -89,11 +89,11 @@
                                                     $subproduct=substr($row->productimage,0,5);
                                                     if($subproduct=="gs://")
                                                     {
-                                                        echo "http://www.lylaloves.co.uk/showimage?size=300&image=";
+                                                        echo "http://www.magicmirror.in/showimage?size=300&image=";
                                                     }
                                                     else
                                                     {
-                                                        echo "http://www.lylaloves.co.uk/showimage?size=800&image=gs://lylaimages/images";
+                                                        echo "http://www.magicmirror.in/showimage?size=800&image=gs://lylaimages/images";
                                                     }
                                                     echo $row->productimage;?>" style="height:100px;width:100px;" /></td>
 						<td><?php if($row->is_default=="1") { echo "Image is default"; } else { echo "";} ?></td>
@@ -160,7 +160,7 @@
     }; 
     $(document).ready(function() { 
         
-        $.getJSON("http://www.lylaloves.co.uk/myuploads",{},function(data) {
+        $.getJSON("http://www.magicmirror.in/myuploads",{},function(data) {
             console.log(data);
 			
             options = { 
