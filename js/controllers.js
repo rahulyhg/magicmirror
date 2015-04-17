@@ -1619,6 +1619,11 @@ phonecatControllers.controller('checkout',
             $scope.form.status = $scope.status; //MainJson.placeorder(form.firstname,form.lastname,form.email,form.company,form.billingaddress,form.billingcity,form.billingstate,form.billingpincode,form.billingcountry,form.phone,form.fax,form.shippingaddress,form.shippingcity,form.shippingstate,form.shippingpincode,form.shippingcountry,$scope.id,$scope.status).success(orderplaced);
             MainJson.placeorder(form).success(orderplaced);
         };
+    
+        $scope.submitcheckout = function (form){
+            MainJson.submitcheckout(form);
+        }
+        
     });
 
 phonecatControllers.controller('headerctrl',

@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    <form method="post" action="admin/Checkout.php">
+                    <form>
                     <div class="panel panel-default" ng-show="(billinginfo=='1')">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -725,7 +725,7 @@
 
 <!--                                <a class="btns btns-primary pull-right" ng-click="continuepayment(form)" ng-show="buttonsvalidate.payment==0">Continue</a>-->
                                
-                               <input type="submit" class="btns btns-primary pull-right"  value="submit">
+                               <input type="submit" class="btns btns-primary pull-right"  value="submit" ng-click="submitcheckout(form)">
                                
                                 <div class="clearfix"></div>
                             </div>

@@ -15,6 +15,8 @@
 <?php 
 
 error_reporting(0);
+$limited = json_decode(file_get_contents('php://input'), true);
+print_r($limited);
 //$merchant_id=$_POST['Merchant_Id'];  // Merchant id(also User_Id) 
 $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
 //$amount=$_POST['Amount'];            // your script should substitute the amount here in the quotes provided here
