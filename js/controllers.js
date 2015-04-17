@@ -1403,6 +1403,12 @@ phonecatControllers.controller('checkout',
                 field: $scope.form.phone,
                 validation: ""
             }, {
+                field: $scope.form.shippingname,
+                validation: ""
+            }, {
+                field: $scope.form.shippingtel,
+                validation: ""
+            }, {
                 field: $scope.form.shippingaddress,
                 validation: ""
             }, {
@@ -1413,6 +1419,9 @@ phonecatControllers.controller('checkout',
                 validation: ""
             }, {
                 field: $scope.form.shippingcountry,
+                validation: ""
+            }, {
+                field: $scope.form.customernotes,
                 validation: ""
             }];
 
