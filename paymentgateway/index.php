@@ -16,16 +16,45 @@
 error_reporting(0);
 $limited = json_decode(file_get_contents('php://input'), true);
 print_r($limited);
-//$merchant_id=$_POST['Merchant_Id'];  // Merchant id(also User_Id) 
+
+
+Array
+(
+    [form] => Array
+        (
+            [shipdifferent] => 2
+            [shippingcost] => 5
+            [firstname] => jagruti
+            [lastname] => patil
+            [company] => wohlig
+            [email] => jagruti@wohlig.com
+            [billingaddress] => varadvinayak soc
+            [billingcity] => thakurli
+            [billingstate] => maharashtra
+            [billingpincode] => 421201
+            [billingcountry] => India
+            [shippingmethod] => 5
+            [phone] => 9819222221
+            [cart] => Array
+                (
+                )
+
+            [orderid] => 3
+            [amount] => 5
+            [shippingname] => chhaya
+            [shippingtel] => 9878654367
+            [shippingaddress] => siddhivinayak soc
+            [shippingcity] => thane
+            [shippingstate] => maharashtra
+            [shippingpincode] => 432312
+            [shippingcountry] => India
+            [customernote] => hey my note
+        )
+
+)
+
+
 $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
-//$amount=$_POST['Amount'];            // your script should substitute the amount here in the quotes provided here
-
-
-//$sql = "INSERT INTO `order`(`firstname`) VALUES ('')";
-//$result = $conn->query($sql);
-//$orderid=$conn->insert_id;
-//echo $orderid;
-//return 0;
 
 $amount="56";            // your script should substitute the amount here in the quotes provided here
 $order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here

@@ -223,7 +223,7 @@ service.factory('MainJson', function ($http, TemplateService) {
         submitcheckout: function (form) {
             console.log(form);
             return $http({
-                url: "http://localhost/magicmirror/admin/Checkout.php",
+                url: "http://localhost/magicmirror/paymentgateway/index.php",
                 method: "POST",
                 withCredentials: true,
                 data: {

@@ -1207,6 +1207,7 @@ phonecatControllers.controller('checkout',
         $scope.shippinginfo = 0;
         $scope.paywithcard = 0;
         $scope.hidebilling = 1;
+        $scope.orderplacedid = false;
 
 
 
@@ -1598,10 +1599,10 @@ phonecatControllers.controller('checkout',
         var orderplaced = function(data, status) {
             console.log("place order returns");
             console.log(data);
-            //            $scope.paymentorderemail = $scope.form.email;
-            $scope.paymentorderid = data;
-            //            MainJson.orderemail($scope.form.email, data).success(orderemailsend);
-            //alert("Order Placed");
+            if(data != "0"){
+                $scope.orderplacedid = true;
+                $scope.paymentorderid = data;
+            }
         };
         $scope.continuepayment = function(form) {
             $scope.paywithcard = 1;
@@ -1625,7 +1626,9 @@ phonecatControllers.controller('checkout',
             MainJson.placeorder(form).success(orderplaced);
         };
 
-        $scope.submitcheckout = function(form) {
+        $scope.submitcheckout = function(form,amount) {
+            form.orderid = $scope.paymentorderid;
+            form.amount = amount;
             MainJson.submitcheckout(form);
         }
 
