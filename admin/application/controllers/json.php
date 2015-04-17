@@ -518,6 +518,12 @@ class Json extends CI_Controller
 		$this->load->view("json",$data);
 	} 
     
+    function login()
+	{
+		$id=$this->input->get_post('id');
+		$data["message"]=$this->user_model->loginuser($id);
+		$this->load->view("json",$data);
+	}
     
     
 }
