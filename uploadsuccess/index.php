@@ -7,7 +7,7 @@ header('Content-type: application/javascript');
 require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
 use google\appengine\api\cloud_storage\CloudStorageTools;
 $object_url=$_FILES['uploaded_files']['tmp_name'];
-$bucket="lylaimages2";
+$bucket="magicmirroruploads/uploads";
 $t=time();
 $newfilename="image_".$t."_".$_FILES['uploaded_files']['name'];
 move_uploaded_file($object_url, "gs://$bucket/$newfilename");
