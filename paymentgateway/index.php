@@ -11,7 +11,6 @@
 <center>
 <?php include('adler32.php')?>
 <?php include('Aes.php')?>
-<?php include('database.php')?>
 <?php 
 
 error_reporting(0);
@@ -22,15 +21,15 @@ $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id)
 //$amount=$_POST['Amount'];            // your script should substitute the amount here in the quotes provided here
 
 
-$sql = "INSERT INTO `order`(`firstname`) VALUES ('')";
-$result = $conn->query($sql);
-$orderid=$conn->insert_id;
+//$sql = "INSERT INTO `order`(`firstname`) VALUES ('')";
+//$result = $conn->query($sql);
+//$orderid=$conn->insert_id;
 //echo $orderid;
 //return 0;
 
 $amount="56";            // your script should substitute the amount here in the quotes provided here
-//$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
-$order_id=$orderid;        //your script should substitute the order description here in the quotes provided here
+$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
+//$order_id=$orderid;        //your script should substitute the order description here in the quotes provided here
 $url=$_POST['Redirect_Url'];         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
 $billing_cust_name=$_POST['billing_cust_name'];
 $billing_cust_address=$_POST['billing_cust_address'];

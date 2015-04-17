@@ -525,6 +525,13 @@ class Json extends CI_Controller
 		$this->load->view("json",$data);
 	}
     
+    function updateorderstatusafterpayment()
+    {
+        $orderid=$_POST["orderid"];
+        $returnvalue=$this->order_model->updateorderstatusafterpayment($orderid);
+        return $returnvalue;
+    }
+    
     
 }
 ?>

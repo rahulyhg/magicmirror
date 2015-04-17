@@ -48,6 +48,28 @@
 	{
 		echo "<br>Thank you for shopping with us. Your credit card has been charged and your transaction is successful. We will be shipping your order to you soon.";
 	
+        $url = "http://magicmirror.in/index.php/json/updateorderdetails";
+        
+//        $url = site_url("json/updateorderdetails");
+        $fields = array(
+                                'orderid' => urlencode($orderid)
+                        );
+
+        //url-ify the data for the POST
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string, '&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        //execute post
+        $result = curl_exec($ch);
+        
 		//Here you need to put in the routines for a successful 
 		//transaction such as sending an email to customer,
 		//setting database status, informing logistics etc etc

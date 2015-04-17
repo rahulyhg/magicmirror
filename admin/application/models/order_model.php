@@ -406,5 +406,10 @@ WHERE DATE(`order`.`timestamp`) = '$date'")->result();
         }
         
     }
+    function updateorderstatusafterpayment($orderid)
+    {
+        $query=$this->db->query("UPDATE `order` SET `status`=2 WHERE `id`=$orderid");
+        return $query;
+    }
 }
 ?>
