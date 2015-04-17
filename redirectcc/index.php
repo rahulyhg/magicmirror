@@ -69,7 +69,8 @@
 
         //execute post
         $result = curl_exec($ch);
-        
+        redirect("http://magicmirror.in");
+        curl_close($ch);
 		//Here you need to put in the routines for a successful 
 		//transaction such as sending an email to customer,
 		//setting database status, informing logistics etc etc
@@ -78,6 +79,31 @@
 	{
 		echo "<br>Thank you for shopping with us.We will keep you posted regarding the status of your order through e-mail";
 	
+        
+        $url = "http://magicmirror.in/index.php/json/updateorderdetails";
+        
+//        $url = site_url("json/updateorderdetails");
+        $fields = array(
+                                'orderid' => urlencode($orderid)
+                        );
+
+        //url-ify the data for the POST
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string, '&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        //execute post
+        $result = curl_exec($ch);
+        redirect("http://magicmirror.in");
+        curl_close($ch);
+        
 		//Here you need to put in the routines/e-mail for a  "Batch Processing" order
 		//This is only if payment for this transaction has been made by an American Express Card
 		//since American Express authorisation status is available only after 5-6 hours by mail from ccavenue and at the "View Pending Orders"

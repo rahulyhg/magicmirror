@@ -105,11 +105,14 @@ class Json extends CI_Controller
 		$billingpincode=$order['form']['billingpincode'];
         $shippingmethod=$order['form']['shippingmethod'];
 		$carts=$order['form']['cart'];
-                $finalamount=$order['form']['finalamount'];
+        $finalamount=$order['form']['finalamount'];
+        $shippingname=$order['form']['shippingname'];
+        $shippingtel=$order['form']['shippingtel'];
+        $customernote=$order['form']['customernote'];
         
         
         
-        $data["message"]=$this->order_model->placeorder($user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingcountry,$shippingstate,$shippingpincode,$billingpincode,$phone,$status,$company,$fax,$carts,$finalamount,$shippingmethod);
+        $data["message"]=$this->order_model->placeorder($user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingcountry,$shippingstate,$shippingpincode,$billingpincode,$phone,$status,$company,$fax,$carts,$finalamount,$shippingmethod,$shippingname,$shippingtel,$customernote);
         //$data["message"]=$this->order_model->placeorder($user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingcountry,$shippingstate,$shippingpincode,$billingpincode,$phone,$status,$company,$fax);
 		$this->load->view("json",$data);
 	}
