@@ -560,10 +560,9 @@ class Json extends CI_Controller
         $region=$_POST["region"];
         $city=$_POST["city"];
         $country=$_POST["country"];
-        $user_profile=$_POST["user_profile"];
         $provider=$_POST["provider"];
 
-        $query=$this->db->query("SELECT * FROM `user` WHERE `user`.`socialid`='$user_profile->identifier'");
+        $query=$this->db->query("SELECT * FROM `user` WHERE `user`.`socialid`='$identifier'");
         if($query->num_rows == 0)
         {
 
