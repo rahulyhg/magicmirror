@@ -547,6 +547,19 @@ class Json extends CI_Controller
     function socialcheck()
     {
     //print_r($_POST);
+        
+        
+        $displayName=$_POST["displayName"];
+        $email=$_POST["email"];
+        $photoURL=$_POST["photoURL"];
+        $identifier=$_POST["identifier"];
+        $birthYear=$_POST["birthYear"];
+        $birthMonth=$_POST["birthMonth"];
+        $birthDay=$_POST["birthDay"];
+        $address=$_POST["address"];
+        $region=$_POST["region"];
+        $city=$_POST["city"];
+        $country=$_POST["country"];
         $user_profile=$_POST["user_profile"];
         $provider=$_POST["provider"];
 
@@ -570,7 +583,8 @@ class Json extends CI_Controller
 						break;
 					}
 
-            $query2=$this->db->query("INSERT INTO `user` (`id`, `name`, `password`, `email`, `accesslevel`, `timestamp`, `status`, `image`, `username`, `socialid`, `logintype`, `json`, `dob`, `street`, `address`, `city`, `state`, `country`, `pincode`, `facebook`, `google`, `twitter`) VALUES (NULL, '$user_profile->displayName', '', '$user_profile->email', '3', CURRENT_TIMESTAMP, '1', '$user_profile->photoURL', '', '$user_profile->identifier', '$provider', '', '$user_profile->birthYear-$user_profile->birthMonth-$user_profile->birthDay', '', '$user_profile->address,$user_profile->region', '$user_profile->city', '', '$user_profile->country', '', '$facebookid', '$googleid', '$twitterid')");
+            
+            $query2=$this->db->query("INSERT INTO `user` (`id`, `name`, `password`, `email`, `accesslevel`, `timestamp`, `status`, `image`, `username`, `socialid`, `logintype`, `json`, `dob`, `street`, `address`, `city`, `state`, `country`, `pincode`, `facebook`, `google`, `twitter`) VALUES (NULL, '$displayName', '', '$email', '3', CURRENT_TIMESTAMP, '1', '$photoURL', '', '$identifier', '$provider', '', '$birthYear-$birthMonth-$birthDay', '', '$address,$region', '$city', '', '$country', '', '$facebookid', '$googleid', '$twitterid')");
             $id=$this->db->insert_id();
             
             return $id;
