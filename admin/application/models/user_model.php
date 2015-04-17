@@ -341,7 +341,7 @@ class User_model extends CI_Model
         return false;
     }
     
-    function loginsocial($id)
+    function createsessionbyid($id)
     {
         $query=$this->db->query("SELECT * FROM `user` WHERE `user`.`id`='$id'");
             $query=$query->row();
