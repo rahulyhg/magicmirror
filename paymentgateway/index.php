@@ -15,8 +15,6 @@
 
 error_reporting(0);
 $limited = json_decode(file_get_contents('php://input'), true);
-print_r($limited);
-
 //
 //Array
 //(
@@ -56,10 +54,10 @@ print_r($limited);
 $order_id=$limited["form"]["orderid"];
 $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
 
-$amount="56";            // your script should substitute the amount here in the quotes provided here
+$amount=$limited["form"]["amount"];            // your script should substitute the amount here in the quotes provided here
 //$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
 //$order_id=$orderid;        //your script should substitute the order description here in the quotes provided here
-$url=$_POST['Redirect_Url'];         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
+$url="http://magicmirror.in/#/home";         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
 $billing_cust_name=$limited["form"]["firstname"]." ".$limited["form"]["lastname"];;
 $billing_cust_address=$limited["form"]["billingaddress"];
 $billing_cust_country=$limited["form"]["billingcountry"];

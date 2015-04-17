@@ -13,7 +13,7 @@
 	//---------------------------------------------------------------------------------------------------------------------------------//
 
 	error_reporting(0);
-	$workingKey='';		//Working Key should be provided here.
+	$workingKey='ptljk2r1lxqc8k8gbf';		//Working Key should be provided here.
 	$encResponse=$_POST["encResponse"];			//This is the response sent by the CCAvenue Server
 
 
@@ -69,7 +69,7 @@
 
         //execute post
         $result = curl_exec($ch);
-        redirect("http://magicmirror.in/#/home");
+        redirect("http://wohlig.com");
         curl_close($ch);
 		//Here you need to put in the routines for a successful 
 		//transaction such as sending an email to customer,
@@ -80,7 +80,7 @@
 		echo "<br>Thank you for shopping with us.We will keep you posted regarding the status of your order through e-mail";
 	
         
-        $url = "http://magicmirror.in/index.php/json/updateorderdetails";
+        $url = "http://localhost/magicmirror/index.php/json/updateorderdetails";
         
 //        $url = site_url("json/updateorderdetails");
         $fields = array(
@@ -101,7 +101,7 @@
 
         //execute post
         $result = curl_exec($ch);
-        redirect("http://magicmirror.in/#/home");
+        redirect("http://wohlig.com");
         curl_close($ch);
         
 		//Here you need to put in the routines/e-mail for a  "Batch Processing" order

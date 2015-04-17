@@ -1628,7 +1628,7 @@ phonecatControllers.controller('checkout',
 
         $scope.submitcheckout = function(form,amount) {
             form.orderid = $scope.paymentorderid;
-            form.amount = amount;
+            form.amount = $scope.form.finalamount;
             MainJson.submitcheckout(form);
         }
 

@@ -1,7 +1,7 @@
-//var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
-//var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
-var adminurl = 'http://localhost/admin/index.php/json/';
-var adminurl2 = 'http://localhost/admin/index.php/json/';
+var adminurl = 'http://www.magicmirror.in/admin/index.php/json/';
+var adminurl2 = 'http://www.magicmirror.in/admin/index.php/json/';
+//var adminurl = 'http://localhost/admin/index.php/json/';
+//var adminurl2 = 'http://localhost/admin/index.php/json/';
 
 var conversionrate = [{
     id: "1",
