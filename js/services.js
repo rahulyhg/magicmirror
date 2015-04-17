@@ -220,6 +220,17 @@ service.factory('MainJson', function ($http, TemplateService) {
                 }
             });
         },
+        submitcheckout: function (form) {
+            console.log(form);
+            return $http({
+                url: "http://localhost/magicmirror/admin/Checkout.php",
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    'form': form
+                }
+            });
+        },
         seach: function (search) {
             return $http.post(adminurl + 'searchbyname?search=' + search, {}, {
                 withCredentials: true

@@ -352,7 +352,7 @@ li.bag {
 .imageset {
     width: 1020px;
     margin: auto;
-    height: 244px;
+    height: 250px;
     position: relative;
 }
 
@@ -362,7 +362,7 @@ li.bag {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 228px;
+    height: 210px;
 }
 
 .toggle.right {
@@ -1650,4 +1650,18 @@ input[type="checkbox"] {
     float: right;
     margin-right: 4px;
     padding: 1px 5px;
+}
+
+.img-cont {
+    text-align: center;
+}
+
+.img-cont img {
+    width: 100%;
+}
+
+.img-cont h5 {
+    font-size: 22px;
+    padding-top: 10px;
+    color: #838383;
 }
