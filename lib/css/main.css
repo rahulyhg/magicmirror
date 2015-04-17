@@ -577,3 +577,7 @@ h5.pricecolor {
     width: 300px;
     height: 300px;
 }
+
+.ng-invalid.ng-dirty {
+    border: 1px solid red !important;
+}

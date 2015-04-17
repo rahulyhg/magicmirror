@@ -1665,3 +1665,6 @@ input[type="checkbox"] {
     padding-top: 10px;
     color: #838383;
 }
+.ng-invalid.ng-dirty {
+    border: 1px solid red !important;
+}
