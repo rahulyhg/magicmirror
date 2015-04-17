@@ -93,7 +93,7 @@
                                                     }
                                                     else
                                                     {
-                                                        echo "http://www.magicmirror.in/showimage?size=800&image=gs://lylaimages/images";
+                                                        echo "http://www.magicmirror.in/showimage?size=800&image=gs://lylaimages/images/";
                                                     }
                                                     echo $row->productimage;?>" style="height:100px;width:100px;" /></td>
 						<td><?php if($row->is_default=="1") { echo "Image is default"; } else { echo "";} ?></td>
