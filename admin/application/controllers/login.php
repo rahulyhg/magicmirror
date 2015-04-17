@@ -5,6 +5,7 @@ class Login extends CI_Controller
 {
 	public function index( )
 	{
+        $this->session->sess_destroy();
 		$is_logged_in = $this->session->userdata( 'logged_in' );
 		if ( $is_logged_in == 'true' ) {
 			redirect( base_url() . 'index.php/site', 'refresh' );
