@@ -41,5 +41,17 @@ handlers:
 - url: /uploadsuccess/(.+)
   script: uploadsuccess/index.php
 
+- url: /paymentgateway
+  script: paymentgateway/index.php
+
+- url: /paymentgateway/(.+)
+  script: paymentgateway/index.php
+  
+- url: /redirectcc
+  script: redirectcc/index.php
+
+- url: /redirectcc/(.+)
+  script: redirectcc/index.php  
+
 - url: /.*
   script: index.php
