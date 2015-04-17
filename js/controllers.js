@@ -1595,13 +1595,16 @@ phonecatControllers.controller('checkout',
         };
 
         // order id and email after payment
-
+        $scope.payment={};
         var orderplaced = function(data, status) {
             console.log("place order returns");
             console.log(data);
             if(data != "0"){
                 $scope.orderplacedid = true;
                 $scope.paymentorderid = data;
+                
+                $scope.payment.orderid=data;
+                $scope.payment.amount=$scope.subtotal;
             }
         };
         $scope.continuepayment = function(form) {
@@ -1628,8 +1631,11 @@ phonecatControllers.controller('checkout',
 
         $scope.submitcheckout = function(form,amount) {
             form.orderid = $scope.paymentorderid;
+            $scope.payment={};
+            $scope.payment.orderid=form.orderid;
             form.amount = $scope.form.finalamount;
-            MainJson.submitcheckout(form);
+//            MainJson.submitcheckout(form);
+            window.location.href = window.location.origin + window.location.pathname + "admin/paymentgateway/index.php?orderid=" + $scope.paymentorderid + "&amount=" + $scope.form.finalamount;
         }
 
     });

@@ -13,8 +13,8 @@
 <?php include('Aes.php')?>
 <?php 
 
-error_reporting(0);
-$limited = json_decode(file_get_contents('php://input'), true);
+//error_reporting(0);
+//$limited = json_decode(file_get_contents('php://input'), true);
 //
 //Array
 //(
@@ -51,29 +51,30 @@ $limited = json_decode(file_get_contents('php://input'), true);
 //
 //)
 
-$order_id=$limited["form"]["orderid"];
+$order_id=$_POST['orderid'];  
+
 $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
 
-$amount=$limited["form"]["amount"];            // your script should substitute the amount here in the quotes provided here
+$amount=$_POST['amount'];            // your script should substitute the amount here in the quotes provided here
 //$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
 //$order_id=$orderid;        //your script should substitute the order description here in the quotes provided here
 $url="http://magicmirror.in/#/home";         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
-$billing_cust_name=$limited["form"]["firstname"]." ".$limited["form"]["lastname"];;
-$billing_cust_address=$limited["form"]["billingaddress"];
-$billing_cust_country=$limited["form"]["billingcountry"];
-$billing_cust_state=$limited["form"]["billingstate"];
-$billing_city=$limited["form"]["billingcity"];
-$billing_zip=$limited["form"]["billingpincode"];
-$billing_cust_tel=$limited["form"]["phone"];
-$billing_cust_email=$limited["form"]["email"];
-$delivery_cust_name=$limited["form"]["shippingname"];
-$delivery_cust_address=$limited["form"]["shippingaddress"];
-$delivery_cust_country=$limited["form"]["shippingcountry"];
-$delivery_cust_state=$limited["form"]["shippingstate"];
-$delivery_city=$limited["form"]["shippingstate"];
-$delivery_zip=$limited["form"]["shippingpincode"];
-$delivery_cust_tel=$limited["form"]["shippingtel"];
-$delivery_cust_notes=$limited["form"]["customernote"];
+//$billing_cust_name=$limited["form"]["firstname"]." ".$limited["form"]["lastname"];;
+//$billing_cust_address=$limited["form"]["billingaddress"];
+//$billing_cust_country=$limited["form"]["billingcountry"];
+//$billing_cust_state=$limited["form"]["billingstate"];
+//$billing_city=$limited["form"]["billingcity"];
+//$billing_zip=$limited["form"]["billingpincode"];
+//$billing_cust_tel=$limited["form"]["phone"];
+//$billing_cust_email=$limited["form"]["email"];
+//$delivery_cust_name=$limited["form"]["shippingname"];
+//$delivery_cust_address=$limited["form"]["shippingaddress"];
+//$delivery_cust_country=$limited["form"]["shippingcountry"];
+//$delivery_cust_state=$limited["form"]["shippingstate"];
+//$delivery_city=$limited["form"]["shippingstate"];
+//$delivery_zip=$limited["form"]["shippingpincode"];
+//$delivery_cust_tel=$limited["form"]["shippingtel"];
+//$delivery_cust_notes=$limited["form"]["customernote"];
 
 
 $working_key='ptljk2r1lxqc8k8gbf';	//Put in the 32 bit alphanumeric key in the quotes provided here.

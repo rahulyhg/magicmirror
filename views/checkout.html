@@ -839,7 +839,17 @@
                                         </table>
                                     </div>
                                 </div>
-                                <a class="btns btns-primary pull-right" ng-click="submitcheckout(form,subtotal+form.shippingcost-discountamount)" ng-if="orderplacedid">Place Order</a>
+                                <form action="http://magicmirror.in/paymentgateway/index.php" method="post">
+                                    {{payment.orderid}}
+                                    
+<!--               CHECKOUT POST FORM START                    -->
+                                    
+                                   <input type="text" name="orderid" ng-model="payment.orderid"> 
+                                   <input type="text" name="amount" ng-model="payment.amount"> 
+                                    <input type="submit" class="btns btns-primary pull-right"  ng-if="orderplacedid" value="Place Order">
+                                    
+<!--               CHECKOUT POST FORM START                    -->
+                                </form>
 
                                 <!--
                             <a href="" class="btn btn-primary pull-right" ng-click="placeorder(form)" ng-show="(accesslevel!=3)">Place order</a>
