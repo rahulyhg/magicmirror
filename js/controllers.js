@@ -20,9 +20,9 @@ phonecatControllers.controller('home',
         MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         console.log("totalproducts");
         console.log($scope.template.totalproducts);
-        console.log(TemplateService.totalproducts);    
-    
-       
+        console.log(TemplateService.totalproducts);
+
+
 
         $scope.sliders1 = [{
                 "id": "2",
@@ -57,7 +57,7 @@ phonecatControllers.controller('home',
                 "name": "Earings"
             },
             {
-                "id": "7",
+                "id": "6",
                 "image": "up1.png",
                 "link": "804",
                 "price": "3",
@@ -65,7 +65,7 @@ phonecatControllers.controller('home',
                 "name": "Bangles"
             },
             {
-                "id": "8",
+                "id": "7",
                 "image": "up2.png",
                 "link": "806",
                 "price": "3",
@@ -73,20 +73,52 @@ phonecatControllers.controller('home',
                 "name": "Necklace"
             },
             {
-                "id": "9",
+                "id": "8",
                 "image": "up3.png",
-                "link": "807",
+                "link": "808",
+                "price": "3",
+                "order": "7",
+                "name": "Rings"
+            },
+            {
+                "id": "9",
+                "image": "up4.png",
+                "link": "809",
                 "price": "3",
                 "order": "7",
                 "name": "Rings"
             },
             {
                 "id": "10",
-                "image": "up4.png",
-                "link": "737",
+                "image": "up1.png",
+                "link": "810",
                 "price": "3",
-                "order": "8",
-                "name": "Earings"
+                "order": "7",
+                "name": "Rings"
+            },
+            {
+                "id": "11",
+                "image": "up1.png",
+                "link": "811",
+                "price": "3",
+                "order": "7",
+                "name": "Rings"
+            },
+            {
+                "id": "12",
+                "image": "up1.png",
+                "link": "812",
+                "price": "3",
+                "order": "7",
+                "name": "Rings"
+            },
+            {
+                "id": "13",
+                "image": "up1.png",
+                "link": "807",
+                "price": "3",
+                "order": "7",
+                "name": "Rings"
             }];
 
         $scope.sliders = [{
@@ -606,7 +638,7 @@ phonecatControllers.controller('loginwishlist',
         TemplateService.lightboximage = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-    
+
         console.log("totalproducts");
         console.log(TemplateService.totalproducts);
         $scope.alert2 = "Login or signup for wishlist";
@@ -926,7 +958,7 @@ phonecatControllers.controller('newsletter',
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
         $scope.msgg = "";
-    
+
         //cart badge
         var totalcart = function (data, status) {
             console.log("cart data");
@@ -935,7 +967,7 @@ phonecatControllers.controller('newsletter',
         };
         MainJson.gettotalcart().success(totalcart);
         //cart badge    
-    
+
         //authenticate
         $scope.logout = function () {
             MainJson.logout();
@@ -988,7 +1020,7 @@ phonecatControllers.controller('badge',
         };
         MainJson.gettotalcart().success(totalcart);
         //cart badge
-    
+
         //authenticate
         $scope.logout = function () {
             MainJson.logout();
@@ -1194,30 +1226,30 @@ phonecatControllers.controller('checkout',
             MainJson.orderemail($scope.paymentorderemail, $scope.paymentorderid).success(orderemailsend);
             window.location.href = "http://www.lylaloves.co.uk/#/thankyou";
         };
-//        var handler = StripeCheckout.configure({
-//            key: 'pk_live_I1udSOaNJK4si3FCMwvHsY4g',
-//            //key: 'pk_test_4etgLi16WbODEDr4YBFdcbP0',
-//            image: 'img/logo.jpg',
-//            currency: 'GBP',
-//            token: function (token) {
-//                MainJson.chargestripe(token.id, $scope.form.email, ($scope.subtotal + $scope.form.shippingcost - $scope.discountamount), ($scope.form.firstname + " " + $scope.form.lastname)).success(paymentcomplete);
-//                //window.location.href="http://www.lylaloves.co.uk/#/thankyou";
-//                // Use the token to create the charge with a server-side script.
-//                // You can access the token ID with `token.id`
-//            }
-//        });
-//
-//        $scope.StipePaymentGen = function (amount) {
-//
-//
-//            handler.open({
-//                name: 'Lyla Loves',
-//                description: 'Total Amount: £ ' + amount,
-//                amount: amount * 100,
-//
-//            });
-//
-//        };
+        //        var handler = StripeCheckout.configure({
+        //            key: 'pk_live_I1udSOaNJK4si3FCMwvHsY4g',
+        //            //key: 'pk_test_4etgLi16WbODEDr4YBFdcbP0',
+        //            image: 'img/logo.jpg',
+        //            currency: 'GBP',
+        //            token: function (token) {
+        //                MainJson.chargestripe(token.id, $scope.form.email, ($scope.subtotal + $scope.form.shippingcost - $scope.discountamount), ($scope.form.firstname + " " + $scope.form.lastname)).success(paymentcomplete);
+        //                //window.location.href="http://www.lylaloves.co.uk/#/thankyou";
+        //                // Use the token to create the charge with a server-side script.
+        //                // You can access the token ID with `token.id`
+        //            }
+        //        });
+        //
+        //        $scope.StipePaymentGen = function (amount) {
+        //
+        //
+        //            handler.open({
+        //                name: 'Lyla Loves',
+        //                description: 'Total Amount: £ ' + amount,
+        //                amount: amount * 100,
+        //
+        //            });
+        //
+        //        };
 
 
 
@@ -2231,9 +2263,9 @@ phonecatControllers.controller('zoomCtrl',
 
 
 phonecatControllers.controller('searchbuttonCtrl',
-    function ($scope,$location) {
+    function ($scope, $location) {
         $scope.searchproducts = function (text) {
-            $location.url("/search/"+text);
+            $location.url("/search/" + text);
         };
     }
 );
