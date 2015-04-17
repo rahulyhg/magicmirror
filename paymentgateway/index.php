@@ -17,65 +17,65 @@ error_reporting(0);
 $limited = json_decode(file_get_contents('php://input'), true);
 print_r($limited);
 
+//
+//Array
+//(
+//    [form] => Array
+//        (
+//            [shipdifferent] => 2
+//            [shippingcost] => 5
+//            [firstname] => jagruti
+//            [lastname] => patil
+//            [company] => wohlig
+//            [email] => jagruti@wohlig.com
+//            [billingaddress] => varadvinayak soc
+//            [billingcity] => thakurli
+//            [billingstate] => maharashtra
+//            [billingpincode] => 421201
+//            [billingcountry] => India
+//            [shippingmethod] => 5
+//            [phone] => 9819222221
+//            [cart] => Array
+//                (
+//                )
+//
+//            [orderid] => 3
+//            [amount] => 5
+//            [shippingname] => chhaya
+//            [shippingtel] => 9878654367
+//            [shippingaddress] => siddhivinayak soc
+//            [shippingcity] => thane
+//            [shippingstate] => maharashtra
+//            [shippingpincode] => 432312
+//            [shippingcountry] => India
+//            [customernote] => hey my note
+//        )
+//
+//)
 
-Array
-(
-    [form] => Array
-        (
-            [shipdifferent] => 2
-            [shippingcost] => 5
-            [firstname] => jagruti
-            [lastname] => patil
-            [company] => wohlig
-            [email] => jagruti@wohlig.com
-            [billingaddress] => varadvinayak soc
-            [billingcity] => thakurli
-            [billingstate] => maharashtra
-            [billingpincode] => 421201
-            [billingcountry] => India
-            [shippingmethod] => 5
-            [phone] => 9819222221
-            [cart] => Array
-                (
-                )
-
-            [orderid] => 3
-            [amount] => 5
-            [shippingname] => chhaya
-            [shippingtel] => 9878654367
-            [shippingaddress] => siddhivinayak soc
-            [shippingcity] => thane
-            [shippingstate] => maharashtra
-            [shippingpincode] => 432312
-            [shippingcountry] => India
-            [customernote] => hey my note
-        )
-
-)
-
-
+$order_id=$limited["form"]["orderid"];
 $merchant_id="M_magicwmn_11883";  // Merchant id(also User_Id) 
 
 $amount="56";            // your script should substitute the amount here in the quotes provided here
-$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
+//$order_id=$_POST['Order_Id'];        //your script should substitute the order description here in the quotes provided here
 //$order_id=$orderid;        //your script should substitute the order description here in the quotes provided here
 $url=$_POST['Redirect_Url'];         //your redirect URL where your customer will be redirected after authorisation from CCAvenue
-$billing_cust_name=$_POST['billing_cust_name'];
-$billing_cust_address=$_POST['billing_cust_address'];
-$billing_cust_country=$_POST['billing_cust_country'];
-$billing_cust_state=$_POST['billing_cust_state'];
-$billing_city=$_POST['billing_city'];
-$billing_zip=$_POST['billing_zip'];
-$billing_cust_tel=$_POST['billing_cust_tel'];
-$billing_cust_email=$_POST['billing_cust_email'];
-$delivery_cust_name=$_POST['delivery_cust_name'];
-$delivery_cust_address=$_POST['delivery_cust_address'];
-$delivery_cust_country=$_POST['delivery_cust_country'];
-$delivery_cust_state=$_POST['delivery_cust_state'];
-$delivery_city=$_POST['delivery_city'];
-$delivery_zip=$_POST['delivery_zip'];
-$delivery_cust_tel=$_POST['delivery_cust_tel'];
-$delivery_cust_notes=$_POST['delivery_cust_notes'];
+$billing_cust_name=$limited["form"]["firstname"]." ".$limited["form"]["lastname"];;
+$billing_cust_address=$limited["form"]["billingaddress"];
+$billing_cust_country=$limited["form"]["billingcountry"];
+$billing_cust_state=$limited["form"]["billingstate"];
+$billing_city=$limited["form"]["billingcity"];
+$billing_zip=$limited["form"]["billingpincode"];
+$billing_cust_tel=$limited["form"]["phone"];
+$billing_cust_email=$limited["form"]["email"];
+$delivery_cust_name=$limited["form"]["shippingname"];
+$delivery_cust_address=$limited["form"]["shippingaddress"];
+$delivery_cust_country=$limited["form"]["shippingcountry"];
+$delivery_cust_state=$limited["form"]["shippingstate"];
+$delivery_city=$limited["form"]["shippingstate"];
+$delivery_zip=$limited["form"]["shippingpincode"];
+$delivery_cust_tel=$limited["form"]["shippingtel"];
+$delivery_cust_notes=$limited["form"]["customernote"];
 
 
 $working_key='ptljk2r1lxqc8k8gbf';	//Put in the 32 bit alphanumeric key in the quotes provided here.
