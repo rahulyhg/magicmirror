@@ -69,7 +69,7 @@
 
         //execute post
         $result = curl_exec($ch);
-        redirect("http://magicmirror.in");
+        redirect("http://magicmirror.in/#/home");
         curl_close($ch);
 		//Here you need to put in the routines for a successful 
 		//transaction such as sending an email to customer,
@@ -101,7 +101,7 @@
 
         //execute post
         $result = curl_exec($ch);
-        redirect("http://magicmirror.in");
+        redirect("http://magicmirror.in/#/home");
         curl_close($ch);
         
 		//Here you need to put in the routines/e-mail for a  "Batch Processing" order
