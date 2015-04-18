@@ -28,7 +28,7 @@ phonecatControllers.controller('home',
                 $("#video").get(0).play();
             }
         };
-        $scope.soundtate = "unmuted";
+        $scope.soundstate = "unmuted";
         $scope.changesoundstate = function () {
             if ($scope.soundstate == "muted") {
                 $scope.soundstate = "unmuted";
