@@ -36,7 +36,6 @@
 -->
     <!--        <div class="black-overlay"></div>-->
     <video id="video" class="home-video" loop="loop" preload="auto" autoplay="autoplay">
-
         <source src="img/video.mp4" type="video/mp4">
             <source src="img/video.webm" type="video/webm">
     </video>
@@ -48,7 +47,7 @@
     </div>
     <div class="playpause" ng-click="changevideostate();"><i class="fa fa-pause" ng-show="videostate=='play'"></i><i class="fa fa-play" ng-show="videostate=='pause'"></i>
     </div>
-    <div class="playpause" ng-click="changesoundstate();"><i class="fa fa-pause" ng-show="soundstate=='muted'"></i><i class="fa fa-play" ng-show="soundstate=='unmuted'"></i>
+    <div class="playpause muted" ng-click="changesoundstate();"><i class="fa fa-pause" ng-show="soundstate=='unmuted'"></i><i class="fa fa-play" ng-show="soundstate=='muted'"></i>
     </div>
 </div>
 <div class="product-img">

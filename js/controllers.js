@@ -42,7 +42,6 @@ phonecatControllers.controller('home',
         };
 
         $scope.sound = "muted";
-
         MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         console.log("totalproducts");
         console.log($scope.template.totalproducts);

@@ -1710,7 +1710,12 @@ input[type="checkbox"] {
 }
 
 li.miss-logo {
-    width: 500px!important;
+    width: 375px!important;
+    padding-left: 85px;
+}
+
+.top-padimg {
+    padding-top: 30px!important;
 }
 
 .miss-uni ul li {
@@ -1718,14 +1723,42 @@ li.miss-logo {
     float: left;
 }
 
+.playpause.muted {
+    right: 113px;
+}
+
+.miss-uni ul li img {
+    padding-top: 10px;
+}
+
 .logo-footer {
     padding: 20px 0;
 }
 
+i.fa.fa-android,
+i.fa.fa-apple {
+    font-size: 55px;
+    color: #C0C0C0;
+}
+
+.foot-icon {
+    padding: 30px 0;
+}
+
 li.magic-bg .megamenu {
-    background: url('../../img/bg-missnui.png');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url('../../img/bg-missnui.png')no-repeat!important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+}
+
+img.bottom-padimg {
+    padding-top: 0!important;
+    padding-bottom: 20px;
+    width: 68%;
+}
+
+li.text-center.miss-logo p {
+    text-align: justify;
 }
