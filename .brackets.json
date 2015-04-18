@@ -3,6 +3,7 @@
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/drilldown.src.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/js/controllers.js",
-        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.src.js"
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.src.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.src.js"
     ]
 }

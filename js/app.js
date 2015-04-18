@@ -139,6 +139,7 @@ firstapp.config(['$routeProvider',
 firstapp.filter('imagepath', function() {
     return function(input) {
         if (input) {
+            input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
             image = image.replace(" ", "_");
         }
@@ -147,7 +148,9 @@ firstapp.filter('imagepath', function() {
 });
 firstapp.filter('imagepath1', function() {
     return function(input) {
+
         if (input) {
+            input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
             image = image.replace(" ", "_");
         }
@@ -156,7 +159,9 @@ firstapp.filter('imagepath1', function() {
 });
 firstapp.filter('imagepath2', function() {
     return function(input) {
+
         if (input) {
+            input = input.replace("gs://magicmirroruploads/uploads/", "");
             return "img/" + input.trim();
         }
     };
@@ -165,7 +170,9 @@ firstapp.filter('imagepath2', function() {
 firstapp.filter('imagepathbig', function() {
     return function(input) {
         if (input) {
+            input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/" + input.trim();
+
             image = image.replace(" ", "_");
         }
 
