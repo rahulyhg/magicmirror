@@ -4,6 +4,13 @@
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/exporting.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/js/controllers.js",
         "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/funnel.src.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.src.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.src.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/assets/jquery-file-upload/js/vendor/tmpl.min.js",
+        "moment.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/easy-pie-chart.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/external-dragging-calendar.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/form-component.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/form-validation-script.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/ga.js"
     ]
 }

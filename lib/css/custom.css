@@ -1688,33 +1688,44 @@ input[type="checkbox"] {
 
 .playpause {
     position: absolute;
-<<<<<<< HEAD
     top: 335px;
     right: 17px;
     color: white;
     font-size: 16px;
-=======
     bottom: 50px;
     right: 41px;
     color: white;
     font-size: 22px;
->>>>>>> origin/master
     border: 5px solid white;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     width: 50px;
     height: 50px;
-<<<<<<< HEAD
     padding: 11px 0;
     text-align: center;
     line-height: 7px;
-=======
     padding: 10px 0px;
     text-align: center;
 }
 
+li.miss-logo {
+    width: 500px!important;
+}
+
+.miss-uni ul li {
+    width: 200px;
+    float: left;
+}
+
 .logo-footer {
     padding: 20px 0;
->>>>>>> origin/master
+}
+
+li.magic-bg .megamenu {
+    background: url('../../img/bg-missnui.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
