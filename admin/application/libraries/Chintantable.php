@@ -76,7 +76,7 @@ class Chintantable {
         $return = new stdClass();
         $return->query = $selectquery . $fromquery . $wherequery . $groupquery . $havingquery . $orderquery . $limitquery;
         $return->queryresult = $this->CI->db->query($return->query)->result();
-        $return->totalvalues = $this->CI->db->query($selectquery $fromquery . $wherequery . $groupquery . $havingquery);
+        $return->totalvalues = $this->CI->db->query($selectquery . $fromquery . $wherequery . $groupquery . $havingquery);
         $return->totalvalues = intval($return->totalvalues->num_rows());
         $return->pageno = $pageno;
         $return->lastpage = ceil($return->totalvalues / $maxlength);
