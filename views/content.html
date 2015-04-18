@@ -35,7 +35,7 @@
     </wrap-owlcarousel>
 -->
     <!--        <div class="black-overlay"></div>-->
-    <video id="video" class="home-video" loop="loop" preload="auto" autoplay="autoplay" muted>
+    <video id="video" class="home-video" loop="loop" preload="auto" autoplay="autoplay">
 
         <source src="img/video.mp4" type="video/mp4">
             <source src="img/video.webm" type="video/webm">
@@ -60,12 +60,16 @@
                 <div class="row">
                     <a href="#category/18">
                         <div class="col-xs-2">
-
+                            <a href="#/category/1">
+                                <div class="img-cont">
+                                    <h5> Bangles</h5>
+                                    <img src="img/up1.png">
+                                </div>
+                            </a>
                             <div class="img-cont">
                                 <h5> Bangles</h5>
                                 <img src="img/up1.png">
                             </div>
-
                         </div>
                     </a>
                     <a href="#category/19">
@@ -251,59 +255,60 @@ $('.carousel1 .item').each(function(){
     </script>          
 -->
         </div>
-        <div class="clearfix"></div>
-        <div class="jwellerybck">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4 border-jewell">
-                        <div class="text-jellwery">
-                            <h5>JEWELLERY CARE</h5>
-                            <p>
-                                ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry &amp; the excellent professional services.
-                            </p>
-                        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="jwellerybck">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4 border-jewell">
+                    <div class="text-jellwery">
+                        <h5>JEWELLERY CARE</h5>
+                        <p>
+                            ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry &amp; the excellent professional services.
+                        </p>
                     </div>
-                    <div class="col-xs-4 endorse">
-                        <div class="text-client">
-                            <h5>CLIENT ENDORSEMENT</h5>
-                            <p>
-                                I just received my order and love my purchases! This was my first experience buying Magic Mirror jewellery online.Thank you for your support. Look forward to being an ongoing Magic Mirror customer.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xs-2"></div>
                 </div>
+                <div class="col-xs-4 endorse">
+                    <div class="text-client">
+                        <h5>CLIENT ENDORSEMENT</h5>
+                        <p>
+                            I just received my order and love my purchases! This was my first experience buying Magic Mirror jewellery online.Thank you for your support. Look forward to being an ongoing Magic Mirror customer.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
             </div>
         </div>
-        <script>
-            jQuery(window).ready(function() {
-                var $onlyhome = {};
-                $onlyhome = jQuery(".parallax-effect");
-                if ($onlyhome.length > 0) {
-                    var child = ".in-parallax";
-                    $onlyhome.css("overflow", "hidden");
-                    var barheight = 400;
-                    $onlyhome.height(barheight);
+    </div>
+    <script>
+        jQuery(window).ready(function () {
+            var $onlyhome = {};
+            $onlyhome = jQuery(".parallax-effect");
+            if ($onlyhome.length > 0) {
+                var child = ".in-parallax";
+                $onlyhome.css("overflow", "hidden");
+                var barheight = 400;
+                $onlyhome.height(barheight);
+                var $window = jQuery(window);
+                var top = $onlyhome.offset().top;
+                var height = $onlyhome.height();
+                var windowheight = $window.height();
+                console.log($onlyhome.offset());
+                jQuery(window).scroll(function () {
                     var $window = jQuery(window);
+                    var scrolltop = $window.scrollTop();
                     var top = $onlyhome.offset().top;
-                    var height = $onlyhome.height();
+                    var height = $onlyhome.children(child).height();
                     var windowheight = $window.height();
-                    console.log($onlyhome.offset());
-                    jQuery(window).scroll(function() {
-                        var $window = jQuery(window);
-                        var scrolltop = $window.scrollTop();
-                        var top = $onlyhome.offset().top;
-                        var height = $onlyhome.children(child).height();
-                        var windowheight = $window.height();
 
-                        if ((scrolltop) > (top - windowheight) && (scrolltop) < (top + height)) {
-                            var difference = (scrolltop) - (top - windowheight);
-                            var pullup = (height - barheight) * difference / (windowheight + height) * (-1.4);
-                            $onlyhome.children(child).css("transform", "translateY(" + pullup + "px)");
-                        }
-                    });
-                }
-                jQuery(window).scroll(0);
-            });
-        </script>
+                    if ((scrolltop) > (top - windowheight) && (scrolltop) < (top + height)) {
+                        var difference = (scrolltop) - (top - windowheight);
+                        var pullup = (height - barheight) * difference / (windowheight + height) * (-1.4);
+                        $onlyhome.children(child).css("transform", "translateY(" + pullup + "px)");
+                    }
+                });
+            }
+            jQuery(window).scroll(0);
+        });
+    </script>
