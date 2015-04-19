@@ -416,11 +416,11 @@ class User_model extends CI_Model
             {
                 if($key2!=0)
                 {
-                    $where.=" OR $what LIKE '$sea' ";
+                    $where.=" AND $what LIKE '%$sea%' ";
                 }
                 else
                 {
-                    $where.=" $what LIKE '$sea' ";
+                    $where.=" $what LIKE '%$sea%' ";
                 }
             }
             $where.=" ) ";
@@ -428,6 +428,8 @@ class User_model extends CI_Model
         //echo $where;
         
             $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id` $where  GROUP BY `product`.`id`");
+        //echo "SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id` $where  GROUP BY `product`.`id`";
+        
 //            foreach($query as $p_row)
 //		{
 //			$productid = $p_row->id;
