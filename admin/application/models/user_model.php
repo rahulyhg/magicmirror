@@ -397,16 +397,46 @@ class User_model extends CI_Model
     {
            // $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`, `productimage`.`image`,`category`.`name` FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` LEFT OUTER JOIN `productimage` ON `productimage`.`product`=`product`.`id` LEFT OUTER JOIN `category` ON `category`.`id`=`productcategory`.`category` WHERE `product`.`name` LIKE '%$search%' OR `product`.`description` LIKE '%$search%' OR `category`.`name` LIKE '%$search%'");
         
-            $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id`  WHERE `product`.`name` LIKE '%$search%' OR `product`.`description` LIKE '%$search%' GROUP BY `product`.`id`");
-            foreach($query as $p_row)
-		{
-			$productid = $p_row->id;
-			$query5=$this->db->query("SELECT count(`category`) as `isnew`  FROM `productcategory` 
-			WHERE  `productcategory`.`category`='31' AND `product`='$productid'
-			LIMIT 0,1")->row();
-			$p_row->isnew=$query5->isnew;
-			
-		}
+        $whattosearch=array("`product`.`name`","`product`.`description`","`product`.`sku`");
+        $search=explode(" ",$search);
+        
+        $where=" WHERE ";
+        foreach($whattosearch as $key=>$what) {
+            if($key!=0)
+            {
+                $where.=" OR ( ";
+            }
+            else
+            {
+                $where.=" ( ";
+            }
+                
+            
+            foreach($search as $key2=>$sea)
+            {
+                if($key2!=0)
+                {
+                    $where.=" OR $what LIKE '$sea' ";
+                }
+                else
+                {
+                    $where.=" $what LIKE '$sea' ";
+                }
+            }
+            $where.=" ) ";
+        }
+        //echo $where;
+        
+            $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id` $where  GROUP BY `product`.`id`");
+//            foreach($query as $p_row)
+//		{
+//			$productid = $p_row->id;
+//			$query5=$this->db->query("SELECT count(`category`) as `isnew`  FROM `productcategory` 
+//			WHERE  `productcategory`.`category`='31' AND `product`='$productid'
+//			LIMIT 0,1")->row();
+//			$p_row->isnew=$query5->isnew;
+//			
+//		}
         return $query->result();
     }
     
