@@ -16,22 +16,22 @@
     </script>
     <script>
         var isMobile = {
-            Android: function() {
+            Android: function () {
                 return navigator.userAgent.match(/Android/i);
             },
-            BlackBerry: function() {
+            BlackBerry: function () {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            iOS: function() {
+            iOS: function () {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            Opera: function() {
+            Opera: function () {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            Windows: function() {
+            Windows: function () {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function() {
+            any: function () {
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
@@ -63,8 +63,6 @@
     <link href="lib/range/angular.rangeSlider.css" rel="stylesheet">
     <link href="lib/css/custom.css" rel="stylesheet">
     <link href="lib/css/FUTURAL.TTF" rel="stylesheet">
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
@@ -85,6 +83,7 @@
     <script src="lib/range/angular.rangeSlider.js "></script>
     <script src="lib/js/ng-infinite-scroll.min.js "></script>
     <script src="lib/js/jstorage.js "></script>
+    <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
 </head>
 
 <body>

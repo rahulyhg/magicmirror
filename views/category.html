@@ -2,7 +2,7 @@
     <div class="content">
         <div class="contenttop">
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                     <!--
                    <span class="breadcrumb">
 							Home /
@@ -13,20 +13,52 @@
 </span>
 -->
                 </div>
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
+                    <div class="filter-btn" ng-controller="filterctrl">
+                        <a class="btn btn-default" ng-mouseover="showfilter(0)" ng-mouseleave="hidefilter(0)">
+                            <p class="cat-filter">Product Filters{{demo}}</p>
+                            <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="filter-btn btn-sort" ng-controller="filterctrl">
+                        <!--                        <a class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By</a>-->
+                        <!--                        <div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div>-->
+                        <span>Sort By</span>
+                        <select class="sort-drp">
+                            <option value="">Newest to Oldest</option>
+                            <option value="">Oldest to Newest</option>
+                            <option value="">Hight to Low</option>
+                            <option value="">Low to High</option>
+                        </select>
+                        <!--
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation" class="dropdown-header">Dropdown header 1</li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a>
+                                </li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" class="dropdown-header">Dropdown header 2</li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+-->
 
-                    <div class="pull-right" ng-controller="filterctrl">
-                        <a class="btn btn-default" ng-mouseover="showfilter(0)" ng-mouseleave="hidefilter(0)">Filters{{demo}}
-                       <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
-                    </a> &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By<div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="maincontent">
-            
+
             <div infinite-scroll='addMoreItems();' infinite-scroll-distance="0" infinite-scroll-disabled="shouldscroll">
                 <div class="col-xs-3 text-center clearfix" ng-repeat="product in products" my-repeat-directive>
                     <!--                <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">-->
