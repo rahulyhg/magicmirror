@@ -1471,3 +1471,6 @@ li.text-center.miss-logo p {
 .brand-cont {
     padding-bottom: 30px;
 }
+.container {
+  min-width: 1024px !important;
+}
