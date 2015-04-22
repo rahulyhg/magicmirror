@@ -914,13 +914,15 @@ span.glyphicon.glyphicon-shopping-cart {
 }
 
 .btn.contact {
-    width: 280px;
-    font-size: 24px;
+    width: 30%;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 7px;
     color: #fff;
     margin-top: 12px;
     background: #878787;
+    padding: 2px;
+    display: block;
 }
 
 .address-cont:after {
@@ -1082,6 +1084,10 @@ div.megamenu {
 ul.submenudown {
     list-style: none;
     padding: 10px 0 0 26px;
+}
+
+li.img-widthimg {
+    width: 175px;
 }
 
 ul.submenudown h5 a {
@@ -1858,6 +1864,10 @@ select.sort-drp {
     outline: transparent;
     width: 50%;
     margin-left: 5px;
+}
+
+.img-widthimg img {
+    width: 100%;
 }
 
 .container {
