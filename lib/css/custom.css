@@ -61,10 +61,10 @@ span {
 }
 
 img.slideset1 {
-    width: 80%;
+    width: 100%;
     float: left;
-    padding: 17px 0px 17px 0px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .contenttop {
@@ -587,8 +587,12 @@ li.welcome {
 }
 
 .bckgrnd-sliderdwn {
+    height: 268px;
     background: #f5f5f5;
-    height: 244px;
+}
+
+.pickweek h5 {
+    font-size: 18px;
 }
 
 .nav-pills > li > a {
@@ -607,8 +611,12 @@ li.welcome {
 }
 
 .product-imgdown .pickweek {
-    border-right: 1px solid #000;
+    border-right: 1px solid #ddd;
     overflow: hidden;
+}
+
+.pickweek h5 {
+    font-size: 18px;
 }
 
 footer h5 {
