@@ -371,6 +371,49 @@ class User_model extends CI_Model
         {
             $this->db->query("INSERT INTO `newsletterusers`(`user`, `email`, `status`) VALUES ('$id','$email','$status')");
             $newsletter=$this->db->insert_id();
+            
+            $email=$row->email;
+            $this->load->library('email');
+            $this->email->from('info@magicmirror.in', 'Magic Mirror');
+            $this->email->to($email);
+
+            $this->email->subject('Magic Mirror');
+            $message="<html>
+
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size: 30px;padding-bottom: 5px;color: #e82a96;'>Sparkling Greetings!</h4>
+        <p style='font-size: 22px;padding-bottom: 10px;'>You are subscribed to the world of elegant & exquisite jewellery.</p>
+        <p style='font-size: 22px;padding-bottom: 10px;'> We will be updating you all the latest & masterpiece design of Magic Mirror, of course with gorgeous & exclusive collection for every occasion.</p>
+        <p style='font-size: 22px;padding-bottom: 10px;'>It was our pleasure to share some masterpiece design with you!
+        </p>
+        <p style='font-size: 22px;padding-bottom: 10px;'>See you again!
+        </p>
+        <p style='font-size: 22px;padding-bottom: 10px;text-align:left;'>
+            <br> Keep Sparkling,
+            <br>Team Magic Mirror
+        </p>
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 22px;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You Again
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png'>
+    </div>
+</body>
+
+</html>";
+            echo $message;
+            $this->email->message($message);
+
+            $this->email->send();
+
+             $data["message"]=$this->email->print_debugger();
+            $this->load->view("json",$data);
+            
             return $newsletter;
         }
     }
@@ -454,7 +497,15 @@ class User_model extends CI_Model
                'price'   => $price,
         );
         //array_push($data,$data2);
+        $userid=$this->session->userdata('id');
+        if($userid=="")
+        {
 
+        }
+        else
+        {
+            $this->db->query("INSERT INTO `usercart`(`user`, `product`, `quantity`, `status`, `timestamp`) VALUES ('$userid','$product','$quantity',1,NULL)");
+        }
         $this->cart->insert($data);
     }
     

@@ -34,11 +34,33 @@ class Json extends CI_Controller
         
         $email=$this->input->get('email');
         $this->load->library('email');
-        $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
+        $this->email->from('info@magicmirror.in', 'Magic Mirror');
         $this->email->to($email);
 
-        $this->email->subject('Welcome to Lyla');
-        $this->email->message('Hello, You Sign Up successfully...Thank You For Visiting');
+        $this->email->subject('Welcome to Magic Mirror');
+        $message="<html>
+
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size: 30px;padding-bottom: 5px;color: #e82a96;'>Gorgeous Greetings!</h4>
+        <p style='font-size: 22px;padding-bottom: 10px;'>It's really awesome to see you here!</p>
+        <p style='font-size: 22px;padding-bottom: 10px;'> Welcome to our exquisite, bright and elegant family of adorable designs and dedicated service.</p>
+        <p style='font-size: 22px;padding-bottom: 10px;'>We are sure you are going to love the magical journey we are about to begin!
+        </p>
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 22px;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You Again
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png '>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
 
         $this->email->send();
 
@@ -599,6 +621,61 @@ class Json extends CI_Controller
         }
     
 
+    }
+    
+    public function reminderemail()
+    {
+        $query=$this->db->query("SELECT `usercart`.`user` AS `userid`,`user`.`email` AS `email` FROM `usercart` INNER JOIN `user` ON `user`.`id`=`usercart`.`user`")->result();
+        foreach($query as $row)
+        {
+            $email=$row->email;
+            $this->load->library('email');
+            $this->email->from('info@magicmirror.in', 'Magic Mirror');
+            $this->email->to($email);
+
+            $this->email->subject('Welcome to Magic Mirror');
+            $message="<html>
+
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size: 30px;padding-bottom: 5px;color: #e82a96;'>Sparkling Greetings!</h4>
+        <p style='font-size: 22px;padding-bottom: 10px;'>We noticed you put together beautiful jewellery in shopping cart on our site but didn't submit your order, wondering if you need any help or if you have any questions about the order before you submit it?</p>
+
+
+
+        <p style='font-size: 22px;padding-bottom: 10px;'>If there's anything we can do, drop us a line & email us at <a>support@magicmirror</a>.in with any product or order queries.</p>
+        <p style='font-size: 22px;text-align:left;'>
+            Your shopping cart
+        </p>
+        <p style='font-size: 22px;text-align:left;'>
+            List of your shopping cart contents below.
+        </p>
+        <p style='font-size: 22px;padding-bottom: 10px;text-align:left;'>
+
+            <br> Keep Sparkling,
+            <br>Team Magic Mirror
+        </p>
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 22px;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You Again
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png '>
+    </div>
+</body>
+
+</html>";
+            echo $message;
+            $this->email->message($message);
+
+            $this->email->send();
+
+             $data["message"]=$this->email->print_debugger();
+            $this->load->view("json",$data);
+        }
     }
     
     
