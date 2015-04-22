@@ -1084,6 +1084,10 @@ ul.submenudown {
     padding: 10px 0 0 26px;
 }
 
+li.img-widthimg {
+    width: 175px;
+}
+
 ul.submenudown h5 a {
     color: #EA1665;
 }
@@ -1858,6 +1862,10 @@ select.sort-drp {
     outline: transparent;
     width: 50%;
     margin-left: 5px;
+}
+
+.img-widthimg img {
+    width: 100%;
 }
 
 .container {
