@@ -477,11 +477,11 @@ class Json extends CI_Controller {
             }
             $query2 = $this->db->query("INSERT INTO `user` (`id`, `name`, `password`, `email`, `accesslevel`, `timestamp`, `status`, `image`, `username`, `socialid`, `logintype`, `json`, `dob`, `street`, `address`, `city`, `state`, `country`, `pincode`, `facebook`, `google`, `twitter`) VALUES (NULL, '$displayName', '', '$email', '3', CURRENT_TIMESTAMP, '1', '$photoURL', '', '$identifier', '$provider', '', '$birthYear-$birthMonth-$birthDay', '', '$address,$region', '$city', '', '$country', '', '$facebookid', '$googleid', '$twitterid')");
             $id = $this->db->insert_id();
-            return $id;
+            echo $id;
         } else {
             $query = $query->row();
             $id = $query->id;
-            return $id;
+            echo $id;
         }
     }
     public function reminderemail() {
