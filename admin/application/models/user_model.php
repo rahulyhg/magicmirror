@@ -264,14 +264,29 @@ class User_model extends CI_Model
 		);
 		$query2=$this->db->insert( 'userlog', $data2 );
 	}
-    //############################################################Frontend function########################################3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function registeruser($firstname,$lastname,$email,$password)
     {
     	$newdata=0;
         $password=md5($password);
         //echo $email;
         $query=$this->db->query("SELECT `id` FROM `user` WHERE `email`='$email'");
-        if($query->num_rows() == 0)
+				$num=$query->num_rows();
+
+        if($num == 0)
         {
              $this->db->query("INSERT INTO `user`(`firstname`, `lastname`, `email`, `password`) VALUE('$firstname','$lastname','$email','$password')");
             $user=$this->db->insert_id();
