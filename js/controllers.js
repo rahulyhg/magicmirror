@@ -973,7 +973,7 @@ phonecatControllers.controller('newsletter',
             console.log($scope.badge);
         };
         MainJson.gettotalcart().success(totalcart);
-        //cart badge    
+        //cart badge
 
         //authenticate
         $scope.logout = function () {

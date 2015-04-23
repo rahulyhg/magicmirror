@@ -290,19 +290,9 @@ class User_model extends CI_Model
         }
         else
         {
-			$query=$query->row();
-			$user=$query->id;
-			$newdata = array(
-                    'id' => $user,
-                    'email' => $email,
-                    'firstname' => $firstname,
-                    'lastname' => $lastname,
-                    'logged_in' => 'true'
-            );
+						$newdata=false;
 
-            $this->session->set_userdata($newdata);
-
-	}
+				}
         return $newdata;
 
     }
@@ -347,7 +337,7 @@ class User_model extends CI_Model
             );
 
             $this->session->set_userdata($newdata);
-            
+
             return $newdata;
         }
         else
