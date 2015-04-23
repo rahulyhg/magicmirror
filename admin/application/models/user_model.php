@@ -372,7 +372,7 @@ class User_model extends CI_Model
             $this->db->query("INSERT INTO `newsletterusers`(`user`, `email`, `status`) VALUES ('$id','$email','$status')");
             $newsletter=$this->db->insert_id();
             
-            $email=$row->email;
+//            $email=$row->email;
             $this->load->library('email');
             $this->email->from('info@magicmirror.in', 'Magic Mirror');
             $this->email->to($email);
