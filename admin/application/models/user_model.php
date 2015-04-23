@@ -289,7 +289,20 @@ class User_model extends CI_Model
        
         }
         else
-        { $newdata="android";}
+        { 
+			$query=$query->row();
+			$user=$query->id;
+			$newdata = array(
+                    'id' => $user,
+                    'email' => $email,
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'logged_in' => 'true'
+            );
+
+            $this->session->set_userdata($newdata);
+	
+	}
         return $newdata;
         
     }

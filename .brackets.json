@@ -13,6 +13,10 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/form-validation-script.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/ga.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/gritter.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/assets/ckeditor/ckeditor.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/assets/ckeditor/ckeditor.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modernizr.custom.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/morris-script.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/owl.carousel.js"
     ]
 }
