@@ -198,8 +198,11 @@ class Json extends CI_Controller {
         $this->load->view("json", $data);
     }
     function loginuser() {
-        $email = $this->input->get_post('email');
-        $password = $this->input->get_post('password');
+      $data = json_decode(file_get_contents('php://input'), true);
+      $email=$data["email"];
+      $password=$data["password"];
+        // $email = $this->input->get_post('email');
+        // $password = $this->input->get_post('password');
         $data["message"] = $this->user_model->loginuser($email, $password);
         $this->load->view("json", $data);
     }

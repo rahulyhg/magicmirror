@@ -6,7 +6,7 @@ class User_model extends CI_Model
 	protected $id,$username ,$password;
 	public function validate($username,$password )
 	{
-		
+
 		$password=md5($password);
 		$query ="SELECT `id`,`firstname`,`lastname`,`name`,`email`,`accesslevel` FROM `user` WHERE `email` LIKE '$username' AND `password` LIKE '$password' ";
 		$row =$this->db->query( $query );
@@ -32,9 +32,9 @@ class User_model extends CI_Model
 		else
 			return false;
 	}
-	
+
 	public function create($name,$firstname,$lastname,$password,$accesslevel,$email,$phone,$status,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$currency,$companyname,$companyregistrationno,$vatnumber,$country)
-	{ 
+	{
 		$data  = array(
             'companyname'=>$companyname,
             'companyregistrationno'=>$companyregistrationno,
@@ -58,14 +58,14 @@ class User_model extends CI_Model
 			'shippingcountry' => $shippingcountry,
 			'currency' => $currency,
 		);
-		
+
 		$query=$this->db->insert( 'user', $data );
 		$id=$this->db->insert_id();
 		if($query)
 		{
 			$user = $this->session->userdata('id');
 			$this->saveuserlog($id,'User Created',$user);
-			
+
 		}
 		if(!$query)
 			return  0;
@@ -75,10 +75,10 @@ class User_model extends CI_Model
 	function viewusers()
 	{
 		$query="SELECT `user`.`id` as `id`,`user`.`name` as `name`,`user`.`firstname` as `firstname`,`user`.`lastname` as `lastname`,`user`.`status` as `status`,`accesslevel`.`name` as `accesslevel`,`user`.`companyname`,`user`.`country`,`country`.`name` as `countryname` FROM `user`
-		LEFT JOIN `accesslevel` ON `user`.`accesslevel` = `accesslevel`.`id` 
-		LEFT JOIN `country` ON `user`.`country` = `country`.`id` 
+		LEFT JOIN `accesslevel` ON `user`.`accesslevel` = `accesslevel`.`id`
+		LEFT JOIN `country` ON `user`.`country` = `country`.`id`
 		ORDER BY `user`.`id` ASC";
-	   
+
 		$query=$this->db->query($query)->result();
 		return $query;
 	}
@@ -88,7 +88,7 @@ class User_model extends CI_Model
 		$query=$this->db->get( 'user' )->row();
 		return $query;
 	}
-	
+
 	public function edit($id,$name,$firstname,$lastname,$password,$accesslevel,$email,$phone,$status,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$currency,$companyname,$companyregistrationno,$vatnumber,$country)
 	{
 		$data  = array(
@@ -121,7 +121,7 @@ class User_model extends CI_Model
 		{
 			$user = $this->session->userdata('id');
 			$this->saveuserlog($id,'User Details Edited',$user);
-			
+
 		}
 		return 1;
 	}
@@ -174,7 +174,7 @@ class User_model extends CI_Model
 					}
 				}
 			}
-	
+
 		return $return;
 	}
 	function changestatus($id)
@@ -217,7 +217,7 @@ class User_model extends CI_Model
 		{
             $return[$row->name]=$row->name;
 		}
-		
+
 		return $return;
 	}
 	function editaddress($id,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode)
@@ -233,14 +233,14 @@ class User_model extends CI_Model
 			'shippingcountry' => $shippingcountry,
 			'shippingpincode' => $shippingpincode,
 		);
-		
+
 		$this->db->where( 'id', $id );
 		$query=$this->db->update( 'user', $data );
 		if($query)
 		{
 			$user = $this->session->userdata('id');
 			$this->saveuserlog($id,'User Address Edited',$user);
-			
+
 		}
 		return 1;
 	}
@@ -251,7 +251,7 @@ class User_model extends CI_Model
 		{
 			$user = $this->session->userdata('id');
 			$this->saveuserlog($id,"User Credits Edited, Credits: $credits",$user);
-			
+
 		}
 		return 1;
 	}
@@ -286,10 +286,10 @@ class User_model extends CI_Model
 
             $this->session->set_userdata($newdata);
 
-       
+
         }
         else
-        { 
+        {
 			$query=$query->row();
 			$user=$query->id;
 			$newdata = array(
@@ -301,15 +301,15 @@ class User_model extends CI_Model
             );
 
             $this->session->set_userdata($newdata);
-	
+
 	}
         return $newdata;
-        
+
     }
     function registewholesaler($firstname,$lastname,$phone,$email,$password)
     {
         $password=md5($password);
-        
+
         $query=$this->db->query("SELECT `id` FROM `user` WHERE `email`='$email'");
         if($query->num_rows == 0)
         {
@@ -338,7 +338,7 @@ class User_model extends CI_Model
         {
             $user=$query->row();
             $user=$user->id;
-            
+
 
             $newdata = array(
                 'email'     => $email,
@@ -347,13 +347,13 @@ class User_model extends CI_Model
             );
 
             $this->session->set_userdata($newdata);
-            //print_r($newdata);
+            
             return $newdata;
         }
         else
         return false;
     }
-    
+
     function createsessionbyid($id)
     {
         $query=$this->db->query("SELECT * FROM `user` WHERE `user`.`id`='$id'");
@@ -370,9 +370,9 @@ class User_model extends CI_Model
             $this->session->set_userdata($newdata);
 
             return $newdata;
-        
+
     }
-    
+
     function newsletter($id,$email,$status)
     {
         $query=$this->db->query("SELECT `email` FROM `newsletterusers` WHERE `email`='$email'");
@@ -384,7 +384,7 @@ class User_model extends CI_Model
         {
             $this->db->query("INSERT INTO `newsletterusers`(`user`, `email`, `status`) VALUES ('$id','$email','$status')");
             $newsletter=$this->db->insert_id();
-            
+
 //            $email=$row->email;
             $this->load->library('email');
             $this->email->from('info@magicmirror.in', 'Magic Mirror');
@@ -426,7 +426,7 @@ class User_model extends CI_Model
 
              $data["message"]=$this->email->print_debugger();
             $this->load->view("json",$data);
-            
+
             return $newsletter;
         }
     }
@@ -452,10 +452,10 @@ class User_model extends CI_Model
     function searchbyname($search)
     {
            // $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`, `productimage`.`image`,`category`.`name` FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` LEFT OUTER JOIN `productimage` ON `productimage`.`product`=`product`.`id` LEFT OUTER JOIN `category` ON `category`.`id`=`productcategory`.`category` WHERE `product`.`name` LIKE '%$search%' OR `product`.`description` LIKE '%$search%' OR `category`.`name` LIKE '%$search%'");
-        
+
         $whattosearch=array("`product`.`name`","`product`.`description`","`product`.`sku`");
         $search=explode(" ",$search);
-        
+
         $where=" WHERE ";
         foreach($whattosearch as $key=>$what) {
             if($key!=0)
@@ -466,8 +466,8 @@ class User_model extends CI_Model
             {
                 $where.=" ( ";
             }
-                
-            
+
+
             foreach($search as $key2=>$sea)
             {
                 if($key2!=0)
@@ -482,27 +482,27 @@ class User_model extends CI_Model
             $where.=" ) ";
         }
         //echo $where;
-        
+
             $query=$this->db->query("SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id` $where  GROUP BY `product`.`id`");
         //echo "SELECT `product`.`id`,`product`.`name`,`product`.`sku`,`product`.`description`,`product`.`url`,`product`.`price`,`product`.`wholesaleprice`, `product`.`firstsaleprice`,`product`.`secondsaleprice`,`product`.`specialpriceto`,`product`.`specialpricefrom`,`productimage`.`image` FROM `product` INNER JOIN `productimage` ON `productimage`.`product`=`product`.`id` $where  GROUP BY `product`.`id`";
-        
+
 //            foreach($query as $p_row)
 //		{
 //			$productid = $p_row->id;
-//			$query5=$this->db->query("SELECT count(`category`) as `isnew`  FROM `productcategory` 
+//			$query5=$this->db->query("SELECT count(`category`) as `isnew`  FROM `productcategory`
 //			WHERE  `productcategory`.`category`='31' AND `product`='$productid'
 //			LIMIT 0,1")->row();
 //			$p_row->isnew=$query5->isnew;
-//			
+//
 //		}
         return $query->result();
     }
-    
-    
-    
+
+
+
     function addtocart($product,$productname,$quantity,$price) {
         //$data=$this->cart->contents();
-        
+
         $data = array(
                'id'      => $product,
                'name'      => $productname,
@@ -521,20 +521,20 @@ class User_model extends CI_Model
         }
         $this->cart->insert($data);
     }
-    
+
     function destroycart() {
         $this->cart->destroy();
         $orderid=$this->session->userdata("orderid");
         $this->db->query("UPDATE `order` SET `orderstatus`='2' WHERE `id`='$orderid'");
         return 0;
     }
-    
+
     function exportusercsv()
 	{
 		$this->load->dbutil();
 		$query=$this->db->query("SELECT `user`.`id` as `id`,`user`.`name` as `name`,`user`.`firstname` as `firstname`,`user`.`lastname` as `lastname`,`user`.`status` as `status`,`accesslevel`.`name` as `accesslevel`,`user`.`companyname`,`user`.`country`,`country`.`name` as `countryname` FROM `user`
-		LEFT JOIN `accesslevel` ON `user`.`accesslevel` = `accesslevel`.`id` 
-		LEFT JOIN `country` ON `user`.`country` = `country`.`id` 
+		LEFT JOIN `accesslevel` ON `user`.`accesslevel` = `accesslevel`.`id`
+		LEFT JOIN `country` ON `user`.`country` = `country`.`id`
 		ORDER BY `user`.`id` ASC");
 
        $content= $this->dbutil->csv_from_result($query);
@@ -550,6 +550,6 @@ class User_model extends CI_Model
              echo 'File written!';
         }
 	}
-    
+
 }
 ?>
