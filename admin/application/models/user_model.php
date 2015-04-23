@@ -271,7 +271,7 @@ class User_model extends CI_Model
         $password=md5($password);
         //echo $email;
         $query=$this->db->query("SELECT `id` FROM `user` WHERE `email`='$email'");
-        if($query->num_rows == 0)
+        if($query->num_rows() == 0)
         {
              $this->db->query("INSERT INTO `user`(`firstname`, `lastname`, `email`, `password`) VALUE('$firstname','$lastname','$email','$password')");
             $user=$this->db->insert_id();
