@@ -277,7 +277,7 @@ service.factory('MainJson', function ($http, TemplateService) {
             });
         },
         registeruser: function (firstname, lastname, email, password) {
-            return $http.post(adminurl + 'registeruser?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&password=' + password, {}, {
+            return $http.get(adminurl + 'registeruser?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&password=' + password, {}, {
                 withCredentials: true
             });
         },
