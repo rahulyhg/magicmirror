@@ -8,8 +8,9 @@
     <meta name="keywords" content="Jewelry, Fashion Jewelry, Statement Necklaces, Earrings, Rings, Cuff Bracelets.">
     <script>
         var hostname = window.location.hostname;
-        if (hostname == "lylaloves.co.uk") {
+        if (hostname == "www.magicmirror.in") {
             console.log(hostname);
+            window.location.replace("http://magicmirror.in/");
         } else {
             console.log("other " + hostname);
         }
