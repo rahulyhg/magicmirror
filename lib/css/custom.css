@@ -180,9 +180,18 @@ a.header-logo img {
     right: -14px;
 }
 
+.collect-main .about-cont ul li {
+    line-height: 2.5;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #939598;
+    list-style: none;
+}
+
 .about-cont ul li {
     line-height: 2.5;
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 a.btn.btn-primary.g-login {
@@ -1886,4 +1895,49 @@ select.sort-drp {
     border-top: 1px solid #ddd;
     padding-top: 10px;
     margin: 0;
+}
+
+.collection-img {
+    text-align: center;
+    border: 1px solid #939598;
+}
+
+.collection-img h4 {
+    background: #939598;
+    color: #fff;
+    padding: 5px 0;
+    margin: 0px;
+}
+
+.collection-cont {
+    position: relative;
+}
+
+.collection-img img {
+    width: 100%;
+    padding: 0 0 10px 0px;
+}
+
+.collection-img p {
+    color: #fff;
+}
+
+.collection-cont p {
+    color: #939598;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.collection-cont {
+    padding: 20px;
+}
+
+.collect-main .brand-cont p {
+    color: #939598;
+    text-align: justify;
+}
+
+.about-cont {
+    margin: 0 auto;
+    padding-top: 30px;
 }

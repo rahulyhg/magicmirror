@@ -17,6 +17,8 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/no-data-to-display.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/modernizr.custom.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/morris-script.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/js1/owl.carousel.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/owl.carousel.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/map.src.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/select2.min.js"
     ]
 }

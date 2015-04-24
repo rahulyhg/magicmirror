@@ -10,7 +10,7 @@ var firstapp = angular.module('firstapp', [
 ]);
 
 firstapp.config(['$routeProvider',
-    function($routeProvider) {
+    function ($routeProvider) {
         $routeProvider.
         when('/home', {
             templateUrl: 'views/template.html',
@@ -21,9 +21,9 @@ firstapp.config(['$routeProvider',
             controller: 'searchpage'
         }).
         when('/wishlist', {
-            templateUrl: 'views/template.html',
-            controller: 'wishlist'
-        })
+                templateUrl: 'views/template.html',
+                controller: 'wishlist'
+            })
             .
         when('/comingsoon', {
             templateUrl: 'views/template.html',
@@ -130,14 +130,22 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'aboutus'
         }).
+        when('/collections', {
+            templateUrl: 'views/template.html',
+            controller: 'collections'
+        }).
+        when('/productcare', {
+            templateUrl: 'views/template.html',
+            controller: 'productcare'
+        }).
         otherwise({
             redirectTo: '/home'
         });
     }
 ]);
 
-firstapp.filter('imagepath', function() {
-    return function(input) {
+firstapp.filter('imagepath', function () {
+    return function (input) {
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
@@ -146,8 +154,8 @@ firstapp.filter('imagepath', function() {
         return image;
     };
 });
-firstapp.filter('imagepath1', function() {
-    return function(input) {
+firstapp.filter('imagepath1', function () {
+    return function (input) {
 
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
@@ -157,8 +165,8 @@ firstapp.filter('imagepath1', function() {
         return image;
     };
 });
-firstapp.filter('imagepath2', function() {
-    return function(input) {
+firstapp.filter('imagepath2', function () {
+    return function (input) {
 
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
@@ -167,8 +175,8 @@ firstapp.filter('imagepath2', function() {
     };
 
 });
-firstapp.filter('imagepathbig', function() {
-    return function(input) {
+firstapp.filter('imagepathbig', function () {
+    return function (input) {
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/" + input.trim();
@@ -180,8 +188,8 @@ firstapp.filter('imagepathbig', function() {
     };
 });
 
-firstapp.filter('convertprice', function() {
-    return function(input) {
+firstapp.filter('convertprice', function () {
+    return function (input) {
 
         var price = parseFloat(input);
         var currencyshow = "Rs";
