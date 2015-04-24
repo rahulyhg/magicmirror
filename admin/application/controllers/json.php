@@ -441,8 +441,8 @@ class Json extends CI_Controller {
         $id = $this->input->get_post('id');
         $endurl = $this->input->get_post('endurl');
         $data["message"] = $this->user_model->createsessionbyid($id);
-//        redirect($endurl);
-        		$this->load->view("json",$data);
+        redirect($endurl);
+//        		$this->load->view("json",$data);
 
     }
     function updateorderstatusafterpayment() {
