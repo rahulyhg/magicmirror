@@ -138,6 +138,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'productcare'
         }).
+        when('/ship-return', {
+            templateUrl: 'views/template.html',
+            controller: 'ship-return'
+        }).
         otherwise({
             redirectTo: '/home'
         });

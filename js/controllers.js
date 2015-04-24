@@ -2307,6 +2307,32 @@ phonecatControllers.controller('productcare',
         //authenticate
 
     });
+phonecatControllers.controller('ship-return',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/ship-return.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
 phonecatControllers.controller('collections',
     function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
