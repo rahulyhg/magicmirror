@@ -366,7 +366,7 @@ class User_model extends CI_Model
             $newdata = array(
                 'email'     => $query->email,
                 'password' => "",
-                'logged_in' => true,
+                'logged_in' => 'true',
                 'id'=> $query->id,
                 'name'=> $query->name,
                 'image'=> $query->image
