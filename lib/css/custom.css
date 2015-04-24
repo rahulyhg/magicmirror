@@ -911,6 +911,14 @@ span.glyphicon.glyphicon-shopping-cart {
     visibility: visible;
 }
 
+.collect-main {
+    padding: 20px;
+}
+
+.collect-main .about-cont ul {
+    padding-top: 15px;
+}
+
 .headerstuck.hide {
     visibility: hidden;
 }
