@@ -59,15 +59,118 @@ class Json extends CI_Controller {
     public function orderemail() {
         $email = $this->input->get('email');
         $orderid = $this->input->get('orderid');
+        
+		$table =$this->order_model->getorderitem($this->input->get('orderid'));
+		$before=$this->order_model->beforeedit($this->input->get('orderid'));
+        
+        $todaydata=date("Y-m-d");
         $this->load->library('email');
         $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
         $this->email->to($email);
         $this->email->subject('Order');
-        $this->email->message('<img src="http://zibacollection.co.uk/lylalovecouk/img/orderlyla.jpg" width="560px" height="398px">');
+        if($before['order']->billingaddress=="")
+                        {
+            $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
+                        
+                        }
+                        else
+                        {
+                            $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->billingaddress."<br>".$before['order']->billingcity."<br>".$before['order']->billingstate."<br>".$before['order']->billingpincode;
+                        }
+        if($before['order']->shippingaddress=="")
+                        {
+                             $shippingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->billingaddress."<br>".$before['order']->billingcity."<br>".$before['order']->billingstate."<br>".$before['order']->billingpincode;
+                        }
+                        else
+                        {
+                             $shippingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
+                        }
+        
+        $message="<html><body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h2 style='padding-bottom: 5px;color: #e82a96;'>Orders Details</h2>
+        <table align='center' border='1' cellpadding='2' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+            <tr align='right' style='border: 0px;'>
+                <td width='70%' style='border: 0px;'>
+&nbsp;
+                </td>             
+                     <td width='30%' style='border: 0px;'>
+                   Date :<span>$todaydata</span> 
+                </td>
+                                                   </tr> 
+                                                   <tr align='right' style='border: 0px;'>
+                                                  <td width='70%' style='border: 0px;'>
+&nbsp;
+                </td> 
+                                <td width='30%' style='border: 0px;'>
+                  Invoice No.:<span>$orderid</span>
+                </td>
+            </tr>
+        </table>
+        
+        <table align='center' border='1' cellpadding='0' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+           <tr>
+    <th style='padding: 10px 0;'>Billing Address</th>
+    <th style='padding: 10px 0;'>Shipping Address</th> 
+  </tr>
+          <tr >
+              <td width='50%' style='padding: 10px 15px;'>
+<p>$billingaddress</p>
+</td>
+              <td width='50%' style='padding: 10px 15px;'>
+<p>$shippingaddress</p>
+ </td> 
+  </tr>  
+        </table>
+         
+                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+  <tr>
+    <th style='padding: 10px 0;'>Id</th>
+    <th style='padding: 10px 0;'>Product</th> 
+    <th style='padding: 10px 0;'>Quantity</th>
+    <th style='padding: 10px 0;'>Price</th>
+    <th style='padding: 10px 0;'>Total Amount</th>
+  </tr>";
+        $count=1;
+        $finalpricetotal=0;
+        foreach($table as $row)
+        {
+            $namesku=$row->name."-".$row->sku;
+            $quantity=$row->quantity;
+            $price=$row->price;
+            $finalprice=$row->finalprice;
+            $message.="
+            <tr>
+                <td align='center' style='padding: 10px 0;'>$count</td>
+                <td align='center' style='padding: 10px 0;'>$namesku</td> 
+                <td align='center' style='padding: 10px 0;'>$quantity</td>
+                <td align='center' style='padding: 10px 0;'>$price</td>
+                <td align='center' style='padding: 10px 0;'>$finalprice</td>
+              </tr>";
+            $finalpricetotal=$finalpricetotal+$value->finalprice;
+                            $counter++;
+        }
+  $message.="
+      
+        </table>
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You Again
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png'>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
         // $this->email->html('<b>hello</b>');
         $this->email->send();
-        $data["message"] = $this->email->print_debugger();
-        $this->load->view("json", $data);
+        $data['message'] = $this->email->print_debugger();
+        $this->load->view('json', $data);
     }
     function usercontact() {
         $name = $this->input->get_post('name');
