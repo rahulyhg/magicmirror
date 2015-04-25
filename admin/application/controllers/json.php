@@ -65,7 +65,7 @@ class Json extends CI_Controller {
         
         $todaydata=date("Y-m-d");
         $this->load->library('email');
-        $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
+        $this->email->from('info@magicmirror.in', 'Magicmirror');
         $this->email->to($email);
         $this->email->subject('Order');
         if($before['order']->billingaddress=="")
@@ -92,7 +92,7 @@ class Json extends CI_Controller {
     </div>
     <div style='text-align:center;   width: 50%; margin: 0 auto;'>
         <h2 style='padding-bottom: 5px;color: #e82a96;'>Orders Details</h2>
-        <table align='center' border='1' cellpadding='2' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+        <table align='center' border='1' cellpadding='2' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
             <tr align='right' style='border: 0px;'>
                 <td width='70%' style='border: 0px;'>
 &nbsp;
@@ -111,7 +111,7 @@ class Json extends CI_Controller {
             </tr>
         </table>
         
-        <table align='center' border='1' cellpadding='0' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+        <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
            <tr>
     <th style='padding: 10px 0;'>Billing Address</th>
     <th style='padding: 10px 0;'>Shipping Address</th> 
@@ -126,7 +126,7 @@ class Json extends CI_Controller {
   </tr>  
         </table>
          
-                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='600' style='border: 0px solid black;padding-bottom: 40px;'>
+                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
   <tr>
     <th style='padding: 10px 0;'>Id</th>
     <th style='padding: 10px 0;'>Product</th> 
