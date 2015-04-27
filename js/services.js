@@ -1,6 +1,7 @@
-var adminurl = 'http://magicmirror.in/admin/index.php/json/';
-var adminurl2 = 'http://magicmirror.in/admin/index.php/json/';
-var adminurl3 = 'http://magicmirror.in/admin/index.php/';
+var adminurl1 = 'http://magicmirror.in/admin/index.php/';
+var adminurl1 = 'http://localhost/magicmirror/admin/index.php/';
+var adminurl = adminurl + 'json/';
+var adminurl2 = adminurl + 'json/';
 //var adminurl = 'http://localhost/admin/index.php/json/';
 //var adminurl2 = 'http://localhost/admin/index.php/json/';
 
@@ -211,6 +212,17 @@ service.factory('MainJson', function ($http, TemplateService) {
                 }
             });
         },
+        newPassword: function (forgot) {
+            return $http({
+                url: adminurl + 'forgotpasswordsubmit',
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    'password': forgot.password,
+                    'hashcode': forgot.hashcode
+                }
+            });
+        },
         placeorder: function (form) {
             return $http({
                 url: adminurl + 'placeorder',
@@ -325,6 +337,15 @@ service.factory('MainJson', function ($http, TemplateService) {
                     price2: filters.pricemax,
                     search: search
                 }
+            }, {
+                withCredentials: true
+            });
+        },
+        forgotPassword: function (forgot) {
+            return $http.get(adminurl1 + 'json/forgotpassword', {
+                params: {
+                email: forgot.email
+            }
             }, {
                 withCredentials: true
             });

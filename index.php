@@ -76,15 +76,16 @@
 -->
     <script src="lib/js/skrollr.js"></script>
     <script src="lib/js/skrollr.dir.js"></script>
+   <script src="lib/js/jstorage.js "></script>
+   
+<!--    <script src="lib/js/jagruticontroller.js"></script>-->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/templateservice.js"></script>
     <script src="js/services.js"></script>
 
-    <script src="lib/js/jagruticontroller.js"></script>
     <script src="lib/range/angular.rangeSlider.js "></script>
     <script src="lib/js/ng-infinite-scroll.min.js "></script>
-    <script src="lib/js/jstorage.js "></script>
     <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
 </head>
 
