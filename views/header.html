@@ -3,17 +3,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-3">
+<!--
                     <div class="rupee">
                         <select>
                             <option value="Rupee">INR Rs</option>
                             <option value="Dollar">Dollar $</option>
                         </select>
                     </div>
+-->
                 </div>
                 <div class="col-xs-9">
                     <div class="login-tab pull-right">
                         <ul>
-                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a>Welcome, {{alldata.email}} </a>
+                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a>Welcome, {{alldata.firstname}} </a>
                             </li>
                             <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a>
                             </li>

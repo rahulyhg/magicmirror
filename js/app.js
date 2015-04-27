@@ -134,9 +134,17 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'collections'
         }).
+        when('/resetpassword', {
+            templateUrl: 'views/template.html',
+            controller: 'resetpassword'
+        }).
         when('/productcare', {
             templateUrl: 'views/template.html',
             controller: 'productcare'
+        }).
+        when('/forgotpassword', {
+            templateUrl: 'views/template.html',
+            controller: 'forgotpassword'
         }).
         when('/ship-return', {
             templateUrl: 'views/template.html',

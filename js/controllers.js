@@ -632,6 +632,28 @@ phonecatControllers.controller('login',
 
 
     });
+phonecatControllers.controller('forgotpassword',
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Forgot Password");
+        TemplateService.content = "views/forgotpassword.html";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+    });
+phonecatControllers.controller('resetpassword',
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Rest Password");
+        TemplateService.content = "views/resetpassword.html";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+    });
 
 
 phonecatControllers.controller('loginwishlist',
@@ -694,6 +716,7 @@ phonecatControllers.controller('loginwishlist',
         };
         var getlogin = function (data, status) {
             if (data != "false") {
+     
                 $scope.msg = "Login Successful";
                 $location.url("/wishlist");
             } else {

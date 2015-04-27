@@ -1,6 +1,6 @@
+<!--
 <div class="content">
     <div class="contenttop">
-<!--
        <div class="row">
     <div class="col-xs-4">
         <span class="breadcrumb">
@@ -10,7 +10,6 @@
     </div>
 
 </div>
--->
 
         <div class="container cart">
 
@@ -46,4 +45,116 @@
         </div>
     </div>
 
+</div>
+-->
+<!--     form-->
+
+
+
+
+
+<div class="conct">
+    <div class="row">
+        <div class="container">
+            <div class="cont-content">
+                <div class="col-xs-5">
+                    <div class="address-cont pull-right">
+                        <div class="address">
+                            <h4> Magic Mirror</h4>
+                            <b>Santacruz (West)</b>
+                            <br> Le Magasin, S.V.Road, Santacruz (West
+                            <br> Mumbai - 400054, India.
+                            <br> P : 022 - 26488440 / 44
+                        </div>
+                        <div class="address1">
+                            <h4> Magic Mirror</h4>
+                            <b>Matunga (Central)</b>
+                            <br>Shop No.3-4, Lakhamsi Nappu Road,
+                            <br> Matunga,Mumbai-400019,India.
+                            <br> P:+91 22 2417 4736
+                            <br>E: <a href= "mailto: info@magicmirror.in" >info@magicmirror.in</a>
+                            <br>W:<a href="http://magicmirror.in/">www.magicmirror.in</a>
+                        </div>
+                    </div>
+                </div>      <div class="col-xs-7">
+
+            <div class="row">
+             <div class="col-xs-12 msg">
+                <center> {{msg}} </center>
+             </div>
+            </div>
+          
+                                       <div class="contactthankyou" ng-show="contactsubmit" style="padding: 20%;">
+                       Thank you. Your message has been sent.
+                   </div>
+                    <div class="get-in" ng-hide="contactsubmit">
+                        <h3>Get in Touch</h3>
+                        <div class="input-pad">
+                            <div class="input-name">Name:<sup>*</sup>
+                            </div>
+                            <div class="input-with">
+                                <input type="text" class="form-control input-width" ng-model="contact.name" placeholder="Name*" required/>
+                            </div>
+                        </div>
+<!--
+                        <div class="input-pad">
+                            <div class="input-name">Last Name:<sup>*</sup>
+                            </div>
+                            <div class="input-with">
+                                <input class="input-width" name="" type="text">
+                            </div>
+                        </div>
+-->
+                        <div class="input-pad">
+                            <div class="input-name">Email Name:<sup>*</sup>
+                            </div>
+                            <div class="input-with">
+                                <input class="input-width form-control" type="text" ng-model="contact.email" placeholder="Email Address*" required>
+                            </div>
+                        </div>
+                        <div class="input-pad">
+                            <div class="input-name">Telephone:
+                                <sup>*</sup>
+                            </div>
+                            <div class="input-with">
+                                <input type="text" class=" input-width form-control" ng-model="contact.phone" placeholder="Telephone">
+                            </div>
+                        </div>
+                        <div class="input-pad">
+                            <div class="input-name">Feedback:
+                                <sup>*</sup>
+                            </div>
+                            <div class="input-with">
+                                <textarea class="input-width form-control" cols="10" row="2" ng-model="contact.comment" placeholder="Comment*">
+                                </textarea>
+                                <button class="btn contact" href="" ng-click="usercontact(contact)">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="googlemaps">
+        <div class="row">
+            <div class="container">
+                <div class="making-gogle">
+                    <div class="col-xs-6">
+                        <div class="googlemaps1">
+                            <h4>SANTACRUZ (WEST)</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5407542134785!2d72.83750300000003!3d19.083918999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a78e8d307b%3A0x66953e346632ae2c!2sMagic+Mirror+Art+Jewellery!5e0!3m2!1sen!2sin!4v1429713484728" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="googlemaps2">
+                            <h4>Matunga (Central)</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8298023779466!2d72.85113799999998!3d19.02722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ced7dae4e577%3A0x6d71e761885dbc6a!2sMagic+Mirror!5e0!3m2!1sen!2sin!4v1429707944429" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
