@@ -81,6 +81,7 @@
     <script src="js/templateservice.js"></script>
     <script src="js/services.js"></script>
 
+    <script src="lib/js/jagruticontroller.js"></script>
     <script src="lib/range/angular.rangeSlider.js "></script>
     <script src="lib/js/ng-infinite-scroll.min.js "></script>
     <script src="lib/js/jstorage.js "></script>

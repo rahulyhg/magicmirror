@@ -134,7 +134,7 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'collections'
         }).
-        when('/resetpassword', {
+        when('/resetpassword/:id', {
             templateUrl: 'views/template.html',
             controller: 'resetpassword'
         }).

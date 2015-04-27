@@ -237,7 +237,7 @@ button.btn.contact:focus {
 }
 
 textarea.input-width {
-    height: 75px;
+    height: 50px;
 }
 
 .input-with {
@@ -976,19 +976,15 @@ input.input-width:focus {
 button.btn.contact:focus {
     outline: none;
 }
-.container.header h4 {
-  padding-left: 10px;
+
+textarea.input-width {
+    height: 50px;
 }
-input.form-control.input-forget{
-  margin-bottom: 6px;
-}
+
 .input-with {
     width: 80%;
     float: left;
     margin-bottom: 8px;
-}
-.emailforgot {
-    padding: 50px 0;
 }
 /*
 .cont-content {
@@ -1331,6 +1327,10 @@ a.Subscribe {
     background: #ececec;
     border: 0;
     height: 30px;
+}
+
+textarea.input-widths {
+    height: 50px;
 }
 
 .breadcrumb {
@@ -1980,12 +1980,13 @@ h4.headprivacy {
 .static-page {
     padding: 30px 0;
 }
-.address1 a {
-  color: #c0c0c0;
-}
 
 ul.static-ul li {
     list-style: square;
     color: #6c6e70;
     padding: 7px 0;
+}
+.pickweek img
+{
+    width: 100%;
 }
