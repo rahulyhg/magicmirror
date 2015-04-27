@@ -874,7 +874,7 @@ phonecatControllers.controller('wholesaler',
                 $scope.msgr = "Registred Successful";
 
             } else {
-                $scope.msgr = "Error In Registration";
+                $scope.msgr = "This Email is already registered with us.";
             }
         };
         $scope.wholesalersignup = function (register) {

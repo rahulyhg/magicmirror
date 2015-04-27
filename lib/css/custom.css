@@ -61,7 +61,6 @@ span {
 }
 
 img.slideset1 {
-    width: 100%;
     float: left;
     margin: 0 auto;
     padding: 20px;
@@ -254,7 +253,6 @@ textarea.input-width {
 
 .pickweek {
     position: relative;
-    display: inline-block;
     margin: auto;
     text-align: center;
 }
@@ -264,7 +262,12 @@ ul.submenudown {
     float: left;
     /* padding-left: 25px; */
 }
-
+input.btns.btns-primary {
+  background: #279F45;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
 .proprice.proprice2 {
     position: absolute;
     top: 10px;
@@ -1405,7 +1408,7 @@ textarea.input-widths {
 }
 
 .cart tr>th {
-    background-color: rgba(64, 170, 91, 0.8);
+    background-color: rgba(64, 170, 91, 0.95);
     color: white;
 }
 
@@ -1476,7 +1479,7 @@ span.cartspace {
 
 a.btns-primary {
     color: #fff;
-    background-color: #FF99BC;
+    background-color: #FE5F9A;
     font-weight: 600;
 }
 
@@ -1986,7 +1989,6 @@ ul.static-ul li {
     color: #6c6e70;
     padding: 7px 0;
 }
-.pickweek img
-{
+.pickweek img {
     width: 100%;
 }
