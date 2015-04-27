@@ -634,12 +634,71 @@ class Json extends CI_Controller {
 </body>
 
 </html>";
-            echo $message;
+//            echo $message;
             $this->email->message($message);
             $this->email->send();
             $data["message"] = $this->email->print_debugger();
             $this->load->view("json", $data);
         }
+    }
+    
+    public function forgotpassword()
+    {
+        
+        //set POST variables
+        $email=$this->input->get_post('email');
+        $userid=$this->user_model->getidbyemail($email);
+//        echo "userid=".$userid."end";
+        if($userid=="")
+        {
+            $data['message']="Not A Valid Email.";
+            $this->load->view("json",$data);
+        }
+        else
+        {
+        $hashvalue=base64_encode ($userid."&magicmirror");
+        $link="<a href='http://magicmirror.com/#/resetpassword/$hashvalue'>Click here </a> To Reset Your Password.";
+            
+        $this->load->library('email');
+        $this->email->from('info@magicmirror.in', 'Magic Mirror');
+        $this->email->to($email);
+        $this->email->subject('Welcome to Magic Mirror');   
+            
+        $message = "<html>
+
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size:1.5em;padding-bottom: 5px;color: #e82a96;'>Forgot Password!</h4>
+        <p style='font-size: 1em;padding-bottom: 10px;'>$link </p>
+
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png '>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
+        $this->email->send();
+        $data["message"] = $this->email->print_debugger();
+        $this->load->view("json", $data);
+        
+    }
+    }
+    
+    public function forgotpasswordsubmit()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $password=$data['password'];
+        $hashcode=$data['hashcode'];
+        $data['message']=$this->user_model->forgotpasswordsubmit($hashcode,$password);
+        $this->load->view('json',$data);
     }
 }
 ?>

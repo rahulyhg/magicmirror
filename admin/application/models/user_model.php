@@ -555,6 +555,31 @@ class User_model extends CI_Model
              echo 'File written!';
         }
 	}
+    
+	function getidbyemail($useremail)
+	{
+		$query = $this->db->query("SELECT `id` FROM `user`
+		WHERE `email`='$useremail'")->row();
+        $userid=$query->id;
+		return $userid;
+	}
+    
+    
+    function forgotpasswordsubmit($hashcode,$password)
+    {
+        $normalfromhash=base64_decode ($hashcode);
+        $returnvalue=explode("&",$normalfromhash);
+//        print_r($returnvalue);
+//        echo $returnvalue[0]."<br>";
+        $userid=$returnvalue[0];
+        $password=md5($password);
+        $query=$this->db->query("UPDATE `user` SET `password`='$password' WHERE `id`='$userid'");
+
+		if(!$query)
+			return  0;
+		else
+			return  1;
+    }
 
 }
 ?>
