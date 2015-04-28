@@ -138,6 +138,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'resetpassword'
         }).
+        when('/myaccount', {
+            templateUrl: 'views/template.html',
+            controller: 'myaccount'
+        }).
         when('/productcare', {
             templateUrl: 'views/template.html',
             controller: 'productcare'

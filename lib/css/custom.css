@@ -262,12 +262,14 @@ ul.submenudown {
     float: left;
     /* padding-left: 25px; */
 }
+
 input.btns.btns-primary {
-  background: #279F45;
-  color: #fff;
-  font-size: 16px;
-  margin-top: 20px;
+    background: #279F45;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
 }
+
 .proprice.proprice2 {
     position: absolute;
     top: 10px;
@@ -599,7 +601,7 @@ li.welcome {
 }
 
 .bckgrnd-sliderdwn {
-    height: 268px;
+    height: 228px;
     background: #f5f5f5;
 }
 
@@ -1989,6 +1991,88 @@ ul.static-ul li {
     color: #6c6e70;
     padding: 7px 0;
 }
+
 .pickweek img {
     width: 100%;
+}
+
+.info-cont {
+    border-right: 1px solid #ececec;
+    position: relative;
+    height: 300px;
+    padding-left: 10px;
+}
+
+.info-cont {
+    border-right: 1px solid #ececec;
+    position: relative;
+    height: 300px;
+    padding-left: 10px;
+}
+
+li.cat-list.cpointer.bolds {
+    color: #EA1665;
+    font-weight: 500;
+    position: relative;
+}
+
+ul.info-li {
+    list-style: none;
+    padding-top: 30px;
+    padding-right: 25px;
+    float: right;
+}
+
+ul.info-li li {
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.info {
+    padding: 40px 0;
+}
+
+li.cat-list.cpointer.bolds:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 7px 0px 7px 14px;
+    border-color: transparent #fff #fff #E2E2E2;
+    display: block;
+    width: 0;
+    z-index: 0;
+    top: 10px;
+    right: -40px;
+}
+
+.input-id input.form-control {
+    height: 30px;
+}
+
+.myaccnthead h3 {
+    text-transform: uppercase;
+}
+
+.input-id {
+    padding-bottom: 20px;
+}
+
+.chngpswd-cont a {
+    border: 1px solid #EB2670;
+    padding: 6px 25px;
+    text-transform: uppercase;
+    color: #EB2670;
+}
+
+li.cat-list.cpointer.bolds:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 7px 0px 7px 14px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    top: 10px;
+    right: -37px;
+    z-index: 1;
 }

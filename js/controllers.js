@@ -18,14 +18,14 @@ phonecatControllers.controller('home',
         $scope.demo = "demodemo";
 
         //  GET ALL SLIDER
-    var slidersuccess = function (data, status){
-        console.log("all slider data");
-        console.log(data);
-        $scope.sliders = data;
-    }
+        var slidersuccess = function (data, status) {
+            console.log("all slider data");
+            console.log(data);
+            $scope.sliders = data;
+        }
         MainJson.getallslider().success(slidersuccess);
-    
-    
+
+
         // video only
         $scope.videostate = "play";
         $scope.changevideostate = function () {
@@ -651,20 +651,20 @@ phonecatControllers.controller('forgotpassword',
         TemplateService.content = "views/forgotpassword.html";
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
-    
+
         //  DECLARATION
         $scope.forgot = [];
-    
+
         //  FORGOT PASSWORD
         var forgotSuccess = function (data, status) {
             console.log(data);
-            if(data == "1"){
+            if (data == "1") {
                 $scope.msg = "Please Check Your Email";
-            }else{
+            } else {
                 $scope.msg = "Already send email";
             }
         }
-        $scope.forgotPassword = function(){
+        $scope.forgotPassword = function () {
             MainJson.forgotPassword($scope.forgot).success(forgotSuccess);
         }
     });
@@ -678,21 +678,21 @@ phonecatControllers.controller('resetpassword',
         TemplateService.content = "views/resetpassword.html";
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
-    
+
         $scope.forgot = [];
         $scope.forgot.hashcode = $routeParams.id;
         //  REDIRECT CHANGE PASSWORD STARTS
-    var newPasswordSuccess = function (data, status) {
-        if(data == '1'){
-            $location.url("/login");
-        }else{
-            $scope.msg = data;
+        var newPasswordSuccess = function (data, status) {
+            if (data == '1') {
+                $location.url("/login");
+            } else {
+                $scope.msg = data;
+            }
         }
-    }
-    $scope.newPassword = function() {
-        MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
-    }
-    
+        $scope.newPassword = function () {
+            MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
+        }
+
     });
 
 
@@ -756,7 +756,7 @@ phonecatControllers.controller('loginwishlist',
         };
         var getlogin = function (data, status) {
             if (data != "false") {
-     
+
                 $scope.msg = "Login Successful";
                 $location.url("/wishlist");
             } else {
@@ -2341,6 +2341,60 @@ phonecatControllers.controller('aboutus',
             $scope.services = "bold";
 
 
+        }
+
+    });
+phonecatControllers.controller('myaccount',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/myaccount.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+        $scope.info = "bolds";
+    
+            $scope.changeinfo = function () {
+            $scope.info = "bolds";
+            $scope.chngpass = "";
+            $scope.myorders = "";
+            $scope.ordertracing = "";
+        }
+            
+        $scope.changechngpass = function () {
+            $scope.info = "";
+            $scope.chngpass = "bolds";
+            $scope.myorders = "";
+            $scope.ordertracing = "";
+        }
+        
+        $scope.changemyorders = function () {
+            $scope.info = "";
+            $scope.chngpass = "";
+            $scope.myorders = "bolds";
+            $scope.ordertracing = "";
+        }
+        $scope.changeordertracing = function () {
+            $scope.info = "";
+            $scope.chngpass = "";
+            $scope.myorders = "";
+            $scope.ordertracing = "bolds";
         }
 
     });

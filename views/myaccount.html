@@ -1,0 +1,52 @@
+<div class="info">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-3">
+                <div class="info-cont">
+                    <ul class="info-li">
+                        <li class="cat-list cpointer" ng-class="info" ng-click="changeinfo()">Personal Info</li>
+                        <li class="cat-list cpointer" ng-class="chngpass" ng-click="changechngpass()">Change password</li>
+                        <li class="cat-list cpointer" ng-class="myorders" ng-click="changemyorders()">My Orders </li>
+                        <li class="cat-list cpointer" ng-class="ordertracing" ng-click="changeordertracing()">Order Tracking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="myaccnthead col-xs-9">
+                <h3>My Account</h3>
+
+            </div>
+            <div class="col-xs-9" ng-if="info=='bolds'">
+                <div class="brand-cont">
+
+                    <p>Magic Mirror was founded in 2004 and has beautiful years'experience in selling, designing and giving the quality jewellery for beautiful women. Our dream carried forward by years & clubbed with new horizon of thinking we proudly own the crown of bigest infrastructure & enormous artistic design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.Our designers are well experienced & work closely to produce every single piece as a masterpiece.Designs that are from dynasty look to international look & every design is purely single designed by the experience artistic team of Magic Mirror.</p>
+                    <div class="brand-img">
+                        <img src="img/brand.jpg">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-4" ng-if="chngpass=='bolds'">
+                <div class="chngpswd-cont">
+                    <div class="form-group">
+                        <div class="input-id">
+                            <input type="emalid" class="form-control" placeholder="Email ID">
+                        </div>
+                
+                        <div class="input-id">
+                            <input type="password" class="form-control" placeholder="Old Password">
+                        </div>  
+                           <div class="input-id">
+                            <input type="password" class="form-control" placeholder="New Password">
+                        </div>  
+                           <div class="input-id">
+                            <input type="password" class="form-control" placeholder="Conform Password">
+                        </div>
+                         <a href="">Save</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
