@@ -19,6 +19,7 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/morris-script.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/owl.carousel.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/js1/modules/map.src.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/js1/select2.min.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/js1/select2.min.js",
+        "/Applications/XAMPP/xamppfiles/htdocs/magicmirror/admin/assets/js1/modules/heatmap.js"
     ]
 }

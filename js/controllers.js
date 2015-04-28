@@ -17,6 +17,15 @@ phonecatControllers.controller('home',
         $scope.onhome = "onhome";
         $scope.demo = "demodemo";
 
+        //  GET ALL SLIDER
+    var slidersuccess = function (data, status){
+        console.log("all slider data");
+        console.log(data);
+        $scope.sliders = data;
+    }
+        MainJson.getallslider().success(slidersuccess);
+    
+    
         // video only
         $scope.videostate = "play";
         $scope.changevideostate = function () {
