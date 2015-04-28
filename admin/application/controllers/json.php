@@ -178,6 +178,39 @@ class Json extends CI_Controller {
         $phone = $this->input->get_post('phone');
         $comment = $this->input->get_post('comment');
         $data["message"] = $this->user_model->usercontact($id, $name, $email, $phone, $comment);
+        
+        $toemail="support@magicmirror.in";
+        $this->load->library('email');
+        $this->email->from($email, 'Magic Mirror');
+        $this->email->to($toemail);
+        $this->email->subject('Welcome to Magic Mirror');   
+            
+        $message = "<html>
+
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size:1.5em;padding-bottom: 5px;color: #e82a96;'>Contact</h4>
+        <p style='font-size: 1em;padding-bottom: 10px;'>Name: $name</p>
+        <p style='font-size: 1em;padding-bottom: 10px;'>Email: $email</p>
+        <p style='font-size: 1em;padding-bottom: 10px;'>Contact Number: $phone</p>
+        <p style='font-size: 1em;padding-bottom: 10px;'>Feedback: $comment</p>
+
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png '>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
+        $this->email->send();
+        $data["message"] = $this->email->print_debugger();
         $this->load->view("json", $data);
     }
     /*function orderitem()
@@ -686,7 +719,8 @@ class Json extends CI_Controller {
 </html>";
         $this->email->message($message);
         $this->email->send();
-        $data["message"] = $this->email->print_debugger();
+//        $data["message"] = $this->email->print_debugger();
+        $data["message"] = 'true';
         $this->load->view("json", $data);
         
     }
