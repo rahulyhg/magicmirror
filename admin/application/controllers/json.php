@@ -553,6 +553,11 @@ class Json extends CI_Controller {
         $elements[11]->sort = "1";
         $elements[11]->header = "image2";
         $elements[11]->alias = "image2";
+        $elements[12] = new stdClass();
+        $elements[12]->field = "`product`.`quantity`";
+        $elements[12]->sort = "1";
+        $elements[12]->header = "quantity";
+        $elements[12]->alias = "quantity";
         $search = $this->input->get_post("search");
         $pageno = $this->input->get_post("pageno");
         $orderby = $this->input->get_post("orderby");
@@ -565,7 +570,7 @@ class Json extends CI_Controller {
             $orderby = "id";
             $orderorder = "ASC";
         }
-        $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1", "WHERE `product`.`visibility`=1 AND `product`.`status`=1 AND `product`.`quantity` > 0 AND `product`.`name` LIKE '%$color%' $pricefilter AND (   $iscategory )", ' GROUP BY `product`.`id` ');
+        $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1", "WHERE `product`.`visibility`=1 AND `product`.`status`=1  AND `product`.`name` LIKE '%$color%' $pricefilter AND (   $iscategory )", ' GROUP BY `product`.`id` ');
         $this->load->view("json", $data);
     }
     function login() {
