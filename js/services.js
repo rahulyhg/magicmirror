@@ -1,7 +1,7 @@
 var adminurl1 = 'http://magicmirror.in/admin/index.php/';
 //var adminurl1 = 'http://localhost/magicmirror/admin/index.php/';
-var adminurl = adminurl + 'json/';
-var adminurl2 = adminurl + 'json/';
+var adminurl = adminurl1 + 'json/';
+var adminurl2 = adminurl1 + 'json/';
 //var adminurl = 'http://localhost/admin/index.php/json/';
 //var adminurl2 = 'http://localhost/admin/index.php/json/';
 
