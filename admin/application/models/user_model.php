@@ -599,9 +599,5 @@ class User_model extends CI_Model
         }
     }
 
-		$query="SELECT * FROM `enquiry` WHERE  `phone` ='$number'";
-		$enquirypresentornot=$this->db->query($query);
-         if($enquirypresentornot->num_rows()==0)
-         {
 }
 ?>
