@@ -1,15 +1,14 @@
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute']);
 phonecatControllers.controller('home',
-    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
+                TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
+            TemplateService.title = "Exclusive Art Jewellery";
+            TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
+            TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
         TemplateService.changetitle("Home");
-        $scope.template = TemplateService;
         console.log($scope.template);
-//            TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
-//        TemplateService.title = "Exclusive Art Jewellery";
-//        TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.;
-//        TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -1785,7 +1784,61 @@ phonecatControllers.controller('category',
 //            $scope.hititle = "Stunning American Diamond";
 //
 //        }
+     console.log($routeParams.CategoryId);
+  switch($routeParams.CategoryId)
+{
+case "AD-KADA":
+{
+                TemplateService.title = "Stunning American Diamond";
+            TemplateService.metadescription = "Sparkling the soul of beauty with handpicked American diamonds to design the International designer jewellery necklace to the beautiful earrings";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online,artificial jewellery online , diamond kada, kada bangles, diamond kada bangle, ladies kada, kada online shopping";
+            $scope.hititle = "Stunning American Diamond";
+}
+break;
+    case "Earring":
+{
+                TemplateService.title = "International Italian";
+            TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+}
+break;   
+    case "Italian-kada":
+{
+                TemplateService.title = "International Italian";
+            TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+}
+break;   
+    case "Italian-finger-ring":
+{
+                TemplateService.title = "International Italian";
+            TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+}
+break; 
 
+    case "AQ-VICTORIA-SET":
+{
+                TemplateService.title = "Beautiful Antique Jewellery";
+            TemplateService.metadescription = "Something never fades away, setting the classy look in this specially handcrafted Antique Jewellery collection will mirriorify your dynasty look";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Necklace Set, Antique necklace set, Antique set, antique jewellery sets, antique necklace sets online";
+}
+break;
+            case "Bridal-Bangle":
+{
+                TemplateService.title = "Classy & Stylish Corporate Jewellery";
+            TemplateService.metadescription = "The today’s women is free, independent & confident so our silver jewellery corporate collection too…";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online, Bangle, bridal bangles online, bridal bangles, wedding bangle, bangles for bride, bangle gold, gold bangle for women";
+}
+break;      
+    case "MICRO-JUDA":
+{
+                TemplateService.title = "Magnificent Micro Jewellery";
+            TemplateService.metadescription = "Micro Magnifico! The precise collection of Micro imitation jewellery is heart pumping & it will heavy the beauty.";
+            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online,I ndian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Micro Juda, fancy juda, online micro  juda.";
+}
+break;  
+}
         $scope.gototop = function () {
             $location.hash('totop');
             $anchorScroll();

@@ -4,8 +4,8 @@
 <head ng-controller="headerctrl">
     <title ng-bind="'Magic Mirror - '+template.title">Magic Mirror</title>
     <meta name="name" content="Magic Mirror">
-    <meta name="description" content="">
-    <meta name="keywords" content="Jewelry, Fashion Jewelry, Statement Necklaces, Earrings, Rings, Cuff Bracelets.">
+    <meta name="description" content="{{template.metadescription}}">
+    <meta name="keywords" content="{{template.keywords}}">
     <script>
         var hostname = window.location.hostname;
         if (hostname == "www.magicmirror.in") {
