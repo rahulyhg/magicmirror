@@ -820,7 +820,7 @@ class Json extends CI_Controller {
         $oldpassword = $order['form']['oldpassword'];
         $newpassword = $order['form']['newpassword'];
         $confirmpassword = $order['form']['confirmpassword'];
-        $data["message"] = $this->user_model->changepassword($email, $oldpassword, $newpassword, $confirmpassword);
+        $data["message"] = $this->user_model->changepasswordfront($email, $oldpassword, $newpassword, $confirmpassword);
         $this->load->view("json", $data);
     }
 }

@@ -582,7 +582,7 @@ class User_model extends CI_Model
     }
 
     
-    function changepassword($email, $oldpassword, $newpassword, $confirmpassword) 
+    function changepasswordfront($email, $oldpassword, $newpassword, $confirmpassword) 
     {
         $oldpassword=md5($oldpassword);
         $useridquery="SELECT `id` FROM `user` WHERE `email`='$email' AND `password`='$oldpassword'";
