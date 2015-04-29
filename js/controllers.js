@@ -6,6 +6,10 @@ phonecatControllers.controller('home',
         TemplateService.changetitle("Home");
         $scope.template = TemplateService;
         console.log($scope.template);
+//            TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
+//        TemplateService.title = "Exclusive Art Jewellery";
+//        TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.;
+//        TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -1764,6 +1768,24 @@ phonecatControllers.controller('category',
         TemplateService.navigation = "views/navigation.html";
         TemplateService.content = "views/category.html";
         TemplateService.slider = "";
+//    console.log($routeParams.CategoryId);
+//        if ($routeParams.CategoryId == "3") {
+//            console.log("is if");
+//            TemplateService.title = "Stunning American Diamond";
+//            TemplateService.metadescription = "Sparkling the soul of beauty with handpicked American diamonds to design the International designer jewellery necklace to the beautiful earrings";
+//            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online,artificial jewellery online , diamond kada, kada bangles, diamond kada bangle, ladies kada, kada online shopping";
+//            $scope.hititle = "Stunning American Diamond";
+//
+//        }       
+//    if ($routeParams.CategoryId == "1") {
+//            console.log("is if");
+//            TemplateService.title = "International Italian";
+//            TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+//            TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+//            $scope.hititle = "Stunning American Diamond";
+//
+//        }
+
         $scope.gototop = function () {
             $location.hash('totop');
             $anchorScroll();
