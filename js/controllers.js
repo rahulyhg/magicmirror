@@ -1852,7 +1852,7 @@ phonecatControllers.controller('category',
             $scope.filter = {
                 color: "",
                 pricemin: 0,
-                pricemax: 23000000
+                pricemax: 50000
             };
             MainJson.setfilter($scope.filter);
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccess);
