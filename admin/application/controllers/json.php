@@ -814,13 +814,36 @@ class Json extends CI_Controller {
         $this->load->view("json", $data);
     }
     function changepassword() {
-        $order = json_decode(file_get_contents('php://input'), true);
-        //print_r($order);
-        $email = $order['form']['email'];
-        $oldpassword = $order['form']['oldpassword'];
-        $newpassword = $order['form']['newpassword'];
-        $confirmpassword = $order['form']['confirmpassword'];
+//        $order = json_decode(file_get_contents('php://input'), true);
+//        //print_r($order);
+//        $email = $order['form']['email'];
+//        $oldpassword = $order['form']['oldpassword'];
+//        $newpassword = $order['form']['newpassword'];
+//        $confirmpassword = $order['form']['confirmpassword'];
+        $data = json_decode(file_get_contents('php://input'), true);
+        $email=$data['email'];
+        $oldpassword=$data['oldpassword'];
+        $newpassword=$data['newpassword'];
+        $confirmpassword=$data['confirmpassword'];
         $data["message"] = $this->user_model->changepasswordfront($email, $oldpassword, $newpassword, $confirmpassword);
+        $this->load->view("json", $data);
+    }
+    function updateuser() {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id=$data['id'];
+        $name=$data['name'];
+        $lastname=$data['lastname'];
+        $address=$data['address'];
+        $email=$data['email'];
+        $cell=$data['cell'];
+        $gender=$data['gender'];
+        $data["message"] = $this->user_model->updateuserfront($id,$name, $lastname, $address, $email, $cell, $gender);
+        $this->load->view("json", $data);
+    }
+    function getuserbyid()
+    {
+        $id=$this->input->get_post('id');
+        $data['message']=$this->user_model->beforeedit($id);
         $this->load->view("json", $data);
     }
 }

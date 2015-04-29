@@ -585,19 +585,27 @@ class User_model extends CI_Model
     function changepasswordfront($email, $oldpassword, $newpassword, $confirmpassword) 
     {
         $oldpassword=md5($oldpassword);
-        $useridquery="SELECT `id` FROM `user` WHERE `email`='$email' AND `password`='$oldpassword'";
+        $newpassword=md5($newpassword);
+        $useridquery=$this->db->query("SELECT `id` FROM `user` WHERE `email`='$email' AND `password`='$oldpassword'");
         if($useridquery->num_rows()==0)
         {
             return 0;
         }
         else
         {
-            $query=$this->db->query($useridquery);
+            $query=$useridquery->row();
             $userid=$query->id;
             $updatequery=$this->db->query("UPDATE `user` SET `password`='$newpassword' WHERE `id`='$userid'");
             return 1;
         }
     }
-
+    
+    function updateuserfront($userid,$name, $lastname, $address, $email, $cell, $gender) 
+    {
+        $query="UPDATE `user` SET `name`='$name',`firstname`='$name',`lastname`='$lastname',`email`='$email',`phone`='$cell',`billingaddress`='$address',`gender`='$gender' WHERE `id`='$userid'";
+        echo $query;
+        $query=$this->db->query($query);
+        return $query;
+    }
 }
 ?>
