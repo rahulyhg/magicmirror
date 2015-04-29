@@ -38,7 +38,7 @@
         };
 
         if (isMobile.any()) {
-            window.location = "http://mobile.magicmirror.in/" + window.location.hash;
+            window.location = "http://m.magicmirror.in/" + window.location.hash;
         }
     </script>
 

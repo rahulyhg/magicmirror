@@ -508,11 +508,15 @@ class User_model extends CI_Model
     function addtocart($product,$productname,$quantity,$price) {
         //$data=$this->cart->contents();
 
+        $image=$this->db->query("SELECT `image` FROM `productimage` WHERE `product` = '$product' LIMIT 0,1")->row();
+        $image=$image->image;
+        
         $data = array(
                'id'      => $product,
                'name'      => $productname,
                'qty'     => $quantity,
                'price'   => $price,
+               'image'   => $image
         );
         //array_push($data,$data2);
         $userid=$this->session->userdata('id');
