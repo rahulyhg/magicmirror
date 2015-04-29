@@ -477,6 +477,9 @@ class Json extends CI_Controller {
         $price1 = $this->input->get_post("price1");
         $price2 = $this->input->get_post("price2");
         $category = $this->input->get_post("category");
+        $category=str_replace("-"," ",$category);
+		$getcategoryidbyname=$this->db->query("SELECT * FROM `category` WHERE `name`LIKE '$category'")->row();
+        $category=$getcategoryidbyname->id;
         $iscategory = " 1 ";
         if ($category != "") {
             $iscategory = " `productcategory`.`category`=$category ";
@@ -738,6 +741,87 @@ class Json extends CI_Controller {
         $hashcode=$data['hashcode'];
         $data['message']=$this->user_model->forgotpasswordsubmit($hashcode,$password);
         $this->load->view('json',$data);
+    }
+    
+    function getuserorders() 
+    {
+        $userid = $this->input->get_post("id");
+        
+        $elements = array();
+        
+        $elements[0] = new stdClass();
+        $elements[0]->field = "`order`.`id`";
+        $elements[0]->sort = "1";
+        $elements[0]->header = "ID";
+        $elements[0]->alias = "id";
+        
+        $elements[1] = new stdClass();
+        $elements[1]->field = "`product`.`name`";
+        $elements[1]->sort = "1";
+        $elements[1]->header = "Product Name";
+        $elements[1]->alias = "productname";
+        
+        $elements[2] = new stdClass();
+        $elements[2]->field = "DATE(`order`.`timestamp`)";
+        $elements[2]->sort = "1";
+        $elements[2]->header = "Date";
+        $elements[2]->alias = "date";
+        
+        $elements[3] = new stdClass();
+        $elements[3]->field = "`product`.`sku`";
+        $elements[3]->sort = "1";
+        $elements[3]->header = "sku";
+        $elements[3]->alias = "sku";
+        
+        $elements[4] = new stdClass();
+        $elements[4]->field = "`orderitems`.`quantity`";
+        $elements[4]->sort = "1";
+        $elements[4]->header = "quantity";
+        $elements[4]->alias = "quantity";
+        
+        $elements[5] = new stdClass();
+        $elements[5]->field = "`orderitems`.`price`";
+        $elements[5]->sort = "1";
+        $elements[5]->header = "price";
+        $elements[5]->alias = "price";
+        
+        $elements[6] = new stdClass();
+        $elements[6]->field = "`order`.`orderstatus`";
+        $elements[6]->sort = "1";
+        $elements[6]->header = "status";
+        $elements[6]->alias = "status";
+        
+        $search = $this->input->get_post("search");
+        $pageno = $this->input->get_post("pageno");
+        $orderby = $this->input->get_post("orderby");
+        $orderorder = $this->input->get_post("orderorder");
+        $maxrow = $this->input->get_post("maxrow");
+        if ($maxrow == "") {
+            $maxrow = 20;
+        }
+        if ($orderby == "") {
+            $orderby = "id";
+            $orderorder = "ASC";
+        }
+        $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `orderitems` INNER JOIN `order` ON `order`.`id`=`orderitems`.`order` LEFT OUTER JOIN `product` ON `product`.`id`=`orderitems`.`product`","WHERE `order`.`user`='$userid'");
+        $this->load->view("json", $data);
+    }
+    
+    
+    function getordertrace() {
+        $orderid=$this->input->get('order');
+        $data["message"] = $this->order_model->getstatusbyorderid($orderid);
+        $this->load->view("json", $data);
+    }
+    function changepassword() {
+        $order = json_decode(file_get_contents('php://input'), true);
+        //print_r($order);
+        $email = $order['form']['email'];
+        $oldpassword = $order['form']['oldpassword'];
+        $newpassword = $order['form']['newpassword'];
+        $confirmpassword = $order['form']['confirmpassword'];
+        $data["message"] = $this->user_model->changepassword($email, $oldpassword, $newpassword, $confirmpassword);
+        $this->load->view("json", $data);
     }
 }
 ?>

@@ -411,5 +411,12 @@ WHERE DATE(`order`.`timestamp`) = '$date'")->result();
         $query=$this->db->query("UPDATE `order` SET `status`=2 WHERE `id`=$orderid");
         return $query;
     }
+    
+	function getstatusbyorderid($orderid)
+	{
+		$query=$this->db->query("SELECT `orderstatus` FROM `order` WHERE `id`='$orderid'" )->row();
+		$query=$query->orderstatus;
+		return $query;
+	}
 }
 ?>

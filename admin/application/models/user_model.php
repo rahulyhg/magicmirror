@@ -581,5 +581,27 @@ class User_model extends CI_Model
 			return  1;
     }
 
+    
+    function changepassword($email, $oldpassword, $newpassword, $confirmpassword) 
+    {
+        $oldpassword=md5($oldpassword);
+        $useridquery="SELECT `id` FROM `user` WHERE `email`='$email' AND `password`='$oldpassword'";
+        if($useridquery->num_rows()==0)
+        {
+            return 0;
+        }
+        else
+        {
+            $query=$this->db->query($useridquery);
+            $userid=$query->id;
+            $updatequery=$this->db->query("UPDATE `user` SET `password`='$newpassword' WHERE `id`='$userid'");
+            return 1;
+        }
+    }
+
+		$query="SELECT * FROM `enquiry` WHERE  `phone` ='$number'";
+		$enquirypresentornot=$this->db->query($query);
+         if($enquirypresentornot->num_rows()==0)
+         {
 }
 ?>
