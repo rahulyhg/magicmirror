@@ -270,6 +270,7 @@ class Json extends CI_Controller {
         $productname = $this->input->get_post('productname');
         $quantity = $this->input->get_post('quantity');
         $price = $this->input->get_post('price');
+//        $image = $this->input->get_post('image');
         $data["message"] = $this->user_model->addtocart($product, $productname, $quantity, $price);
         //$data["message"]=$this->order_model->addtocart($user,$product,$quantity);
         $this->load->view("json", $data);
