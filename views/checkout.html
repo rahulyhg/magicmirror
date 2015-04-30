@@ -14,7 +14,7 @@
 
             <div class="container billing">
                 <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" ng-show="(isloggedin=='0')">
                         <div class="panel-heading">
                             <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion">
@@ -26,7 +26,7 @@
                             <div class="panel-body">
                                 <div class="row billing">
                                     <div class="col-md-12">
-                                        <div class="row" ng-show="(isloggedin=='0')">
+                                        <div class="row" >
                                             <div class="col-xs-6">
                                                 <h4>CHECKOUT AS A GUEST OR REGISTER</h4>
                                                 <p>Register with us for future convenience:</p>
@@ -703,10 +703,10 @@
                                     </div>
                         </div>
                     </div>
-                    <div class="panel panel-default" ng-show="(shippinginfo=='1')">
+                    <div class="panel panel-default hidden"  >
                         <div class="panel-heading">
                             <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion">
+        <a data-toggle="collapse" data-parent="#accordion" >
           <h3>Shipping Information</h3>
         </a>
       </h4>
@@ -717,7 +717,7 @@
                                 <p ng-show="showshippingmethods==1">
                                     <input type="radio" name="shipping" value="1" ng-model="form.shippingmethod" ng-change="changeshippingcost(0)">Free UK Delivery £ 0.00
                                 </p>
-<!--
+                                <!--
                                 <p ng-show="showshippingmethods==2">
                                     <input type="radio" name="shipping" value="2" ng-model="form.shippingmethod" ng-change="changeshippingcost(3)">Standard Delivery £ 3.00
                                 </p>
@@ -786,6 +786,7 @@
                         </div>
                     </div>
                     <!--                    </form>-->
+                                        
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -842,18 +843,17 @@
                                     </div>
                                 </div>
                                 <form action="http://magicmirror.in/paymentgateway/index.php" method="post" style="padding-top:20px;">
-                                 <span style="font-weight:600; padding-top:20px">Order Id:</span>  
-                                     {{payment.orderid}}
-                                    
-<!--               CHECKOUT POST FORM START                    -->
-                                    
-<!--
+<!--                                    <span style="font-weight:600; padding-top:20px">Order Id:</span> {{payment.orderid}}-->
+
+                                    <!--               CHECKOUT POST FORM START                    -->
+
+                                    <!--
                                    <input type="text" name="orderid" ng-model="payment.orderid"> 
                                    <input type="text" name="amount" ng-model="payment.amount"> 
 -->
-                                    <input type="submit" class="btns btns-primary pull-right"  ng-if="orderplacedid" value="Place Order">
-                                    
-<!--               CHECKOUT POST FORM START                    -->
+                                    <input type="submit" class="btns placeorder btns-primary " style="text-align:center;" ng-if="orderplacedid" value="Place Order">
+
+                                    <!--               CHECKOUT POST FORM START                    -->
                                 </form>
 
                                 <!--

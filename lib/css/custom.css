@@ -2139,3 +2139,10 @@ p.pending {
   color: #EA1C69;
   font-size: 20px;
 }
+input.btns.placeorder {
+  width: 500px;
+  padding: 20px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}

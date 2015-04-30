@@ -1396,6 +1396,9 @@ phonecatControllers.controller('checkout',
             MainJson.loginuser(login.email, login.password).success(getlogin);
         };
         //userloginckeckout
+        
+
+    
 
         $scope.continuebilling = function () {
             $scope.billinginfo = 1;
@@ -1444,6 +1447,9 @@ phonecatControllers.controller('checkout',
             if (check) {
                 $scope.shippinginfo = 1;
                 $scope.buttonsvalidate.shipping = 1;
+                
+                $scope.placeorder($scope.form);
+                
                 //$scope.hidebilling = 0;
             }
 
@@ -1537,6 +1543,7 @@ phonecatControllers.controller('checkout',
             console.log(data);
             if (data != "false") {
                 $scope.isloggedin = 1;
+                $scope.continuebilling();
                 $scope.accesslevel = data.accesslevel;
                 $scope.status = data.status;
                 $scope.id = data.id;
