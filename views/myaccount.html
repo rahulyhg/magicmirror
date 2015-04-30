@@ -124,7 +124,7 @@
                         </table>
                         <div class="pagination pull-right">
                             <a ng-click="pervious()" class="previous"><i class="fa fa-angle-left "></i>Pervious</a>
-                            <select ng-model="pag" ng-change="pagchange(pag)">
+                            <select ng-model="form.pag" ng-change="pagchange(form.pag)">
                                 <option ng-repeat="i in getNumber(orders.lastpage) track by $index">{{$index+1}}</option>
                             </select> <a ng-click="next()" class="next">Next<i class="fa fa-angle-right "></i></a>
                         </div>
@@ -136,7 +136,7 @@
                     <span>Trace Order:</span>
                     <input type="text" class="form-control" ng-model="order.order" placeholder="OrderId"> <span><a ng-click="tracemyorder(order)">Track</a></span>
                 </div>
-                <p class="pending" ng-if="trace!=''">Your Order has been {{trace.orderstatusname}}</p>
+                <p class="pending" ng-if="trace!=''">Your Order Status Is : {{trace.orderstatusname}}</p>
             </div>
         </div>
     </div>

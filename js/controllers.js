@@ -1857,7 +1857,7 @@ phonecatControllers.controller('category',
         };
 
         // DECLARATION
-        $scope.pageno = 1;
+        $scope.form.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;
         $scope.search = "";
@@ -1923,7 +1923,7 @@ phonecatControllers.controller('category',
             console.log(search);
             $scope.search = search;
             $scope.products = [];
-            MainJson.getproductbycategory("", $scope.pageno, $scope.search).success(categorysuccesspush);
+            MainJson.getproductbycategory("", $scope.form.pageno, $scope.search).success(categorysuccesspush);
         }
 
         //authenticate
@@ -1951,8 +1951,8 @@ phonecatControllers.controller('category',
             for (var i = 0; i < data.queryresult.length; i++) {
                 $scope.products.push(data.queryresult[i]);
             }
-            if (data.lastpage > $scope.pageno) {
-                $scope.pageno = $scope.pageno + 1;
+            if (data.lastpage > $scope.form.pageno) {
+                $scope.form.pageno = $scope.form.pageno + 1;
             } else {
                 $scope.shouldscroll = true;
             }
@@ -1960,9 +1960,9 @@ phonecatControllers.controller('category',
         var oldpage = 0;
         $scope.addMoreItems = function() {
             console.log("ADD MORE: " + oldpage);
-            if (oldpage != $scope.pageno) {
-                oldpage = $scope.pageno;
-                MainJson.getproductbycategory($routeParams.CategoryId, $scope.pageno, $scope.search).success(categorysuccesspush);
+            if (oldpage != $scope.form.pageno) {
+                oldpage = $scope.form.pageno;
+                MainJson.getproductbycategory($routeParams.CategoryId, $scope.form.pageno, $scope.search).success(categorysuccesspush);
             }
 
         };
@@ -2563,39 +2563,44 @@ phonecatControllers.controller('myaccount',
         }
 
         //  GET USER ORDER
-        $scope.pag = "1";
+        $scope.form={};
+        $scope.form.pag = "1";
         $scope.getNumber = function(num) {
             return new Array(num);
         }
         $scope.next = function(){
-            if($scope.pag<$scope.orders.lastpage){
-                $scope.pag = parseInt($scope.pag)+1;
-                MainJson.getorder($scope.pag).success(ordersuccess);
+//            console.log(index);
+            if($scope.form.pag<$scope.orders.lastpage){
+                $scope.form.pag = parseInt($scope.form.pag)+1;
+                MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
         $scope.pervious = function(){
-            if($scope.pag>=$scope.orders.lastpage){
-                $scope.pag = parseInt($scope.pag)-1;
-                MainJson.getorder($scope.pag).success(ordersuccess);
+            if($scope.form.pag>=$scope.orders.lastpage){
+                $scope.form.pag = parseInt($scope.form.pag)-1;
+                MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
         $scope.pagchange = function (pag){
-            console.log($scope.pag);
+            console.log($scope.form.pag);
             MainJson.getorder(pag).success(ordersuccess);
         }
+        
+        
         var ordersuccess = function(data, status) {
-            console.log(data);
+//            console.log(data);
             $scope.orders = data;
             $scope.allorders = data.queryresult;
         }
-        MainJson.getorder($scope.pag).success(ordersuccess);
+        MainJson.getorder($scope.form.pag).success(ordersuccess);
         $scope.$watch('pag', function(){
-            console.log($scope.pag);
+            console.log($scope.form.pag);
+            $scope.form.pag = $scope.form.pag;
         });
 
         //  TRACE ORDER
         var tracesuccess = function(data, status) {
-            console.log(data);
+//            console.log(data);
             $scope.trace = data;
         }
         $scope.tracemyorder = function(order) {
