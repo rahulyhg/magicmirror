@@ -7,40 +7,45 @@
                     <ul class="info-li">
                         <li class="cat-list cpointer" ng-class="info" ng-click="changeinfo()">Personal Info</li>
                         <li class="cat-list cpointer" ng-class="chngpass" ng-click="changechngpass()">Change password</li>
-                        <li class="cat-list cpointer" ng-class="myorders" ng-click="changemyorders()">My Orders </li>
+                        <li class="cat-list cpointer" ng-class="myorders" ng-click="changemyorders()">My Orders</li>
                         <li class="cat-list cpointer" ng-class="ordertracing" ng-click="changeordertracing()">Order Tracking</li>
                     </ul>
                 </div>
             </div>
             <div class="myaccnthead col-xs-6">
-                <h3>My Account </h3> <span ng-if="info=='bolds'" class="pull-right"> <a href="">Edit</a></span>
+                <h3>My Account </h3>  <span ng-if="info=='bolds'" class="pull-right"> <a href="">Edit</a></span>
+                <div class="alert" ng-class="listingclass" role="alert" ng-if="listingmsg!=''">
+                    {{listingmsg}}
+                </div>
             </div>
+
             <div class="col-xs-4" ng-if="info=='bolds'">
+
                 <div class="chngpswd-cont">
                     <div class="form-group">
                         <div class="input-id">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Name" ng-model="user.firstname" ng-class="allvalidation[0].validation" required>
                         </div>
                         <div class="input-id">
-                            <input type="text" class="form-control" placeholder="Last Name">
+                            <input type="text" class="form-control" placeholder="Last Name" ng-model="user.lastname">
                         </div>
                         <div class="input-id">
-                            <textarea class="form-control" rows="5" id="comment" placeholder="Address"></textarea>
+                            <textarea class="form-control" rows="5" id="comment" placeholder="Address" ng-model="user.billingaddress"></textarea>
                             <!--                            <text type="" class="form-control" placeholder="Address">-->
                         </div>
                         <div class="input-id">
-                            <input type="emalid" class="form-control" placeholder="Email ID">
+                            <input type="emalid" class="form-control" placeholder="Email ID" ng-model="user.email" ng-class="allvalidation[1].validation" required>
                         </div>
                         <div class="input-id">
-                            <input type="phoneno" class="form-control" placeholder="Phone No">
+                            <input type="phoneno" class="form-control" placeholder="Phone No" ng-model="user.phone">
                         </div>
                         <div class="input-id">
                             <label class="radio-inline">
-                                <input type="radio" name="optradio">Man</label>
+                                <input type="radio" name="optradio" ng-model="user.gender" value="0">Man</label>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio">Woman</label>
+                                <input type="radio" name="optradio" ng-model="user.gender" value="1">Woman</label>
                         </div>
-                        <a href="">Save</a>
+                        <a ng-click="updateUser(user)">Save</a>
                     </div>
                 </div>
             </div>
@@ -50,21 +55,24 @@
                 <div class="chngpswd-cont">
                     <div class="form-group">
                         <div class="input-id">
-                            <input type="emalid" class="form-control" placeholder="Email ID">
+                            <input type="emalid" class="form-control" placeholder="Email ID" ng-model="pass.email" ng-class="allvalidation[0].validation" required>
                         </div>
                         <div class="input-id">
-                            <input type="password" class="form-control" placeholder="Old Password">
+                            <input type="password" class="form-control" placeholder="Old Password" ng-model="pass.oldpassword" ng-class="allvalidation[1].validation" required>
                         </div>
                         <div class="input-id">
-                            <input type="password" class="form-control" placeholder="New Password">
+                            <input type="password" class="form-control" placeholder="New Password" ng-model="pass.newpassword" ng-class="allvalidation[2].validation" required>
                         </div>
                         <div class="input-id">
-                            <input type="password" class="form-control" placeholder="Conform Password">
+                            <input type="password" class="form-control" placeholder="Conform Password" ng-model="pass.conformpassword" ng-class="allvalidation[3].validation" required>
                         </div>
-                        <a href="">Save</a>
+                        <a ng-click="changepassword(pass)">Save</a>
                     </div>
                 </div>
             </div>
+
+
+
             <div class="col-xs-9" ng-if="myorders=='bolds'">
                 <div class="my-order">
                     <div class="cart orders">
@@ -86,14 +94,15 @@
                             </thead>
                             <tbody>
                                 <!-- ngRepeat: singlecart in cart -->
-                                <tr>
-                                    <td>1</td>
-                                    <td>2/13/15</td>
-                                    <td>Italian Earring</td>
-                                    <td>1</td>
-                                    <td>Rs 16795.00</td>
-                                    <td>Pending</td>
+                                <tr ng-repeat="myorder in allorders">
+                                    <td>{{myorder.id}}</td>
+                                    <td>{{myorder.date}}</td>
+                                    <td>{{myorder.productname}}</td>
+                                    <td>{{myorder.quantity}}</td>
+                                    <td>Rs {{myorder.price}}</td>
+                                    <td>{{myorder.orderstatusname}}</td>
                                 </tr>
+                                <!--
                                 <tr>
                                     <td>1</td>
                                     <td>2/13/15</td>
@@ -110,15 +119,14 @@
                                     <td>Rs 16795.00</td>
                                     <td>Pending</td>
                                 </tr>
+-->
                             </tbody>
                         </table>
                         <div class="pagination pull-right">
-<a href="#" class="previous"><i class="fa fa-angle-left "></i>Pervious</a><select>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select> <a href="#" class="next">Next<i class="fa fa-angle-right "></i></a>
+                            <a ng-click="pervious()" class="previous"><i class="fa fa-angle-left "></i>Pervious</a>
+                            <select ng-model="pag" ng-change="pagchange(pag)">
+                                <option ng-repeat="i in getNumber(orders.lastpage) track by $index">{{$index+1}}</option>
+                            </select> <a ng-click="next()" class="next">Next<i class="fa fa-angle-right "></i></a>
                         </div>
                     </div>
                 </div>
@@ -126,9 +134,9 @@
             <div class="col-xs-4" ng-if="ordertracing=='bolds'">
                 <div class="trck-order">
                     <span>Trace Order:</span>
-                    <input type="text" class="form-control" placeholder="OrderId"> <span><a href="#">Track</a></span>
+                    <input type="text" class="form-control" ng-model="order.order" placeholder="OrderId"> <span><a ng-click="tracemyorder(order)">Track</a></span>
                 </div>
-                <p class="pending">Your Order has been Pending / Your Order has been Sent</p>
+                <p class="pending" ng-if="trace!=''">Your Order has been {{trace.orderstatusname}}</p>
             </div>
         </div>
     </div>

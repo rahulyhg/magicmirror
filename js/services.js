@@ -186,6 +186,9 @@ service.factory('MainJson', function ($http, TemplateService) {
                 }
             });
         },
+        getuserbyid: function () {
+            return $http.get(adminurl + "getuserbyid ", {});
+        },
         getfilters: function () {
             return filters;
         },
@@ -313,8 +316,54 @@ service.factory('MainJson', function ($http, TemplateService) {
                 }
             })
         },
+        updateuser: function (user) {
+            //            return $http.post(adminurl + 'loginuser?email=' + email + '&password=' + password, {}, {
+            //                withCredentials: true
+            //            });
+            return $http({
+                url: adminurl + "updateuser",
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    "name": user.firstname,
+                    "lastname": user.lastname,
+                    "address": user.billingaddress,
+                    "email": user.email,
+                    "cell": user.phone,
+                    "gender": user.gender
+                }
+            })
+        },
+        changepassword: function (pass) {
+            return $http({
+                url: adminurl + "changepassword",
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    "email": pass.email,
+                    "oldpassword": pass.oldpassword,
+                    "newpassword": pass.newpassword,
+                    "conformpassword": pass.conformpassword
+                }
+            })
+        },
+        getordertrace: function (order) {
+            return $http({
+                url: adminurl + "getordertrace",
+                method: "POST",
+                withCredentials: true,
+                data: {
+                    "order": order.order
+                }
+            })
+        },
         getnavigation: function () {
             return $http.post(adminurl + 'getnavigation', {}, {
+                withCredentials: true
+            });
+        },
+        getorder: function (pageno) {
+            return $http.post(adminurl + 'getuserorders?pageno='+pageno, {}, {
                 withCredentials: true
             });
         },

@@ -78,7 +78,7 @@
     <script src="lib/js/skrollr.dir.js"></script>
    <script src="lib/js/jstorage.js "></script>
    
-<!--    <script src="lib/js/jagruticontroller.js"></script>-->
+    <script src="lib/js/underscore-min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/templateservice.js"></script>
