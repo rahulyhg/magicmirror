@@ -621,7 +621,7 @@ phonecatControllers.controller('login',
                 $scope.msgr = "Registred Successful";
                 MainJson.signupemail(data.email).success(emailsend);
             } else {
-                $scope.msgr = "Error In Registration";
+                $scope.msgr = "This Email Id is already registered with us or Error In Registration";
             }
         };
         $scope.signup = function (register) {
@@ -917,7 +917,7 @@ phonecatControllers.controller('wholesaler',
                 $scope.msgr = "Registred Successful";
 
             } else {
-                $scope.msgr = "This Email is already registered with us.";
+                $scope.msgr = "This Email is already registered with us or Error in Registration";
             }
         };
         $scope.wholesalersignup = function (register) {
