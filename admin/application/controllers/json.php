@@ -810,7 +810,8 @@ class Json extends CI_Controller {
     
     
     function getordertrace() {
-        $orderid=$this->input->get('order');
+        $data = json_decode(file_get_contents('php://input'), true);
+        $orderid=$data['order'];
         $data["message"] = $this->order_model->getstatusbyorderid($orderid);
         $this->load->view("json", $data);
     }

@@ -414,8 +414,8 @@ WHERE DATE(`order`.`timestamp`) = '$date'")->result();
     
 	function getstatusbyorderid($orderid)
 	{
-		$query=$this->db->query("SELECT `orderstatus` FROM `order` WHERE `id`='$orderid'" )->row();
-		$query=$query->orderstatus;
+		$query=$this->db->query("SELECT `order`.`orderstatus` AS `orderid`,`orderstatus`.`name` AS `orderstatusname` FROM `order` LEFT OUTER JOIN `orderstatus` ON `order`.`orderstatus`=`orderstatus`.`id` WHERE `order`.`id`='$orderid'" )->row();
+//		$query=$query->orderstatus;
 		return $query;
 	}
 }
