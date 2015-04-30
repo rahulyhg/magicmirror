@@ -67,7 +67,7 @@
             </div>
             <div class="col-xs-9" ng-if="myorders=='bolds'">
                 <div class="my-order">
-                    <div class="cart">
+                    <div class="cart orders">
                         <table class="table table-hover content-static content">
                             <thead>
                                 <tr>
@@ -90,19 +90,15 @@
                                     <td>1</td>
                                     <td>2/13/15</td>
                                     <td>Italian Earring</td>
-                                    <!--                            <td class="ng-binding">Italian Earring</td>-->
                                     <td>1</td>
-
                                     <td>Rs 16795.00</td>
                                     <td>Pending</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>2/13/15</td>
-                                    <td>Italian Earring</td>
-                                    <!--                            <td class="ng-binding">Italian Earring</td>-->
+                                    <td>Italian Earring</td>               
                                     <td>2</td>
-
                                     <td>Rs 16795.00</td>
                                     <td>Pending</td>
                                 </tr>
@@ -110,75 +106,28 @@
                                     <td>1</td>
                                     <td>2/13/15</td>
                                     <td>Italian Earring</td>
-                                    <!--                            <td class="ng-binding">Italian Earring</td>-->
                                     <td>3</td>
-
                                     <td>Rs 16795.00</td>
                                     <td>Pending</td>
                                 </tr>
-                                <!--
-                            <td>
-                                <span class="cartspace" ng-hide="newquantity[$index]!=1"></span>
-                                <a class="btn btn-default carticon ng-hide" ng-click="subproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)" ng-show="newquantity[$index]!=1">-</a>
-                                <input type="text" ng-model="newquantity[$index]" class="form-control cartinput ng-pristine ng-untouched ng-valid" readonly=""><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
-                            </td>
-                            <td class="ng-binding">Rs 16795.00</td>
-                            <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
-                            </td>
--->
-
-                                <!-- end ngRepeat: singlecart in cart -->
-
                             </tbody>
                         </table>
-<!--
-                        <table class="table table-hover content-static content">
-                            <thead>
-                                <tr>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                 ngRepeat: singlecart in cart 
-                                <tr>
-                                   
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>4/13/10</td>
-                                    <td>Italian Earring</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>2/13/15</td>
-                                    <td>Italian Earring</td>
-                                </tr>
--->
-
-                                <!--
-                            <td>
-                                <span class="cartspace" ng-hide="newquantity[$index]!=1"></span>
-                                <a class="btn btn-default carticon ng-hide" ng-click="subproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)" ng-show="newquantity[$index]!=1">-</a>
-                                <input type="text" ng-model="newquantity[$index]" class="form-control cartinput ng-pristine ng-untouched ng-valid" readonly=""><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
-                            </td>
-                            <td class="ng-binding">Rs 16795.00</td>
-                            <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
-                            </td>
--->
-
-                                <!-- end ngRepeat: singlecart in cart -->
-
-<!--
-                            </tbody>
-                        </table>
--->
+                        <div class="pagination pull-right">
+<a href="#" class="previous"><i class="fa fa-angle-left "></i>Pervious</a><select>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select> <a href="#" class="next">Next<i class="fa fa-angle-right "></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-xs-4" ng-if="ordertracing=='bolds'">
                 <div class="trck-order">
                     <span>Trace Order:</span>
-                    <input type="text" class="form-control" placeholder="OrderId"> <span>Track</span>
+                    <input type="text" class="form-control" placeholder="OrderId"> <span><a href="#">Track</a>Track</span>
+                    <p>Your Order has been Sent / </p>
                 </div>
             </div>
         </div>

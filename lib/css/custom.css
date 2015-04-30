@@ -2110,3 +2110,25 @@ li.cat-list.cpointer.bolds:after {
     padding-right: 5px;
     display: inline-block;
 }
+.orders tr>th {
+  background-color: rgba(255, 255, 255, 1);
+  color: #696969;
+}
+
+a.previous {
+    padding: 10px;
+}
+
+a.next {
+    padding-left: 10px;
+}
+a.previous i {
+    font-size: 20px;
+    vertical-align: sub;
+    padding-right: 3px;
+}
+a.next i {
+    font-size: 20px;
+    vertical-align: sub;
+    padding-left: 3px;
+}
