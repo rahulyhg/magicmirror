@@ -607,7 +607,7 @@ class User_model extends CI_Model
     function updateuserfront($userid,$name, $lastname, $address, $email, $cell, $gender) 
     {
         $query="UPDATE `user` SET `firstname`='$name',`lastname`='$lastname',`email`='$email',`phone`='$cell',`billingaddress`='$address',`gender`='$gender' WHERE `id`='$userid'";
-        echo $query;
+//        echo $query;
         $query=$this->db->query($query);
         return $query;
     }
