@@ -746,7 +746,7 @@ class Json extends CI_Controller {
     
     function getuserorders() 
     {
-        $userid = $this->input->get_post("id");
+        $userid = $this->session->userdata('id');;
         
         $elements = array();
         
@@ -831,7 +831,7 @@ class Json extends CI_Controller {
     }
     function updateuser() {
         $data = json_decode(file_get_contents('php://input'), true);
-        $id=$data['id'];
+        $id=$this->session->userdata('id');
         $name=$data['name'];
         $lastname=$data['lastname'];
         $address=$data['address'];
@@ -843,7 +843,7 @@ class Json extends CI_Controller {
     }
     function getuserbyid()
     {
-        $id=$this->input->get_post('id');
+        $id=$this->session->userdata('id');
         $data['message']=$this->user_model->beforeedit($id);
         $this->load->view("json", $data);
     }
