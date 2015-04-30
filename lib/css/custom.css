@@ -2132,3 +2132,10 @@ a.next i {
     vertical-align: sub;
     padding-left: 3px;
 }
+
+p.pending {
+  padding-top: 15px;
+  text-align: center;
+  color: #EA1C69;
+  font-size: 20px;
+}
