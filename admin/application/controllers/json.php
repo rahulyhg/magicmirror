@@ -792,6 +792,12 @@ class Json extends CI_Controller {
         $elements[6]->header = "status";
         $elements[6]->alias = "status";
         
+        $elements[7] = new stdClass();
+        $elements[7]->field = "`orderstatus`.`name`";
+        $elements[7]->sort = "1";
+        $elements[7]->header = "orderstatusname";
+        $elements[7]->alias = "orderstatusname";
+        
         $search = $this->input->get_post("search");
         $pageno = $this->input->get_post("pageno");
         $orderby = $this->input->get_post("orderby");
@@ -804,7 +810,7 @@ class Json extends CI_Controller {
             $orderby = "id";
             $orderorder = "ASC";
         }
-        $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `orderitems` INNER JOIN `order` ON `order`.`id`=`orderitems`.`order` LEFT OUTER JOIN `product` ON `product`.`id`=`orderitems`.`product`","WHERE `order`.`user`='$userid'");
+        $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `orderitems` INNER JOIN `order` ON `order`.`id`=`orderitems`.`order` LEFT OUTER JOIN `product` ON `product`.`id`=`orderitems`.`product` LEFT OUTER JOIN `orderstatus` ON `orderstatus`.`id`=`order`.`orderstatus`","WHERE `order`.`user`='$userid'");
         $this->load->view("json", $data);
     }
     
