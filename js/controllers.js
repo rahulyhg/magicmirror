@@ -1857,6 +1857,7 @@ phonecatControllers.controller('category',
         };
 
         // DECLARATION
+    $scope.form = {};
         $scope.form.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;
