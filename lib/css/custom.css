@@ -2139,6 +2139,9 @@ p.pending {
   color: #EA1C69;
   font-size: 20px;
 }
+li.celebrity a {
+  border: 0px;
+}
 input.btns.placeorder {
   width: 500px;
   padding: 20px;
