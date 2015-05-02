@@ -6,6 +6,7 @@
     <meta name="name" content="Magic Mirror">
     <meta name="description" content="{{template.metadescription}}">
     <meta name="keywords" content="{{template.keywords}}">
+    <base href="/">
     <script>
         var hostname = window.location.hostname;
         if (hostname == "www.magicmirror.in") {
