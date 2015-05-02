@@ -35,7 +35,7 @@
             <div class="col-md-3 text-center" ng-repeat="product in find" my-repeat-directive>
                 <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">
 
-                    <a href="#/product/{{product.id}}">
+                    <a ng-click="template.gourl('/product/'+product.id)">
                         <div class="img1">
                             <img src="{{product.image|imagepath}}" class="img">
                         </div>
@@ -46,10 +46,10 @@
                     </a>
 
                     <div class="protitle">
-                        <a href="#/product/{{product.id}}"><h5>{{product.name}}</h5></a>
+                        <a ng-click="template.gourl('/product/'+product.id)"><h5>{{product.name}}</h5></a>
                     </div>
                     <div class="proprice">
-                        <a href="#/product/{{product.id}}">
+                        <a ng-click="template.gourl('/product/'+product.id)">
                             <h5 ng-show="(accesslevel!=3)"> {{product.price|convertprice}}</h5>
                             <h5 ng-show="(accesslevel==3)"> {{product.wholesaleprice|convertprice}}</h5>
                             <!--h5 class="discountprice">£ {{product.price}}</h5-->

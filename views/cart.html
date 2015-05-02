@@ -50,7 +50,7 @@
                 <p>
                     <input type="text" placeholder="Enter your coupon code" ng-model="couponcode" class="discountcoupon form-control newsletteremail " style="margin-right:5px;"><a class="btn btn-primary {{'valid'+validcouponcode}}" ng-click="checkcoupon(couponcode)"><span ng-hide="validcouponcode==1">Apply Coupon</span> <span ng-show="validcouponcode==1">Coupon Code Applied</span></a>
 
-                    <a href="#/checkout" class="btns btns-primary pull-right">Proceed to checkout</a>
+                    <a  ng-click="template.gourl('/checkout');" class="btns btns-primary pull-right">Proceed to checkout</a>
                 </p>
 
                 <div class="checkout row">
