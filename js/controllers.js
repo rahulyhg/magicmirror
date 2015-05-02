@@ -3,11 +3,11 @@ phonecatControllers.controller('home',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
-        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
+//        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
         TemplateService.title = "Exclusive Art Jewellery";
         TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
         TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
-        TemplateService.changetitle("Home");
+//        TemplateService.changetitle("Home");
         console.log($scope.template);
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/header.html";
@@ -1832,7 +1832,7 @@ phonecatControllers.controller('category',
                 break;
             case "Bridal-Bangle":
                 {
-                    TemplateService.title = "Classy & Stylish Corporate Jewellery";
+                    TemplateService.title = "";
                     TemplateService.metadescription = "The today’s women is free, independent & confident so our silver jewellery corporate collection too…";
                     TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online, Bangle, bridal bangles online, bridal bangles, wedding bangle, bangles for bride, bangle gold, gold bangle for women";
                 }
