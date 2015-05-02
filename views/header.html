@@ -15,12 +15,12 @@
                 <div class="col-xs-9">
                     <div class="login-tab pull-right">
                         <ul>
-                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a href="#/myaccount">Welcome, {{alldata.firstname}} {{alldata.lastname}}</a>
+                            <li class="welcome" ng-if="loginlogouttext!='Login'"><a ng-click="template.gourl('/myaccount');">Welcome, {{alldata.firstname}} {{alldata.lastname}}</a>
                             </li>
                             <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a>
                             </li>
 
-                            <li class="welcome" ng-if="loginlogouttext=='Login'"><a href="#/Login">Login </a>
+                            <li class="welcome" ng-if="loginlogouttext=='Login'"><a ng-click="template.gourl('/Login');">Login </a>
                             </li>
                             <li><a  ng-click="template.gourl('/Login');" ng-if="loginlogouttext=='Login'">New User</a>
                             </li>

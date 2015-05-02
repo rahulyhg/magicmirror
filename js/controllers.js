@@ -2702,8 +2702,6 @@ phonecatControllers.controller('zoomCtrl',
         };
     }
 );
-
-
 phonecatControllers.controller('searchbuttonCtrl',
     function($scope, $location) {
         $scope.searchproducts = function(text) {
