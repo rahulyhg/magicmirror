@@ -64,7 +64,7 @@
                     <!--                <div class="product wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1s" data-wow-offset="10" style="visibility:none;">-->
                     <div class="product">
                         <!--                    <span ng-show="product.isnew=='1'" class="pronew"><img src="img/new.png"></span>-->
-                        <a ng-click="template.gourl('/product/'+product.id)">
+                        <a href="#/product/{{product.id}}">
                             <div class="img1" ng-if="product.image1">
                                 <img src="{{product.image1|imagepath}}" class="img">
                             </div>
@@ -80,11 +80,11 @@
                         </a>
                         <div class="top-product">
                             <div class="protitle">
-                                <a ng-click="template.gourl('/product/'+product.id)"><h5>{{product.name}}</h5></a>
+                                <a href="#/product/{{product.id}}"><h5>{{product.name}}</h5></a>
                             </div>
                             <hr class="horiztal-hr">
                             <div class="proprice">
-                                <a ng-click="template.gourl('/product/'+product.id)">
+                                <a href="#/product/{{product.id}}">
                                     <h5 ng-show="(accesslevel!=3)">{{product.price|convertprice}}</h5>
                                     <h5 ng-show="(accesslevel==3)">{{product.wholesaleprice|convertprice}}</h5>
                                     <h5 class="sku pull-right">{{product.sku}}</h6>
