@@ -2085,13 +2085,13 @@ li.cat-list.cpointer.bolds:after {
     float: left;
     font-size: 18px;
     font-weight: 500;
-    margin-top: 3px;
+    margin-top: 1px;
 }
 
 .trck-order input.form-control {
     width: 55%;
     float: left;
-    padding: 15px 5px;
+    padding: 12px 5px;
     font-size: 16px;
     margin: 0px 10px;
     background: #e6e7e8;
@@ -2100,7 +2100,7 @@ li.cat-list.cpointer.bolds:after {
 
 .trck-order {
     border: 1px solid #000;
-    height: 45px;
+    height: 38px;
     padding: 5px;
 }
 .content-static h3:before {

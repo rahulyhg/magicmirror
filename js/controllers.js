@@ -1095,9 +1095,14 @@ phonecatControllers.controller('badge',
         //cart badge
 
         //authenticate
+        var logoutauth = function(data, status){
+            window.location.reload();
+        }
         $scope.logout = function() {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
+            MainJson.authenticate().success(logoutauth);
+            
         }
         var authenticate = function(data, status) {
             console.log(data);
@@ -2446,6 +2451,8 @@ phonecatControllers.controller('myaccount',
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
+            }else{
+                $location.url("/home");
             }
         };
         MainJson.authenticate().success(authenticate);

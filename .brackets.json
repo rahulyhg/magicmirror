@@ -28,6 +28,10 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/assets/morris.js-0.4.3/raphael-min.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/upload/js/main.js",
         "C:/xampp/htdocs/magicmirror/admin/assets/assets/js/promise.js",
-        "C:/xampp/htdocs/magicmirror/admin/assets/assets/morris.js-0.4.3/morris.min.js"
+        "C:/xampp/htdocs/magicmirror/admin/assets/assets/morris.js-0.4.3/morris.min.js",
+        "C:/xampp/htdocs/magicmirror/admin/assets/upload/js/app.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/angular-resource.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/angular-route.min.js",
+        "C:/xampp/htdocs/magicmirror/lib/js/angular.min.js"
     ]
 }

@@ -25,8 +25,7 @@ templateservicemod.service('TemplateService', function ($location) {
     };
     
 });
-templateservicemod.controller('navigationctrl', ['$scope', 'TemplateService',
-                                        function ($scope, TemplateService, MainJson, $rootScope) {
+templateservicemod.controller('navigationctrl',function ($scope, TemplateService, MainJson, $rootScope) {
         $scope.submenuval = ['views/jewellerysubmenu.html', 'views/accessoriessubmenu.html', 'views/lookbooksubmenu.html', 'views/iheartsubmenu.html', 'views/handmadesubmenu.html', 'views/newinmenu.html','views/contactsubmenu.html'];
         $scope.submenu = [];
         $scope.showsub = function (data) {
@@ -39,7 +38,17 @@ templateservicemod.controller('navigationctrl', ['$scope', 'TemplateService',
             console.log(data);
             $scope.submenu[data] = false;
         };
-}]);
+                             
+        $scope.account = "0";
+        var authenticate = function(data, status) {
+             console.log("in navigation ctl");
+            console.log(data);
+            if (data != "false") {
+                $scope.account = "1";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+});
 
 templateservicemod.controller('filterctrl', ['$scope', 'TemplateService',
                                                  function ($scope, TemplateService, MainJson, $rootScope) {
