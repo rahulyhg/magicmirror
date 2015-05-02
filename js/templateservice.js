@@ -1,5 +1,5 @@
 var templateservicemod = angular.module('templateservicemod', []);
-templateservicemod.service('TemplateService', function () {
+templateservicemod.service('TemplateService', function ($location) {
     this.title = "Home";
     this.meta = "Google";
     this.header = "views/header.html";
@@ -18,6 +18,10 @@ templateservicemod.service('TemplateService', function () {
         $(".zoomContainer").remove();
 
         this.firstload = "";
+    };
+    
+    this.gourl=function(url) {
+        $location.path(url);
     };
     
 });
