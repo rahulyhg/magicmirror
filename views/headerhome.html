@@ -18,9 +18,9 @@
                             <li><a ng-if="loginlogouttext!='Login'" ng-click="logout()">Logout</a></li>
                             
                             <li class="welcome" ng-if="loginlogouttext=='Login'"><a href="#/Login">Login </a></li>
-                            <li><a href="#/Login" ng-if="loginlogouttext=='Login'">New User</a></li>
+                            <li><a  ng-click="template.gourl('/Login');" ng-if="loginlogouttext=='Login'">New User</a></li>
                             
-                            <li class="wish-list"><a href="#/wishlist"><i class="fa fa-star"></i>Wish List</a>
+                            <li class="wish-list"><a  ng-click="template.gourl('/wishlist');"><i class="fa fa-star"></i>Wish List</a>
                             </li>
                             <li><a ><i class="fa fa-gift"></i>Gift Card</a>
                             </li>
@@ -28,7 +28,7 @@
                             <li><a >Track Your Order</a>
                             </li>
 -->
-                            <li class="bag"><a href="#/cart"><i class="bag"></i>Shopping Bag({{badge}})</a>
+                            <li class="bag"><a  ng-click="template.gourl('/cart');"><i class="bag"></i>Shopping Bag({{badge}})</a>
                             </li>
                         </ul>
                     </div>
