@@ -677,8 +677,34 @@ phonecatControllers.controller('resetpassword',
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
-        TemplateService.changetitle("Rest Password");
+        TemplateService.changetitle("Reset Password");
         TemplateService.content = "views/resetpassword.html";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+
+        $scope.forgot = [];
+        $scope.forgot.hashcode = $routeParams.id;
+        //  REDIRECT CHANGE PASSWORD STARTS
+        var newPasswordSuccess = function(data, status) {
+            if (data == '1') {
+                $location.url("/login");
+            } else {
+                $scope.msg = data;
+            }
+        }
+        $scope.newPassword = function() {
+            MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
+        }
+
+    });
+phonecatControllers.controller('bride',
+    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Bride");
+        TemplateService.content = "views/bride.html";
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
 

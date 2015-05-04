@@ -32,6 +32,7 @@
         "C:/xampp/htdocs/magicmirror/admin/assets/upload/js/app.js",
         "C:/xampp/htdocs/magicmirror/lib/js/angular-resource.min.js",
         "C:/xampp/htdocs/magicmirror/lib/js/angular-route.min.js",
-        "C:/xampp/htdocs/magicmirror/lib/js/angular.min.js"
+        "C:/xampp/htdocs/magicmirror/lib/js/angular.min.js",
+        "C:/xampp/htdocs/magicmirror/js/controllers.js"
     ]
 }

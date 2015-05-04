@@ -2150,3 +2150,23 @@ input.btns.placeorder {
   display: block;
   margin: 0 auto;
 }
+.bride .content .row {
+    width: 85%;    margin: 0 auto;
+}
+
+.img-bridehead {
+    padding: 40px 0 15px 0;
+}
+
+.bride-headcont p {
+    text-align: justify;
+    padding: 30px 0 15px 0px;
+}
+
+.mainconts p {
+    padding-bottom: 15px;
+}
+
+.maincontsbride{
+    padding-bottom: 25px;
+}
