@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="firstapp">
 
 <head ng-controller="headerctrl">
-    <title ng-bind="'Magic Mirror - '+template.title">Magic Mirror</title>
+    <title ng-bind="template.title">Magic Mirror</title>
     <meta name="name" content="Magic Mirror">
     <meta name="description" content="{{template.metadescription}}">
     <meta name="keywords" content="{{template.keywords}}">
