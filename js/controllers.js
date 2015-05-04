@@ -697,13 +697,13 @@ phonecatControllers.controller('resetpassword',
         }
 
     });
-phonecatControllers.controller('bride',
+phonecatControllers.controller('weddingjewellery',
     function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
-        TemplateService.changetitle("Bride");
+        TemplateService.changetitle("Wedding Jewellery");
         TemplateService.content = "views/bride.html";
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";

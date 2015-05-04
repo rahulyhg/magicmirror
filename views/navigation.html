@@ -69,7 +69,7 @@
                     <li>
                         <a class=""  ng-click="template.gourl('/celebrities');">Celebrity Column</a>
                     </li>
-                                                        <li>
+                                                        <li ng-if="account=='1'">
                         <a class="" ng-click="template.gourl('/myaccount');">My Account</a>
 
                     </li>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <script>
         $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '99999').removeClass('original').hide();
 
