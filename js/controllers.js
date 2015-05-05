@@ -697,7 +697,7 @@ phonecatControllers.controller('resetpassword',
         }
 
     });
-phonecatControllers.controller('weddingjewellery',
+phonecatControllers.controller('wedding-jewellery',
     function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
