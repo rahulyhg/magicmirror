@@ -682,6 +682,8 @@ phonecatControllers.controller('resetpassword',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
 
+    
+        console.log("in forgot controller");
         $scope.forgot = [];
         $scope.forgot.hashcode = $routeParams.id;
         //  REDIRECT CHANGE PASSWORD STARTS
@@ -693,6 +695,7 @@ phonecatControllers.controller('resetpassword',
             }
         }
         $scope.newPassword = function() {
+            console.log($scope.forgot);
             MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
         }
 
@@ -708,19 +711,7 @@ phonecatControllers.controller('wedding-jewellery',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
 
-        $scope.forgot = [];
-        $scope.forgot.hashcode = $routeParams.id;
-        //  REDIRECT CHANGE PASSWORD STARTS
-        var newPasswordSuccess = function(data, status) {
-            if (data == '1') {
-                $location.url("/login");
-            } else {
-                $scope.msg = data;
-            }
-        }
-        $scope.newPassword = function() {
-            MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
-        }
+        
 
     });
 
