@@ -699,7 +699,7 @@ class Json extends CI_Controller {
         else
         {
         $hashvalue=base64_encode ($userid."&magicmirror");
-        $link="<a href='http://magicmirror.com/#/resetpassword/$hashvalue'>Click here </a> To Reset Your Password.";
+        $link="<a href='http://magicmirror.in/resetpassword/$hashvalue'>Click here </a> To Reset Your Password.";
             
         $this->load->library('email');
         $this->email->from('info@magicmirror.in', 'Magic Mirror');
