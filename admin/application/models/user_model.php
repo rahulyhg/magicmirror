@@ -578,7 +578,37 @@ class User_model extends CI_Model
         $userid=$returnvalue[0];
         $password=md5($password);
         $query=$this->db->query("UPDATE `user` SET `password`='$password' WHERE `id`='$userid'");
+        
+        $getemailbyid=$this->db->query("SELECT `email` FROM `user` WHERE `id`='$userid'")->row();
+        $email=$getemailbyid->email;
+           
+        $this->load->library('email');
+        $this->email->from('info@magicmirror.in', 'Magic Mirror');
+        $this->email->to($email);
+        $this->email->subject('Magic Mirror');   
+            
+        $message = "<html>
 
+<body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
+    <div style='text-align:center; padding-top: 40px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h4 style='font-size:1.5em;padding-bottom: 5px;color: #e82a96;'>Forgot Password!</h4>
+        <p style='font-size: 1em;padding-bottom: 10px;'>Your Password Has Been Changed Successfully!!! </p>
+
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png '>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
+        $this->email->send();
 		if(!$query)
 			return  0;
 		else
