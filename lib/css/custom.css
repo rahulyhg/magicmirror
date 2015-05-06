@@ -2170,3 +2170,10 @@ input.btns.placeorder {
 .maincontsbride{
     padding-bottom: 25px;
 }
+.container.header h4 {
+  padding-left: 25px;
+}
+input.input-forget {
+  margin-bottom: 10px;
+  height: 30px;
+}
