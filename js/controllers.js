@@ -1,4 +1,4 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute','ngDialog']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute']);
 phonecatControllers.controller('home',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
@@ -1794,7 +1794,7 @@ phonecatControllers.controller('category',
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
-        TemplateService.f = "views/category.html";
+        TemplateService.content = "views/category.html";
         TemplateService.slider = "";
         //    console.log($routeParams.CategoryId);
         //        if ($routeParams.CategoryId == "3") {
@@ -2002,7 +2002,7 @@ phonecatControllers.controller('category',
     });
 
 phonecatControllers.controller('product',
-    function($scope, $routeParams, TemplateService, MainJson, $timeout, $location , ngDialog ) {
+    function($scope, $routeParams, TemplateService, MainJson, $timeout, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2016,20 +2016,13 @@ phonecatControllers.controller('product',
         $scope.addedtocart = "hide";
         $scope.loginlogouttext = "Login";
 
-    
-    //popup
-    
-         $scope.onemailclick = function(listing) {
-            console.log(listing);
-            $.jStorage.set("listingid", listing);
-            ngDialog.open({
-                template: 'views/emailclick.html',
-                controller: 'product'
-            });
-        };
-    //
 
-        
+        //  MODAL POPUP
+        $scope.showModal = false;
+    $scope.toggleModal = function(){
+        $scope.showModal = !$scope.showModal;
+    };
+    
     
     
         //authenticate
@@ -2097,11 +2090,16 @@ phonecatControllers.controller('product',
             TemplateService.cartclicked = "animated swing";
 
             MainJson.addtocart(id, name, price, quantity).success(cartt);
-            ngDialog.open({
-                template: 'views/emailclick.html',
-                controller: 'product'
-            });
-//            $scope.addedtocart = "show";
+//            ModalService.showModal({
+//                    templateUrl: 'popup.html',
+//                    controller: "home"
+//                }).then(function (modal) {
+//                    modal.element.modal();
+//                    modal.close.then(function (result) {
+//                        $scope.message = "You said " + result;
+//                    });
+//                });
+            $scope.addedtocart = "show";
         };
         var addedtowaitinglist = function(data) {
             console.log(data);
