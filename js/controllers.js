@@ -8,7 +8,7 @@ phonecatControllers.controller('home',
         TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
         TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
 //        TemplateService.changetitle("Home");
-        console.log($scope.template);
+        console.log($scope.template);  
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -2017,6 +2017,14 @@ phonecatControllers.controller('product',
         $scope.loginlogouttext = "Login";
 
 
+        //  MODAL POPUP
+        $scope.showModal = false;
+    $scope.toggleModal = function(){
+        $scope.showModal = !$scope.showModal;
+    };
+    
+    
+    
         //authenticate
         $scope.logout = function() {
             MainJson.logout();
@@ -2082,6 +2090,15 @@ phonecatControllers.controller('product',
             TemplateService.cartclicked = "animated swing";
 
             MainJson.addtocart(id, name, price, quantity).success(cartt);
+//            ModalService.showModal({
+//                    templateUrl: 'popup.html',
+//                    controller: "home"
+//                }).then(function (modal) {
+//                    modal.element.modal();
+//                    modal.close.then(function (result) {
+//                        $scope.message = "You said " + result;
+//                    });
+//                });
             $scope.addedtocart = "show";
         };
         var addedtowaitinglist = function(data) {

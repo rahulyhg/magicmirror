@@ -38,7 +38,9 @@
                         <span ng-if="product.quantity>0">
                         <label class="hidden">Qty :</label>
                         <input type="text" value="1" class="hidden quantitybox" ng-model="addquantity">
-                        <a class="btn btn-primary " ng-click="addtocart(product.id,product.name,rate,addquantity)"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>
+<!--                        <a class="btn btn-primary " ng-click="addtocart(product.id,product.name,rate,addquantity)"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>-->
+                        
+                        <a class="btn btn-primary " ng-click="showModal = !showModal;"><span class="glyphicon  glyphicon-shopping-cart"></span> Add to Cart</a>
                         </span>
 
                         <span ng-if="product.quantity<=0">
@@ -63,6 +65,10 @@
             <span class="pronew2" ng-if="product.isnew=='1'"><img src="img/new.png"></span>
             <!--<span ng-repeat="image in productimage">-->
             <span>
+              
+              
+               
+               
                
                 <!--<div ><img src="img/product/pro11.jpg" class="imgback wow fadeInLeft" ></div>
                 <div><img src="img/product/pro12.jpg" class="imgback wow fadeInLeft"></div>
@@ -138,5 +144,32 @@
 
         </div>
     </div>
+    
+    
+    
+    
+    <button ng-click="toggleModal()" class="btn btn-default">Open modal</button>
+    
+    <modal title="Login form" visible="showModal">
+    <form role="form">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" />
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </modal>
+    
+    
+    
+    
 </div>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+
+
+
+

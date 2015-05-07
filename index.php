@@ -68,6 +68,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
     <script src="lib/js/angular.min.js"></script>
+    
+<!--    <script src="lib/js/ngDialog.js"></script>-->
     <!--    <script src="lib/js/angular-animate.js"></script>-->
     <script src="lib/js/angular-route.min.js"></script>
     <!--    <script src="lib/js/angular-resource.min.js"></script>-->
