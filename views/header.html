@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-3">
-<!--
+                    <!--
                     <div class="rupee">
                         <select>
                             <option value="Rupee">INR Rs</option>
@@ -22,25 +22,48 @@
 
                             <li class="welcome" ng-if="loginlogouttext=='Login'"><a ng-click="template.gourl('/Login');">Login </a>
                             </li>
-                            <li><a  ng-click="template.gourl('/Login');" ng-if="loginlogouttext=='Login'">New User</a>
+                            <li><a ng-click="template.gourl('/Login');" ng-if="loginlogouttext=='Login'">New User</a>
                             </li>
-                            <li class="wish-list"><a  ng-click="template.gourl('/wishlist');"><i class="fa fa-heart"></i>Wish List</a>
+                            <li class="wish-list"><a ng-click="template.gourl('/wishlist');"><i class="fa fa-heart"></i>Wish List</a>
                             </li>
-                            <li><a ng-click="template.gourl('/comingsoon');" ><i class="fa fa-gift"></i>Gift Card</a>
+                            <li><a ng-click="template.gourl('/comingsoon');"><i class="fa fa-gift"></i>Gift Card</a>
                             </li>
                             <!--
                             <li><a >Track Your Order</a>
                             </li>
 -->
-<!--
-                          <li class="bag"><a ng-click="template.gourl('/cart');"><i class="bag"></i>Shopping Bag({{badge}})</a>
-</li>
--->
+                            <li class="bag">
+                                <a ng-click="template.gourl('/cart');">
+                                    <i class="bag"></i>Shopping Bag({{badge}})
+                                </a>
+                                <div class="drop-cart">
+                                    <ul class="img-namess" ng-repeat="cat in cart">
+                                        <li>
+                                            <img ng-src="{{cat.image|imagepath}}" alt="">
+                                        </li>
+                                        <li class="jwellery">
+                                            <h4>{{cat.name}}</h4> 
+                                        </li>
+                                        <li class="jwellery">
+                                            <p>Quatity:<span>{{cat.qty}}</span>
+                                            </p>
+                                        </li>
+<!--                                        <li class="rupee">{{cat.price}}</li>-->
+                                    </ul>
+                                    <div class="link-cart">
+                                        <a ng-click="template.gourl('/cart');">View Cart</a>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <!--
                                                 <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
                         <a ng-click="template.gourl('/cart');"><i class="bag"></i>Shopping Bag({{badge}})</a>
-                        <div class="megamenu" ng-include src="submenuval[3]" ng-show="submenu[3]">
+                        <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
                         </div>
                     </li>
+-->
                         </ul>
                     </div>
                 </div>
@@ -50,7 +73,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6">
-                <a  ng-click="template.gourl('/home');" class="header-logo"><img src="img/logo.png">
+                <a ng-click="template.gourl('/home');" class="header-logo">
+                    <img src="img/logo.png">
                 </a>
             </div>
             <div class="col-xs-6">
