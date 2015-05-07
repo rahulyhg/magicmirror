@@ -1,4 +1,4 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog']);
 phonecatControllers.controller('home',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
@@ -2002,7 +2002,7 @@ phonecatControllers.controller('category',
     });
 
 phonecatControllers.controller('product',
-    function($scope, $routeParams, TemplateService, MainJson, $timeout, $location) {
+    function($scope, $routeParams, TemplateService, MainJson, $timeout, $location, ngDialog) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2090,6 +2090,10 @@ phonecatControllers.controller('product',
             TemplateService.cartclicked = "animated swing";
 
             MainJson.addtocart(id, name, price, quantity).success(cartt);
+            ngDialog.open({
+                template: 'views/emailclick.html',
+                controller: 'product'
+            });
 //            ModalService.showModal({
 //                    templateUrl: 'popup.html',
 //                    controller: "home"
@@ -2099,7 +2103,7 @@ phonecatControllers.controller('product',
 //                        $scope.message = "You said " + result;
 //                    });
 //                });
-            $scope.addedtocart = "show";
+//            $scope.addedtocart = "show";
         };
         var addedtowaitinglist = function(data) {
             console.log(data);

@@ -64,6 +64,7 @@
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/range/angular.rangeSlider.css" rel="stylesheet">
     <link href="lib/css/custom.css" rel="stylesheet">
+    <link href="lib/css/ngDialog.css" rel="stylesheet">
     <link href="lib/css/FUTURAL.TTF" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="lib/js/jquery-1.11.1.min.js"></script>
@@ -80,6 +81,7 @@
     <script src="lib/js/skrollr.js"></script>
     <script src="lib/js/skrollr.dir.js"></script>
    <script src="lib/js/jstorage.js "></script>
+   <script src="lib/js/ngDialog.js"></script>
    
     <script src="lib/js/underscore-min.js"></script>
     <script src="js/app.js"></script>
