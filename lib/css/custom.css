@@ -27,6 +27,19 @@
     font-weight: 700;
 }
 
+.ngdialog-content {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  top: 50%;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 33%;
+}
+.ngdialog-content h2 {
+  padding: 18px;
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -2176,4 +2189,9 @@ input.btns.placeorder {
 input.input-forget {
   margin-bottom: 10px;
   height: 30px;
+}
+.ngdialog-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
