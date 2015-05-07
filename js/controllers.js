@@ -3,12 +3,12 @@ phonecatControllers.controller('home',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
-//        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
+        //        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
         TemplateService.title = "Exclusive Art Jewellery";
         TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
         TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
-//        TemplateService.changetitle("Home");
-        console.log($scope.template);  
+        //        TemplateService.changetitle("Home");
+        console.log($scope.template);
         TemplateService.slider = "views/slider.html";
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -316,9 +316,10 @@ phonecatControllers.controller('home',
         };
         //newsletter
         //cart badge
+        $scope.badge = TemplateService.totalproducts;
         var totalcart = function(data, status) {
             console.log("cart data");
-            $scope.badge = data;
+            $scope.badge = TemplateService.totalproducts;
             console.log($scope.badge);
         };
         MainJson.gettotalcart().success(totalcart);
@@ -682,7 +683,7 @@ phonecatControllers.controller('resetpassword',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
 
-    
+
         console.log("in forgot controller");
         $scope.forgot = [];
         $scope.forgot.hashcode = $routeParams.id;
@@ -711,7 +712,7 @@ phonecatControllers.controller('wedding-jewellery',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
 
-        
+
 
     });
 
@@ -1102,6 +1103,24 @@ phonecatControllers.controller('badge',
         TemplateService.navigation = "views/navigation.html";
         $scope.msgg = "Message here..........";
 
+        //  GET CART
+        var showcart = function(data, status) {
+            console.log(data);
+            $scope.cart = data;
+            console.log("Values in cart");
+            // console.log($scope.cart[0].qty);
+            console.log($scope.cart.length);
+
+            for (var i = 0; i < $scope.cart.length; i++) {
+                $scope.newquantity[i] = $scope.cart[i].qty;
+
+            }
+            console.log("values in newquantity");
+            console.log($scope.newquantity);
+        };
+        MainJson.getcart().success(showcart);
+        //  END CART
+    
         //cart badge
         var totalcart = function(data, status) {
             console.log("cart data");
@@ -1112,14 +1131,14 @@ phonecatControllers.controller('badge',
         //cart badge
 
         //authenticate
-        var logoutauth = function(data, status){
+        var logoutauth = function(data, status) {
             window.location.reload();
         }
         $scope.logout = function() {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
             MainJson.authenticate().success(logoutauth);
-            
+
         }
         var authenticate = function(data, status) {
             console.log(data);
@@ -1879,7 +1898,7 @@ phonecatControllers.controller('category',
         };
 
         // DECLARATION
-    $scope.form = {};
+        $scope.form = {};
         $scope.form.pageno = 1;
         $scope.totallength = 0;
         $scope.check = 0;
@@ -2016,15 +2035,14 @@ phonecatControllers.controller('product',
         $scope.addedtocart = "hide";
         $scope.loginlogouttext = "Login";
 
-
         //  MODAL POPUP
         $scope.showModal = false;
-    $scope.toggleModal = function(){
-        $scope.showModal = !$scope.showModal;
-    };
-    
-    
-    
+        $scope.toggleModal = function() {
+            $scope.showModal = !$scope.showModal;
+        };
+
+
+
         //authenticate
         $scope.logout = function() {
             MainJson.logout();
@@ -2083,6 +2101,8 @@ phonecatControllers.controller('product',
         MainJson.getproductdetails($routeParams.ProductId).success(productsuccess);
         var cartt = function(data, status) {
             console.log(data);
+            console.log("cart cart cart#######################################");
+            console.log(TemplateService.totalproducts);
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         };
         $scope.addtocart = function(id, name, price, quantity) {
@@ -2094,16 +2114,16 @@ phonecatControllers.controller('product',
                 template: 'views/emailclick.html',
                 controller: 'product'
             });
-//            ModalService.showModal({
-//                    templateUrl: 'popup.html',
-//                    controller: "home"
-//                }).then(function (modal) {
-//                    modal.element.modal();
-//                    modal.close.then(function (result) {
-//                        $scope.message = "You said " + result;
-//                    });
-//                });
-//            $scope.addedtocart = "show";
+            //            ModalService.showModal({
+            //                    templateUrl: 'popup.html',
+            //                    controller: "home"
+            //                }).then(function (modal) {
+            //                    modal.element.modal();
+            //                    modal.close.then(function (result) {
+            //                        $scope.message = "You said " + result;
+            //                    });
+            //                });
+            //            $scope.addedtocart = "show";
         };
         var addedtowaitinglist = function(data) {
             console.log(data);
@@ -2489,7 +2509,7 @@ phonecatControllers.controller('myaccount',
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
-            }else{
+            } else {
                 $location.url("/home");
             }
         };
@@ -2609,44 +2629,44 @@ phonecatControllers.controller('myaccount',
         }
 
         //  GET USER ORDER
-        $scope.form={};
+        $scope.form = {};
         $scope.form.pag = "1";
         $scope.getNumber = function(num) {
             return new Array(num);
         }
-        $scope.next = function(){
-//            console.log(index);
-            if($scope.form.pag<$scope.orders.lastpage){
-                $scope.form.pag = parseInt($scope.form.pag)+1;
+        $scope.next = function() {
+            //            console.log(index);
+            if ($scope.form.pag < $scope.orders.lastpage) {
+                $scope.form.pag = parseInt($scope.form.pag) + 1;
                 MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
-        $scope.pervious = function(){
-            if($scope.form.pag>=$scope.orders.lastpage){
-                $scope.form.pag = parseInt($scope.form.pag)-1;
+        $scope.pervious = function() {
+            if ($scope.form.pag >= $scope.orders.lastpage) {
+                $scope.form.pag = parseInt($scope.form.pag) - 1;
                 MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
-        $scope.pagchange = function (pag){
+        $scope.pagchange = function(pag) {
             console.log($scope.form.pag);
             MainJson.getorder(pag).success(ordersuccess);
         }
-        
-        
+
+
         var ordersuccess = function(data, status) {
-//            console.log(data);
+            //            console.log(data);
             $scope.orders = data;
             $scope.allorders = data.queryresult;
         }
         MainJson.getorder($scope.form.pag).success(ordersuccess);
-        $scope.$watch('pag', function(){
+        $scope.$watch('pag', function() {
             console.log($scope.form.pag);
             $scope.form.pag = $scope.form.pag;
         });
 
         //  TRACE ORDER
         var tracesuccess = function(data, status) {
-//            console.log(data);
+            //            console.log(data);
             $scope.trace = data;
         }
         $scope.tracemyorder = function(order) {
