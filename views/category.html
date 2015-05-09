@@ -14,10 +14,28 @@
 -->
                 </div>
                 <div class="col-xs-3">
-                    <div class="filter-btn" ng-controller="filterctrl">
+                    <div class="filter-btn">
                         <a class="btn btn-default" ng-mouseover="showfilter(0)" ng-mouseleave="hidefilter(0)">
                             <p class="cat-filter">Product Filters{{demo}}</p>
-                            <div class="" ng-include src="filterval[0]" ng-show="filters[0]"></div>
+                            
+                            <div class="filters sorting"  ng-show="filtersshow">
+                                <div class="row">
+                                    <div class="filter-bod">
+                                        <div class="col-xs-12">
+                                            <h5 style="margin: 0;">Price</h5>
+                                            <div class="rangeslider" range-slider min="0" max="50000" model-min="filter.pricemin" model-max="filter.pricemax"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="pull-right">
+                                        <button class=" btn btn-primary" ng-click="filtersave(filter);">Save</button>
+                                        <button class="btn btn-danger" ng-click="filterclear();">Clear</button>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 </div>

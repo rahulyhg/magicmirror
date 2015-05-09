@@ -4,79 +4,12 @@
             <div class="col-xs-12">
                 <h5 style="margin: 0;">Price</h5>
                 <div class="rangeslider" range-slider min="0" max="50000" model-min="filter.pricemin" model-max="filter.pricemax"></div>
-                <!--                <div>{{0}}</div>-->
             </div>
         </div>
-<!--
-        <div class="col-xs-12">
-            <h5 class="head-fil">Colours</h5>
-            <div class="row">
-                <div class="radio-btn">
-                    <form role="form">
-                        <div>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">White</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" ng-click="filtercolor('red')">Red</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Blue</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Yellow</label>
-                        </div>
-                        <div>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Pink</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Green</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Purple</label>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
--->
-
-        <!--
-  <div class="col-md-6">
-    <ul class="list-unstyled">
-        <li><a ng-click="filtercolor('red')">Red</a>
-        </li>
-        <li><a ng-click="filtercolor('pink')">Pink</a>
-        </li>
-        <li><a ng-click="filtercolor('white')">White</a>
-        </li>
-        <li><a ng-click="filtercolor('brown')">Brown</a>
-        </li>
-        <li><a ng-click="filtercolor('black')">Black</a>
-        </li>
-
-    </ul>
-
-</div>
--->
-        <!--
-<div class="col-md-6">
-    <ul class="list-unstyled">
-
-        <li><a ng-click="filtercolor('purple')">Purple</a>
-        </li>
-        <li><a ng-click="filtercolor('blue')">Blue</a>
-        </li>
-        <li><a ng-click="filtercolor('green')">Green</a>
-        </li>
-        <li><a ng-click="filtercolor('yellow')">Yellow</a>
-        </li>
-        <li><a ng-click="filtercolor('orange')">Orange</a>
-        </li>
-    </ul>
-</div>
--->
-
 
         
  <div class="pull-right">
-    <button class=" btn btn-primary" ng-click="filtersave(filter);">Save</button>
+    <button class=" btn btn-primary" ng-click="filtersaves(filter);">Save</button>
     <button class="btn btn-danger" ng-click="filterclear();">Clear</button>
 </div>
 

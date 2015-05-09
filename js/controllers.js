@@ -1120,7 +1120,7 @@ phonecatControllers.controller('badge',
         };
         MainJson.getcart().success(showcart);
         //  END CART
-    
+
         //cart badge
         var totalcart = function(data, status) {
             console.log("cart data");
@@ -1907,6 +1907,13 @@ phonecatControllers.controller('category',
         //  MainJson.showcountry().success(getcountry);
         $scope.usercountry = "India";
         //filters
+
+        $scope.showfilter = function() {
+            $scope.filtersshow = true;
+        };
+        $scope.hidefilter = function() {
+            $scope.filtersshow = false;
+        };
         $scope.filter = MainJson.getfilters();
         $scope.filtercolors = [{
             name: "red",
@@ -1947,7 +1954,8 @@ phonecatControllers.controller('category',
         $scope.filtersave = function(filter) {
             MainJson.setfilter(filter);
             console.log(MainJson.getfilters());
-            MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccess);
+            $scope.products = [];
+            MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
         $scope.filterclear = function() {
             $scope.filter = {
@@ -1956,7 +1964,8 @@ phonecatControllers.controller('category',
                 pricemax: 50000
             };
             MainJson.setfilter($scope.filter);
-            MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccess);
+            $scope.products = [];
+            MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
 
 
