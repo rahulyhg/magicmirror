@@ -16,6 +16,7 @@
             console.log("other " + hostname);
         }
     </script>
+	
     <script>
         var isMobile = {
             Android: function () {
