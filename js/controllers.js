@@ -1959,7 +1959,7 @@ phonecatControllers.controller('category',
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
 
-        $scope.orderby = function(filter) {
+        $scope.orderbychange = function(filter) {
             MainJson.setfilter(filter);
             $scope.products = [];
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);

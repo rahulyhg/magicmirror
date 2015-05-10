@@ -58,7 +58,7 @@ class Chintantable {
                 $wherequery.= " `" . $element->field . "` " . $element->filterfunction . " '" . $element->filter . "' AND ";
             }
             if (isset($element->sort) && $orderby != "" && $orderorder != "" && ($orderby == $element->alias || $orderby == $element->field)) {
-                $orderquery.= " `" . $orderby . "` " . $orderorder . ", ";
+                $orderquery.= " " . $orderby . " " . $orderorder . ", ";
                 $element->sort = $orderorder;
             }
             if ($search != "") {

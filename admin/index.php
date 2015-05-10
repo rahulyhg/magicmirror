@@ -30,7 +30,7 @@ if(isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'], 'Go
 }
 else
 {
-    define('ENVIRONMENT', 'production');
+    define('ENVIRONMENT', 'development');
 }
 
 /*

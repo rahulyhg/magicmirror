@@ -380,6 +380,7 @@ service.factory('MainJson', function($http, TemplateService) {
                     color: filters.color,
                     price1: filters.pricemin,
                     price2: filters.pricemax,
+                    orderby: filters.orderby,
                     search: search
                 }
             }, {
