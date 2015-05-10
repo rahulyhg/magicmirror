@@ -1961,6 +1961,8 @@ phonecatControllers.controller('category',
 
         $scope.orderby = function(filter) {
             MainJson.setfilter(filter);
+            $scope.products = [];
+            MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
 
         $scope.filterclear = function() {
