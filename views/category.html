@@ -40,36 +40,16 @@
                     </div>
                 </div>
                 <div class="col-xs-3">
-                    <div class="filter-btn btn-sort" ng-controller="filterctrl">
-                        <!--                        <a class="btn btn-default" ng-mouseover="showfilter(1)" ng-mouseleave="hidefilter(1)">Sort By</a>-->
-                        <!--                        <div class="" ng-include src="filterval[1]" ng-show="filters[1]"></div>-->
+                    <div class="filter-btn btn-sort">
+                       
                         <span>Sort By</span>
-                        <select class="sort-drp">
-                            <option value="">Newest to Oldest</option>
-                            <option value="">Oldest to Newest</option>
-                            <option value="">Hight to Low</option>
-                            <option value="">Low to High</option>
+                        <select class="sort-drp" ng-model="myfilter.sorting" ng-change="orderby()">
+                            <option value="new">Newest to Oldest</option>
+                            <option value="old">Oldest to Newest</option>
+                            <option value="high">Hight to Low</option>
+                            <option value="low">Low to High</option>
                         </select>
-                        <!--
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation" class="dropdown-header">Dropdown header 1</li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a>
-                                </li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation" class="dropdown-header">Dropdown header 2</li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </div>
--->
+                      
 
                     </div>
                 </div>
