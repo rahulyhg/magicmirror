@@ -570,9 +570,38 @@ class Json extends CI_Controller {
         if ($maxrow == "") {
             $maxrow = 20;
         }
-        if ($orderby == "") {
-            $orderby = "id";
-            $orderorder = "ASC";
+        switch($orderby)
+        {
+            case "new":
+            {
+                $orderby = "`product`.`id`";
+                $orderorder = "DESC";
+            }
+            break;
+            case "old":
+            {
+                $orderby = "`product`.`id`";
+                $orderorder = "ASC";
+            }
+            break;
+            case "high":
+            {
+                $orderby = "`product`.`price`";
+                $orderorder = "DESC";
+            }
+            break;
+            case "low":
+            {
+                $orderby = "`product`.`price`";
+                $orderorder = "ASC";
+            }
+            break;
+            default: 
+            {
+                $orderby = "`product`.`id`";
+                $orderorder = "DESC";
+            }
+            break;
         }
         $data["message"] = $this->chintantable->query($pageno, $maxrow, $orderby, $orderorder, $search, $elements, "FROM `product` INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` LEFT OUTER JOIN `productimage` as `image2` ON `image2`.`product`=`product`.`id` AND `image2`.`order`=0 LEFT OUTER JOIN `productimage` as `image1` ON `image1`.`product`=`product`.`id` AND `image1`.`order`=1", "WHERE `product`.`visibility`=1 AND `product`.`status`=1  AND `product`.`name` LIKE '%$color%' $pricefilter AND (   $iscategory )", ' GROUP BY `product`.`id` ');
         $this->load->view("json", $data);

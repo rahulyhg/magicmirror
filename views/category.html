@@ -43,7 +43,7 @@
                     <div class="filter-btn btn-sort">
                        
                         <span>Sort By</span>
-                        <select class="sort-drp" ng-model="myfilter.sorting" ng-change="orderby()">
+                        <select class="sort-drp" ng-model="filter.orderby" ng-change="orderbychange(filter)">
                             <option value="new">Newest to Oldest</option>
                             <option value="old">Oldest to Newest</option>
                             <option value="high">Hight to Low</option>
@@ -86,8 +86,6 @@
                                     <h5 ng-show="(accesslevel!=3)">{{product.price|convertprice}}</h5>
                                     <h5 ng-show="(accesslevel==3)">{{product.wholesaleprice|convertprice}}</h5>
                                     <h5 class="sku pull-right">{{product.sku}}</h6>
-                                    <!--                                    <img src="img/product-logo.jpg" class="pull-right">-->
-                                    <!--h5 class="discountprice">£ {{product.price}}</h5-->
                                 </a>
                             </div>
                         </div>

@@ -1904,6 +1904,7 @@ phonecatControllers.controller('category',
         $scope.check = 0;
         $scope.search = "";
 
+
         //  MainJson.showcountry().success(getcountry);
         $scope.usercountry = "India";
         //filters
@@ -1957,6 +1958,11 @@ phonecatControllers.controller('category',
             $scope.products = [];
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
+
+        $scope.orderby = function(filter) {
+            MainJson.setfilter(filter);
+        };
+
         $scope.filterclear = function() {
             $scope.filter = {
                 color: "",
