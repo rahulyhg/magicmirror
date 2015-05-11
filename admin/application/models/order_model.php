@@ -93,7 +93,7 @@ class Order_model extends CI_Model
         $this->load->library('email');
         $this->email->from('info@magicmirror.in', 'Magicmirror');
         $this->email->to($email);
-        $this->email->subject('Order');
+        $this->email->subject('Magic Mirror Order');
         if($before['order']->billingaddress=="")
                         {
             $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
@@ -132,7 +132,7 @@ class Order_model extends CI_Model
 &nbsp;
                 </td> 
                                 <td width='30%' style='border: 0px;'>
-                  Invoice No.:<span>$orderid</span>
+                  Invoice No.:<span>$order</span>
                 </td>
             </tr>
         </table>
@@ -185,7 +185,7 @@ class Order_model extends CI_Model
     </div>
     <div style='text-align:center;position: relative;'>
         <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
-            Thank You Again
+            Your Order is Pending.
         </p>
         <img src='http://magicmirror.in/emaildata/magicfooter.png'>
     </div>

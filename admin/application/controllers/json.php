@@ -67,7 +67,7 @@ class Json extends CI_Controller {
         $this->load->library('email');
         $this->email->from('info@magicmirror.in', 'Magicmirror');
         $this->email->to($email);
-        $this->email->subject('Order');
+        $this->email->subject('Magicmirror Order');
         if($before['order']->billingaddress=="")
                         {
             $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
@@ -183,7 +183,7 @@ class Json extends CI_Controller {
         $this->load->library('email');
         $this->email->from($email, 'Magic Mirror');
         $this->email->to($toemail);
-        $this->email->subject('Welcome to Magic Mirror');   
+        $this->email->subject('Magic Mirror Contact');   
             
         $message = "<html>
 
@@ -733,7 +733,7 @@ class Json extends CI_Controller {
         $this->load->library('email');
         $this->email->from('info@magicmirror.in', 'Magic Mirror');
         $this->email->to($email);
-        $this->email->subject('Welcome to Magic Mirror');   
+        $this->email->subject('Forgot Password');   
             
         $message = "<html>
 

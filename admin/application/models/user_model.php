@@ -585,7 +585,7 @@ class User_model extends CI_Model
         $this->load->library('email');
         $this->email->from('info@magicmirror.in', 'Magic Mirror');
         $this->email->to($email);
-        $this->email->subject('Magic Mirror');   
+        $this->email->subject('MAgic Mirror Password Changed');   
             
         $message = "<html>
 
