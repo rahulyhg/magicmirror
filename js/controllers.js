@@ -662,10 +662,10 @@ phonecatControllers.controller('forgotpassword',
         //  FORGOT PASSWORD
         var forgotSuccess = function(data, status) {
             console.log(data);
-            if (data == "1") {
+            if (data == "true") {
                 $scope.msg = "Please Check Your Email";
             } else {
-                $scope.msg = "Already send email";
+                $scope.msg = "No such Email Found";
             }
         }
         $scope.forgotPassword = function() {
