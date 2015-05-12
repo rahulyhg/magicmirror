@@ -1,6 +1,6 @@
 var cartglobal = {};
 
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog','ui.bootstrap']);
 phonecatControllers.controller('home',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
@@ -29,8 +29,24 @@ phonecatControllers.controller('home',
             $scope.sliders = data;
         }
         MainJson.getallslider().success(slidersuccess);
+        $scope.myInterval = 5000;
+        $scope.sliders1 = [{
+            "text": "I just love the designs & having so many options of designer jewellery is so great, awesome collection awesome jewellery.",
+            "name": " EKTA SHAH",
+            "email":"eshah0548@gmail.com"
+        }, {
+            "text": "Yesterday I gift an amazing earring as a surprise to my wife; she was so happy by its pretty, beautiful shine of American diamond & packaging added the shine on her smile. Keep rocking like this Magic Mirror.",
+            "name": " Mayur Joshi",
+            "email":"joshi.mayur53@yahoo.in"
 
+        }, {
+            "text": "The Quality, Finishing & Packaging was great and the commitment regarding delivery was really amazing!",
+            "name": "SAKSHI CHAWLA",
+            "email":"chawlasakshi70@yahoo.in"
+        }];
 
+    
+    
         // video only
         $scope.videostate = "play";
         $scope.changevideostate = function() {
@@ -203,13 +219,9 @@ phonecatControllers.controller('home',
                 $(this).removeClass("animated tada");
             });
         });
-        $scope.myInterval = 5000;
-        var slides = $scope.slides = [{
-            image: "img/slide.jpg"
-        }, {
-            image: "img/slide2.jpg"
-        }];
     });
+
+
 phonecatControllers.controller('cart',
     function($scope, TemplateService, MainJson, $rootScope, $location) {
         $(".zoomContainer").remove();

@@ -23,7 +23,7 @@
         <div class="imageset">
             <div class="homesrc">
                 <div class="row">
-                    <a  ng-click="template.gourl('/category/AD-Bangle');">
+                    <a ng-click="template.gourl('/category/AD-Bangle');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5> Bangles</h5>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/AD-NECKLACE-SET');">
+                    <a ng-click="template.gourl('/category/AD-NECKLACE-SET');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5>Necklace</h5>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/FingerRing');">
+                    <a ng-click="template.gourl('/category/FingerRing');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5> Ring</h5>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/Corporate-Earings');">
+                    <a ng-click="template.gourl('/category/Corporate-Earings');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5> Earing</h5>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/AQ-JUDA');">
+                    <a ng-click="template.gourl('/category/AQ-JUDA');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5>Juda </h5>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/AD-PAYAL');">
+                    <a ng-click="template.gourl('/category/AD-PAYAL');">
                         <div class="col-xs-2">
                             <div class="img-cont">
                                 <h5> Payal</h5>
@@ -159,7 +159,7 @@
         <div class="imageset">
             <div class="homesrc">
                 <div class="row">
-<!--
+                    <!--
                     <a href="#category/4" ng-repeat="slide in sliders">
                         <div class="col-xs-3" class="pickweek">
                             <div class="pickweek">
@@ -169,16 +169,16 @@
                         </div>
                     </a>       
 -->
-                       <a  ng-click="template.gourl('/category/AD-NECKLACE-SET');">
+                    <a ng-click="template.gourl('/category/AD-NECKLACE-SET');">
                         <div class="col-xs-3" class="pickweek">
                             <div class="pickweek">
-<!--                                                                <img src="{{slide.image | imagepath}}" class="slideset1">-->
+                                <!--                                                                <img src="{{slide.image | imagepath}}" class="slideset1">-->
                                 <img src="img/p1.png" class="slideset1">
                                 <h5>American Diamond</h5>
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/Pearl-Mala');">
+                    <a ng-click="template.gourl('/category/Pearl-Mala');">
                         <div class="col-xs-3" class="pickweek">
                             <div class="pickweek">
                                 <img src="img/p2.png" class="slideset1">
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/AQ-VICTORIA-SET');">
+                    <a ng-click="template.gourl('/category/AQ-VICTORIA-SET');">
                         <div class="col-xs-3" class="pickweek">
                             <div class="pickweek">
                                 <img src="img/p3.png" class="slideset1">
@@ -195,7 +195,7 @@
 
                         </div>
                     </a>
-                    <a  ng-click="template.gourl('/category/MICRO-SET');">
+                    <a ng-click="template.gourl('/category/MICRO-SET');">
                         <div class="col-xs-3" class="pickweek">
                             <div class="pickweek">
                                 <img src="img/p4.png" class="slideset1">
@@ -206,64 +206,53 @@
                 </div>
             </div>
         </div>
+
         <!--
-            <div class="homesrc">
-                <div class="row">
+        <div class="homesrc">
+            <div class="row">
+                
                     <a ng-click="slidesetprev(showslideset1);">
                         <div class="toggle left">
                             <img src="img/leftbanner.png" alt="" ng-show="showslideset1==1">
                         </div>
                     </a>
+
+                
                     <a ng-click="slidesetnext(showslideset1);">
                         <div class="toggle right">
                             <img src="img/rightbanner.png" alt="" ng-show="showslideset1==0">
                         </div>
                     </a>
-                    <div style="overflow:hidden;height:250px;text-align: center;">
-                        <span ng-repeat="slider in sliders">
+
+                <div style="overflow:hidden;height:250px;text-align: center;">
+                    <span ng-repeat="slider in sliders">
+                    <span ng-repeat="slider in sliders">
+
                 <span ng-show="$index<4" class="pickweek">
                     <a><img src="{{slider.image|imagepath2}}" class="slideset1 slideInLeft" ng-show="showslideset1==0">
                     <h5> {{slider.name}}</h5>
                      </a>
                       
-                </span>
-                        <span ng-show="$index>=4" class="pickweek">
-                    <a><img src="{{slider.image|imagepath2}}" class="slideset1 slideInRight" ng-show="showslideset1==1">
-                    <h5> {{slider.name}}</h5>
+                </span> 
+
+                    <span class="pickweek">
+                    <a>
+                    <img src="{{slider.image|imagepath2}}" class="slideset1 slideInRight" ng-show="showslideset1==1">
+                    <h5>EKTA SHAH</h5>
+                    <p>I just love the designs & having so many options of designer jewellery is so great, awesome collection awesome jewellery.
+</p>
+                   <span>Email:</span><p> eshah0548@gmail.com</p>
                     </a>
                 </span>
-                        </span>
-                    </div>
-
+                    </span>
                 </div>
             </div>
+        </div>
 -->
 
 
-        <!--
-    <script>
-        $('#myCarousel1').carousel({
-  interval: 4000
-})
 
-$('.carousel1 .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-  
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-    	next = $(this).siblings(':first');
-  	}
-    
-    next.children(':first-child').clone().appendTo($(this));
-  }
-});
-    </script>          
--->
+
     </div>
 </div>
 <div class="clearfix"></div>
@@ -277,16 +266,26 @@ $('.carousel1 .item').each(function(){
                     <p>
                         ‘Customer is God’; we believe in it from the day 1 & therefore we not only know for the best sales service but also for the great after sales service. Our Services will make you realize that why we known as the chosen brand for artistic jewelry &amp; the excellent professional services.
                     </p>
-                    <p class="pull-right"><a ng-click="template.gourl('/productcare');">read more</a></p>
-                    
+                    <p class="pull-right"><a ng-click="template.gourl('/productcare');">read more</a>
+                    </p>
+
                 </div>
             </div>
             <div class="col-xs-4 endorse">
                 <div class="text-client">
-                    <h5>CLIENT ENDORSEMENT</h5>
-                    <p>
-                        I just received my order and love my purchases! This was my first experience buying Magic Mirror jewellery online.Thank you for your support. Look forward to being an ongoing Magic Mirror customer.
-                    </p>
+<!--                 <h5>CLIENT ENDORSEMENT</h5>-->
+                 <h5>TESTIMONIALS</h5>
+                  <carousel interval="myInterval" class="fix-height">
+      <slide ng-repeat="slide in sliders1"  style="margin:auto;">
+      
+          <p>{{slide.text}}</p>
+      <p>Email Id: {{slide.email}}
+      </p>
+      
+      <p class="pull-right">{{slide.name}}</p>
+      </slide>
+    </carousel>
+
                 </div>
             </div>
             <div class="col-xs-2"></div>

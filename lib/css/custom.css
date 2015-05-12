@@ -2335,3 +2335,10 @@ ul.img-namess li img {
     right: 9px;
     padding: 2px;
 }
+.fix-height
+{
+    height: 140px;
+}
+a.left.carousel-control,a.right.carousel-control {
+  display: none;
+}
