@@ -12,7 +12,7 @@ var firstapp = angular.module('firstapp', [
 firstapp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.
-        when('/home', {
+        when('/', {
             templateUrl: 'views/template.html',
             controller: 'home'
         }).
@@ -159,7 +159,7 @@ firstapp.config(['$routeProvider', '$locationProvider',
             controller: 'ship-return'
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
         $locationProvider
             .html5Mode(true);
