@@ -455,6 +455,11 @@ ul.footer-ul {
 
 .text-client p {
     text-align: justify;
+    margin-bottom: 0px;
+}
+
+.carousel-indicators {
+    bottom: 0px;
 }
 
 button.Subscribe {
@@ -1983,7 +1988,7 @@ select.sort-drp {
     text-align: justify;
     padding-bottom: 10px;
     color: #6c6e70;
-    padding-left: 20px;
+    /*    padding-left: 20px;*/
 }
 
 h4.headprivacy {
@@ -2109,7 +2114,8 @@ li.cat-list.cpointer.bolds:after {
 }
 
 .content-static h3:before {
-    content: "Ã¢â€“Â ";
+    content: "•";
+    color: #EC2987;
     font-size: 14px;
     vertical-align: initial;
     padding-right: 5px;
@@ -2279,7 +2285,9 @@ li.jwellery h4 {
     bottom: 6px;
     right: 9px;
     padding: 2px;
-}ul.img-namess {
+}
+
+ul.img-namess {
     list-style: none;
     padding: 0;
     margin-bottom: 10px;
@@ -2290,29 +2298,31 @@ ul.img-namess li {
     width: 50%;
     float: left;
 }
+
 .drop-cart a {
     color: #000!important;
     padding: 7px!important;
 }
-.drop-cart{
-     display: none; 
+
+.drop-cart {
+    display: none;
     position: absolute!important;
     top: 30px;
     width: 250px;
     padding: 25px;
-    
-     right: -25px;
-     z-index: 99999;
+    right: -25px;
+    z-index: 99999;
     background: rgba(255, 255, 255, 0.9);
-        -webkit-transition: all 1s;
+    -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s;
 }
 
-.bag:hover .drop-cart{
+.bag:hover .drop-cart {
     display: block;
 }
+
 ul.img-namess li img {
     width: 90px;
     padding: 5px;
@@ -2335,10 +2345,12 @@ ul.img-namess li img {
     right: 9px;
     padding: 2px;
 }
-.fix-height
-{
+
+.fix-height {
     height: 140px;
 }
-a.left.carousel-control,a.right.carousel-control {
-  display: none;
+
+a.left.carousel-control,
+a.right.carousel-control {
+    display: none;
 }
