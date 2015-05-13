@@ -7,7 +7,7 @@ var adminurl2 = adminurl1 + 'json/';
 
 var conversionrate = [{
     id: "1",
-    name: "GBP",
+    name: "INR",
     conversionrate: "1",
     isdefault: "1"
 }];
@@ -21,7 +21,7 @@ $.getJSON(adminurl + "getconversionrates", {}, function(data) {
 
 var lat = 0;
 var long = 0;
-var currency = "GBP";
+var currency = "INR";
 var country = false;
 var showError = function(data) {
     console.log(data);
@@ -49,11 +49,9 @@ var showlocationdata = function(data, status) {
             console.log("Country ////////////////////////");
             //case1 : short name: GB
             console.log(country);
-            if (country == "GB") {
-                currency = "GBP";
-            } else if (country == "EUROPE") {
-                currency = "EURO";
-            } else {
+            if (country == "IN") {
+                currency = "INR";
+            }  else {
                 currency = "USD";
             }
             console.log("Currency: " + currency);
@@ -86,10 +84,8 @@ var ongettingdata = function(data) {
         console.log("Country ////////////////////////");
         //case1 : short name: GB
         console.log(country);
-        if (country == "GB") {
-            currency = "GBP";
-        } else if (country == "EUROPE") {
-            currency = "EURO";
+        if (country == "IN") {
+            currency = "INR";
         } else {
             currency = "USD";
         }
