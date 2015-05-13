@@ -739,7 +739,7 @@ a:hover {
 .login-tab.pull-right ul {
     position: relative;
     height: 95px;
-    border-bottom: 1px solid #E2E2E2;
+/*    border-bottom: 1px solid #E2E2E2;*/
 }
 
 li.bag a {
@@ -2351,4 +2351,30 @@ ul.img-namess li {
 a.left.carousel-control,
 a.right.carousel-control {
     display: none;
+}
+
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+ .carousel-inner .active.left,
+ .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.carousel-inner .next.left,
+.carousel-inner .prev.right {
+    opacity: 1;
+}
+
+ .carousel-control {
+    z-index: 2;
 }
