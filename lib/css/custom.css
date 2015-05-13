@@ -739,6 +739,7 @@ a:hover {
 .login-tab.pull-right ul {
     position: relative;
     height: 95px;
+    border-bottom: 1px solid #E2E2E2;
 }
 
 li.bag a {
@@ -2122,6 +2123,14 @@ li.cat-list.cpointer.bolds:after {
     display: inline-block;
 }
 
+li.jwellery p {
+    margin: 0;
+}
+
+li.jwellery h4 {
+    margin-top: 4px;
+}
+
 .orders tr>th {
     background-color: rgba(255, 255, 255, 1);
     color: #696969;
@@ -2323,17 +2332,6 @@ ul.img-namess li {
     display: block;
 }
 
-ul.img-namess li img {
-    width: 90px;
-    padding: 5px;
-    height: 90px;
-    border: 1px solid #000;
-}
-
-.drop-cart a {
-    background: #48AD61;
-    color: #FFF;
-}
 
 .link-cart a {
     padding: 6px;
