@@ -87,7 +87,7 @@ class Json extends CI_Controller {
                         }
         
         $message="<html><body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
-    <div style='text-align:center; padding-top: 40px;'>
+    <div text-align: center; width: 60%; margin: 0 auto; padding-left: 65px;'>
         <img src='http://magicmirror.in/emaildata/email.png'>
     </div>
     <div style='text-align:center;   width: 50%; margin: 0 auto;'>
@@ -126,7 +126,7 @@ class Json extends CI_Controller {
   </tr>  
         </table>
          
-                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
+                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 30px;'>
   <tr>
     <th style='padding: 10px 0;'>Id</th>
     <th style='padding: 10px 0;'>Product</th> 
@@ -161,7 +161,7 @@ class Json extends CI_Controller {
         <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
             Thank You Again
         </p>
-        <img src='http://magicmirror.in/emaildata/magicfooter.png'>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png' style='height: 225px;'>
     </div>
 </body>
 
