@@ -273,20 +273,24 @@
             </div>
             <div class="col-xs-4 endorse">
                 <div class="text-client">
-<!--                 <h5>CLIENT ENDORSEMENT</h5>-->
-                 <h5>TESTIMONIALS</h5>
-                  <carousel interval="myInterval" class="fix-height">
-      <slide ng-repeat="slide in sliders1"  style="margin:auto;">
-      
-          <p>{{slide.text}}</p>
-<!--
+                    <!--                 <h5>CLIENT ENDORSEMENT</h5>-->
+                    <h5>TESTIMONIALS</h5>
+                    <carousel interval="myInterval" class="fix-height">
+                        <slide ng-repeat="slide in sliders1" style="margin:auto;">
+
+                            <p>{{slide.text}}</p>
+                            <!--
       <p>Email Id: {{slide.email}}
       </p>
 -->
-      
-      <p class="pull-right">{{slide.name}}</p>
-      </slide>
-    </carousel>
+
+                            <p class="right-allign">{{slide.name}}</p>
+                            <p class="right-allign">
+                                <a ng-click="template.gourl('/testimonal');">read more</a>
+                            </p>
+                        </slide>
+
+                    </carousel>
 
                 </div>
             </div>

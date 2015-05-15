@@ -739,7 +739,7 @@ a:hover {
 .login-tab.pull-right ul {
     position: relative;
     height: 95px;
-/*    border-bottom: 1px solid #E2E2E2;*/
+    /*    border-bottom: 1px solid #E2E2E2;*/
 }
 
 li.bag a {
@@ -2332,7 +2332,6 @@ ul.img-namess li {
     display: block;
 }
 
-
 .link-cart a {
     padding: 6px;
 }
@@ -2353,7 +2352,6 @@ a.right.carousel-control {
     display: none;
 }
 
-
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
@@ -2363,8 +2361,8 @@ a.right.carousel-control {
     opacity: 1;
 }
 
- .carousel-inner .active.left,
- .carousel-inner .active.right {
+.carousel-inner .active.left,
+.carousel-inner .active.right {
     left: 0;
     opacity: 0;
     z-index: 1;
@@ -2375,6 +2373,50 @@ a.right.carousel-control {
     opacity: 1;
 }
 
- .carousel-control {
+.carousel-control {
     z-index: 2;
+}
+
+.ico-size {
+    font-size: 28px;
+    position: absolute;
+    left: -35px;
+    color: #E5E4E2;
+}
+
+.p-marg-pad {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+    color: #A3A3A3 !important;
+}
+
+.p-text-align {
+    text-align: right !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+}
+
+.border-bott {
+    border-bottom: 1px solid #D1D0CE;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.border-botto {
+    border-bottom: 1px solid #D1D0CE;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 58px;
+}
+
+.icoo-size {
+    font-size: 28px;
+    position: absolute;
+    right: -35px;
+    bottom: 30px;
+    color: #E5E4E2;
+}
+
+.right-allign {
+    text-align: right!important;
 }

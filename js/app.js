@@ -10,7 +10,7 @@ var firstapp = angular.module('firstapp', [
 ]);
 
 firstapp.config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
+    function ($routeProvider, $locationProvider) {
         $routeProvider.
         when('/', {
             templateUrl: 'views/template.html',
@@ -21,9 +21,9 @@ firstapp.config(['$routeProvider', '$locationProvider',
             controller: 'searchpage'
         }).
         when('/wishlist', {
-            templateUrl: 'views/template.html',
-            controller: 'wishlist'
-        })
+                templateUrl: 'views/template.html',
+                controller: 'wishlist'
+            })
             .
         when('/comingsoon', {
             templateUrl: 'views/template.html',
@@ -118,6 +118,10 @@ firstapp.config(['$routeProvider', '$locationProvider',
             templateUrl: 'views/template.html',
             controller: 'faq'
         }).
+        when('/testimonal', {
+            templateUrl: 'views/template.html',
+            controller: 'testimonal'
+        }).
         when('/policy', {
             templateUrl: 'views/template.html',
             controller: 'policy'
@@ -166,8 +170,8 @@ firstapp.config(['$routeProvider', '$locationProvider',
     }
 ]);
 
-firstapp.filter('imagepath', function() {
-    return function(input) {
+firstapp.filter('imagepath', function () {
+    return function (input) {
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=300&image=gs://magicmirroruploads/uploads/" + input.trim();
@@ -176,8 +180,8 @@ firstapp.filter('imagepath', function() {
         return image;
     };
 });
-firstapp.filter('imagepath1', function() {
-    return function(input) {
+firstapp.filter('imagepath1', function () {
+    return function (input) {
 
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
@@ -187,8 +191,8 @@ firstapp.filter('imagepath1', function() {
         return image;
     };
 });
-firstapp.filter('imagepath2', function() {
-    return function(input) {
+firstapp.filter('imagepath2', function () {
+    return function (input) {
 
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
@@ -197,8 +201,8 @@ firstapp.filter('imagepath2', function() {
     };
 
 });
-firstapp.filter('imagepathbig', function() {
-    return function(input) {
+firstapp.filter('imagepathbig', function () {
+    return function (input) {
         if (input) {
             input = input.replace("gs://magicmirroruploads/uploads/", "");
             var image = "http://magicmirrornew.appspot.com/showimage?size=800&image=gs://magicmirroruploads/uploads/" + input.trim();
@@ -210,8 +214,8 @@ firstapp.filter('imagepathbig', function() {
     };
 });
 
-firstapp.filter('convertprice', function() {
-    return function(input) {
+firstapp.filter('convertprice', function () {
+    return function (input) {
 
         var price = parseFloat(input);
         var currencyshow = "Rs";
@@ -238,48 +242,48 @@ firstapp.filter('convertprice', function() {
 
 firstapp.directive('modal', function () {
     return {
-      template: '<div class="modal fade">' + 
-          '<div class="modal-dialog">' + 
-            '<div class="modal-content">' + 
-              '<div class="modal-header">' + 
-                '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + 
-                '<h4 class="modal-title">{{ title }}</h4>' + 
-              '</div>' + 
-              '<div class="modal-body" ng-transclude></div>' + 
-            '</div>' + 
-          '</div>' + 
-        '</div>',
-      restrict: 'E',
-      transclude: true,
-      replace:true,
-      scope:true,
-      link: function postLink(scope, element, attrs) {
-        scope.title = attrs.title;
+        template: '<div class="modal fade">' +
+            '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+            '<h4 class="modal-title">{{ title }}</h4>' +
+            '</div>' +
+            '<div class="modal-body" ng-transclude></div>' +
+            '</div>' +
+            '</div>' +
+            '</div>',
+        restrict: 'E',
+        transclude: true,
+        replace: true,
+        scope: true,
+        link: function postLink(scope, element, attrs) {
+            scope.title = attrs.title;
 
-        scope.$watch(attrs.visible, function(value){
-          if(value == true)
-            $(element).modal('show');
-          else
-            $(element).modal('hide');
-        });
+            scope.$watch(attrs.visible, function (value) {
+                if (value == true)
+                    $(element).modal('show');
+                else
+                    $(element).modal('hide');
+            });
 
-        $(element).on('shown.bs.modal', function(){
-          scope.$apply(function(){
-            scope.$parent[attrs.visible] = true;
-          });
-        });
+            $(element).on('shown.bs.modal', function () {
+                scope.$apply(function () {
+                    scope.$parent[attrs.visible] = true;
+                });
+            });
 
-        $(element).on('hidden.bs.modal', function(){
-          scope.$apply(function(){
-            scope.$parent[attrs.visible] = false;
-          });
-        });
-      }
+            $(element).on('hidden.bs.modal', function () {
+                scope.$apply(function () {
+                    scope.$parent[attrs.visible] = false;
+                });
+            });
+        }
     };
-  });
+});
 
 
-var formvalidation = function(allvalidation) {
+var formvalidation = function (allvalidation) {
     var isvalid2 = true;
     for (var i = 0; i < allvalidation.length; i++) {
         console.log("checking");
