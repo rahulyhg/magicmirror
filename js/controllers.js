@@ -1,8 +1,8 @@
 var cartglobal = {};
 
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog','ui.bootstrap']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog', 'ui.bootstrap']);
 phonecatControllers.controller('home',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         //        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
@@ -23,7 +23,7 @@ phonecatControllers.controller('home',
         $scope.demo = "demodemo";
 
         //  GET ALL SLIDER
-        var slidersuccess = function(data, status) {
+        var slidersuccess = function (data, status) {
             console.log("all slider data");
             console.log(data);
             $scope.sliders = data;
@@ -33,23 +33,23 @@ phonecatControllers.controller('home',
         $scope.sliders1 = [{
             "text": "I just love the designs & having so many options of designer jewellery is so great, awesome collection awesome jewellery.",
             "name": " EKTA SHAH",
-//            "email":"eshah0548@gmail.com"
+            //            "email":"eshah0548@gmail.com"
         }, {
             "text": "Yesterday I gift an amazing earring as a surprise to my wife; she was so happy by its pretty, beautiful shine of American diamond & packaging added the shine on her smile. Keep rocking like this Magic Mirror.",
             "name": "MAYUR JOSHI",
-//            "email":"joshi.mayur53@yahoo.in"
+            //            "email":"joshi.mayur53@yahoo.in"
 
         }, {
             "text": "The Quality, Finishing & Packaging was great and the commitment regarding delivery was really amazing!",
             "name": "SAKSHI CHAWLA",
-//            "email":"chawlasakshi70@yahoo.in"
+            //            "email":"chawlasakshi70@yahoo.in"
         }];
 
-    
-    
+
+
         // video only
         $scope.videostate = "play";
-        $scope.changevideostate = function() {
+        $scope.changevideostate = function () {
             if ($scope.videostate == "play") {
                 $scope.videostate = "pause";
                 $("#video").get(0).pause();
@@ -59,7 +59,7 @@ phonecatControllers.controller('home',
             }
         };
         $scope.soundstate = "unmuted";
-        $scope.changesoundstate = function() {
+        $scope.changesoundstate = function () {
             if ($scope.soundstate == "muted") {
                 $scope.soundstate = "unmuted";
                 var vid = document.getElementById("video");
@@ -142,29 +142,29 @@ phonecatControllers.controller('home',
 
         //get get country from geo location
 
-        $scope.showaccount = function() {
+        $scope.showaccount = function () {
             $scope.visible = true;
         };
-        $scope.hideaccount = function() {
+        $scope.hideaccount = function () {
             $scope.visible = false;
         };
         $scope.showslideset1 = 0;
-        $scope.slidesetnext = function(value) {
+        $scope.slidesetnext = function (value) {
             console.log("Next Clicked");
             $scope.showslideset1 = 1;
             console.log($scope.showslideset1);
         };
-        $scope.slidesetprev = function(value) {
+        $scope.slidesetprev = function (value) {
             console.log("Prev Clicked");
             $scope.showslideset1 = 0;
         };
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -180,14 +180,14 @@ phonecatControllers.controller('home',
         //authenticate
         //newsletter
         $scope.msgg = "";
-        var newslettersaved = function(data, status) {
+        var newslettersaved = function (data, status) {
             if (data == true) {
                 $scope.msgg = "Thank You For Subscribe";
             } else {
                 $scope.msgg = "Thank You For Subscribe";
             }
         };
-        $scope.newsletter = function(uemail) {
+        $scope.newsletter = function (uemail) {
             if (!uemail) {
                 alert("Please Enter Email");
             } else {
@@ -197,25 +197,25 @@ phonecatControllers.controller('home',
         //newsletter
         //cart badge
         $scope.badge = TemplateService.totalproducts;
-        var totalcart = function(data, status) {
+        var totalcart = function (data, status) {
             console.log("cart data");
             $scope.badge = TemplateService.totalproducts;
             console.log($scope.badge);
         };
         MainJson.gettotalcart().success(totalcart);
         //cart badge
-        $scope.$on("$includeContentLoaded", function() {
+        $scope.$on("$includeContentLoaded", function () {
             TemplateService.firsttimeloaded();
             $(".zoomContainer").remove();
-            $(".pulseanimation").hover(function() {
+            $(".pulseanimation").hover(function () {
                 $(this).addClass("animated pulse");
-            }, function() {
+            }, function () {
                 $(this).removeClass("animated pulse");
             });
 
-            $(".tadaanimation").hover(function() {
+            $(".tadaanimation").hover(function () {
                 $(this).addClass("animated tada");
-            }, function() {
+            }, function () {
                 $(this).removeClass("animated tada");
             });
         });
@@ -223,7 +223,7 @@ phonecatControllers.controller('home',
 
 
 phonecatControllers.controller('cart',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         $(".zoomContainer").remove();
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
@@ -235,11 +235,11 @@ phonecatControllers.controller('cart',
         $scope.cart = [];
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldata = data;
@@ -270,14 +270,14 @@ phonecatControllers.controller('cart',
                 console.log($scope.cart);
 
                 var totallength = 0;
-                _.each($scope.cart, function(cart) {
+                _.each($scope.cart, function (cart) {
                     totallength += parseInt(cart.qty);
                 });
                 var xproducts = parseInt(data.xproducts);
                 var yproducts = parseInt(data.yproducts);
                 var itter = Math.floor(totallength / xproducts) * yproducts;
                 console.log("ITTER " + itter);
-                var newcart = _.sortBy($scope.cart, function(cart) {
+                var newcart = _.sortBy($scope.cart, function (cart) {
                     cart.price = parseFloat(cart.price);
                     cart.qty2 = parseInt(cart.qty);
                     return parseFloat(cart.price);
@@ -307,7 +307,7 @@ phonecatControllers.controller('cart',
         $scope.isamount = 0;
         $scope.isfreedelivery = 0;
         $scope.discountamount = 0;
-        var couponsuccess = function(data, status) {
+        var couponsuccess = function (data, status) {
             if (data == 'false') {
                 $scope.validcouponcode = 0;
             } else {
@@ -322,7 +322,7 @@ phonecatControllers.controller('cart',
 
 
 
-        $scope.checkcoupon = function(couponcode) {
+        $scope.checkcoupon = function (couponcode) {
             console.log(couponcode);
             MainJson.getdiscountcoupon(couponcode).success(couponsuccess);
         };
@@ -330,7 +330,7 @@ phonecatControllers.controller('cart',
 
         //authenticate
         $scope.newquantity = [];
-        var showcart = function(data, status) {
+        var showcart = function (data, status) {
             console.log(data);
             $scope.cart = data;
             console.log("Values in cart");
@@ -345,52 +345,52 @@ phonecatControllers.controller('cart',
             console.log($scope.newquantity);
         };
         MainJson.getcart().success(showcart);
-        var getsubtotal = function(data, status) {
+        var getsubtotal = function (data, status) {
             $scope.subtotal = data;
             calcdiscountamount();
         };
         MainJson.totalcart().success(getsubtotal);
         //separating cart
-        $scope.postcart = function() {
-            $scope.cart = MainJson.getcart();
-            $scope.id = $scope.cart[0].id;
-            $scope.name = $scope.cart[0].name;
-            $scope.price = $scope.cart[0].price;
-            $scope.quantity = $scope.cart[0].quantity;
-            for (var i = 1; i < $scope.cart.length; i++) {
-                $scope.id += "," + $scope.cart[i].id;
-                $scope.name += "," + $scope.cart[i].name;
-                $scope.price += "," + $scope.cart[i].price;
-                $scope.quantity += "," + $scope.cart[i].quantity;
+        $scope.postcart = function () {
+                $scope.cart = MainJson.getcart();
+                $scope.id = $scope.cart[0].id;
+                $scope.name = $scope.cart[0].name;
+                $scope.price = $scope.cart[0].price;
+                $scope.quantity = $scope.cart[0].quantity;
+                for (var i = 1; i < $scope.cart.length; i++) {
+                    $scope.id += "," + $scope.cart[i].id;
+                    $scope.name += "," + $scope.cart[i].name;
+                    $scope.price += "," + $scope.cart[i].price;
+                    $scope.quantity += "," + $scope.cart[i].quantity;
+                }
+
+
             }
-
-
-        }
-        //separating cart
-        //add to cart
-        var getsubtotal = function(data, status) {
+            //separating cart
+            //add to cart
+        var getsubtotal = function (data, status) {
             $scope.subtotal = data;
         };
-        var cartt = function(data, status) {
+        var cartt = function (data, status) {
             console.log(data);
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
             MainJson.totalcart().success(getsubtotal);
         };
-        $scope.addtocart = function(id, name, price, quantity, index) {
+        $scope.addtocart = function (id, name, price, quantity, index) {
             // console.log(id+name+price+quantity);
             $scope.cart[index].subtotal = price * quantity;
             MainJson.addtocart(id, name, price, quantity).success(cartt);
         };
         //addto cart
 
-        $scope.addproductcart = function(id, name, price, quantity, index) {
+        $scope.addproductcart = function (id, name, price, quantity, index) {
             console.log(id + name + price + quantity);
             quantity = parseInt(quantity) + 1;
             $scope.newquantity[index] = quantity;
             $scope.cart[index].subtotal = price * quantity;
             MainJson.addtocart(id, name, price, quantity).success(cartt);
         };
-        $scope.subproductcart = function(id, name, price, quantity, index) {
+        $scope.subproductcart = function (id, name, price, quantity, index) {
             console.log(id + name + price + quantity);
             quantity = parseInt(quantity) - 1;
             $scope.newquantity[index] = quantity;
@@ -399,17 +399,17 @@ phonecatControllers.controller('cart',
         };
 
 
-        var deletefromcart = function() {
+        var deletefromcart = function () {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
             MainJson.totalcart().success(getsubtotal);
             console.log("Subtotal should change");
         };
-        var savefromcart = function() {
+        var savefromcart = function () {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
             MainJson.totalcart().success(getsubtotal);
             console.log("Subtotal should change on save");
         };
-        $scope.deletecart = function(id) {
+        $scope.deletecart = function (id) {
             //console.log(cart);
             for (var i = 0; i < $scope.cart.length; i++) {
                 if ($scope.cart[i].id == id) {
@@ -426,7 +426,7 @@ phonecatControllers.controller('cart',
             MainJson.deletecartfromsession(id).success(deletefromcart);
 
         };
-        $scope.savecart = function(id, quantity) {
+        $scope.savecart = function (id, quantity) {
             $scope.returntwo = MainJson.savecart($scope.uid, id, quantity).success(savefromcart);
             $scope.subtotal = $scope.returntwo.subtotal;
         };
@@ -434,10 +434,10 @@ phonecatControllers.controller('cart',
     });
 
 phonecatControllers.controller('logout ',
-    function($scope, TemplateService, MainJson, $location) {
+    function ($scope, TemplateService, MainJson, $location) {
 
         //######################authentication######################
-        var logout = function(data, status) {
+        var logout = function (data, status) {
             //console.log(data);
             $scope.loginlogouttext = "Login";
             $scope.isloggedin = 0;
@@ -452,7 +452,7 @@ phonecatControllers.controller('logout ',
 
 
 phonecatControllers.controller('login',
-    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -462,21 +462,21 @@ phonecatControllers.controller('login',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var cartt = function(data, status) {
+        var cartt = function (data, status) {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         };
 
-        var cartdata = function(data, status) {
+        var cartdata = function (data, status) {
             console.log(data);
             for (var i = 0; i < data.length; i++) {
                 MainJson.addtocart(data[i].id, data[i].name, data[i].price, data[i].quantity).success(cartt);;
             }
         };
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             MainJson.getusercart(data.id).success(cartdata);
             if (data != "false") {
@@ -488,11 +488,11 @@ phonecatControllers.controller('login',
         };
         MainJson.authenticate().success(authenticate);
         //authenticate
-        var emailsend = function(data, status) {
+        var emailsend = function (data, status) {
             console.log(data);
             alert("Email send to you");
         };
-        var getsignup = function(data, status) {
+        var getsignup = function (data, status) {
             if (data != "false") {
                 $location.url("/home");
                 $scope.msgr = "Registred Successful";
@@ -501,11 +501,11 @@ phonecatControllers.controller('login',
                 $scope.msgr = "This Email Id is already registered with us or Error In Registration";
             }
         };
-        $scope.signup = function(register) {
+        $scope.signup = function (register) {
             console.log(register);
             MainJson.registeruser(register.firstname, register.lastname, register.email, register.password).success(getsignup);
         };
-        var getlogin = function(data, status) {
+        var getlogin = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.msg = "Login Successful";
@@ -514,7 +514,7 @@ phonecatControllers.controller('login',
                 $scope.msg = "Invalid Email Or Password";
             }
         };
-        $scope.userlogin = function(login) {
+        $scope.userlogin = function (login) {
             console.log(login);
             MainJson.loginuser(login.email, login.password).success(getlogin);
         };
@@ -522,7 +522,7 @@ phonecatControllers.controller('login',
 
     });
 phonecatControllers.controller('forgotpassword',
-    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -536,7 +536,7 @@ phonecatControllers.controller('forgotpassword',
         $scope.forgot = [];
 
         //  FORGOT PASSWORD
-        var forgotSuccess = function(data, status) {
+        var forgotSuccess = function (data, status) {
             console.log(data);
             if (data == "true") {
                 $scope.msg = "Please Check Your Email";
@@ -544,12 +544,12 @@ phonecatControllers.controller('forgotpassword',
                 $scope.msg = "No such Email Found";
             }
         }
-        $scope.forgotPassword = function() {
+        $scope.forgotPassword = function () {
             MainJson.forgotPassword($scope.forgot).success(forgotSuccess);
         }
     });
 phonecatControllers.controller('resetpassword',
-    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -564,21 +564,21 @@ phonecatControllers.controller('resetpassword',
         $scope.forgot = [];
         $scope.forgot.hashcode = $routeParams.id;
         //  REDIRECT CHANGE PASSWORD STARTS
-        var newPasswordSuccess = function(data, status) {
+        var newPasswordSuccess = function (data, status) {
             if (data == '1') {
                 $location.url("/login");
             } else {
                 $scope.msg = data;
             }
         }
-        $scope.newPassword = function() {
+        $scope.newPassword = function () {
             console.log($scope.forgot);
             MainJson.newPassword($scope.forgot).success(newPasswordSuccess);
         }
 
     });
 phonecatControllers.controller('wedding-jewellery',
-    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -594,7 +594,7 @@ phonecatControllers.controller('wedding-jewellery',
 
 
 phonecatControllers.controller('loginwishlist',
-    function($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $routeParams, $location) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -609,21 +609,21 @@ phonecatControllers.controller('loginwishlist',
         console.log(TemplateService.totalproducts);
         $scope.alert2 = "Login or signup for wishlist";
 
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var cartt = function(data, status) {
+        var cartt = function (data, status) {
             MainJson.gettotalcart().success(MainJson.gettotalproductsincart);
         };
 
-        var cartdata = function(data, status) {
+        var cartdata = function (data, status) {
             console.log(data);
             for (var i = 0; i < data.length; i++) {
                 MainJson.addtocart(data[i].id, data[i].name, data[i].price, data[i].quantity).success(cartt);;
             }
         };
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             MainJson.getusercart(data.id).success(cartdata);
             if (data != "false") {
                 $scope.alldata = data;
@@ -634,11 +634,11 @@ phonecatControllers.controller('loginwishlist',
         };
         MainJson.authenticate().success(authenticate);
         //authenticate
-        var emailsend = function(data, status) {
+        var emailsend = function (data, status) {
             console.log(data);
             alert("Email send to you");
         };
-        var getsignup = function(data, status) {
+        var getsignup = function (data, status) {
             if (data != "false") {
                 $scope.msgr = "Registred Successful";
                 $location.url("/home");
@@ -647,11 +647,11 @@ phonecatControllers.controller('loginwishlist',
                 $scope.msgr = "Error In Registration";
             }
         };
-        $scope.signup = function(register) {
+        $scope.signup = function (register) {
             console.log(register);
             MainJson.registeruser(register.firstname, register.lastname, register.email, register.password).success(getsignup);
         };
-        var getlogin = function(data, status) {
+        var getlogin = function (data, status) {
             if (data != "false") {
 
                 $scope.msg = "Login Successful";
@@ -660,7 +660,7 @@ phonecatControllers.controller('loginwishlist',
                 $scope.msg = "Invalid Email Or Password";
             }
         };
-        $scope.userlogin = function(login) {
+        $scope.userlogin = function (login) {
             console.log(login);
             MainJson.loginuser(login.email, login.password).success(getlogin);
         };
@@ -672,7 +672,7 @@ phonecatControllers.controller('loginwishlist',
 
 
 phonecatControllers.controller('xoxo',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -683,11 +683,11 @@ phonecatControllers.controller('xoxo',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -699,7 +699,7 @@ phonecatControllers.controller('xoxo',
 
     });
 phonecatControllers.controller('comingsoon',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -710,11 +710,11 @@ phonecatControllers.controller('comingsoon',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -727,7 +727,7 @@ phonecatControllers.controller('comingsoon',
     });
 
 phonecatControllers.controller('contact',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.changetitle("Login");
@@ -738,11 +738,11 @@ phonecatControllers.controller('contact',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -751,12 +751,12 @@ phonecatControllers.controller('contact',
         MainJson.authenticate().success(authenticate);
         //authenticate
         //contact
-        var contact = function(data, status) {
+        var contact = function (data, status) {
             console.log(data);
             $scope.msg = "YOUR REVIEW IS SAVED SUCCESSFULY";
         };
         $scope.contactsubmit = false;
-        $scope.usercontact = function(data) {
+        $scope.usercontact = function (data) {
             $scope.contactsubmit = true;
             MainJson.usercontact("", data.name, data.email, data.phone, data.comment).success(contact);
         };
@@ -766,14 +766,14 @@ phonecatControllers.controller('contact',
 
 
 phonecatControllers.controller('contact2',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
 
-        var contact = function(data, status) {
+        var contact = function (data, status) {
             console.log(data);
             $scope.msg = "YOUR REVIEW IS SAVED SUCCESSFULY";
         };
         $scope.contactsubmit = false;
-        $scope.usercontact = function(data) {
+        $scope.usercontact = function (data) {
             $scope.contactsubmit = true;
             MainJson.usercontact("", data.name, data.email, data.phone, data.comment).success(contact);
         };
@@ -782,7 +782,7 @@ phonecatControllers.controller('contact2',
     });
 
 phonecatControllers.controller('wholesaler',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -793,11 +793,11 @@ phonecatControllers.controller('wholesaler',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -806,7 +806,7 @@ phonecatControllers.controller('wholesaler',
         MainJson.authenticate().success(authenticate);
         //authenticate
         //register
-        var getwholesalersignup = function(data, status) {
+        var getwholesalersignup = function (data, status) {
             if (data != "false") {
                 $scope.msgr = "Registred Successful";
 
@@ -814,7 +814,7 @@ phonecatControllers.controller('wholesaler',
                 $scope.msgr = "This Email is already registered with us or Error in Registration";
             }
         };
-        $scope.wholesalersignup = function(register) {
+        $scope.wholesalersignup = function (register) {
             console.log(register);
             MainJson.registerwholesaler(register.firstname, register.lastname, register.phone, register.email, register.password).success(getwholesalersignup);
         };
@@ -824,7 +824,7 @@ phonecatControllers.controller('wholesaler',
 
 
 phonecatControllers.controller('profile',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -835,11 +835,11 @@ phonecatControllers.controller('profile',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -853,7 +853,7 @@ phonecatControllers.controller('profile',
     });
 
 phonecatControllers.controller('lylaloves',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -864,11 +864,11 @@ phonecatControllers.controller('lylaloves',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
@@ -893,7 +893,7 @@ phonecatControllers.controller('lylaloves',
     });
 
 phonecatControllers.controller('thankyou',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -905,11 +905,11 @@ phonecatControllers.controller('thankyou',
         $scope.loginlogouttext = "Login";
         MainJson.destroycart().success(MainJson.gettotalproductsincart);
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
@@ -920,14 +920,14 @@ phonecatControllers.controller('thankyou',
 
     });
 phonecatControllers.controller('newsletter',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
         $scope.msgg = "";
 
         //cart badge
-        var totalcart = function(data, status) {
+        var totalcart = function (data, status) {
             console.log("cart data");
             $scope.badge = data;
             console.log($scope.badge);
@@ -936,11 +936,11 @@ phonecatControllers.controller('newsletter',
         //cart badge
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldate = data;
@@ -950,7 +950,7 @@ phonecatControllers.controller('newsletter',
         MainJson.authenticate().success(authenticate);
         //authenticate
         //newsletter
-        var newslettersaved = function(data, status) {
+        var newslettersaved = function (data, status) {
             if (data == "true") {
                 //alert("Thank you for subscribing.");
                 TemplateService.lightboximage = "img/newsletterpopup.jpg";
@@ -960,7 +960,7 @@ phonecatControllers.controller('newsletter',
                 $location.url("/xoxo");
             }
         };
-        $scope.newsletter = function(uemail) {
+        $scope.newsletter = function (uemail) {
             if (!uemail) {
                 alert("Please Enter Email");
             } else {
@@ -973,7 +973,7 @@ phonecatControllers.controller('newsletter',
     });
 
 phonecatControllers.controller('badge',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -983,7 +983,7 @@ phonecatControllers.controller('badge',
 
         //  END CART
 
-        var showcart = function(data, status) {
+        var showcart = function (data, status) {
             console.log(data);
             $scope.cart = data;
             console.log("Values in cart");
@@ -1002,7 +1002,7 @@ phonecatControllers.controller('badge',
 
 
         //cart badge
-        var totalcart = function(data, status) {
+        var totalcart = function (data, status) {
             console.log("cart data");
             $scope.badge = data;
             console.log($scope.badge);
@@ -1010,7 +1010,7 @@ phonecatControllers.controller('badge',
         MainJson.gettotalcart().success(totalcart);
         //cart badge
 
-        cartglobal.cartchange = function() {
+        cartglobal.cartchange = function () {
 
             MainJson.getcart().success(showcart);
             MainJson.gettotalcart().success(totalcart);
@@ -1018,16 +1018,16 @@ phonecatControllers.controller('badge',
 
 
         //authenticate
-        var logoutauth = function(data, status) {
+        var logoutauth = function (data, status) {
             window.location.reload();
         }
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
             MainJson.authenticate().success(logoutauth);
 
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldate = data;
@@ -1046,18 +1046,18 @@ phonecatControllers.controller('badge',
 
 
 phonecatControllers.controller('search',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
         $scope.msgg = "Message here..........";
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldate = data;
@@ -1067,7 +1067,7 @@ phonecatControllers.controller('search',
         MainJson.authenticate().success(authenticate);
         //authenticate
         //search
-        $scope.search = function(search) {
+        $scope.search = function (search) {
             $location.url("/search/" + search);
         };
         //search
@@ -1076,8 +1076,8 @@ phonecatControllers.controller('search',
 
 
 phonecatControllers.controller('lightbox',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
-        $scope.removelightbox = function() {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+        $scope.removelightbox = function () {
             TemplateService.lightboximage = "";
         };
     });
@@ -1086,7 +1086,7 @@ phonecatControllers.controller('lightbox',
 
 
 phonecatControllers.controller('searchpage',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -1098,11 +1098,11 @@ phonecatControllers.controller('searchpage',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
@@ -1113,7 +1113,7 @@ phonecatControllers.controller('searchpage',
 
         //searching
         $scope.searchresult = $routeParams.search;
-        var searching = function(data, status) {
+        var searching = function (data, status) {
             $scope.find = data;
         };
         MainJson.seach($routeParams.search).success(searching);
@@ -1122,7 +1122,7 @@ phonecatControllers.controller('searchpage',
 
 
 phonecatControllers.controller('lookbook',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
 
 
 
@@ -1137,11 +1137,11 @@ phonecatControllers.controller('lookbook',
         $scope.firstshow = "firstshow";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = data.email;
@@ -1149,7 +1149,7 @@ phonecatControllers.controller('lookbook',
         };
         MainJson.authenticate().success(authenticate);
         //authenticate
-        $scope.changeactivelookbook = function(id) {
+        $scope.changeactivelookbook = function (id) {
             $scope.firstshow = "";
             console.log(id);
             for (var i = 0; i < $scope.lookbookimages.length; i++) {
@@ -1189,7 +1189,7 @@ phonecatControllers.controller('lookbook',
 
 
 phonecatControllers.controller('checkout',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -1220,10 +1220,10 @@ phonecatControllers.controller('checkout',
         $scope.paymentorderid = 0;
 
 
-        $scope.focusout = function() {
+        $scope.focusout = function () {
             console.log("out focus");
         };
-        var paymentcomplete = function(data, status) {
+        var paymentcomplete = function (data, status) {
             console.log(data);
             MainJson.orderemail($scope.paymentorderemail, $scope.paymentorderid).success(orderemailsend);
             window.location.href = "http://www.lylaloves.co.uk/#/thankyou";
@@ -1277,14 +1277,14 @@ phonecatControllers.controller('checkout',
                 console.log($scope.cart);
 
                 var totallength = 0;
-                _.each($scope.cart, function(cart) {
+                _.each($scope.cart, function (cart) {
                     totallength += parseInt(cart.qty);
                 });
                 var xproducts = parseInt(data.xproducts);
                 var yproducts = parseInt(data.yproducts);
                 var itter = Math.floor(totallength / xproducts) * yproducts;
                 console.log("ITTER " + itter);
-                var newcart = _.sortBy($scope.cart, function(cart) {
+                var newcart = _.sortBy($scope.cart, function (cart) {
                     cart.price = parseFloat(cart.price);
                     cart.qty2 = parseInt(cart.qty);
                     return parseFloat(cart.price);
@@ -1310,7 +1310,7 @@ phonecatControllers.controller('checkout',
 
 
         //userloginckeckout
-        var getlogin = function(data, status) {
+        var getlogin = function (data, status) {
             if (data != "false") {
                 //$scope.msg = "Login Successful";
                 $location.url("/checkout");
@@ -1319,7 +1319,7 @@ phonecatControllers.controller('checkout',
                 $scope.msg = "Invalid Email Or Password";
             }
         };
-        $scope.userloginckeckout = function(login) {
+        $scope.userloginckeckout = function (login) {
             console.log(login);
             MainJson.loginuser(login.email, login.password).success(getlogin);
         };
@@ -1328,12 +1328,12 @@ phonecatControllers.controller('checkout',
 
 
 
-        $scope.continuebilling = function() {
+        $scope.continuebilling = function () {
             $scope.billinginfo = 1;
             $scope.buttonsvalidate.billing = 1;
         };
 
-        $scope.continueshipping = function() {
+        $scope.continueshipping = function () {
 
             //$scope.errorvalid="Fill All Information *";
             //alert($scope.form.firstname);
@@ -1383,7 +1383,7 @@ phonecatControllers.controller('checkout',
 
         };
 
-        $scope.continueshipping1 = function() {
+        $scope.continueshipping1 = function () {
 
             //$scope.errorvalid="Fill All Information *";
             //alert($scope.form.firstname);
@@ -1463,11 +1463,11 @@ phonecatControllers.controller('checkout',
         }
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.isloggedin = 1;
@@ -1483,7 +1483,7 @@ phonecatControllers.controller('checkout',
         //authenticate
 
         $scope.newquantity = [];
-        var showcart = function(data, status) {
+        var showcart = function (data, status) {
             console.log(data);
             $scope.cart = data;
             console.log($scope.cart[0].qty);
@@ -1497,7 +1497,7 @@ phonecatControllers.controller('checkout',
             calcdiscountamount();
         };
         MainJson.getcart().success(showcart);
-        var getsubtotal = function(data, status) {
+        var getsubtotal = function (data, status) {
             console.log(data);
             $scope.subtotal = parseFloat(data);
             calcdiscountamount();
@@ -1508,7 +1508,7 @@ phonecatControllers.controller('checkout',
         MainJson.totalcart().success(getsubtotal);
         $scope.showshippingmethods = 0;
         // free
-        $scope.free = function(country, subtotal, shipping) {
+        $scope.free = function (country, subtotal, shipping) {
             console.log("MAaaaza");
             console.log(country);
             console.log(subtotal);
@@ -1547,7 +1547,7 @@ phonecatControllers.controller('checkout',
             }
 
         };
-        $scope.free2 = function(country, subtotal, shipping) {
+        $scope.free2 = function (country, subtotal, shipping) {
             console.log(country);
             console.log(subtotal);
             console.log(shipping);
@@ -1587,28 +1587,28 @@ phonecatControllers.controller('checkout',
         };
         // free
         $scope.form.shippingcost = 0;
-        $scope.changeshippingcost = function(value) {
+        $scope.changeshippingcost = function (value) {
             console.log(value);
             $scope.form.shippingcost = value;
         };
 
 
 
-        $scope.deletecart = function(id) {
+        $scope.deletecart = function (id) {
             $scope.subtotal = MainJson.deletecart(id);
 
         };
-        $scope.savecart = function(id, quantity) {
+        $scope.savecart = function (id, quantity) {
             $scope.subtotal = MainJson.savecart(id, quantity);
         };
-        var orderemailsend = function(data, status) {
+        var orderemailsend = function (data, status) {
             console.log(data);
             //alert("Email send");
         };
 
         // order id and email after payment
         $scope.payment = {};
-        var orderplaced = function(data, status) {
+        var orderplaced = function (data, status) {
             console.log("place order returns");
             console.log(data);
             if (data != "0") {
@@ -1619,7 +1619,7 @@ phonecatControllers.controller('checkout',
                 $scope.payment.amount = $scope.subtotal;
             }
         };
-        $scope.continuepayment = function(form) {
+        $scope.continuepayment = function (form) {
             $scope.paywithcard = 1;
             $scope.buttonsvalidate.payment = 1;
             $scope.form.finalamount = $scope.subtotal;
@@ -1632,7 +1632,7 @@ phonecatControllers.controller('checkout',
             MainJson.placeorder(form).success(orderplaced);
         }
 
-        $scope.placeorder = function(form) {
+        $scope.placeorder = function (form) {
             console.log($scope.cart);
             //MainJson.orderitem($scope.cart);
             $scope.form.cart = $scope.cart;
@@ -1641,7 +1641,7 @@ phonecatControllers.controller('checkout',
             MainJson.placeorder(form).success(orderplaced);
         };
 
-        $scope.submitcheckout = function(form, amount) {
+        $scope.submitcheckout = function (form, amount) {
             form.orderid = $scope.paymentorderid;
             $scope.payment = {};
             $scope.payment.orderid = form.orderid;
@@ -1653,10 +1653,10 @@ phonecatControllers.controller('checkout',
     });
 
 phonecatControllers.controller('headerctrl',
-    function($scope, TemplateService, MainJson) {
+    function ($scope, TemplateService, MainJson) {
         $scope.template = TemplateService;
         $scope.testing = "testing";
-        var fillemail = function(data, status) {
+        var fillemail = function (data, status) {
             $scope.email = data.email;
         };
 
@@ -1664,13 +1664,13 @@ phonecatControllers.controller('headerctrl',
 
     });
 phonecatControllers.controller('slider',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location) {
         $scope.template = TemplateService;
 
 
-        $scope.placelimited = function(limited) {
+        $scope.placelimited = function (limited) {
 
-            var limitedorder = function(data, status) {
+            var limitedorder = function (data, status) {
                 if (data != "false") {
                     // alert("Order Placed");
                     TemplateService.lightboximage = "img/giveawaypopup.jpg";
@@ -1693,7 +1693,7 @@ phonecatControllers.controller('slider',
     });
 
 phonecatControllers.controller('category',
-    function($scope, $routeParams, TemplateService, MainJson, $rootScope, $location, $anchorScroll) {
+    function ($scope, $routeParams, TemplateService, MainJson, $rootScope, $location, $anchorScroll) {
         $scope.iscategory = "category";
 
         //$scope.firstloadclass = TemplateService.firstload;
@@ -1721,65 +1721,65 @@ phonecatControllers.controller('category',
         //        }
         console.log($routeParams.CategoryId);
         switch ($routeParams.CategoryId) {
-            case "AD-KADA":
-                {
-                    TemplateService.title = "Stunning American Diamond";
-                    TemplateService.metadescription = "Sparkling the soul of beauty with handpicked American diamonds to design the International designer jewellery necklace to the beautiful earrings";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online,artificial jewellery online , diamond kada, kada bangles, diamond kada bangle, ladies kada, kada online shopping";
-                    $scope.hititle = "Stunning American Diamond";
-                }
-                break;
-            case "Earring":
-                {
-                    TemplateService.title = "International Italian";
-                    TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
-                }
-                break;
-            case "Italian-kada":
-                {
-                    TemplateService.title = "International Italian";
-                    TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
-                }
-                break;
-            case "Italian-finger-ring":
-                {
-                    TemplateService.title = "International Italian";
-                    TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
-                }
-                break;
+        case "AD-KADA":
+            {
+                TemplateService.title = "Stunning American Diamond";
+                TemplateService.metadescription = "Sparkling the soul of beauty with handpicked American diamonds to design the International designer jewellery necklace to the beautiful earrings";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online,artificial jewellery online , diamond kada, kada bangles, diamond kada bangle, ladies kada, kada online shopping";
+                $scope.hititle = "Stunning American Diamond";
+            }
+            break;
+        case "Earring":
+            {
+                TemplateService.title = "International Italian";
+                TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+            }
+            break;
+        case "Italian-kada":
+            {
+                TemplateService.title = "International Italian";
+                TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+            }
+            break;
+        case "Italian-finger-ring":
+            {
+                TemplateService.title = "International Italian";
+                TemplateService.metadescription = "Bello! The only word which can describe this elegant collection of fashion jewellery , exclusively design  for international feel";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online earrings online, fashion earrings, earrings for girls, diamond earring, online shopping earrings, rings for women, ring designs, rings online, kada design, online Kada";
+            }
+            break;
 
-            case "AQ-VICTORIA-SET":
-                {
-                    TemplateService.title = "Beautiful Antique Jewellery";
-                    TemplateService.metadescription = "Something never fades away, setting the classy look in this specially handcrafted Antique Jewellery collection will mirriorify your dynasty look";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Necklace Set, Antique necklace set, Antique set, antique jewellery sets, antique necklace sets online";
-                }
-                break;
-            case "Bridal-Bangle":
-                {
-                    TemplateService.title = "";
-                    TemplateService.metadescription = "The today’s women is free, independent & confident so our silver jewellery corporate collection too…";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online, Bangle, bridal bangles online, bridal bangles, wedding bangle, bangles for bride, bangle gold, gold bangle for women";
-                }
-                break;
-            case "MICRO-JUDA":
-                {
-                    TemplateService.title = "Magnificent Micro Jewellery";
-                    TemplateService.metadescription = "Micro Magnifico! The precise collection of Micro imitation jewellery is heart pumping & it will heavy the beauty.";
-                    TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online,I ndian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Micro Juda, fancy juda, online micro  juda.";
-                }
-                break;
+        case "AQ-VICTORIA-SET":
+            {
+                TemplateService.title = "Beautiful Antique Jewellery";
+                TemplateService.metadescription = "Something never fades away, setting the classy look in this specially handcrafted Antique Jewellery collection will mirriorify your dynasty look";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Necklace Set, Antique necklace set, Antique set, antique jewellery sets, antique necklace sets online";
+            }
+            break;
+        case "Bridal-Bangle":
+            {
+                TemplateService.title = "";
+                TemplateService.metadescription = "The today’s women is free, independent & confident so our silver jewellery corporate collection too…";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online, Bangle, bridal bangles online, bridal bangles, wedding bangle, bangles for bride, bangle gold, gold bangle for women";
+            }
+            break;
+        case "MICRO-JUDA":
+            {
+                TemplateService.title = "Magnificent Micro Jewellery";
+                TemplateService.metadescription = "Micro Magnifico! The precise collection of Micro imitation jewellery is heart pumping & it will heavy the beauty.";
+                TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online,I ndian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Micro Juda, fancy juda, online micro  juda.";
+            }
+            break;
         }
-        $scope.gototop = function() {
+        $scope.gototop = function () {
             $location.hash('totop');
             $anchorScroll();
         };
         $scope.loginlogouttext = "Login";
         //get user country
-        var getcountry = function(data, status) {
+        var getcountry = function (data, status) {
             console.log("get country");
             console.log(data);
         };
@@ -1796,10 +1796,10 @@ phonecatControllers.controller('category',
         $scope.usercountry = "India";
         //filters
 
-        $scope.showfilter = function() {
+        $scope.showfilter = function () {
             $scope.filtersshow = true;
         };
-        $scope.hidefilter = function() {
+        $scope.hidefilter = function () {
             $scope.filtersshow = false;
         };
         $scope.filter = MainJson.getfilters();
@@ -1835,24 +1835,24 @@ phonecatControllers.controller('category',
             active: ""
         }];
 
-        $scope.filtercolor = function(color) {
+        $scope.filtercolor = function (color) {
             $scope.filter.color = color;
         };
 
-        $scope.filtersave = function(filter) {
+        $scope.filtersave = function (filter) {
             MainJson.setfilter(filter);
             console.log(MainJson.getfilters());
             $scope.products = [];
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
 
-        $scope.orderbychange = function(filter) {
+        $scope.orderbychange = function (filter) {
             MainJson.setfilter(filter);
             $scope.products = [];
             MainJson.getproductbycategory($routeParams.CategoryId).success(categorysuccesspush);
         };
 
-        $scope.filterclear = function() {
+        $scope.filterclear = function () {
             $scope.filter = {
                 color: "",
                 pricemin: 0,
@@ -1865,7 +1865,7 @@ phonecatControllers.controller('category',
 
 
         //  SEARCH PRODUCT
-        $scope.searchclick = function(search) {
+        $scope.searchclick = function (search) {
             console.log(search);
             $scope.search = search;
             $scope.products = [];
@@ -1873,11 +1873,11 @@ phonecatControllers.controller('category',
         }
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldata = data;
@@ -1891,7 +1891,7 @@ phonecatControllers.controller('category',
         $scope.products = [];
         $scope.productsheight = {};
         $scope.shouldscroll = false;
-        var categorysuccesspush = function(data, status) {
+        var categorysuccesspush = function (data, status) {
             console.log("category products");
             console.log(data);
             for (var i = 0; i < data.queryresult.length; i++) {
@@ -1904,7 +1904,7 @@ phonecatControllers.controller('category',
             }
         }
         var oldpage = 0;
-        $scope.addMoreItems = function() {
+        $scope.addMoreItems = function () {
             console.log("ADD MORE: " + oldpage);
             if (oldpage != $scope.form.pageno) {
                 oldpage = $scope.form.pageno;
@@ -1917,7 +1917,7 @@ phonecatControllers.controller('category',
 
         $scope.addMoreItems();
 
-        $scope.$on('$viewContentLoaded', function() {
+        $scope.$on('$viewContentLoaded', function () {
 
 
 
@@ -1925,7 +1925,7 @@ phonecatControllers.controller('category',
     });
 
 phonecatControllers.controller('product',
-    function($scope, $routeParams, TemplateService, MainJson, $timeout, $location, ngDialog) {
+    function ($scope, $routeParams, TemplateService, MainJson, $timeout, $location, ngDialog) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -1941,18 +1941,18 @@ phonecatControllers.controller('product',
 
         //  MODAL POPUP
         $scope.showModal = false;
-        $scope.toggleModal = function() {
+        $scope.toggleModal = function () {
             $scope.showModal = !$scope.showModal;
         };
 
 
 
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.accesslevel = data.accesslevel;
@@ -1963,31 +1963,31 @@ phonecatControllers.controller('product',
         MainJson.authenticate().success(authenticate);
         //authenticate
         //nextprevious
-        var changelocation = function(data) {
+        var changelocation = function (data) {
             $location.url("/product/" + data.id);
         };
-        $scope.next = function(product) {
+        $scope.next = function (product) {
             MainJson.nextproduct(product, 1).success(changelocation);
         };
-        $scope.previous = function(product) {
+        $scope.previous = function (product) {
             MainJson.nextproduct(product, 0).success(changelocation);
         };
         //nestprevious
         $scope.wishlistlogin = false;
         $scope.wishlistadded = false;
-        var getwishlist = function(data, status) {
+        var getwishlist = function (data, status) {
             console.log(data);
             $scope.wish = data;
             $scope.wishlistadded = true;
         };
-        $scope.addwishlist = function(id) {
+        $scope.addwishlist = function (id) {
             if ($scope.id) {
                 MainJson.addtowishlist(id, $routeParams.ProductId).success(getwishlist);
             } else {
                 $scope.wishlistlogin = true;
             }
         };
-        var productsuccess = function(data, status) {
+        var productsuccess = function (data, status) {
             if ($scope.accesslevel == 3) {
                 $scope.rate = data.product.wholesaleprice;
             } else {
@@ -2003,11 +2003,11 @@ phonecatControllers.controller('product',
             //            $location.replace();
         };
         MainJson.getproductdetails($routeParams.ProductId).success(productsuccess);
-        var cartt = function(data, status) {
-        
+        var cartt = function (data, status) {
+
             cartglobal.cartchange();
         };
-        $scope.addtocart = function(id, name, price, quantity) {
+        $scope.addtocart = function (id, name, price, quantity) {
             // console.log(id+name+price+quantity);
             TemplateService.cartclicked = "animated swing";
 
@@ -2027,30 +2027,30 @@ phonecatControllers.controller('product',
             //                });
             //            $scope.addedtocart = "show";
         };
-        var addedtowaitinglist = function(data) {
+        var addedtowaitinglist = function (data) {
             console.log(data);
             $scope.addedtowaitinglist = true;
         };
         $scope.addedtowaitinglist = false;
-        $scope.addtowaitinglist = function(product, email) {
+        $scope.addtowaitinglist = function (product, email) {
             MainJson.addtowaitinglist(product, email).success(addedtowaitinglist);
         };
 
-        $scope.$on("$includeContentLoaded", function() {
+        $scope.$on("$includeContentLoaded", function () {
 
             // stLight.options({publisher: "d145c5ea-9796-4078-8488-dc6407ac1d79", doNotHash: false, doNotCopy: false, hashAddressBar: true});
 
             TemplateService.firsttimeloaded();
             $(".zoomContainer").remove();
-            $(".pulseanimation").hover(function() {
+            $(".pulseanimation").hover(function () {
                 $(this).addClass("animated pulse");
-            }, function() {
+            }, function () {
                 $(this).removeClass("animated pulse");
             });
 
-            $(".tadaanimation").hover(function() {
+            $(".tadaanimation").hover(function () {
                 $(this).addClass("animated tada");
-            }, function() {
+            }, function () {
                 $(this).removeClass("animated tada");
             });
         });
@@ -2058,7 +2058,7 @@ phonecatControllers.controller('product',
     });
 
 phonecatControllers.controller('delivery',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2069,11 +2069,11 @@ phonecatControllers.controller('delivery',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2085,7 +2085,7 @@ phonecatControllers.controller('delivery',
     });
 
 phonecatControllers.controller('wishlist',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2096,14 +2096,14 @@ phonecatControllers.controller('wishlist',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var userwishlist = function(data, status) {
+        var userwishlist = function (data, status) {
             $scope.find = data;
         };
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
                 $scope.alldata = data;
@@ -2120,7 +2120,7 @@ phonecatControllers.controller('wishlist',
 
 
 phonecatControllers.controller('returns',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2131,11 +2131,11 @@ phonecatControllers.controller('returns',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2147,7 +2147,7 @@ phonecatControllers.controller('returns',
     });
 
 phonecatControllers.controller('conditions',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2158,11 +2158,11 @@ phonecatControllers.controller('conditions',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2174,7 +2174,7 @@ phonecatControllers.controller('conditions',
     });
 
 phonecatControllers.controller('faq',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2185,11 +2185,37 @@ phonecatControllers.controller('faq',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+phonecatControllers.controller('testimonal',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Testimonal");
+        TemplateService.content = "views/testimonal.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2201,7 +2227,7 @@ phonecatControllers.controller('faq',
     });
 
 phonecatControllers.controller('policy',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2212,11 +2238,11 @@ phonecatControllers.controller('policy',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2228,7 +2254,7 @@ phonecatControllers.controller('policy',
     });
 
 phonecatControllers.controller('sitemap',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2239,11 +2265,11 @@ phonecatControllers.controller('sitemap',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2255,7 +2281,7 @@ phonecatControllers.controller('sitemap',
     });
 
 phonecatControllers.controller('celebrities',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2266,11 +2292,11 @@ phonecatControllers.controller('celebrities',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2281,7 +2307,7 @@ phonecatControllers.controller('celebrities',
 
     });
 phonecatControllers.controller('feedback',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2292,11 +2318,11 @@ phonecatControllers.controller('feedback',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2307,7 +2333,7 @@ phonecatControllers.controller('feedback',
 
     });
 phonecatControllers.controller('contactus',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2318,11 +2344,11 @@ phonecatControllers.controller('contactus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2333,7 +2359,7 @@ phonecatControllers.controller('contactus',
 
     });
 phonecatControllers.controller('aboutus',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2344,11 +2370,11 @@ phonecatControllers.controller('aboutus',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2358,14 +2384,14 @@ phonecatControllers.controller('aboutus',
         //authenticate
         $scope.about = "bold";
 
-        $scope.changebrand = function() {
+        $scope.changebrand = function () {
             $scope.brand = "bold";
             $scope.about = "";
             $scope.fashion = "";
             $scope.services = "";
 
         }
-        $scope.changeabout = function() {
+        $scope.changeabout = function () {
             $scope.brand = "";
             $scope.about = "bold";
             $scope.fashion = "";
@@ -2373,7 +2399,7 @@ phonecatControllers.controller('aboutus',
 
 
         }
-        $scope.changefashion = function() {
+        $scope.changefashion = function () {
             $scope.brand = "";
             $scope.about = "";
             $scope.fashion = "bold";
@@ -2381,7 +2407,7 @@ phonecatControllers.controller('aboutus',
 
 
         }
-        $scope.changeservices = function() {
+        $scope.changeservices = function () {
             $scope.brand = "";
             $scope.about = "";
             $scope.fashion = "";
@@ -2392,7 +2418,7 @@ phonecatControllers.controller('aboutus',
 
     });
 phonecatControllers.controller('myaccount',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2403,11 +2429,11 @@ phonecatControllers.controller('myaccount',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2419,7 +2445,7 @@ phonecatControllers.controller('myaccount',
         //authenticate
         $scope.info = "bolds";
 
-        $scope.changeinfo = function() {
+        $scope.changeinfo = function () {
             $scope.info = "bolds";
             $scope.chngpass = "";
             $scope.myorders = "";
@@ -2427,7 +2453,7 @@ phonecatControllers.controller('myaccount',
             $scope.listingmsg = "";
         }
 
-        $scope.changechngpass = function() {
+        $scope.changechngpass = function () {
             $scope.info = "";
             $scope.chngpass = "bolds";
             $scope.myorders = "";
@@ -2435,14 +2461,14 @@ phonecatControllers.controller('myaccount',
             $scope.listingmsg = "";
         }
 
-        $scope.changemyorders = function() {
+        $scope.changemyorders = function () {
             $scope.info = "";
             $scope.chngpass = "";
             $scope.myorders = "bolds";
             $scope.ordertracing = "";
             $scope.listingmsg = "";
         }
-        $scope.changeordertracing = function() {
+        $scope.changeordertracing = function () {
             $scope.info = "";
             $scope.chngpass = "";
             $scope.myorders = "";
@@ -2460,7 +2486,7 @@ phonecatControllers.controller('myaccount',
         $scope.trace = [];
 
         //  UPDATE USER
-        var updateusersuccess = function(data, status) {
+        var updateusersuccess = function (data, status) {
             console.log(data);
             if (data == "false") {
                 $scope.listingmsg = "Enable to Update Profile";
@@ -2470,7 +2496,7 @@ phonecatControllers.controller('myaccount',
                 $scope.listingclass = "alert-success";
             }
         }
-        $scope.updateUser = function(user) {
+        $scope.updateUser = function (user) {
             console.log(user);
             $scope.allvalidation = [{
                 field: $scope.user.firstname,
@@ -2488,14 +2514,14 @@ phonecatControllers.controller('myaccount',
         }
 
         //  GET USER DETAILS
-        var usersuccess = function(data, status) {
+        var usersuccess = function (data, status) {
             $scope.user = data;
             $scope.pass.email = data.email;
         }
         MainJson.getuserbyid().success(usersuccess);
 
         //  CHANGE PASSWORD
-        var passwordsuccess = function(data, status) {
+        var passwordsuccess = function (data, status) {
             if (data != "1") {
                 $scope.listingmsg = "Enable to change password";
                 $scope.listingclass = "alert-danger";
@@ -2504,7 +2530,7 @@ phonecatControllers.controller('myaccount',
                 $scope.listingclass = "alert-success";
             }
         }
-        $scope.changepassword = function(pass) {
+        $scope.changepassword = function (pass) {
             $scope.allvalidation = [{
                 field: $scope.pass.email,
                 validation: ""
@@ -2533,51 +2559,51 @@ phonecatControllers.controller('myaccount',
         //  GET USER ORDER
         $scope.form = {};
         $scope.form.pag = "1";
-        $scope.getNumber = function(num) {
+        $scope.getNumber = function (num) {
             return new Array(num);
         }
-        $scope.next = function() {
+        $scope.next = function () {
             //            console.log(index);
             if ($scope.form.pag < $scope.orders.lastpage) {
                 $scope.form.pag = parseInt($scope.form.pag) + 1;
                 MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
-        $scope.pervious = function() {
+        $scope.pervious = function () {
             if ($scope.form.pag >= $scope.orders.lastpage) {
                 $scope.form.pag = parseInt($scope.form.pag) - 1;
                 MainJson.getorder($scope.form.pag).success(ordersuccess);
             }
         }
-        $scope.pagchange = function(pag) {
+        $scope.pagchange = function (pag) {
             console.log($scope.form.pag);
             MainJson.getorder(pag).success(ordersuccess);
         }
 
 
-        var ordersuccess = function(data, status) {
+        var ordersuccess = function (data, status) {
             //            console.log(data);
             $scope.orders = data;
             $scope.allorders = data.queryresult;
         }
         MainJson.getorder($scope.form.pag).success(ordersuccess);
-        $scope.$watch('pag', function() {
+        $scope.$watch('pag', function () {
             console.log($scope.form.pag);
             $scope.form.pag = $scope.form.pag;
         });
 
         //  TRACE ORDER
-        var tracesuccess = function(data, status) {
+        var tracesuccess = function (data, status) {
             //            console.log(data);
             $scope.trace = data;
         }
-        $scope.tracemyorder = function(order) {
+        $scope.tracemyorder = function (order) {
             MainJson.getordertrace(order).success(tracesuccess);
         }
 
     });
 phonecatControllers.controller('productcare',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2588,11 +2614,11 @@ phonecatControllers.controller('productcare',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2603,7 +2629,7 @@ phonecatControllers.controller('productcare',
 
     });
 phonecatControllers.controller('ship-return',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2614,11 +2640,11 @@ phonecatControllers.controller('ship-return',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2629,7 +2655,7 @@ phonecatControllers.controller('ship-return',
 
     });
 phonecatControllers.controller('collections',
-    function($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
@@ -2640,11 +2666,11 @@ phonecatControllers.controller('collections',
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";
         //authenticate
-        $scope.logout = function() {
+        $scope.logout = function () {
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        var authenticate = function(data, status) {
+        var authenticate = function (data, status) {
             if (data != "false") {
                 $scope.alldata = data;
                 $scope.loginlogouttext = "Logout";
@@ -2655,16 +2681,16 @@ phonecatControllers.controller('collections',
     });
 
 phonecatControllers.controller('zoomCtrl',
-    function($scope) {
-        $scope.switchImage = function(imageSrc) {
+    function ($scope) {
+        $scope.switchImage = function (imageSrc) {
             console.log('change image to: ' + imageSrc);
             $scope.imageSrc = imageSrc;
         };
     }
 );
 phonecatControllers.controller('searchbuttonCtrl',
-    function($scope, $location) {
-        $scope.searchproducts = function(text) {
+    function ($scope, $location) {
+        $scope.searchproducts = function (text) {
             $location.url("/search/" + text);
         };
     }
