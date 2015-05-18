@@ -1546,8 +1546,10 @@ h2.articleheader {
 }
 
 video#video {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -180px;
 }
 
 .billing {
@@ -1609,7 +1611,25 @@ button.btnss-primary {
     margin-top: -10px;
     margin-left: 0px;
 }
+.popup {
+  background: url('../img/popbg.png')no-repeat center;
+  width: 910px;
+  height: 500px;
+  margin: 0 auto;
+}
+a.popup-email {
+    font-size: 18px;
+    color: #c38d64;
+}
 
+a.popup-join {
+    font-size: 18px;    color: #c38d64;
+}
+
+.poppup-cont1 {
+    width: 600px;
+    margin: 0 auto;
+}
 .billing .panel-heading {
     background-color: #fcfcfc;
 }
@@ -2410,11 +2430,11 @@ a.right.carousel-control {
 }
 
 .icoo-size {
-    font-size: 28px;
-    position: absolute;
-    right: -35px;
-    bottom: 30px;
-    color: #E5E4E2;
+  font-size: 34px;
+  position: absolute;
+  right: -40px;
+  bottom: 28px;
+  color: #E5E4E2;
 }
 
 .right-allign {
@@ -2451,14 +2471,6 @@ a.right.carousel-control {
     position: relative;
     padding-bottom: 20px;
     padding-top: 58px;
-}
-
-.icoo-size {
-    font-size: 28px;
-    position: absolute;
-    right: -35px;
-    bottom: 30px;
-    color: #E5E4E2;
 }
 
 .right-allign {
