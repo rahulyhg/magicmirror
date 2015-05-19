@@ -1612,10 +1612,11 @@ button.btnss-primary {
     margin-left: 0px;
 }
 .popup {
-  background: url('../img/popbg.png')no-repeat center;
-  width: 910px;
+  background: url('/img/popbg.png')no-repeat center;
+  width: 920px;
   height: 500px;
   margin: 0 auto;
+  background-size: cover;
 }
 a.popup-email {
     font-size: 18px;
@@ -2231,12 +2232,13 @@ input.input-forget {
     background: rgba(255, 255, 255, 0.75);
     top: 50%;
     left: 50%;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    width: 33%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+/*    width: 72%;*/
+/*    height: 500px;*/
 }
 
 .ngdialog-content h2 {
@@ -2473,6 +2475,46 @@ a.right.carousel-control {
     padding-top: 58px;
 }
 
+.text-center.popupimg {
+    padding-top: 40px;
+}
+
+p.text-center.color {
+    font-size: 20px;   color: #c38d64;
+    padding: 25px 0;
+}
+
+.poppup-cont.text-center {   color: #c38d64;
+    padding-top: 31px;
+}
+
+.poppup-cont.text-center h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.poppup-cont.text-center h3 {
+    font-weight: 500;
+}
+
+p.text-center.on-center {
+    font-size: 20px;   color: #c38d64;
+}
+
+p.text-center.on-center a i {
+    color: #c38d64;
+    padding-right: 5px;
+    font-weight: 600;
+}
+
+p.text-center.on-center span {
+    padding-right: 10px;
+}
 .right-allign {
     text-align: right!important;
+}
+
+.poppup-cont1 {
+  width: 570px;
+  margin: 0 auto;
 }

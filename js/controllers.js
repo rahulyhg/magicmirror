@@ -2,7 +2,7 @@ var cartglobal = {};
 
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog', 'ui.bootstrap']);
 phonecatControllers.controller('home',
-    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location,ngDialog) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         //        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
@@ -44,7 +44,13 @@ phonecatControllers.controller('home',
             "name": "SAKSHI CHAWLA",
             //            "email":"chawlasakshi70@yahoo.in"
         }];
-
+//popup registration
+//     $scope.init = function () {
+//                ngDialog.open({
+//                template: 'views/popup.html',
+//                controller: 'home'
+//            });
+//     }
 
 
         // video only
@@ -1771,7 +1777,13 @@ phonecatControllers.controller('category',
                 TemplateService.metadescription = "Micro Magnifico! The precise collection of Micro imitation jewellery is heart pumping & it will heavy the beauty.";
                 TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online,I ndian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Micro Juda, fancy juda, online micro  juda.";
             }
-            break;
+            break; 
+            default:
+                {
+    TemplateService.title = "Exclusive Art Jewellery";
+        TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
+        TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
+                }
         }
         $scope.gototop = function () {
             $location.hash('totop');
