@@ -53,5 +53,11 @@ handlers:
 - url: /redirectcc/(.+)
   script: redirectcc/index.php  
 
+- url: /servepublic
+  script: servepublic/index.php
+
+- url: /servepublic/(.+)
+  script: servepublic/index.php  
+  
 - url: /.*
   script: index.php

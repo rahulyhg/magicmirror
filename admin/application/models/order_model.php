@@ -442,17 +442,32 @@ class Order_model extends CI_Model
 		ORDER BY `order`.`timestamp` DESC");
 
        $content= $this->dbutil->csv_from_result($query);
+        $timestamp=new DateTime();
+        $timestamp=$timestamp->format('Y-m-d_H.i.s');
         //$data = 'Some file data';
 
-        if ( ! write_file('./csvgenerated/orderfile.csv', $content))
-        {
-             echo 'Unable to write the file';
-        }
-        else
-        {
-            redirect(base_url('csvgenerated/orderfile.csv'), 'refresh');
-             echo 'File written!';
-        }
+//        if ( ! write_file('./csvgenerated/retailerfilefromdashboard.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/retailerfilefromdashboard.csv'), 'refresh');
+//             echo 'File written!';
+//        }
+        file_put_contents("gs://magicmirroruploads/orders_$timestamp.csv", $content);
+		redirect("http://magicmirror.in/servepublic?name=orders_$timestamp.csv", 'refresh');
+        //$data = 'Some file data';
+//magicmirroruploads
+//        if ( ! write_file('./csvgenerated/orderfile.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/orderfile.csv'), 'refresh');
+//             echo 'File written!';
+//        }
 	}
     function exportorderitemcsv()
 	{
@@ -463,17 +478,33 @@ class Order_model extends CI_Model
 		INNER JOIN `product` ON `product`.`id`=`orderitems`.`product`");
 
        $content= $this->dbutil->csv_from_result($query);
+        
+        $timestamp=new DateTime();
+        $timestamp=$timestamp->format('Y-m-d_H.i.s');
         //$data = 'Some file data';
 
-        if ( ! write_file('./csvgenerated/orderitemfile.csv', $content))
-        {
-             echo 'Unable to write the file';
-        }
-        else
-        {
-            redirect(base_url('csvgenerated/orderitemfile.csv'), 'refresh');
-             echo 'File written!';
-        }
+//        if ( ! write_file('./csvgenerated/retailerfilefromdashboard.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/retailerfilefromdashboard.csv'), 'refresh');
+//             echo 'File written!';
+//        }
+        file_put_contents("gs://magicmirroruploads/orderItems_$timestamp.csv", $content);
+		redirect("http://magicmirror.in/servepublic?name=orderItems_$timestamp.csv", 'refresh');
+        //$data = 'Some file data';
+
+//        if ( ! write_file('./csvgenerated/orderitemfile.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/orderitemfile.csv'), 'refresh');
+//             echo 'File written!';
+//        }
 	}
     
 //	function getorderitemforchange($id)
