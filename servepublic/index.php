@@ -6,7 +6,7 @@ header('Content-Type: text/csv');
 $name=$_GET["name"];
 header('Content-Disposition: attachment; filename='.$name);
 //$bucket="magicmirroruploads/uploads";
-CloudStorageTools::serve("gs://magicmirroruploads");
+CloudStorageTools::serve("gs://magicmirroruploads/$name");
 
 
 

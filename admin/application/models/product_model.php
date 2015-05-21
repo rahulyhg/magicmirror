@@ -521,24 +521,28 @@ class Product_model extends CI_Model
     function exportproductcsv()
 	{
 		$this->load->dbutil();
-		$query=$this->db->query("SELECT `product`.`id`AS `Parentid`,`product`.`id`AS `Productid`, `product`.`name`,CONCAT('http://www.lylaloves.co.uk/#/product/',`product`.`id`) as `Permalink` ,CONCAT('http://www.lylaloves.co.uk/#/product/',`productimage`.`image`) as `ImageURL` ,`product`.`description`,'0000-00-00' AS 'productpublished','0000-00-00' AS 'productmodified','Item' AS 'Type', `product`.`price`,`category`.`name` AS `Category`,`product`. `quantity` ,'NO' AS 'Allow Backorders'
-FROM `product`
-LEFT OUTER JOIN `productimage` ON `productimage`.`product`=`product`.`id`
-LEFT OUTER JOIN `productcategory` ON `productcategory`.`product`=`product`.`id`
-LEFT OUTER JOIN `category` ON `productcategory`.`category`=`category`.`id`");
+		$query=$this->db->query("SELECT  `product`.`id`  AS `id` ,  `product`.`name`  AS `name` ,  `product`.`sku`  AS `sku` ,  `product`.`url`  AS `url` ,  `product`.`price`  AS `price` ,  `product`.`wholesaleprice`  AS `wholesaleprice` ,  `product`.`firstsaleprice`  AS `firstsaleprice` ,  `product`.`secondsaleprice`  AS `secondsaleprice` ,  `product`.`specialpriceto`  AS `specialpriceto` ,  `product`.`specialpricefrom`  AS `specialpricefrom` , GROUP_CONCAT(`productimage`.`image`) AS `image`, GROUP_CONCAT(`category`.`name`) AS `category`, `product`.`quantity`  AS `quantity` 
+FROM `product` 
+INNER JOIN `productcategory` ON `product`.`id`=`productcategory`.`product` 
+INNER JOIN `category` ON `category`.`id`=`productcategory`.`category` 
+LEFT OUTER JOIN `productimage` ON `productimage`.`product`=`product`.`id` 
+GROUP BY `product`.`id` ORDER BY  `product`.`id` DESC");
 
        $content= $this->dbutil->csv_from_result($query);
         //$data = 'Some file data';
-
-        if ( ! write_file('./csvgenerated/productfile.csv', $content))
-        {
-             echo 'Unable to write the file';
-        }
-        else
-        {
-            redirect(base_url('csvgenerated/productfile.csv'), 'refresh');
-             echo 'File written!';
-        }
+$timestamp=new DateTime();
+        $timestamp=$timestamp->format('Y-m-d_H.i.s');
+        file_put_contents("gs://magicmirroruploads/products_$timestamp.csv", $content);
+		redirect("http://magicmirror.in/servepublic?name=products_$timestamp.csv", 'refresh');
+//        if ( ! write_file('./csvgenerated/productfile.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/productfile.csv'), 'refresh');
+//             echo 'File written!';
+//        }
 //		file_put_contents("gs://lylafiles/product_$timestamp.csv", $content);
 //		redirect("http://lylaloves.co.uk/servepublic?name=product_$timestamp.csv", 'refresh');
 	}

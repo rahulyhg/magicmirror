@@ -541,23 +541,26 @@ class User_model extends CI_Model
     function exportusercsv()
 	{
 		$this->load->dbutil();
-		$query=$this->db->query("SELECT `user`.`id` as `id`,`user`.`name` as `name`,`user`.`firstname` as `firstname`,`user`.`lastname` as `lastname`,`user`.`status` as `status`,`accesslevel`.`name` as `accesslevel`,`user`.`companyname`,`user`.`country`,`country`.`name` as `countryname` FROM `user`
+		$query=$this->db->query("SELECT `user`.`id` as `id`,`user`.`name` as `name`,`user`.`firstname` as `firstname`,`user`.`lastname` as `lastname`,`user`.`email` as `Email`,`user`.`status` as `status`,`accesslevel`.`name` as `accesslevel`,`user`.`companyname`,`user`.`country`,`country`.`name` as `countryname` FROM `user`
 		LEFT JOIN `accesslevel` ON `user`.`accesslevel` = `accesslevel`.`id`
 		LEFT JOIN `country` ON `user`.`country` = `country`.`id`
 		ORDER BY `user`.`id` ASC");
 
        $content= $this->dbutil->csv_from_result($query);
         //$data = 'Some file data';
-
-        if ( ! write_file('./csvgenerated/userfile.csv', $content))
-        {
-             echo 'Unable to write the file';
-        }
-        else
-        {
-            redirect(base_url('csvgenerated/userfile.csv'), 'refresh');
-             echo 'File written!';
-        }
+$timestamp=new DateTime();
+        $timestamp=$timestamp->format('Y-m-d_H.i.s');
+        file_put_contents("gs://magicmirroruploads/users_$timestamp.csv", $content);
+		redirect("http://magicmirror.in/servepublic?name=users_$timestamp.csv", 'refresh');
+//        if ( ! write_file('./csvgenerated/userfile.csv', $content))
+//        {
+//             echo 'Unable to write the file';
+//        }
+//        else
+//        {
+//            redirect(base_url('csvgenerated/userfile.csv'), 'refresh');
+//             echo 'File written!';
+//        }
 	}
     
 	function getidbyemail($useremail)
