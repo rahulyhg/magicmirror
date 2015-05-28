@@ -7,7 +7,7 @@ class Json extends CI_Controller {
         $email = $limited['limited']['email'];
         $address = $limited['limited']['address'];
         $this->load->library('email');
-        $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
+        $this->email->from('magicmirror.in', 'Lyla');
         $this->email->to($email);
         $this->email->subject('Limited Stock');
         $this->email->message('<img src="http://zibacollection.co.uk/lylalovecouk/img/onformsubmit.jpg" width="560px" height="398px">');

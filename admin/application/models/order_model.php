@@ -534,7 +534,7 @@ WHERE DATE(`order`.`timestamp`) = '$date'")->result();
 //            $email=$this->input->get('email');
 //            $orderid=$this->input->get('orderid');
             $this->load->library('email');
-            $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
+            $this->email->from('magicmirrorm.in', 'Magicmirror');
             $this->email->to($email);
 
             $this->email->subject('Lyla');

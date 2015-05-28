@@ -864,7 +864,7 @@ phonecatControllers.controller('lylaloves',
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
-        TemplateService.changetitle("lylaloves...");
+        TemplateService.changetitle("Magic Mirror");
         $scope.homeactive = "active";
         TemplateService.content = "views/lylaloves.html";
         TemplateService.slider = "";

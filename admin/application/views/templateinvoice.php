@@ -232,7 +232,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 text-center">Thank you for shopping with lyla.</div>
+            <div class="col-xs-12 text-center">Thank you for shopping with Magic Mirror.</div>
         </div>
     </div>
 

@@ -2613,7 +2613,7 @@ class Site extends CI_Controller
                 //$email=$this->input->get('email');
                 $this->load->library('email');
                 $email=$email;
-                $this->email->from('lyla@lylaloves.co.uk', 'Lyla');
+                $this->email->from('magicmirror.in', 'MagicMirror');
                 $this->email->to($email);
                 $this->email->cc('another@another-example.com');
                 $this->email->bcc('them@their-example.com');
