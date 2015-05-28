@@ -5,34 +5,33 @@
                 <ul class="nav nav-pills mainmenu" ng-class="ishome">
 
                     <li>
-                        <a  ng-click="template.gourl('/aboutus');">Designer</a>
-
+                        <a ng-click="template.gourl('/aboutus');">Designer</a>
                     </li>
+
                     <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
                         <a>Collections</a>
                         <div class="megamenu" ng-include src="submenuval[0]" ng-show="submenu[0]">
                         </div>
-
                     </li>
 
                     <li ng-mouseover="showsub(1)" ng-mouseleave="hidesub(1)" style="position:static;" class="magic-bg">
-                        <a>Miss Universe</a>
+                        <a href="">Miss Universe</a>
                         <div class="megamenu" ng-include src="submenuval[1]" ng-show="submenu[1]">
                         </div>
                     </li>
 
                     <li>
-                        <a class=""  ng-click="template.gourl('/contact');">Store Locator</a>
-
+                        <a class="" ng-click="template.gourl('/contact');">Store Locator</a>
                     </li>
+
                     <li class="celebrity">
-                        <a class=""  ng-click="template.gourl('/celebrities');">Celebrity Column</a>
-
-                    </li>       
-                    <li class="pull-right" ng-if="account=='1'">
-                        <a class=""  ng-click="template.gourl('/myaccount');">My Account</a>
-
+                        <a class="" ng-click="template.gourl('/celebrities');">Celebrity Column</a>
                     </li>
+
+                    <li class="pull-right" ng-if="account=='1'">
+                        <a class="" ng-click="template.gourl('/myaccount');">My Account</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -48,7 +47,7 @@
                 <ul class="nav nav-pills mainmenu pull-right" ng-class="ishome">
 
                     <li>
-                        <a  ng-click="template.gourl('/aboutus');">Designer</a>
+                        <a ng-click="template.gourl('/aboutus');">Designer</a>
 
                     </li>
                     <li ng-mouseover="showsub(0)" ng-mouseleave="hidesub(0)" style="position:static;">
@@ -63,51 +62,46 @@
                         </div>
                     </li>
                     <li>
-                        <a class=""  ng-click="template.gourl('/contact');">Store Locator</a>
+                        <a class="" ng-click="template.gourl('/contact');">Store Locator</a>
 
                     </li>
                     <li>
-                        <a class=""  ng-click="template.gourl('/celebrities');">Celebrity Column</a>
+                        <a class="" ng-click="template.gourl('/celebrities');">Celebrity Column</a>
                     </li>
-                                                        <li ng-if="account=='1'">
+                    <li ng-if="account=='1'">
                         <a class="" ng-click="template.gourl('/myaccount');">My Account</a>
 
                     </li>
-                    <!--
-                    <li ng-mouseover="showsub(6)" ng-mouseleave="hidesub(6)">
-                        <a href="#/comingsoon">Gift Card</a>
-                    </li>
--->
                 </ul>
             </div>
         </div>
     </div>
 </div>
-    <script>
-        $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '99999').removeClass('original').hide();
+<script>
+    $('.bgrnd-nav').addClass('original').clone().insertAfter('.bgrnd-nav').addClass('cloned').css('position', 'fixed').css('top', '0').css('margin-top', '0').css('z-index', '99999').removeClass('original').hide();
 
-        scrollIntervalID = setInterval(stickIt, 10);
+    scrollIntervalID = setInterval(stickIt, 10);
 
 
-        function stickIt() {
+    function stickIt() {
 
-            var orgElementPos = $('.original').offset();
-            orgElementTop = orgElementPos.top;
+        var orgElementPos = $('.original').offset();
+        orgElementTop = orgElementPos.top;
 
-            if ($(window).scrollTop() >= (orgElementTop)) {
-                // scrolled past the original position; now only show the cloned, sticky element.
+        if ($(window).scrollTop() >= (orgElementTop)) {
+            // scrolled past the original position; now only show the cloned, sticky element.
 
-                // Cloned element should always have same left position and width as original element.     
-                orgElement = $('.original');
-                coordsOrgElement = orgElement.offset();
-                leftOrgElement = coordsOrgElement.left;
-                widthOrgElement = orgElement.css('width');
-                $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
-                $('.original').css('visibility', 'hidden');
-            } else {
-                // not scrolled past the menu; only show the original menu.
-                $('.cloned').hide();
-                $('.original').css('visibility', 'visible');
-            }
+            // Cloned element should always have same left position and width as original element.     
+            orgElement = $('.original');
+            coordsOrgElement = orgElement.offset();
+            leftOrgElement = coordsOrgElement.left;
+            widthOrgElement = orgElement.css('width');
+            $('.cloned').css('left', leftOrgElement + 'px').css('top', 0).css('width', widthOrgElement).show();
+            $('.original').css('visibility', 'hidden');
+        } else {
+            // not scrolled past the menu; only show the original menu.
+            $('.cloned').hide();
+            $('.original').css('visibility', 'visible');
         }
-    </script>
+    }
+</script>
