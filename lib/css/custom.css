@@ -1735,7 +1735,7 @@ li.cat-list.cpointer.bolds:after {
     padding: 5px;
 }
 .content-static h3:before {
-    content: "•";
+    content: "â€¢";
     color: #EC2987;
     font-size: 14px;
     vertical-align: initial;
@@ -2075,10 +2075,11 @@ p.text-center.on-center span {
 }
 li.miss-logo i {
     float: right;
-    background: #B5B5B5;
+    background: #4D5355;
     height: 25px;
     width: 25px;
     border-radius: 100%;
-    padding: 6px 8px 0px;
+    padding: 6px 9px 0px;
     color: #fff;
+    margin-right: 25px;
 }

@@ -314,10 +314,15 @@ class Json extends CI_Controller {
         $this->load->view("json", $data);
     }
     function registeruser() {
-        $firstname = $this->input->get_post('firstname');
-        $lastname = $this->input->get_post('lastname');
-        $email = $this->input->get_post('email');
-        $password = $this->input->get_post('password');
+        $data = json_decode(file_get_contents('php://input'), true);
+        $firstname=$data['firstname'];
+        $lastname=$data['lastname'];
+        $email=$data['email'];
+        $password=$data['password'];
+//        $firstname = $this->input->get_post('firstname');
+//        $lastname = $this->input->get_post('lastname');
+//        $email = $this->input->get_post('email');
+//        $password = $this->input->get_post('password');
         $data["message"] = $this->user_model->registeruser($firstname, $lastname, $email, $password);
         $this->load->view("json", $data);
     }
