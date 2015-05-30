@@ -45,12 +45,12 @@ phonecatControllers.controller('home',
             //            "email":"chawlasakshi70@yahoo.in"
         }];
 //popup registration
-//     $scope.init = function () {
-//                ngDialog.open({
-//                template: 'views/popup.html',
-//                controller: 'home'
-//            });
-//     }
+     $scope.init = function () {
+                ngDialog.open({
+                template: 'views/popup.html',
+                controller: 'home'
+            });
+     }
 
 
         // video only

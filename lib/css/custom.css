@@ -81,6 +81,8 @@ a {
     width: 32px;
     height: 32px;
     background: #727376;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 6px 0px 0px 8px;
     margin-right: 15px;
@@ -280,6 +282,8 @@ hr.horiztal-hr {
 }
 .stylish-input-group .form-control {
     border-right: 0;
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
     box-shadow: 0 0 0;
     border: 0px;
 }
@@ -307,6 +311,7 @@ ul.nav.nav-pills.mainmenu.homeclass li:last-child a {
 }
 li.bag {
     padding-left: 3px;
+    padding-bottom: 35px;
 }
 .imageset {
     width: 1020px;
@@ -316,6 +321,9 @@ li.bag {
 }
 .bckgrnd-sliderup {
     background: url('../../img/bg2.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     height: 210px;
 }
@@ -392,6 +400,8 @@ input.subscribe-email {
     padding: 2px;
     border-bottom: 1px Solid;
     background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     outline: none;
     border-top: 0;
@@ -415,6 +425,7 @@ input.subscribe-email {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
+    display: -moz-inline-box;
     display: inline-flex;
     color: #fff;
     list-style: none;
@@ -471,6 +482,8 @@ li.welcome {
     text-transform: uppercase;
     -webkit-transform: translatey(-50%);
     -ms-transform: translatey(-50%);
+    -moz-transform: translatey(-50%);
+    -o-transform: translatey(-50%);
     transform: translatey(-50%);
 }
 .bind-all.ng-scope {
@@ -609,7 +622,7 @@ a:hover {
     /*    border-bottom: 1px solid #E2E2E2;*/
 }
 li.bag a {
-    padding: 0px 0px 0px 40px;
+    padding: 0px 0px 40px 40px;
 }
 .login-tab.pull-right ul li:nth-child(2) a {
     padding: 0px 5px 0 2px;
@@ -629,6 +642,8 @@ li.bag a {
     z-index: 10;
     opacity: 1;
     -webkit-transition: all 1.3s;
+    -moz-transition: all 1.3s;
+    -o-transition: all 1.3s;
     transition: all 1.3s;
 }
 .img {
@@ -737,6 +752,8 @@ span.glyphicon.glyphicon-shopping-cart {
     background: #fff;
     border-bottom: 1px solid #000;
     -webkit-transition: all 700ms ease;
+    -moz-transition: all 700ms ease;
+    -o-transition: all 700ms ease;
     transition: all 700ms ease;
 }
 #comment {
@@ -1166,6 +1183,8 @@ span.cartspace {
 }
 .carticon {
     font-size: 25px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     width: 25px;
     height: 25px;
@@ -1186,6 +1205,8 @@ span.cartspace {
 .discountcoupon {
     border-color: #03e1e4;
     outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #03e1e4;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #03e1e4;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #03e1e4;
 }
 .newsletteremail {
@@ -1259,6 +1280,8 @@ h2.articleheader {
     user-select: none;
     background-image: none;
     border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
     border-radius: 0;
 }
 video#video {
@@ -1271,6 +1294,8 @@ video#video {
     margin: 20px 0;
 }
 .billing .panel-group .panel {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
     border-radius: 0px;
     border-color: transparent;
 }
@@ -1291,6 +1316,8 @@ video#video {
 .form-control:focus {
     border-color: #18A157;
     outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #18A157;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #18A157;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #18A157;
 }
 .billing>.panel-group .panel-heading + .panel-collapse .panel-body {
@@ -1316,6 +1343,9 @@ button.btnss-primary {
     width: 920px;
     height: 500px;
     margin: 0 auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 a.popup-email {
@@ -1347,11 +1377,15 @@ li.wish-list:hover .making-list {
     left: 63%;
     -webkit-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     background: #000;
     color: #fff;
     top: 30px;
     padding: 7px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
     z-index: 9999999999;
 }
@@ -1391,6 +1425,8 @@ input[type="checkbox"] {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .head-on.text-center {
@@ -1454,6 +1490,8 @@ input[type="checkbox"] {
     color: white;
     font-size: 22px;
     border: 5px solid white;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     width: 50px;
     height: 50px;
@@ -1494,6 +1532,9 @@ i.fa.fa-apple {
 }
 li.magic-bg .megamenu {
     background: url('../../img/bg-missnui.png')no-repeat!important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
     background-size: cover!important;
 }
 .ngrs-range-slider .ngrs-handle {
@@ -1504,6 +1545,8 @@ li.magic-bg .megamenu {
     margin: -5px 0 0 -3px;
     background: #515254;
     border: 1px solid #515254;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
 }
 .ngrs-range-slider .ngrs-value.ngrs-value-max {
@@ -1527,16 +1570,22 @@ li.magic-bg .megamenu {
     right: 100%;
     height: 3px;
     margin: -4px 0 0 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     background-color: #505153;
     background-image: -webkit-linear-gradient(#F5F5F5, #F5F5F5);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#505153), to(#505153));
     background-image: -webkit-linear-gradient(#505153, #505153);
+    background-image: -moz-linear-gradient(#505153, #505153);
+    background-image: -o-linear-gradient(#505153, #505153);
     background-image: linear-gradient(#505153, #505153);
 }
 .rangeslider.ngrs-range-slider {
     background: transparent;
     border: 0px;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+    -moz-box-shadow: 0px 0px 0px 0px transparent;
     box-shadow: 0px 0px 0px 0px transparent;
 }
 img.bottom-padimg {
@@ -1735,9 +1784,9 @@ li.cat-list.cpointer.bolds:after {
     padding: 5px;
 }
 .content-static h3:before {
-    content: "â€¢";
+    content: ">";
     color: #EC2987;
-    font-size: 14px;
+    font-size: 18px;
     vertical-align: initial;
     padding-right: 5px;
     display: inline-block;
@@ -1815,6 +1864,8 @@ input.input-forget {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     /*    width: 72%;*/
     /*    height: 500px;*/
@@ -1852,7 +1903,11 @@ ul.img-namess li {
     z-index: 99999;
     background: rgba(255, 255, 255, 0.9);
     -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
+    -webkit-box-shadow: 1px 1px 11px 1px rgba(10, 10, 10, 0.18);
+    -moz-box-shadow: 1px 1px 11px 1px rgba(10, 10, 10, 0.18);
     box-shadow: 1px 1px 11px 1px rgba(10, 10, 10, 0.18);
 }
 .poppup-cont1 span {
@@ -1904,11 +1959,18 @@ ul.img-namess li {
     top: 30px;
     width: 250px;
     padding: 25px;
-    right: -25px;
+    left: 50%;
     z-index: 99999;
     background: rgba(255, 255, 255, 0.9);
     -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
+    transform: translatex(-50%);
 }
 .bag:hover .drop-cart {
     display: block;
@@ -1932,6 +1994,8 @@ a.right.carousel-control {
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
     transition-property: opacity;
 }
 .carousel-fade .carousel-inner .active {
@@ -2078,6 +2142,8 @@ li.miss-logo i {
     background: #4D5355;
     height: 25px;
     width: 25px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 6px 9px 0px;
     color: #fff;
