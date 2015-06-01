@@ -3169,7 +3169,7 @@ class Site extends CI_Controller
         $fullfilepath=$filepath."".$file;
         $file = $this->csvreader->parse_file($fullfilepath);
         $category=$this->input->get_post('category');
-        $id1=$this->listing_model->createbycsv($file,$category);
+        $id1=$this->product_model->createbycsv($file,$category);
 //        echo $id1;
         
         if($id1==0)

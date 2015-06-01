@@ -439,6 +439,29 @@ class Json extends CI_Controller {
         $this->db->query("INSERT INTO `productimage` (`id`,`product`,`image`,`is_default`,`order`,`status`) VALUES (NULL,'$product','$image','$default','$order','0')");
         echo "Done";
     }
+    public function addproductcsv() {
+        $filename = $this->input->get_post("filename");
+//        $image = $this->input->get_post("image");
+//        $order = $this->input->get_post("order");
+//        if ($order == "1") {
+//            $default = 1;
+//        } else {
+//            $default = 0;
+//        }
+        $filepath="http://magicmirror.in/servepublicother?name=$filename";
+//        $filepath="https://console.developers.google.com/project/magicmirrornew/storage/browser/magicmirroruploads/other/$filename";
+//        $fullfilepath=$filepath."".$file;
+        $file = $this->csvreader->parse_file($filepath);
+        $id1=$this->product_model->createbycsv($file);
+        
+        if($id1==0)
+        $data['alerterror']="New Products could not be Uploaded.";
+		else
+		$data['alertsuccess']="Products Uploaded Successfully.";
+        
+        $data['redirect']="site/uploadproductcsv";
+        $this->load->view("redirect",$data);
+    }
     public function nextproduct() {
         $id = $this->input->get_post("id");
         $next = $this->input->get_post("next");
