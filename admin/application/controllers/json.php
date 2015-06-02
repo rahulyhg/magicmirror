@@ -431,12 +431,23 @@ class Json extends CI_Controller {
         $product = $this->input->get_post("product");
         $image = $this->input->get_post("image");
         $order = $this->input->get_post("order");
+        $image=substr($image,32);
         if ($order == "1") {
             $default = 1;
         } else {
             $default = 0;
         }
-        $this->db->query("INSERT INTO `productimage` (`id`,`product`,`image`,`is_default`,`order`,`status`) VALUES (NULL,'$product','$image','$default','$order','0')");
+        $message=new stdClass();
+        $querycheck="INSERT INTO `productimage` (`product`, `image`, `is_default`, `order`, `status`) VALUES ('$product', '$image','$default', '$order', '0')";
+        $this->db->query("INSERT INTO `productimage` (`product`, `image`, `is_default`, `order`, `status`) VALUES ('$product', '$image','$default', '$order', '0')");
+        $message->product=$product;
+        $message->querycheck=$querycheck;
+        $message->id=$this->db->insert_id();
+        $message->image=$image;
+        $message->image=$image;
+        $message->order=$order;
+//        $data["message"]=$message;
+//        $this->load->view("json", $data);
         echo "Done";
     }
     public function addproductcsv() {
@@ -448,19 +459,26 @@ class Json extends CI_Controller {
 //        } else {
 //            $default = 0;
 //        }
-        $filepath="http://magicmirror.in/servepublicother?name=$filename";
-//        $filepath="https://console.developers.google.com/project/magicmirrornew/storage/browser/magicmirroruploads/other/$filename";
-//        $fullfilepath=$filepath."".$file;
+        $filepath="http://magicmirror.in/servepublicother?name=$filename"; 
+echo $filepath;
         $file = $this->csvreader->parse_file($filepath);
+        print_r($file);
         $id1=$this->product_model->createbycsv($file);
-        
+        echo "<br>".$id1."<br>";
         if($id1==0)
         $data['alerterror']="New Products could not be Uploaded.";
 		else
 		$data['alertsuccess']="Products Uploaded Successfully.";
-        
-        $data['redirect']="site/uploadproductcsv";
-        $this->load->view("redirect",$data);
+        print_r($data);
+//        $data['redirect']="site/uploadproductcsv";
+//        $this->load->view("redirect",$data);
+    }
+    public function getfile()
+    {
+    $filepath="http://magicmirror.in/servepublicother?name=product (11).csv"; 
+echo $filepath;
+        $file = $this->csvreader->parse_file($filepath);
+        print_r($file);
     }
     public function nextproduct() {
         $id = $this->input->get_post("id");
@@ -649,6 +667,125 @@ class Json extends CI_Controller {
     }
     function updateorderstatusafterpayment() {
         $orderid = $_POST["orderid"];
+        $email=$this->db->query("SELECT `email` FROM `order` WHERE `id`='$orderid'")->row();
+        $email=$email->email;
+        
+        
+//        $email = $this->input->get('email');
+        $orderid = $this->input->get('orderid');
+        
+		$table =$this->order_model->getorderitem($this->input->get('orderid'));
+		$before=$this->order_model->beforeedit($this->input->get('orderid'));
+        
+        $todaydata=date("Y-m-d");
+        $this->load->library('email');
+        $this->email->from('info@magicmirror.in', 'Magicmirror');
+        $this->email->to($email);
+        $this->email->subject('Magicmirror Order');
+        if($before['order']->billingaddress=="")
+                        {
+            $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
+                        
+                        }
+                        else
+                        {
+                            $billingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->billingaddress."<br>".$before['order']->billingcity."<br>".$before['order']->billingstate."<br>".$before['order']->billingpincode;
+                        }
+        if($before['order']->shippingaddress=="")
+                        {
+                             $shippingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->billingaddress."<br>".$before['order']->billingcity."<br>".$before['order']->billingstate."<br>".$before['order']->billingpincode;
+                        }
+                        else
+                        {
+                             $shippingaddress=$before['order']->firstname." ".$before['order']->lastname."<br>".$before['order']->shippingaddress."<br>".$before['order']->shippingcity."<br>".$before['order']->shippingstate."<br>".$before['order']->shippingpincode;
+                        }
+        
+        $message="<html><body style=\"background:url('http://magicmirror.in/emaildata/emailer.jpg')no-repeat center; background-size:cover;\">
+    <div text-align: center; width: 60%; margin: 0 auto; padding-left: 65px;'>
+        <img src='http://magicmirror.in/emaildata/email.png'>
+    </div>
+    <div style='text-align:center;   width: 50%; margin: 0 auto;'>
+        <h2 style='padding-bottom: 5px;color: #e82a96;'>Orders Details</h2>
+        <table align='center' border='1' cellpadding='2' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
+            <tr align='right' style='border: 0px;'>
+                <td width='70%' style='border: 0px;'>
+&nbsp;
+                </td>             
+                     <td width='30%' style='border: 0px;'>
+                   Date :<span>$todaydata</span> 
+                </td>
+                                                   </tr> 
+                                                   <tr align='right' style='border: 0px;'>
+                                                  <td width='70%' style='border: 0px;'>
+&nbsp;
+                </td> 
+                                <td width='30%' style='border: 0px;'>
+                  Invoice No.:<span>$orderid</span>
+                </td>
+            </tr>
+        </table>
+        
+        <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 40px;'>
+           <tr>
+    <th style='padding: 10px 0;'>Billing Address</th>
+    <th style='padding: 10px 0;'>Shipping Address</th> 
+  </tr>
+          <tr >
+              <td width='50%' style='padding: 10px 15px;'>
+<p>$billingaddress</p>
+</td>
+              <td width='50%' style='padding: 10px 15px;'>
+<p>$shippingaddress</p>
+ </td> 
+  </tr>  
+        </table>
+         
+                 <table align='center' border='1' cellpadding='0' cellspacing='0' width='100%' style='border: 0px solid black;padding-bottom: 30px;'>
+  <tr>
+    <th style='padding: 10px 0;'>Id</th>
+    <th style='padding: 10px 0;'>Product</th> 
+    <th style='padding: 10px 0;'>Quantity</th>
+    <th style='padding: 10px 0;'>Price</th>
+    <th style='padding: 10px 0;'>Total Amount</th>
+  </tr>";
+        $count=1;
+        $finalpricetotal=0;
+        foreach($table as $row)
+        {
+            $namesku=$row->name."-".$row->sku;
+            $quantity=$row->quantity;
+            $price=$row->price;
+            $finalprice=$row->finalprice;
+            $message.="
+            <tr>
+                <td align='center' style='padding: 10px 0;'>$count</td>
+                <td align='center' style='padding: 10px 0;'>$namesku</td> 
+                <td align='center' style='padding: 10px 0;'>$quantity</td>
+                <td align='center' style='padding: 10px 0;'>$price</td>
+                <td align='center' style='padding: 10px 0;'>$finalprice</td>
+              </tr>";
+            $finalpricetotal=$finalpricetotal+$value->finalprice;
+                            $counter++;
+        }
+  $message.="
+      
+        </table>
+    </div>
+    <div style='text-align:center;position: relative;'>
+        <p style=' position: absolute; top: 8%;left: 50%; transform: translatex(-50%); font-size: 1em;margin: 0; letter-spacing:2px; font-weight: bold;'>
+            Thank You Again
+        </p>
+        <img src='http://magicmirror.in/emaildata/magicfooter.png' style='height: 225px;'>
+    </div>
+</body>
+
+</html>";
+        $this->email->message($message);
+        // $this->email->html('<b>hello</b>');
+        $this->email->send();
+//        $data['message'] = $this->email->print_debugger();
+//        $this->load->view('json', $data);
+        
         $returnvalue = $this->order_model->updateorderstatusafterpayment($orderid);
         return $returnvalue;
     }

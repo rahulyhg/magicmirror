@@ -145,7 +145,7 @@
 //        }
 //        console.log({product:product,image:image,order:order});
         $.post("<?php echo site_url("json/addproductcsv");?>",{filename:filename},function(data) {
-            location.reload();
+//            location.reload();
         });
     };
     function errorEncounter(data) {

@@ -58,6 +58,12 @@ handlers:
 
 - url: /servepublic/(.+)
   script: servepublic/index.php  
+
+- url: /servepublicother
+  script: servepublicother/index.php
+
+- url: /servepublicother/(.+)
+  script: servepublicother/index.php  
   
 - url: /uploadother
   script: uploadother/index.php
