@@ -987,6 +987,12 @@ phonecatControllers.controller('badge',
         $scope.newquantity = [];
         //  GET CART
 
+        $scope.tocartgo = function () {
+            console.log("in chart");
+            if($scope.badge!=0)
+            $location.url("/cart");
+        }
+    
         //  END CART
 
         var showcart = function (data, status) {

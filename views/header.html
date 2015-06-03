@@ -27,10 +27,11 @@
                             </li>
 -->
                             <li class="bag">
-                                <a ng-click="template.gourl('/cart');">
+<!--                                <a ng-click="template.gourl('/cart');">-->
+                                <a ng-click="tocartgo()">
                                     <i class="bag"></i>Shopping Bag({{badge}})
                                 </a>
-                                <div class="drop-cart">
+                                <div class="drop-cart" ng-if="badge!=0">
                                     <ul class="img-namess" ng-repeat="cat in cart">
                                         <li>
                                             <img ng-src="{{cat.image|imagepath}}" alt="">
