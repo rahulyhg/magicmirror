@@ -1453,7 +1453,7 @@ phonecatControllers.controller('checkout',
                 field: $scope.form.shippingcountry,
                 validation: ""
             }, {
-                field: $scope.form.customernotes,
+                field: $scope.form.customernote,
                 validation: ""
             }];
 
@@ -1462,8 +1462,8 @@ phonecatControllers.controller('checkout',
             console.log(check);
             if (check) {
                 $scope.shippinginfo = 1;
-
                 $scope.buttonsvalidate.shipping = 1;
+                $scope.placeorder($scope.form);
                 //$scope.hidebilling = 0;
             }
 
@@ -1630,7 +1630,7 @@ phonecatControllers.controller('checkout',
         };
 
         // order id and email after payment
-    $scope.orderplacedid = true;
+    $scope.orderplacedid = false;
         $scope.payment = {};
         var orderplaced = function (data, status) {
             console.log("place order returns");
