@@ -74,7 +74,6 @@ $delivery_cust_state=$_POST['shippingstate'];
 $delivery_city=$_POST['shippingstate'];
 $delivery_zip=$_POST['shippingpincode'];
 $delivery_cust_tel=$_POST['shippingtel'];
-$delivery_cust_notes=$_POST['customernote'];
 
 
 $working_key='ptljk2r1lxqc8k8gbf';	//Put in the 32 bit alphanumeric key in the quotes provided here.
