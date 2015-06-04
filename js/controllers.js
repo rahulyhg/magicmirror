@@ -1040,6 +1040,7 @@ phonecatControllers.controller('badge',
 
         }
         var authenticate = function (data, status) {
+            console.log("user authenticate data");
             console.log(data);
             if (data != "false") {
                 $scope.alldate = data;
@@ -1215,6 +1216,13 @@ phonecatControllers.controller('checkout',
             shipping: 0,
             payment: 0
         };
+    
+        //fill all user information
+//        var userinfo = function (data, status){
+//            console.log("get");
+//        }
+//        MainJson.getuserbyid().success(userinfo);
+    
         $scope.loginlogouttext = "Login";
         $scope.isloggedin = 0;
         $scope.form = {};
@@ -1479,9 +1487,12 @@ phonecatControllers.controller('checkout',
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
+        
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
+                $scope.alldata = data;
+                $scope.form = data;
                 $scope.isloggedin = 1;
                 $scope.continuebilling();
                 $scope.accesslevel = data.accesslevel;
@@ -1619,6 +1630,7 @@ phonecatControllers.controller('checkout',
         };
 
         // order id and email after payment
+    $scope.orderplacedid = true;
         $scope.payment = {};
         var orderplaced = function (data, status) {
             console.log("place order returns");
