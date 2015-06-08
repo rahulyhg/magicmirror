@@ -392,11 +392,11 @@
                                         </div>
                                         <div></div>
 
-                                        <p>
+                                        <span class="red">*</span><p>
                                             <input type="radio" name="shippdifferent" ng-model="form.shipdifferent" value="1">Ship to this address
                                             <br>
                                             <input type="radio" name="shippdifferent" ng-model="form.shipdifferent" value="2">Ship to different address</p>
-                                        <a class="btns btns-primary pull-right" ng-click="continueshipping()" ng-show="buttonsvalidate.shipping==0">Continuee</a>
+                                        <a class="btns btns-primary pull-right" ng-click="continueshipping()" ng-show="form.shipdifferent==1">Continue</a>
                                         <div class="clearfix"></div>
                                     </div>
 
@@ -698,7 +698,7 @@
                                         </div>
 
                                         <p>
-                                            <a class="btns btns-primary pull-right" ng-click="continueshipping1()">Continue</a>
+                                            <a class="btns btns-primary pull-right" ng-if="form.shipdifferent==2" ng-click="continueshipping1()">Continue</a>
                                             <div class="clearfix"></div>
                                     </div>
                         </div>
@@ -738,7 +738,7 @@
                                 </p>
 -->
 
-                                <a class="btns btns-primary pull-right" ng-click="continuepayment(form)" ng-show="buttonsvalidate.payment==0">Continueee</a>
+                                <a class="btns btns-primary pull-right" ng-click="continuepayment(form)" ng-show="buttonsvalidate.payment==0">Continue</a>
 
                                 <input type="submit" class="btns btns-primary pull-right" value="submit" ng-click="placeorder(form)">
 

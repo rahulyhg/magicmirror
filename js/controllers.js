@@ -1463,7 +1463,7 @@ phonecatControllers.controller('checkout',
             if (check) {
                 $scope.shippinginfo = 1;
                 $scope.buttonsvalidate.shipping = 1;
-                $scope.placeorder($scope.form);
+                $scope. placeorder($scope.form);
                 //$scope.hidebilling = 0;
             }
 
