@@ -3133,9 +3133,9 @@ class Site extends CI_Controller
         $fullfilepath=$filepath."".$file;
         //"http://storage.googleapis.com/lylalovescsv/product.csv"
         
-//		$this->form_validation->set_rules('url','url','trim');
-//        $path=$this->input->get_post('url');
-//        $fullfilepath=file_get_contents($path); 
+		$this->form_validation->set_rules('url','url','trim');
+        $path=$this->input->get_post('url');
+        $fullfilepath=file_get_contents($path); 
 //        $file = $this->csvreader->parse_file($fullfilepath);
 //        print_r($file);
         
@@ -3147,8 +3147,8 @@ class Site extends CI_Controller
 		else
 		$data['alertsuccess']="products Uploaded Successfully.";
         
-//        $data['redirect']="site/viewproduct";
-//        $this->load->view("redirect",$data);
+        $data['redirect']="site/viewproduct";
+        $this->load->view("redirect",$data);
     }
    
     function uploadproductcsvsubmitw()
