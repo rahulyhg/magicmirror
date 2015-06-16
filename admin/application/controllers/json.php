@@ -451,7 +451,20 @@ class Json extends CI_Controller {
         echo "Done";
     }
     public function addproductcsv() {
-        $filename = $this->input->get_post("filename");
+        $filepath = $this->input->get_post("filepath");
+//        echo $filepath;
+        $file = $this->csvreader->parse_file($filepath);
+//        print_r($file);
+        $id1=$this->product_model->createbycsv($file);
+//        echo "<br>".$id1;
+        if($id1==0)
+        $data['alerterror']="New products could not be Uploaded.";
+		else
+		$data['alertsuccess']="products Uploaded Successfully.";
+//        print_r($data);
+        $data['redirect']="site/viewproduct";
+        $this->load->view("redirect",$data);
+        
 //        $image = $this->input->get_post("image");
 //        $order = $this->input->get_post("order");
 //        if ($order == "1") {
@@ -459,17 +472,17 @@ class Json extends CI_Controller {
 //        } else {
 //            $default = 0;
 //        }
-        $filepath="http://magicmirror.in/servepublicother?name=$filename"; 
-echo $filepath;
-        $file = $this->csvreader->parse_file($filepath);
-        print_r($file);
-        $id1=$this->product_model->createbycsv($file);
-        echo "<br>".$id1."<br>";
-        if($id1==0)
-        $data['alerterror']="New Products could not be Uploaded.";
-		else
-		$data['alertsuccess']="Products Uploaded Successfully.";
-        print_r($data);
+//        $filepath="http://magicmirror.in/servepublicother?name=$filename"; 
+//echo $filepath;
+//        $file = $this->csvreader->parse_file($filepath);
+//        print_r($file);
+//        $id1=$this->product_model->createbycsv($file);
+//        echo "<br>".$id1."<br>";
+//        if($id1==0)
+//        $data['alerterror']="New Products could not be Uploaded.";
+//		else
+//		$data['alertsuccess']="Products Uploaded Successfully.";
+//        print_r($data);
 //        $data['redirect']="site/uploadproductcsv";
 //        $this->load->view("redirect",$data);
     }

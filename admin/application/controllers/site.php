@@ -3135,18 +3135,32 @@ class Site extends CI_Controller
         
 		$this->form_validation->set_rules('url','url','trim');
         $path=$this->input->get_post('url');
-        $fullfilepath=file_get_contents($path); 
-//        $file = $this->csvreader->parse_file($fullfilepath);
-//        print_r($file);
+//        $fullfilepath=file_get_contents($path); 
+        $file = $this->csvreader->parse_file($path);
+        print_r($file);
         
-        $file = $this->csvreader->parse_file($fullfilepath);
+//        $file = $this->csvreader->parse_file($fullfilepath);
         $id1=$this->product_model->createbycsv($file);
+        
+//		$this->form_validation->set_rules('url','url','trim');
+//        $path=$this->input->get_post('url');
+//        echo $path." path ends";
+//        $fullfilepath=file_get_contents($path); 
+////        $file = $this->csvreader->parse_file($fullfilepath);
+////        print_r($file);
+//        echo $fullfilepath;
+//        $file = $this->csvreader->parse_file($fullfilepath);
+//        echo "file:- ";
+//        print_r($file);
+//        $id1=$this->product_model->createbycsv($file);
+//        echo $id1;
 //        echo $id1;
         if($id1==0)
         $data['alerterror']="New products could not be Uploaded.";
 		else
 		$data['alertsuccess']="products Uploaded Successfully.";
-        
+//        echo "<br>lastdata";
+//        print_r($data);
         $data['redirect']="site/viewproduct";
         $this->load->view("redirect",$data);
     }

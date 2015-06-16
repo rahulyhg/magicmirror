@@ -549,6 +549,7 @@ $timestamp=new DateTime();
     
 	public function createbycsv($file)
 	{
+//        echo "in Model";
 //            print_r($file);
         foreach ($file as $row)
         {
@@ -580,14 +581,19 @@ $timestamp=new DateTime();
                 'secondsaleprice' => $row['secondsaleprice'],
                 'specialpricefrom' => $specialpricefrom,
                 'specialpriceto' => $specialpriceto,
+                'visibility' => 1,
                 'status' => 1
             );
             $checkproductpresent=$this->db->query("SELECT COUNT(`id`) as `count1` FROM `product` WHERE `sku`='$sku'")->row();
 //            print_r($data);
+            echo $checkproductpresent->count1;
             if($checkproductpresent->count1 == 0)
             {
-                $query=$this->db->insert( 'product', $data );
+//                echo "in count1 before inserting";
+//                print_r($data);
+                $query=$this->db->insert('product', $data );
                 $productid=$this->db->insert_id();
+//                echo "pid".$productid;
             }
             
 			foreach($allimages as $key => $image)

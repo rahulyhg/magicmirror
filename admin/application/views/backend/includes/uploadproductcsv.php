@@ -1,3 +1,4 @@
+
 <div class=" row" style="padding:1% 0;">
 	<div class="col-md-9">
 		<div class=" pull-right col-md-1 createbtn" ><a href="<?php echo site_url('site/viewproduct'); ?>" class="btn btn-primary pull-right"><i class="icon-long-arrow-left"></i>&nbsp;Back</a> </div>
@@ -14,23 +15,24 @@
 				 Upload Product CSV
 			</header>
 			<div class="panel-body">
-			  <form class="form-horizontal tasi-form" method="post" action="<?php echo site_url('site/uploadproductcsvsubmit');?>" enctype= "multipart/form-data">
+			  
+<form class="form-horizontal tasi-form" method="post" action="http://wohlig.co.in/social/index.php/json/uploadproductcsvsubmit" enctype= "multipart/form-data">
 				
 				
-<!--
 				<div class=" form-group">
 				  <label class="col-sm-2 control-label" for="normal-field">Product CSV File</label>
 				  <div class="col-sm-4">
 					<input type="file" id="normal-field" class="form-control" name="file">
 				  </div>
 				</div>
--->
+<!--
 				<div class="form-group">
 						<label class="col-sm-2 control-label">URL</label>
 						<div class="col-sm-4">
 						  <input type="url" id="normal-field" class="form-control" name="url" value="<?php echo set_value('url');?>">
 						</div>
 					</div>
+-->
 				<div class=" form-group">
 				  <label class="col-sm-2 control-label">&nbsp;</label>
 				  <div class="col-sm-4">
