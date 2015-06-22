@@ -1503,14 +1503,14 @@ input[type="checkbox"] {
     opacity: 0.4;
 }
 li.miss-logo {
-    width: 375px!important;
-    padding-left: 85px;
+    width: 300px!important;
+    padding-left: 50px;
 }
 .top-padimg {
     padding-top: 30px!important;
 }
 .miss-uni ul li {
-    width: 180px;
+    width: 165px;
     float: left;
 }
 .playpause.muted {
