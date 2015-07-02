@@ -1886,7 +1886,7 @@ phonecatControllers.controller('category',
             $scope.filter = {
                 color: "",
                 pricemin: 0,
-                pricemax: 50000
+                pricemax: 500000
             };
             MainJson.setfilter($scope.filter);
             $scope.products = [];

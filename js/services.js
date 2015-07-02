@@ -140,7 +140,7 @@ service.factory('MainJson', function($http, TemplateService) {
     var filters = {
         color: "",
         pricemin: 0,
-        pricemax: 50000,
+        pricemax: 500000,
         orderby: "new"
     };
     var coupondetails = $.jStorage.get("coupon");
