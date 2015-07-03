@@ -565,33 +565,67 @@ $timestamp=new DateTime();
             $category=$row['category'];
             $allcategories=explode(",",$category);
             
+            $name=$row['name'];
+            $description=$row['description'];
+            $url=$row['url'];
+            $metatitle=$row['metatitle'];
+            $metadescription=$row['metadescription'];
+            $metakeyword=$row['metakeyword'];
+            $quantity=$row['quantity'];
+            $price=$row['price'];
+            $wholesaleprice=$row['wholesaleprice'];
+            $firstsaleprice=$row['firstsaleprice'];
+            $secondsaleprice=$row['secondsaleprice'];
+            
+            $q="INSERT INTO `product`( `name`, `sku`, `description`, `url`, `visibility`, `price`, `wholesaleprice`, `firstsaleprice`, `secondsaleprice`, `specialpriceto`, `specialpricefrom`, `metatitle`, `metadesc`, `metakeyword`, `quantity`, `status`) VALUES ('$name','$sku','$description','$url','1','$price','$wholesaleprice','$firstsaleprice','$secondsaleprice','$specialpriceto','$specialpricefrom','$metatitle','$metadescription','$metakeyword','$quantity',1)";
+//            echo $q;
             $category=$row['category'];
+//            $data  = array(
+//                'name' => $row['name'],
+//                'sku' => $row['sku'],
+//                'description' => $row['description'],
+//                'url' => $row['url'],
+//                'metatitle' => $row['metatitle'],
+//                'metadesc' => $row['metadescription'],
+//                'metakeyword' => $row['metakeyword'],
+//                'quantity' => $row['quantity'],
+//                'price' => $row['price'],
+//                'wholesaleprice' => $row['wholesaleprice'],
+//                'firstsaleprice' => $row['firstsaleprice'],
+//                'secondsaleprice' => $row['secondsaleprice'],
+//                'specialpricefrom' => $specialpricefrom,
+//                'specialpriceto' => $specialpriceto,
+//                'visibility' => 1,
+//                'status' => 1
+//            );
             $data  = array(
-                'name' => $row['name'],
-                'sku' => $row['sku'],
-                'description' => $row['description'],
-                'url' => $row['url'],
-                'metatitle' => $row['metatitle'],
-                'metadesc' => $row['metadescription'],
-                'metakeyword' => $row['metakeyword'],
-                'quantity' => $row['quantity'],
-                'price' => $row['price'],
-                'wholesaleprice' => $row['wholesaleprice'],
-                'firstsaleprice' => $row['firstsaleprice'],
-                'secondsaleprice' => $row['secondsaleprice'],
-                'specialpricefrom' => $specialpricefrom,
-                'specialpriceto' => $specialpriceto,
-                'visibility' => 1,
-                'status' => 1
-            );
+			'name' => $row['name'],
+			'sku' => $row['sku'],
+			'description' => $row['description'],
+			'url' => $row['url'],
+			'visibility' => 1,
+			'price' => $row['price'],
+			'wholesaleprice' => $row['wholesaleprice'],
+			'firstsaleprice' => $row['firstsaleprice'],
+			'secondsaleprice' => $row['secondsaleprice'],
+			'specialpricefrom' => $specialpricefrom,
+			'specialpriceto' => $specialpriceto,
+			'metatitle' => $row['metatitle'],
+			'metadesc' => $row['metadescription'],
+			'metakeyword' => $row['metakeyword'],
+			'quantity' => $row['quantity'],
+			'status' => 1
+		);
+            $q1="SELECT COUNT(`id`) as `count1` FROM `product` WHERE `sku`='$sku'";
+//            echo $q1;
             $checkproductpresent=$this->db->query("SELECT COUNT(`id`) as `count1` FROM `product` WHERE `sku`='$sku'")->row();
 //            print_r($data);
             echo $checkproductpresent->count1;
+//            $checkproductpresent->count1=0;
             if($checkproductpresent->count1 == 0)
             {
-//                echo "in count1 before inserting";
-//                print_r($data);
-                $query=$this->db->insert('product', $data );
+//                $query=$this->db->insert('product', $data );
+                $query=$this->db->query("INSERT INTO `product`( `name`, `sku`, `description`, `url`, `visibility`, `price`, `wholesaleprice`, `firstsaleprice`, `secondsaleprice`, `specialpriceto`, `specialpricefrom`, `metatitle`, `metadesc`, `metakeyword`, `quantity`, `status`) VALUES ('$name','$sku','$description','$url','1','$price','$wholesaleprice','$firstsaleprice','$secondsaleprice','$specialpriceto','$specialpricefrom','$metatitle','$metadescription','$metakeyword','$quantity',1)");
                 $productid=$this->db->insert_id();
 //                echo "pid".$productid;
             }
@@ -601,6 +635,7 @@ $timestamp=new DateTime();
 				$data1  = array(
 					'product' => $productid,
 					'image' => $image,
+                    'order' => $key
 				);
 				$queryproductimage=$this->db->insert( 'productimage', $data1 );
 			}
