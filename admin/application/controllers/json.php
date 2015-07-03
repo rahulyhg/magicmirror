@@ -431,8 +431,10 @@ class Json extends CI_Controller {
         $product = $this->input->get_post("product");
         $image = $this->input->get_post("image");
         $order = $this->input->get_post("order");
+        $order=intval($order);
+        $order--;
         $image=substr($image,32);
-        if ($order == "1") {
+        if ($order == "0") {
             $default = 1;
         } else {
             $default = 0;

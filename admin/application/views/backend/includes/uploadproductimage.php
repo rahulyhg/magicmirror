@@ -98,7 +98,7 @@
                                                     echo $row->productimage;?>" style="height:100px;width:100px;" /></td>
 						<td><?php if($row->is_default=="1") { echo "Image is default"; } else { echo "";} ?></td>
 						<td><a style="" href="<?php echo site_url('site/defaultimage?imageid='.$row->id.' && id='.$before['product']->id);?>">Default</a></td>
-						<td style="width:30px;"><?php if($row->is_default=="1") { echo ''; } else { echo "<input type='text' id='normal-field' class='order3' value='".$row->order."' class='form-control' name='ordernumber'>";} ?></td>
+						<td style="width:30px;"><?php  echo "<input type='text' id='normal-field' class='order3' value='".$row->order."' class='form-control' name='ordernumber'>"; ?></td>
 						<td class="ms"><div class="btn-group"><a href="<?php echo site_url('site/deleteimage?imageid='.$row->id.' && id='.$before['product']->id );?>" class="button red deleteimage btn btn-danger btn-xs" rel="tooltip" ><i class="icon-trash"></i></a> </div></td>
 						</tr>
 					   <?php } ?>
