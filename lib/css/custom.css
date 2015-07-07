@@ -933,10 +933,10 @@ div.megamenu {
 }
 ul.submenudown {
     list-style: none;
-    padding: 10px 0 0 12px;
+    padding: 10px 0 0 0px;
 }
 li.img-widthimg {
-    width: 175px;
+    width: 150px;
 }
 ul.submenudown h5 a {
     color: #EA1665;
