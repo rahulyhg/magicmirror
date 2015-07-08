@@ -1063,5 +1063,12 @@ echo $filepath;
         $data['message']=$this->user_model->beforeedit($id);
         $this->load->view("json", $data);
     }
+    
+     public function checkorderstatus()
+     {
+         $orderid=$this->input->get('orderid');
+         $data['message']=$this->order_model->checkorderstatus($orderid);
+         $this->load->view('json',$data);
+     }
 }
 ?>

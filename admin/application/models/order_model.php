@@ -563,5 +563,21 @@ WHERE DATE(`order`.`timestamp`) = '$date'")->result();
 //		$query=$query->orderstatus;
 		return $query;
 	}
+    
+	public function checkorderstatus($orderid)
+    {
+        $query=$this->db->query("SELECT `orderstatus` FROM `order` WHERE `id`='$orderid'")->row();
+        $status=$query->orderstatus;
+        if($status==2)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+//        return $query;
+	}
+    
 }
 ?>
