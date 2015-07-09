@@ -1070,5 +1070,12 @@ echo $filepath;
          $data['message']=$this->order_model->checkorderstatus($orderid);
          $this->load->view('json',$data);
      }
+    
+     public function getorderforpayment()
+     {
+         $data['data']=$_GET;
+         $this->load->view('paymentpage',$data);
+     }
+    
 }
 ?>
