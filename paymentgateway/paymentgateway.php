@@ -12,8 +12,8 @@ print_r($posted);
   <head>
   <script>
     function submitPayuForm() {
-      var payuForm = document.forms.payuForm;
-      payuForm.submit();
+//      var payuForm = document.forms.payuForm;
+//      payuForm.submit();
     }
   </script>
   </head>
