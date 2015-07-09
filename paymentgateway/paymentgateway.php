@@ -12,6 +12,8 @@ print_r($posted);
   <head>
   <script>
     function submitPayuForm() {
+        
+        console.log("on load");
 //      var payuForm = document.forms.payuForm;
 //      payuForm.submit();
     }
@@ -19,7 +21,7 @@ print_r($posted);
   </head>
   <body onload="submitPayuForm()" style="display:none">
     <h2>PayU Form</h2>
-    <form action="http://magicmirror.in/paymentgateway/index.php" method="post" name="payuForm">
+    <form action="#" method="post" name="payuForm">
       <table>
         <tr>
           <td><b>Mandatory Parameters</b></td>
