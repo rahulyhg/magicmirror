@@ -5,7 +5,7 @@ if(!empty($data)) {
     $posted[$key] = $value;
   }
 }
-print_r($posted);
+//print_r($posted);
 ?>
 <html>
   <head>
