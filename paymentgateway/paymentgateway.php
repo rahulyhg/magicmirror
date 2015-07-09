@@ -6,6 +6,7 @@ if(!empty($_GET)) {
     $posted[$key] = $value;
   }
 }
+print_r($posted);
 ?>
 <html>
   <head>
