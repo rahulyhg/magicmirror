@@ -2603,7 +2603,9 @@ class Site extends CI_Controller
 			$currency=$this->input->post('currency');
 			$orderstatus=$this->input->post('orderstatus');
 			$trackingcode=$this->input->post('trackingcode');
-			if(($this->order_model->edit($id,$user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode))==0)
+			$billingcontact=$this->input->post('billingcontact');
+			$shippingcontact=$this->input->post('shippingcontact');
+			if(($this->order_model->edit($id,$user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode,$billingcontact,$shippingcontact))==0)
 				$data['alerterror']="Order could not be edited.";
 			else
             {

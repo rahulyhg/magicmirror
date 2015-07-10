@@ -67,7 +67,7 @@ class Order_model extends CI_Model
         
         $mysession=$this->session->all_userdata();
         
-        $query=$this->db->query("INSERT INTO `order`(`user`, `firstname`, `lastname`, `email`, `billingaddress`, `billingcity`, `billingstate`, `billingcountry`, `shippingaddress`, `shippingcity`, `shippingcountry`, `shippingstate`, `shippingpincode`, `finalamount`, `billingpincode`,`shippingmethod`,`orderstatus`,`shippingname`,`shippingtel`,`customernote`) VALUES ('$user','$firstname','$lastname','$email','$billingaddress','$billingcity','$billingstate','$billingcountry','$shippingaddress','$shippingcity','$shippingcountry','$shippingstate','$shippingpincode','$finalamount','$billingpincode','$shippingmethod','1','$shippingname','$shippingtel','$customernote')");
+        $query=$this->db->query("INSERT INTO `order`(`user`, `firstname`, `lastname`, `email`, `billingaddress`, `billingcity`, `billingstate`, `billingcountry`, `shippingaddress`, `shippingcity`, `shippingcountry`, `shippingstate`, `shippingpincode`, `finalamount`, `billingpincode`,`shippingmethod`,`orderstatus`,`shippingname`,`shippingtel`,`customernote`,`billingcontact`,`shippingcontact`) VALUES ('$user','$firstname','$lastname','$email','$billingaddress','$billingcity','$billingstate','$billingcountry','$shippingaddress','$shippingcity','$shippingcountry','$shippingstate','$shippingpincode','$finalamount','$billingpincode','$shippingmethod','1','$shippingname','$shippingtel','$customernote','$phone','$shippingtel')");
         
         $billingaddressforuser=$billingaddress;
         $shippingaddressforuser=$shippingaddress;
@@ -77,8 +77,6 @@ class Order_model extends CI_Model
         $this->session->set_userdata($mysession);
         foreach($carts as $cart)
         {
-            
-            
             $querycart=$this->db->query("INSERT INTO `orderitems`(`order`, `product`, `quantity`, `price`, `finalprice`) VALUES ('$order','".$cart['id']."','".$cart['qty']."','".$cart['price']."','".$cart['subtotal']."')");
             $quantity=intval($cart['qty']);
             $productid=$cart['id'];
@@ -229,7 +227,7 @@ class Order_model extends CI_Model
 		return $query;
 	}
 	
-	public function edit($id,$user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode)
+	public function edit($id,$user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode,$billingcontact,$shippingcontact)
 	{
 		
 		$data  = array(
@@ -249,6 +247,8 @@ class Order_model extends CI_Model
 			'currency' => $currency,
 			'orderstatus' =>$orderstatus,
 			'trackingcode' => $trackingcode,
+			'billingcontact' => $billingcontact,
+			'shippingcontact' => $shippingcontact,
 		);
 		$this->db->where( 'id', $id );
 		$query=$this->db->update( 'order', $data );

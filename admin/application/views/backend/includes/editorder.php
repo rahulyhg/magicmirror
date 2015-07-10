@@ -36,7 +36,13 @@ ini_set('display_errors', 1);?>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Billing Address</label>
 						<div class="col-sm-4">
-						  <textarea name="billingaddress" class="form-control"><?php echo set_value('billingcity',$before['order']->billingaddress); ?></textarea>
+						  <textarea name="billingaddress" class="form-control"><?php echo set_value('billingaddress',$before['order']->billingaddress); ?></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Billing Contact</label>
+						<div class="col-sm-4">
+						  <textarea name="billingcontact" class="form-control"><?php echo set_value('billingcontact',$before['order']->billingcontact); ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
@@ -75,6 +81,13 @@ ini_set('display_errors', 1);?>
 
 //echo set_value('shippingaddress',$before['order']->shippingaddress);
                               ?></textarea>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Shipping Contact</label>
+						<div class="col-sm-4">
+						  <textarea name="shippingcontact" class="form-control"><?php echo set_value('shippingcontact',$before['order']->shippingcontact); ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
