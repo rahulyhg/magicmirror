@@ -6,8 +6,24 @@ class Product_model extends CI_Model
 	//product
     function addtowishlist($user,$product)
     {
-        $query=$this->db->query("INSERT INTO `userwishlist`(`user`,`product`) VALUES ('$user','$product')");
-        return $query;
+        if($user!="")
+        {
+            $userwishlist=$this->db->query("SELECT * FROM `userwishlist` WHERE `user`='$user' AND `product`='$product'")->row();
+            if(empty($userwishlist))
+            {
+                $query=$this->db->query("INSERT INTO `userwishlist`(`user`,`product`) VALUES ('$user','$product')");
+                return $query;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        
+        return 0;
+        
+//        $query=$this->db->query("INSERT INTO `userwishlist`(`user`,`product`) VALUES ('$user','$product')");
+//        return $query;
     }
 	public function createproduct($name,$sku,$description,$url,$visibility,$price,$wholesaleprice,$firstsaleprice,$secondsaleprice,$specialpricefrom,$specialpriceto,$metatitle,$metadesc,$metakeyword,$quantity,$status,$category,$relatedproduct)
 	{
