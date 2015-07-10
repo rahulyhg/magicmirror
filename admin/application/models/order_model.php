@@ -248,7 +248,7 @@ class Order_model extends CI_Model
 			'orderstatus' =>$orderstatus,
 			'trackingcode' => $trackingcode,
 			'billingcontact' => $billingcontact,
-			'shippingcontact' => $shippingcontact,
+			'shippingcontact' => $shippingcontact
 		);
 		$this->db->where( 'id', $id );
 		$query=$this->db->update( 'order', $data );
@@ -294,7 +294,7 @@ class Order_model extends CI_Model
     }
     
     
-    public function createorder($user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode)
+    public function createorder($user,$firstname,$lastname,$email,$billingaddress,$billingcity,$billingstate,$billingcountry,$shippingaddress,$shippingcity,$shippingstate,$shippingcountry,$shippingpincode,$currency,$orderstatus,$trackingcode,$billingcontact,$shippingcontact)
 	{
 		
 		$data  = array(
@@ -314,6 +314,8 @@ class Order_model extends CI_Model
 			'currency' => $currency,
 			'orderstatus' =>$orderstatus,
 			'trackingcode' => $trackingcode,
+			'billingcontact' => $billingcontact,
+			'shippingcontact' => $shippingcontact
 		);
 		$query=$this->db->insert( 'order', $data );
 		

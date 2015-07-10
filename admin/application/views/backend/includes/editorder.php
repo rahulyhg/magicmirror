@@ -42,7 +42,7 @@ ini_set('display_errors', 1);?>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Billing Contact</label>
 						<div class="col-sm-4">
-						  <textarea name="billingcontact" class="form-control"><?php echo set_value('billingcontact',$before['order']->billingcontact); ?></textarea>
+						  <input type="text" id="normal-field" class="form-control" name="billingcontact" value="<?php echo set_value('billingcontact',$before['order']->billingcontact);?>">
 						</div>
 					</div>
 					<div class="form-group">
@@ -87,7 +87,7 @@ ini_set('display_errors', 1);?>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Shipping Contact</label>
 						<div class="col-sm-4">
-						  <textarea name="shippingcontact" class="form-control"><?php echo set_value('shippingcontact',$before['order']->shippingcontact); ?></textarea>
+						  <input type="text" id="normal-field" class="form-control" name="shippingcontact" value="<?php echo set_value('shippingcontact',$before['order']->shippingcontact);?>">
 						</div>
 					</div>
 					<div class="form-group">

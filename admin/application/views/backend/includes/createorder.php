@@ -40,6 +40,12 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label class="col-sm-2 control-label">Billing Contact</label>
+						<div class="col-sm-4">
+						  <input type="text" id="normal-field" class="form-control" name="billingcontact" value="<?php echo set_value('billingcontact');?>">
+						</div>
+					</div>
+					<div class="form-group">
 						<label class="col-sm-2 control-label">Billing City</label>
 						<div class="col-sm-4">
 						  <input type="text" id="" name="billingcity" class="form-control" value="<?php echo set_value('billingcity',$before['order']->billingcity); ?>">
@@ -62,6 +68,12 @@
 						<label class="col-sm-2 control-label">Shipping Address</label>
 						<div class="col-sm-4">
 						  <textarea name="shippingaddress" class="form-control"><?php echo set_value('shippingaddress',$before['order']->shippingaddress); ?></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Shipping Contact</label>
+						<div class="col-sm-4">
+						  <input type="text" id="normal-field" class="form-control" name="shippingcontact" value="<?php echo set_value('shippingcontact');?>">
 						</div>
 					</div>
 					<div class="form-group">
