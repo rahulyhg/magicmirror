@@ -280,13 +280,22 @@ class Json extends CI_Controller {
         $this->load->view("json", $data);
     }
     function showcart() {
-        $cart = $this->cart->contents();
-        $newcart = array();
-        foreach ($cart as $item) {
-            array_push($newcart, $item);
+        $userid=$this->session->userdata("id");
+        if($userid!="")
+        {
+            $data['message']=$this->user_model->getusercartdetails($userid);
+            $this->load->view("json", $data);
         }
-        $data["message"] = $newcart;
-        $this->load->view("json", $data);
+        else
+        {
+            $cart = $this->cart->contents();
+            $newcart = array();
+            foreach ($cart as $item) {
+                array_push($newcart, $item);
+            }
+            $data["message"] = $newcart;
+            $this->load->view("json", $data);
+        }
     }
     function totalcart() {
         $data["message"] = $this->cart->total();

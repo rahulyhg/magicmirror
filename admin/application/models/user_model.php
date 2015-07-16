@@ -644,5 +644,10 @@ $timestamp=new DateTime();
         $query=$this->db->query($query);
         return $query;
     }
+    function getusercartdetails($userid)
+    {
+        $query=$this->db->query("SELECT * FROM `usercart` WHERE `user`='$userid'")->result();
+        return $query;
+    }
 }
 ?>
