@@ -1,23 +1,11 @@
 <div class="content">
     <div class="container">
         <div class="contenttop">
-            <!--
-    <div class="row">
-    <div class="col-xs-4">
-        <span class="breadcrumb">
-							Home / Cart</a>
-							</span>
-        </span>
-    </div>
-
-</div>
--->
-
             <div class="container cart">
                 <table class="table table-hover content-static">
                     <thead>
                         <tr>
-                           <th style="width:100px;">Product Image</th>
+                            <th style="width:100px;">Product Image</th>
                             <th>Product Name</th>
                             <th>Unit Price</th>
                             <th>
@@ -29,7 +17,8 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="singlecart in cart">
-                           <td><img style="width:100px;" ng-src="{{singlecart.image|imagepath}}" alt=""></td>
+                            <td><img style="width:100px;" ng-src="{{singlecart.image|imagepath}}" alt="">
+                            </td>
                             <td>{{singlecart.name}}</td>
 
                             <td>{{singlecart.price|convertprice}}</td>
@@ -50,7 +39,7 @@
                 <p>
                     <input type="text" placeholder="Enter your coupon code" ng-model="couponcode" class="discountcoupon form-control newsletteremail " style="margin-right:5px;"><a class="btn btn-primary {{'valid'+validcouponcode}}" ng-click="checkcoupon(couponcode)"><span ng-hide="validcouponcode==1">Apply Coupon</span> <span ng-show="validcouponcode==1">Coupon Code Applied</span></a>
 
-                    <a  ng-click="template.gourl('/checkout');" class="btns btns-primary pull-right">Proceed to checkout</a>
+                    <a ng-click="template.gourl('/checkout');" class="btns btns-primary pull-right">Proceed to checkout</a>
                 </p>
 
                 <div class="checkout row">
