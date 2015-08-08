@@ -214,26 +214,24 @@ firstapp.filter('imagepathbig', function () {
     };
 });
 
-firstapp.filter('convertprice', function () {
-    return function (input) {
+firstapp.filter('convertprice', function() {
+    return function(input) {
 
         var price = parseFloat(input);
-        var currencyshow = "Rs";
         if (price < 0) {
             return 0;
         }
-        //        else{
-        //            return currencyshow + " " + (price).toFixed(2);
-        //        }
-
+        var currencyshow = "£";
         for (var i = 0; i < conversionrate.length; i++) {
             if (conversionrate[i].name == currency) {
                 //console.log("currency: "+currency+" price ini: "+price+" price new: "+parseFloat(conversionrate[i].conversionrate)*price);
                 if (currency == "USD") {
-                    currencyshow = "Rs";
+                    currencyshow = "$";
                 } else if (currency == "EURO") {
                     currencyshow = "€";
-                }
+                }else if(currency == "INR"){
+	 currencyshow = "₹";
+			 }
                 return currencyshow + " " + (parseFloat(conversionrate[i].conversionrate) * price).toFixed(2);
             }
         }
