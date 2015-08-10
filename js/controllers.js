@@ -1127,6 +1127,7 @@ phonecatControllers.controller('searchpage',
         //searching
         $scope.searchresult = $routeParams.search;
         var searching = function (data, status) {
+            console.log(data);
             $scope.find = data;
         };
         MainJson.seach($routeParams.search).success(searching);
