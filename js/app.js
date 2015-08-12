@@ -230,7 +230,7 @@ firstapp.filter('convertprice', function() {
                 } else if (currency == "EURO") {
                     currencyshow = "€";
                 }else if(currency == "INR"){
-	 currencyshow = "₹";
+	 currencyshow = "Rs";
 			 }
                 return currencyshow + " " + (parseFloat(conversionrate[i].conversionrate) * price).toFixed(2);
             }
