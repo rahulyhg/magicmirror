@@ -658,6 +658,7 @@ $timestamp=new DateTime();
             
 			foreach($allcategories as $key => $category)
 			{
+                $category=trim($category);
                 $categoryquery=$this->db->query("SELECT * FROM `category` where `name`LIKE '$category'")->row();
                 if(empty($categoryquery))
                 {
