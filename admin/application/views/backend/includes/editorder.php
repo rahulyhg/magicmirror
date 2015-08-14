@@ -85,6 +85,12 @@ ini_set('display_errors', 1);?>
 					</div>
 					
 					<div class="form-group">
+						<label class="col-sm-2 control-label">Shipping NAme</label>
+						<div class="col-sm-4">
+						  <input type="text" id="normal-field" class="form-control" name="shippingname" value="<?php echo set_value('shippingname',$before['order']->shippingname);?>">
+						</div>
+					</div>
+					<div class="form-group">
 						<label class="col-sm-2 control-label">Shipping Contact</label>
 						<div class="col-sm-4">
 						  <input type="text" id="normal-field" class="form-control" name="shippingcontact" value="<?php echo set_value('shippingcontact',$before['order']->shippingcontact);?>">
