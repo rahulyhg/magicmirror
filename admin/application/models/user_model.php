@@ -646,7 +646,12 @@ $timestamp=new DateTime();
     }
     function getusercartdetails($userid)
     {
-        $query=$this->db->query("SELECT * FROM `usercart` WHERE `user`='$userid'")->result();
+        $query=$this->db->query("SELECT `usercart`.`user`,`usercart`. `product`,`usercart`. `quantity` as `qty`,`usercart`. `status`,`usercart`. `timestamp`,`productimage`.`image` as `image` ,`product`.`name` AS `name`,`product`.`price` as `price`,`product`.`price` * `usercart`. `quantity` AS `subtotal`
+FROM `usercart`
+LEFT OUTER JOIN `product` ON `product`.`id`=`usercart`.`product`
+LEFT OUTER JOIN `productimage` ON `productimage`.`product`=`product`.`id`
+WHERE `usercart`.`user`='$userid'
+GROUP BY `product`.`id`")->result();
         return $query;
     }
 }

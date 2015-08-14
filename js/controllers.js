@@ -337,6 +337,7 @@ phonecatControllers.controller('cart',
         //authenticate
         $scope.newquantity = [];
         var showcart = function (data, status) {
+            console.log("my cart __________________________________-");
             console.log(data);
             $scope.cart = data;
             console.log("Values in cart");
