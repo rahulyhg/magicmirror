@@ -656,7 +656,7 @@ GROUP BY `product`.`id`")->result();
     }
     function deleteproductfromusercart($userid,$productid)
     {
-        $query=$this->db->query("DELETE FROM `usercart` WHERE `user`='$id' AND `product`='$productid'");
+        $query=$this->db->query("DELETE FROM `usercart` WHERE `user`='$userid' AND `product`='$productid'");
         return 1;
     }
 }
