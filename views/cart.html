@@ -28,7 +28,7 @@
                                 <input type="text" ng-model="newquantity[$index]" class="form-control cartinput" readonly><a class="btn btn-default carticon" ng-click="addproductcart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)">+</a> &nbsp; &nbsp;<a class="hidden btn btn-primary" ng-click="addtocart(singlecart.id,singlecart.name,singlecart.price,newquantity[$index],$index)"><strong><span class="glyphicon glyphicon-floppy-save"></span></strong></a>
                             </td>
                             <td>{{singlecart.subtotal|convertprice}}</td>
-                            <td><a ng-click="deletecart(singlecart.id)"><strong>X</strong></a>
+                            <td><a ng-click="deletecart(singlecart.product)"><strong>X</strong></a>
                             </td>
 
                         </tr>
