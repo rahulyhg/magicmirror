@@ -375,6 +375,11 @@ class Json extends CI_Controller {
         foreach ($cart as $item) {
             if ($item['id'] != $id) array_push($newcart, $item);
         }
+        $userid=$this->session->userdata('id');
+        if($userid!="")
+        {
+            $this->user_model->deleteproductfromusercart($userid,$id);
+        }
         $this->cart->destroy();
         $this->cart->insert($newcart);
         $data["message"] = $newcart;
