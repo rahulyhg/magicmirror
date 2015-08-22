@@ -18,7 +18,7 @@ class productimage_model extends CI_Model
 	}
 	function viewproductimagebyproduct($id)
 	{
-		$query="SELECT `productimage`.`id`,`productimage`.`product`, `productimage`.`image`, `product`.`name` AS `productname`
+		$query="SELECT `productimage`.`id`,`productimage`.`product`, `productimage`.`image`, `product`.`name` AS `productname`, `product`.`order` AS `order`
         FROM `productimage` LEFT OUTER JOIN `product` ON `product`.`id`=`productimage`.`product` WHERE `productimage`.`product`='$id'";
         $result=$this->db->query($query)->result();
         

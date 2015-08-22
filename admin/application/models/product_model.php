@@ -683,5 +683,49 @@ $timestamp=new DateTime();
 			return  1;
 	}
     
+    
+    function productimagereorderbyid($id)
+    {
+        $allimages=$this->db->query("SELECT * FROM `productimage` WHERE `product`='$id' ORDER BY `order`")->result();
+        if(!empty($allimages))
+        {
+            foreach($allimages as $key=>$row)
+            {
+                $productimageid=$row->id;
+                $order=$row->order;
+                $updatequery=$this->db->query("UPDATE `productimage` SET `order`='$key' WHERE `id`='$productimageid'");
+            }
+            $selectproductimagecroncheck=$this->db->query("SELECT * FROM `productimagecroncheck` WHERE `product`='$id'")->row();
+            if(!empty($selectproductimagecroncheck))
+            {
+                $productimagecroncheckid=$selectproductimagecroncheck->id;
+                $update=$this->db->query("UPDATE `productimagecroncheck` SET `timestamp`=NULL WHERE `id`='$productimagecroncheckid'");
+            }
+            else
+            {
+                $message="Images for productid ".$id." are reordered";
+                $insert=$this->db->query("INSERT INTO `productimagecroncheck`( `product`, `message`, `timestamp`) VALUES ('$id','$message',NULL)");
+            }
+        }
+        else
+        {
+            return 0;
+        }
+        return 1;
+    
+    }
+    
+    function getproductsforimageorderchange()
+    {
+        $query=$this->db->query("SELECT * FROM `product`")->result();
+        return $query;
+    }
+    
+    function viewproductimagesreorder()
+    {
+        $query=$this->db->query("SELECT `productimagecroncheck`.`id`, `productimagecroncheck`.`product`,`productimagecroncheck`. `message`,`productimagecroncheck`. `timestamp`,`product`.`name` AS `productname`,`product`.`sku` AS `sku` FROM `productimagecroncheck` LEFT OUTER JOIN `product` ON `product`.`id`=`productimagecroncheck`.`product`")->result();
+        return $query;
+    }
+    
 }
 ?>
