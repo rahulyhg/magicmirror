@@ -89,7 +89,7 @@ a {
 }
 .bgrnd-nav.cloned ul li a {
     background: #fff;
-    padding: 0px 14px 0px 4px
+    padding: 0px 14px 0px 2px
 }
 .brand-img img {
     width: 100%;
@@ -933,10 +933,10 @@ div.megamenu {
 }
 ul.submenudown {
     list-style: none;
-    padding: 10px 0 0 15px;
+    padding: 8px 0 0 10px;
 }
 li.img-widthimg {
-    width: 150px;
+    width: 120px;
 }
 ul.submenudown h5 a {
     color: #EA1665;

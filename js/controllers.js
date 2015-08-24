@@ -2338,6 +2338,113 @@ phonecatControllers.controller('celebrities',
         //authenticate
 
     });
+phonecatControllers.controller('socialconnect',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/social-connect.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+
+phonecatControllers.controller('ecommerrce',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/e-commerrce.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+
+phonecatControllers.controller('fashion',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/fashion-magicmirror.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+
+phonecatControllers.controller('whatsnew',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/whats-new.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
 phonecatControllers.controller('feedback',
     function ($scope, TemplateService, MainJson, $rootScope, $location) {
         //$scope.firstloadclass = TemplateService.firstload;
