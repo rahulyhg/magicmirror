@@ -2149,3 +2149,7 @@ li.miss-logo i {
     color: #fff;
     margin-right: 25px;
 }
+
+.brand-cont ul li {
+    list-style: square;
+}

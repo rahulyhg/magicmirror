@@ -715,9 +715,10 @@ $timestamp=new DateTime();
     
     }
     
-    function getproductsforimageorderchange()
+    function getproductsforimageorderchange($pageno)
     {
-        $query=$this->db->query("SELECT * FROM `product`")->result();
+        $lower=($pageno-1)*100;
+        $query=$this->db->query("SELECT * FROM `product` LIMIT $lower,100")->result();
         return $query;
     }
     
@@ -725,6 +726,11 @@ $timestamp=new DateTime();
     {
         $query=$this->db->query("SELECT `productimagecroncheck`.`id`, `productimagecroncheck`.`product`,`productimagecroncheck`. `message`,`productimagecroncheck`. `timestamp`,`product`.`name` AS `productname`,`product`.`sku` AS `sku` FROM `productimagecroncheck` LEFT OUTER JOIN `product` ON `product`.`id`=`productimagecroncheck`.`product`")->result();
         return $query;
+    }
+    function getproductcount()
+    {
+        $query=$this->db->query("SELECT COUNT(`id`) as `count1` FROM `product`")->row();
+        return $query->count1;
     }
     
 }

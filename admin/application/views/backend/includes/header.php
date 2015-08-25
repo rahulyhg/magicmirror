@@ -241,6 +241,22 @@ $(document).ready(function(){
                           <span class="arrow"></span>
                       </a>
                   </li>
+                  <li >
+                      <a href="<?php echo site_url('site/productimagereorder?pageno=1'); ?>" class="">
+                          <i class="icon-money"></i>
+                          <span>Product Images Reorder</span>
+                          <span class="arrow"></span>
+                      </a>
+                  </li>
+<!--
+                  <li >
+                      <a href="<?php echo site_url('site/viewproductimagesreorder'); ?>" class="">
+                          <i class="icon-money"></i>
+                          <span>Product Images Reorder</span>
+                          <span class="arrow"></span>
+                      </a>
+                  </li>
+-->
               </ul>
               <!-- sidebar menu end-->
           </div>

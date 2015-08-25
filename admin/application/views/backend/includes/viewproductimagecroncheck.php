@@ -1,3 +1,35 @@
+<div class="row" style="padding:1% 0;">
+<?php
+$pageno=$this->input->get('pageno');
+if($pageno=="")
+{
+$pageno=1;
+}
+echo $pageno;
+echo $count;
+if($pageno==1)
+{
+    ?>
+<div class="col-md-7">
+		<div class=" pull-right col-md-1 createbtn" ><a class="btn btn-primary" href="<?php echo site_url('site/productimagereorder?pageno='.$pageno); ?>"><i class="icon-plus"></i>Execute Product Image Reorder </a></div>
+	</div>
+	<?php
+}
+    ?>
+    <?php
+if($pageno > 1)
+{
+    if((($count/100)+1) >= ($pageno))
+    {
+    ?>
+<div class="col-md-7">
+		<div class=" pull-right col-md-1 createbtn" ><a class="btn btn-primary" href="<?php echo site_url('site/productimagereorder?pageno='.$pageno); ?>"><i class="icon-plus"></i>Execute Next </a></div>
+	</div>
+	<?php
+    }
+}
+    ?>
+</div>
 <div class="row">
 	<div class="col-lg-12">
 		<section class="panel">
