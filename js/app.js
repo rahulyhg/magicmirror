@@ -162,6 +162,22 @@ firstapp.config(['$routeProvider', '$locationProvider',
             templateUrl: 'views/template.html',
             controller: 'ship-return'
         }).
+        when('/social-connect', {
+            templateUrl: 'views/template.html',
+            controller: 'socialconnect'
+        }).
+        when('/e-commerrce', {
+            templateUrl: 'views/template.html',
+            controller: 'ecommerrce'
+        }).
+        when('/whats-new', {
+            templateUrl: 'views/template.html',
+            controller: 'whatsnew'
+        }).
+        when('/fashion-magicmirror', {
+            templateUrl: 'views/template.html',
+            controller: 'fashion'
+        }).
         otherwise({
             redirectTo: '/'
         });

@@ -3397,5 +3397,39 @@ class Site extends CI_Controller
 		$this->load->view("redirect2",$data);
 	}
     
+	function productimagereorder()
+	{
+		$access = array("1");
+		$this->checkaccess($access);
+//        $id=$this->input->get_post("id");
+        $pageno=$this->input->get_post('pageno');
+        $products=$this->product_model->getproductsforimageorderchange(intval($pageno));
+        
+        
+        echo "<h3><a href='".site_url("site/index")."'>Click Here For Dashboard</a></h3>";
+        foreach($products as $product)
+        {
+            $id=$product->id;
+            $this->product_model->productimagereorderbyid($id);
+            echo "product $id is done;";
+            echo "<br>";
+        }
+        
+        echo "<h3><a href='".site_url("site/productimagereorder?pageno=".++$pageno)."'>For Next Records Click Me</a></h3>";
+        
+        $this->load->view("none",$data);
+	}
+    
+    function viewproductimagesreorder()
+    {
+		$access = array("1");
+		$this->checkaccess($access);
+		$data['table']=$this->product_model->viewproductimagesreorder();
+        $countproduct=$this->product_model->getproductcount();
+        $data['count']=$countproduct;
+		$data['page']='viewproductimagecroncheck';
+        $data['title']='View product Image Re-Order With Time';
+		$this->load->view('template',$data);
+    }
 }
 ?>

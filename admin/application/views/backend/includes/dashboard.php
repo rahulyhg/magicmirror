@@ -1,4 +1,16 @@
-<header class="Banner">
+
+<!--
+    <div class=" row" style="padding:1% 0;">
+	<div class="col-md-8">
+		<div class=" pull-right col-md-1 createbtn" ><a class="btn btn-primary" href="<?php echo site_url('site/productimagereorder'); ?>"target="_blank"><i class="icon-plus"></i>Execute Product Image Reorder </a></div>
+	</div>
+	
+	<div class=" pull-right col-md-1 createbtn" ><a class="btn btn-primary" href="<?php echo site_url('site/viewproductimagesreorder'); ?>"><i class="icon-plus"></i>View Results</a></div>
+	
+</div>
+-->
+
+    <header class="Banner">
 
     <div class="Banner-auth" id="auth"></div>
     <section>
