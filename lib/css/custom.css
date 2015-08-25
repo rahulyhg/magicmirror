@@ -496,6 +496,7 @@ li.welcome {
     right: 0;
     left: auto;
 }
+
 /*
 .banner-image.ng-scope {
     position: relative;
@@ -560,6 +561,7 @@ footer h5 {
 .col-xs-4.endorse {
     padding: 20px 25px 20px 15px;
 }
+
 /*        carousel-inner           */
 
 .carousel-inner .active.left {
@@ -614,6 +616,7 @@ a:hover {
     color: #E5097F;
     outline: none;
 }
+
 /*         end carousel-inner         */
 
 .login-tab.pull-right ul {
@@ -651,6 +654,9 @@ li.bag a {
 }
 .product .img2:hover {
     opacity: 0;
+}
+.brand-cont ul li {
+    list-style: square;
 }
 .protitle {
     text-transform: uppercase;
@@ -831,6 +837,7 @@ textarea.input-width {
     float: left;
     margin-bottom: 8px;
 }
+
 /*
 .cont-content {
     padding: 20px;
@@ -944,7 +951,8 @@ ul.submenudown h5 a {
 ul.footer-ul {
     font-size: 12px;
 }
-.footer-pad {} .ftr_menu_hd {
+.footer-pad {}
+.ftr_menu_hd {
     margin: 0px 0px 10px 0px;
     font-size: 14px;
 }
@@ -1017,6 +1025,7 @@ ul.footer-ul {
 ul.nav.nav-pills.mainmenu li:last-child a {
     border-right: 0px;
 }
+
 /*
  .bgborder {
     background-image: url('../../img/bgborder.jpg');
@@ -1310,7 +1319,8 @@ video#video {
     padding-bottom: 15px;
     padding-right: 15px;
 }
-.filter-bod {} .billing-info .row {
+.filter-bod {}
+.billing-info .row {
     margin: 10px 0;
 }
 .form-control:focus {
