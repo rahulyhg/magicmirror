@@ -2,7 +2,7 @@ var cartglobal = {};
 
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'Service', 'ngRoute', 'ngDialog', 'ui.bootstrap']);
 phonecatControllers.controller('home',
-    function ($scope, TemplateService, MainJson, $rootScope, $location,ngDialog) {
+    function ($scope, TemplateService, MainJson, $rootScope, $location, ngDialog) {
         ////$scope.firstloadclass = TemplateService.firstload;
         $scope.template = TemplateService;
         //        TemplateService.meta = "Exclusive Art Jewellery| MagicMirror";
@@ -44,13 +44,13 @@ phonecatControllers.controller('home',
             "name": "SAKSHI CHAWLA",
             //            "email":"chawlasakshi70@yahoo.in"
         }];
-//popup registration
-     $scope.init = function () {
-                ngDialog.open({
+        //popup registration
+        $scope.init = function () {
+            ngDialog.open({
                 template: 'views/popup.html',
                 controller: 'home'
             });
-     }
+        }
 
 
         // video only
@@ -990,10 +990,10 @@ phonecatControllers.controller('badge',
 
         $scope.tocartgo = function () {
             console.log("in chart");
-            if($scope.badge!=0)
-            $location.url("/cart");
+            if ($scope.badge != 0)
+                $location.url("/cart");
         }
-    
+
         //  END CART
 
         var showcart = function (data, status) {
@@ -1218,13 +1218,13 @@ phonecatControllers.controller('checkout',
             shipping: 0,
             payment: 0
         };
-    
+
         //fill all user information
-//        var userinfo = function (data, status){
-//            console.log("get");
-//        }
-//        MainJson.getuserbyid().success(userinfo);
-    
+        //        var userinfo = function (data, status){
+        //            console.log("get");
+        //        }
+        //        MainJson.getuserbyid().success(userinfo);
+
         $scope.loginlogouttext = "Login";
         $scope.isloggedin = 0;
         $scope.form = {};
@@ -1465,7 +1465,7 @@ phonecatControllers.controller('checkout',
             if (check) {
                 $scope.shippinginfo = 1;
                 $scope.buttonsvalidate.shipping = 1;
-                $scope. placeorder($scope.form);
+                $scope.placeorder($scope.form);
                 //$scope.hidebilling = 0;
             }
 
@@ -1489,7 +1489,7 @@ phonecatControllers.controller('checkout',
             MainJson.logout();
             $scope.loginlogouttext = "Login";
         }
-        
+
         var authenticate = function (data, status) {
             console.log(data);
             if (data != "false") {
@@ -1632,7 +1632,7 @@ phonecatControllers.controller('checkout',
         };
 
         // order id and email after payment
-    $scope.orderplacedid = false;
+        $scope.orderplacedid = false;
         $scope.payment = {};
         var orderplaced = function (data, status) {
             console.log("place order returns");
@@ -1797,13 +1797,13 @@ phonecatControllers.controller('category',
                 TemplateService.metadescription = "Micro Magnifico! The precise collection of Micro imitation jewellery is heart pumping & it will heavy the beauty.";
                 TemplateService.keywords = "fashion jewellery, sterling silver jewellery, indian jewellery online,I ndian wedding jewellery, fashion jewellery online, imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online ,Micro Juda, fancy juda, online micro  juda.";
             }
-            break; 
-            default:
-                {
-    TemplateService.title = "Exclusive Art Jewellery";
-        TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
-        TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
-                }
+            break;
+        default:
+            {
+                TemplateService.title = "Exclusive Art Jewellery";
+                TemplateService.metadescription = "New horizon of thinking we proudly own the crown of biggest infrastructure & enormous artistic  design in silver art jewellery & perfect professional team & the exquisite design with quality is our core value.";
+                TemplateService.keywords = "fashion jewelLery,  sterling silver jewellery, indian jewellery online, indian wedding jewellery, fashion jewellery online, Imitation jewelry, imitation jewellery, indian artificial jewellery, online jewellery shopping, indian imitation jewellery, indian fashion jewellery online, artificial jewellery online , bridal jewellery, designer jewellery, jewellery brands, jewellery set online, women jewelry, designer necklace sets";
+            }
         }
         $scope.gototop = function () {
             $location.hash('totop');
@@ -2427,6 +2427,59 @@ phonecatControllers.controller('whatsnew',
         TemplateService.navigation = "views/navigation.html";
         TemplateService.changetitle("Returns");
         TemplateService.content = "views/whats-new.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+phonecatControllers.controller('disclaimer',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/disclaimer.html";
+        $scope.returnsactive = "active";
+        TemplateService.slider = "";
+        $scope.loginlogouttext = "Login";
+        //authenticate
+        $scope.logout = function () {
+            MainJson.logout();
+            $scope.loginlogouttext = "Login";
+        }
+        var authenticate = function (data, status) {
+            if (data != "false") {
+                $scope.alldata = data;
+                $scope.loginlogouttext = "Logout";
+            }
+        };
+        MainJson.authenticate().success(authenticate);
+        //authenticate
+
+    });
+
+phonecatControllers.controller('refund-policy',
+    function ($scope, TemplateService, MainJson, $rootScope, $location) {
+        //$scope.firstloadclass = TemplateService.firstload;
+        $scope.template = TemplateService;
+        TemplateService.header = "views/header.html";
+        TemplateService.navigation = "views/navigation.html";
+        TemplateService.changetitle("Returns");
+        TemplateService.content = "views/refund-policy.html";
         $scope.returnsactive = "active";
         TemplateService.slider = "";
         $scope.loginlogouttext = "Login";

@@ -28,6 +28,14 @@ firstapp.config(['$routeProvider', '$locationProvider',
         when('/comingsoon', {
             templateUrl: 'views/template.html',
             controller: 'comingsoon'
+        })            .
+        when('/refund-policy', {
+            templateUrl: 'views/template.html',
+            controller: 'refund-policy'
+        })            .
+        when('/disclaimer', {
+            templateUrl: 'views/template.html',
+            controller: 'disclaimer'
         }).
         when('/xoxo', {
             templateUrl: 'views/template.html',
