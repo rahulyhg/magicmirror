@@ -621,7 +621,7 @@ a:hover {
 
 .login-tab.pull-right ul {
     position: relative;
-    height: 95px;
+    height: 0px;
     /*    border-bottom: 1px solid #E2E2E2;*/
 }
 li.bag a {
